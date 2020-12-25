@@ -12,6 +12,9 @@ namespace Bus_Mangement_system
 {
     public partial class Main : MetroFramework.Forms.MetroForm
     {
+
+      
+
         public Main()
         {
             InitializeComponent();
