@@ -90,7 +90,7 @@
             // panelDrawer
             // 
             this.panelDrawer.AutoScroll = true;
-            this.panelDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panelDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
             this.panelDrawer.Controls.Add(this.paneliconSetting);
             this.panelDrawer.Controls.Add(this.paneliconReport);
             this.panelDrawer.Controls.Add(this.btniconReport);
@@ -104,10 +104,10 @@
             this.panelDrawer.Controls.Add(this.btniconStudent);
             this.panelDrawer.Controls.Add(this.panel1);
             this.panelDrawer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelDrawer.Location = new System.Drawing.Point(15, 80);
+            this.panelDrawer.Location = new System.Drawing.Point(10, 60);
             this.panelDrawer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDrawer.Name = "panelDrawer";
-            this.panelDrawer.Size = new System.Drawing.Size(73, 794);
+            this.panelDrawer.Size = new System.Drawing.Size(73, 814);
             this.panelDrawer.TabIndex = 0;
             // 
             // paneliconSetting
@@ -126,8 +126,8 @@
             this.btniconSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btniconSetting.Dock = System.Windows.Forms.DockStyle.Top;
             this.btniconSetting.FlatAppearance.BorderSize = 0;
-            this.btniconSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btniconSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btniconSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btniconSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btniconSetting.Location = new System.Drawing.Point(0, 0);
             this.btniconSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -151,8 +151,8 @@
             this.btniconReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btniconReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.btniconReport.FlatAppearance.BorderSize = 0;
-            this.btniconReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btniconReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btniconReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btniconReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btniconReport.Location = new System.Drawing.Point(0, 950);
             this.btniconReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -177,8 +177,8 @@
             this.btniconDailyTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btniconDailyTicket.Dock = System.Windows.Forms.DockStyle.Top;
             this.btniconDailyTicket.FlatAppearance.BorderSize = 0;
-            this.btniconDailyTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btniconDailyTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btniconDailyTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconDailyTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btniconDailyTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btniconDailyTicket.Location = new System.Drawing.Point(0, 823);
             this.btniconDailyTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -203,8 +203,8 @@
             this.btniconDriver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btniconDriver.Dock = System.Windows.Forms.DockStyle.Top;
             this.btniconDriver.FlatAppearance.BorderSize = 0;
-            this.btniconDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btniconDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btniconDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btniconDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btniconDriver.Location = new System.Drawing.Point(0, 580);
             this.btniconDriver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -229,8 +229,8 @@
             this.btniconBus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btniconBus.Dock = System.Windows.Forms.DockStyle.Top;
             this.btniconBus.FlatAppearance.BorderSize = 0;
-            this.btniconBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btniconBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btniconBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btniconBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btniconBus.Location = new System.Drawing.Point(0, 337);
             this.btniconBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -255,8 +255,8 @@
             this.btniconStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btniconStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.btniconStudent.FlatAppearance.BorderSize = 0;
-            this.btniconStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btniconStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btniconStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btniconStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btniconStudent.Location = new System.Drawing.Point(0, 94);
             this.btniconStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -282,8 +282,8 @@
             this.btnDrawer.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_menu_80px;
             this.btnDrawer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDrawer.FlatAppearance.BorderSize = 0;
-            this.btnDrawer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnDrawer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnDrawer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnDrawer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btnDrawer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrawer.Location = new System.Drawing.Point(0, 0);
             this.btnDrawer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -296,7 +296,7 @@
             // panelMenu
             // 
             this.panelMenu.AutoScroll = true;
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
             this.panelMenu.Controls.Add(this.btnSetting);
             this.panelMenu.Controls.Add(this.reportSubPanel);
             this.panelMenu.Controls.Add(this.btnReport);
@@ -310,10 +310,10 @@
             this.panelMenu.Controls.Add(this.btnStudent);
             this.panelMenu.Controls.Add(this.Logo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(88, 80);
+            this.panelMenu.Location = new System.Drawing.Point(83, 60);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(201, 794);
+            this.panelMenu.Size = new System.Drawing.Size(201, 814);
             this.panelMenu.TabIndex = 1;
             // 
             // btnSetting
@@ -321,8 +321,8 @@
             this.btnSetting.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSetting.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSetting.FlatAppearance.BorderSize = 0;
-            this.btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetting.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetting.ForeColor = System.Drawing.Color.White;
@@ -337,7 +337,7 @@
             // 
             // reportSubPanel
             // 
-            this.reportSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.reportSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.reportSubPanel.Controls.Add(this.universityReport);
             this.reportSubPanel.Controls.Add(this.monthlyReport);
             this.reportSubPanel.Controls.Add(this.dailyReport);
@@ -352,8 +352,8 @@
             this.universityReport.BackColor = System.Drawing.Color.Transparent;
             this.universityReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.universityReport.FlatAppearance.BorderSize = 0;
-            this.universityReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.universityReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.universityReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.universityReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.universityReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.universityReport.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.universityReport.ForeColor = System.Drawing.Color.White;
@@ -371,8 +371,8 @@
             this.monthlyReport.BackColor = System.Drawing.Color.Transparent;
             this.monthlyReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.monthlyReport.FlatAppearance.BorderSize = 0;
-            this.monthlyReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.monthlyReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.monthlyReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.monthlyReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.monthlyReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.monthlyReport.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthlyReport.ForeColor = System.Drawing.Color.White;
@@ -390,8 +390,8 @@
             this.dailyReport.BackColor = System.Drawing.Color.Transparent;
             this.dailyReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.dailyReport.FlatAppearance.BorderSize = 0;
-            this.dailyReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.dailyReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.dailyReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.dailyReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.dailyReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dailyReport.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dailyReport.ForeColor = System.Drawing.Color.White;
@@ -409,8 +409,8 @@
             this.btnReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnReport.FlatAppearance.BorderSize = 0;
-            this.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
@@ -426,7 +426,7 @@
             // 
             // dailyticketSubPanel
             // 
-            this.dailyticketSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dailyticketSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.dailyticketSubPanel.Controls.Add(this.addDailyTicket);
             this.dailyticketSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.dailyticketSubPanel.Location = new System.Drawing.Point(0, 898);
@@ -439,8 +439,8 @@
             this.addDailyTicket.BackColor = System.Drawing.Color.Transparent;
             this.addDailyTicket.Dock = System.Windows.Forms.DockStyle.Top;
             this.addDailyTicket.FlatAppearance.BorderSize = 0;
-            this.addDailyTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.addDailyTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.addDailyTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.addDailyTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.addDailyTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addDailyTicket.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addDailyTicket.ForeColor = System.Drawing.Color.White;
@@ -458,8 +458,8 @@
             this.btnDailyTickets.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDailyTickets.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDailyTickets.FlatAppearance.BorderSize = 0;
-            this.btnDailyTickets.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnDailyTickets.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnDailyTickets.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnDailyTickets.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btnDailyTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDailyTickets.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDailyTickets.ForeColor = System.Drawing.Color.White;
@@ -475,7 +475,7 @@
             // 
             // driverSubPanel
             // 
-            this.driverSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.driverSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.driverSubPanel.Controls.Add(this.reportDriver);
             this.driverSubPanel.Controls.Add(this.salary);
             this.driverSubPanel.Controls.Add(this.editDriver);
@@ -491,8 +491,8 @@
             this.reportDriver.BackColor = System.Drawing.Color.Transparent;
             this.reportDriver.Dock = System.Windows.Forms.DockStyle.Top;
             this.reportDriver.FlatAppearance.BorderSize = 0;
-            this.reportDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.reportDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.reportDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.reportDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.reportDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportDriver.ForeColor = System.Drawing.Color.White;
@@ -510,8 +510,8 @@
             this.salary.BackColor = System.Drawing.Color.Transparent;
             this.salary.Dock = System.Windows.Forms.DockStyle.Top;
             this.salary.FlatAppearance.BorderSize = 0;
-            this.salary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.salary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.salary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.salary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.salary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salary.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salary.ForeColor = System.Drawing.Color.White;
@@ -529,8 +529,8 @@
             this.editDriver.BackColor = System.Drawing.Color.Transparent;
             this.editDriver.Dock = System.Windows.Forms.DockStyle.Top;
             this.editDriver.FlatAppearance.BorderSize = 0;
-            this.editDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.editDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.editDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.editDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.editDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editDriver.ForeColor = System.Drawing.Color.White;
@@ -548,8 +548,8 @@
             this.addDriver.BackColor = System.Drawing.Color.Transparent;
             this.addDriver.Dock = System.Windows.Forms.DockStyle.Top;
             this.addDriver.FlatAppearance.BorderSize = 0;
-            this.addDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.addDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.addDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.addDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.addDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addDriver.ForeColor = System.Drawing.Color.White;
@@ -567,8 +567,8 @@
             this.btnDriver.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDriver.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDriver.FlatAppearance.BorderSize = 0;
-            this.btnDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btnDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDriver.ForeColor = System.Drawing.Color.White;
@@ -584,7 +584,7 @@
             // 
             // busSubPanel
             // 
-            this.busSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.busSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.busSubPanel.Controls.Add(this.reportBus);
             this.busSubPanel.Controls.Add(this.Fees);
             this.busSubPanel.Controls.Add(this.editBus);
@@ -600,8 +600,8 @@
             this.reportBus.BackColor = System.Drawing.Color.Transparent;
             this.reportBus.Dock = System.Windows.Forms.DockStyle.Top;
             this.reportBus.FlatAppearance.BorderSize = 0;
-            this.reportBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.reportBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.reportBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.reportBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.reportBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportBus.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportBus.ForeColor = System.Drawing.Color.White;
@@ -619,8 +619,8 @@
             this.Fees.BackColor = System.Drawing.Color.Transparent;
             this.Fees.Dock = System.Windows.Forms.DockStyle.Top;
             this.Fees.FlatAppearance.BorderSize = 0;
-            this.Fees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.Fees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.Fees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.Fees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Fees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Fees.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fees.ForeColor = System.Drawing.Color.White;
@@ -638,8 +638,8 @@
             this.editBus.BackColor = System.Drawing.Color.Transparent;
             this.editBus.Dock = System.Windows.Forms.DockStyle.Top;
             this.editBus.FlatAppearance.BorderSize = 0;
-            this.editBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.editBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.editBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.editBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.editBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editBus.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBus.ForeColor = System.Drawing.Color.White;
@@ -657,8 +657,8 @@
             this.addBus.BackColor = System.Drawing.Color.Transparent;
             this.addBus.Dock = System.Windows.Forms.DockStyle.Top;
             this.addBus.FlatAppearance.BorderSize = 0;
-            this.addBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.addBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.addBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.addBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.addBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBus.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBus.ForeColor = System.Drawing.Color.White;
@@ -676,8 +676,8 @@
             this.btnBus.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBus.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnBus.FlatAppearance.BorderSize = 0;
-            this.btnBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btnBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBus.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBus.ForeColor = System.Drawing.Color.White;
@@ -693,7 +693,7 @@
             // 
             // studentSubPanel
             // 
-            this.studentSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.studentSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.studentSubPanel.Controls.Add(this.reportStudent);
             this.studentSubPanel.Controls.Add(this.booking);
             this.studentSubPanel.Controls.Add(this.editStudent);
@@ -709,8 +709,8 @@
             this.reportStudent.BackColor = System.Drawing.Color.Transparent;
             this.reportStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.reportStudent.FlatAppearance.BorderSize = 0;
-            this.reportStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.reportStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.reportStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.reportStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.reportStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportStudent.ForeColor = System.Drawing.Color.White;
@@ -728,8 +728,8 @@
             this.booking.BackColor = System.Drawing.Color.Transparent;
             this.booking.Dock = System.Windows.Forms.DockStyle.Top;
             this.booking.FlatAppearance.BorderSize = 0;
-            this.booking.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.booking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.booking.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.booking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.booking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.booking.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.booking.ForeColor = System.Drawing.Color.White;
@@ -747,8 +747,8 @@
             this.editStudent.BackColor = System.Drawing.Color.Transparent;
             this.editStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.editStudent.FlatAppearance.BorderSize = 0;
-            this.editStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.editStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.editStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.editStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.editStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editStudent.ForeColor = System.Drawing.Color.White;
@@ -766,8 +766,8 @@
             this.addStudent.BackColor = System.Drawing.Color.Transparent;
             this.addStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.addStudent.FlatAppearance.BorderSize = 0;
-            this.addStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.addStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.addStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.addStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.addStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addStudent.ForeColor = System.Drawing.Color.White;
@@ -785,8 +785,8 @@
             this.btnStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStudent.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStudent.FlatAppearance.BorderSize = 0;
-            this.btnStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
             this.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudent.ForeColor = System.Drawing.Color.White;
@@ -811,22 +811,22 @@
             // 
             // panelChildForm
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.White;
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.panelChildForm.Controls.Add(this.panel2);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(88, 80);
+            this.panelChildForm.Location = new System.Drawing.Point(83, 60);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1356, 794);
+            this.panelChildForm.Size = new System.Drawing.Size(1361, 814);
             this.panelChildForm.TabIndex = 3;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(20, 794);
+            this.panel2.Size = new System.Drawing.Size(20, 814);
             this.panel2.TabIndex = 0;
             // 
             // Main
@@ -842,9 +842,8 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(1454, 884);
             this.Name = "Main";
-            this.Padding = new System.Windows.Forms.Padding(15, 80, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10, 60, 10, 10);
             this.Style = MetroFramework.MetroColorStyle.Silver;
-            this.Text = "Main Menu";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Shown += new System.EventHandler(this.Main_Shown);
