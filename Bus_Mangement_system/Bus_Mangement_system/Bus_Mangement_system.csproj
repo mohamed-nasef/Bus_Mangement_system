@@ -33,13 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework">
-      <HintPath>..\..\..\..\..\Desktop\Metro\MetroFramework.dll</HintPath>
+      <HintPath>C:\Users\Mahmo\Desktop\MetroFramework.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Design">
-      <HintPath>..\..\..\..\..\Desktop\Metro\MetroFramework.Design.dll</HintPath>
+      <HintPath>C:\Users\Mahmo\Desktop\MetroFramework.Design.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Fonts">
-      <HintPath>..\..\..\..\..\Desktop\Metro\MetroFramework.Fonts.dll</HintPath>
+      <HintPath>C:\Users\Mahmo\Desktop\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
