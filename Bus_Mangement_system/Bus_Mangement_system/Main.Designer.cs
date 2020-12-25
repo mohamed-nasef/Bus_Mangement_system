@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelDrawer = new System.Windows.Forms.Panel();
             this.paneliconSetting = new System.Windows.Forms.Panel();
             this.btniconSetting = new System.Windows.Forms.Button();
@@ -89,7 +90,7 @@
             // panelDrawer
             // 
             this.panelDrawer.AutoScroll = true;
-            this.panelDrawer.BackColor = System.Drawing.Color.Transparent;
+            this.panelDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.panelDrawer.Controls.Add(this.paneliconSetting);
             this.panelDrawer.Controls.Add(this.paneliconReport);
             this.panelDrawer.Controls.Add(this.btniconReport);
@@ -103,10 +104,10 @@
             this.panelDrawer.Controls.Add(this.btniconStudent);
             this.panelDrawer.Controls.Add(this.panel1);
             this.panelDrawer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelDrawer.Location = new System.Drawing.Point(30, 98);
+            this.panelDrawer.Location = new System.Drawing.Point(15, 80);
             this.panelDrawer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDrawer.Name = "panelDrawer";
-            this.panelDrawer.Size = new System.Drawing.Size(73, 754);
+            this.panelDrawer.Size = new System.Drawing.Size(73, 794);
             this.panelDrawer.TabIndex = 0;
             // 
             // paneliconSetting
@@ -295,7 +296,7 @@
             // panelMenu
             // 
             this.panelMenu.AutoScroll = true;
-            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.panelMenu.Controls.Add(this.btnSetting);
             this.panelMenu.Controls.Add(this.reportSubPanel);
             this.panelMenu.Controls.Add(this.btnReport);
@@ -309,10 +310,10 @@
             this.panelMenu.Controls.Add(this.btnStudent);
             this.panelMenu.Controls.Add(this.Logo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(103, 98);
+            this.panelMenu.Location = new System.Drawing.Point(88, 80);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(201, 754);
+            this.panelMenu.Size = new System.Drawing.Size(201, 794);
             this.panelMenu.TabIndex = 1;
             // 
             // btnSetting
@@ -813,10 +814,10 @@
             this.panelChildForm.BackColor = System.Drawing.Color.White;
             this.panelChildForm.Controls.Add(this.panel2);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(103, 98);
+            this.panelChildForm.Location = new System.Drawing.Point(88, 80);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1321, 754);
+            this.panelChildForm.Size = new System.Drawing.Size(1356, 794);
             this.panelChildForm.TabIndex = 3;
             // 
             // panel2
@@ -825,7 +826,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(20, 754);
+            this.panel2.Size = new System.Drawing.Size(20, 794);
             this.panel2.TabIndex = 0;
             // 
             // Main
@@ -837,9 +838,11 @@
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelDrawer);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1454, 884);
             this.Name = "Main";
-            this.Padding = new System.Windows.Forms.Padding(30, 98, 30, 32);
+            this.Padding = new System.Windows.Forms.Padding(15, 80, 10, 10);
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "Main Menu";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
