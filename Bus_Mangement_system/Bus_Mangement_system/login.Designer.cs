@@ -39,8 +39,10 @@ namespace Bus_Mangement_system
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new Guna.UI.WinForms.GunaTextBox();
+            this.panelToolbar = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panelToolbar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +51,7 @@ namespace Bus_Mangement_system
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 159);
+            this.label1.Location = new System.Drawing.Point(31, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 30);
             this.label1.TabIndex = 1;
@@ -61,7 +63,7 @@ namespace Bus_Mangement_system
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 242);
+            this.label2.Location = new System.Drawing.Point(48, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 30);
             this.label2.TabIndex = 2;
@@ -71,11 +73,12 @@ namespace Bus_Mangement_system
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(21, 7);
+            this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 30);
+            this.label3.Size = new System.Drawing.Size(59, 25);
             this.label3.TabIndex = 16;
             this.label3.Text = "Login";
             // 
@@ -161,13 +164,14 @@ namespace Bus_Mangement_system
             this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
             this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
             this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.Dock = System.Windows.Forms.DockStyle.Right;
             this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
             this.gunaAdvenceButton1.Image = null;
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(393, 3);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(397, 0);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -175,8 +179,7 @@ namespace Bus_Mangement_system
             this.gunaAdvenceButton1.OnHoverImage = null;
             this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Radius = 10;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(30, 24);
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(30, 29);
             this.gunaAdvenceButton1.TabIndex = 21;
             this.gunaAdvenceButton1.Text = "X";
             this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -217,6 +220,17 @@ namespace Bus_Mangement_system
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
+            // panelToolbar
+            // 
+            this.panelToolbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.panelToolbar.Controls.Add(this.gunaAdvenceButton1);
+            this.panelToolbar.Controls.Add(this.label3);
+            this.panelToolbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelToolbar.Location = new System.Drawing.Point(0, 0);
+            this.panelToolbar.Name = "panelToolbar";
+            this.panelToolbar.Size = new System.Drawing.Size(427, 29);
+            this.panelToolbar.TabIndex = 24;
+            // 
             // login
             // 
             this.AcceptButton = this.btnLogin;
@@ -225,13 +239,12 @@ namespace Bus_Mangement_system
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(427, 481);
             this.ControlBox = false;
+            this.Controls.Add(this.panelToolbar);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.gunaAdvenceButton1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,12 +252,13 @@ namespace Bus_Mangement_system
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "login";
-            this.Padding = new System.Windows.Forms.Padding(30, 97, 30, 32);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panelToolbar.ResumeLayout(false);
+            this.panelToolbar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +275,6 @@ namespace Bus_Mangement_system
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private Guna.UI.WinForms.GunaTextBox txtPassword;
+        private System.Windows.Forms.Panel panelToolbar;
     }
 }

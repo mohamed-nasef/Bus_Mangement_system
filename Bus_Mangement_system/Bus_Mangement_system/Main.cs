@@ -21,6 +21,10 @@ namespace Bus_Mangement_system
         {
             Application.Exit();
         }
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
         private void Main_Shown(object sender, EventArgs e)
         {
