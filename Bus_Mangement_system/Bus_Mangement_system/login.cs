@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Bus_Mangement_system
 {
-    public partial class login : MetroFramework.Forms.MetroForm
+    public partial class login : Form
     {
         string username, password;
         Main obj = new Main();
@@ -18,11 +18,17 @@ namespace Bus_Mangement_system
         {
             InitializeComponent();
         }
+
         private void login_Load(object sender, EventArgs e)
         {
             //select from DB
             username = "a";
             password = "1";
+        }
+
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -35,6 +41,8 @@ namespace Bus_Mangement_system
             else
                 MetroFramework.MetroMessageBox.Show(this, "\n\nIncorrect username Or password", "\nincorrect", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        
 
     }
 }

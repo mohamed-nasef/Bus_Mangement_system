@@ -32,12 +32,14 @@ namespace Bus_Mangement_system
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnLogin = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtUserName = new Guna.UI.WinForms.GunaTextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtPassword = new Guna.UI.WinForms.GunaTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.txtPassword = new Guna.UI.WinForms.GunaTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,113 +67,183 @@ namespace Bus_Mangement_system
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(21, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 30);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Login";
+            // 
             // btnLogin
             // 
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLogin.Location = new System.Drawing.Point(352, 316);
+            this.btnLogin.AnimationHoverSpeed = 0.07F;
+            this.btnLogin.AnimationSpeed = 0.03F;
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BaseColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BorderColor = System.Drawing.Color.Black;
+            this.btnLogin.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnLogin.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnLogin.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLogin.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.CheckedImage")));
+            this.btnLogin.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLogin.FocusedColor = System.Drawing.Color.Empty;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Image = null;
+            this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnLogin.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnLogin.Location = new System.Drawing.Point(332, 319);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(140, 45);
-            this.btnLogin.TabIndex = 10;
+            this.btnLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnLogin.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnLogin.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnLogin.OnHoverImage = null;
+            this.btnLogin.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnLogin.OnPressedColor = System.Drawing.Color.Black;
+            this.btnLogin.Radius = 10;
+            this.btnLogin.Size = new System.Drawing.Size(180, 42);
+            this.btnLogin.TabIndex = 17;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtUserName
             // 
-            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(19)))), ((int)(((byte)(23)))));
-            this.txtUserName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(19)))), ((int)(((byte)(23)))));
+            this.txtUserName.BackColor = System.Drawing.Color.Transparent;
+            this.txtUserName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.txtUserName.BorderColor = System.Drawing.Color.Silver;
-            this.txtUserName.BorderSize = 1;
+            this.txtUserName.BorderSize = 0;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUserName.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtUserName.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.txtUserName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtUserName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUserName.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtUserName.Location = new System.Drawing.Point(199, 113);
+            this.txtUserName.Location = new System.Drawing.Point(199, 108);
+            this.txtUserName.MaxLength = 10;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.Radius = 8;
             this.txtUserName.SelectedText = "";
-            this.txtUserName.Size = new System.Drawing.Size(205, 29);
-            this.txtUserName.TabIndex = 11;
+            this.txtUserName.Size = new System.Drawing.Size(205, 32);
+            this.txtUserName.TabIndex = 18;
             this.txtUserName.Text = "a";
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox3
+            // pictureBox2
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(19)))), ((int)(((byte)(23)))));
-            this.pictureBox3.Image = global::Bus_Mangement_system.Properties.Resources.icons8_user_male;
-            this.pictureBox3.Location = new System.Drawing.Point(208, 116);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.pictureBox2.Image = global::Bus_Mangement_system.Properties.Resources.icons8_user_male;
+            this.pictureBox2.Location = new System.Drawing.Point(206, 113);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
+            // gunaAdvenceButton1
+            // 
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.Image = null;
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(812, 7);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.OnHoverImage = null;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.Radius = 10;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(30, 30);
+            this.gunaAdvenceButton1.TabIndex = 21;
+            this.gunaAdvenceButton1.Text = "X";
+            this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.pictureBox4.Image = global::Bus_Mangement_system.Properties.Resources.icons8_key_2;
+            this.pictureBox4.Location = new System.Drawing.Point(206, 197);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 23;
+            this.pictureBox4.TabStop = false;
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Transparent;
-            this.txtPassword.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(19)))), ((int)(((byte)(23)))));
+            this.txtPassword.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.txtPassword.BorderColor = System.Drawing.Color.Silver;
-            this.txtPassword.BorderSize = 1;
+            this.txtPassword.BorderSize = 0;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtPassword.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPassword.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtPassword.Location = new System.Drawing.Point(199, 194);
+            this.txtPassword.Location = new System.Drawing.Point(199, 193);
+            this.txtPassword.MaxLength = 10;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Radius = 8;
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(205, 29);
-            this.txtPassword.TabIndex = 13;
+            this.txtPassword.Size = new System.Drawing.Size(205, 32);
+            this.txtPassword.TabIndex = 22;
             this.txtPassword.Text = "1";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(19)))), ((int)(((byte)(23)))));
-            this.pictureBox4.Image = global::Bus_Mangement_system.Properties.Resources.icons8_key_2;
-            this.pictureBox4.Location = new System.Drawing.Point(208, 196);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
-            // 
             // login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(847, 396);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.gunaAdvenceButton1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(847, 396);
             this.Name = "login";
             this.Padding = new System.Windows.Forms.Padding(30, 97, 30, 32);
-            this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Silver;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,10 +254,12 @@ namespace Bus_Mangement_system
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI.WinForms.GunaAdvenceButton btnLogin;
         private Guna.UI.WinForms.GunaTextBox txtUserName;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private Guna.UI.WinForms.GunaTextBox txtPassword;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private Guna.UI.WinForms.GunaTextBox txtPassword;
     }
 }
