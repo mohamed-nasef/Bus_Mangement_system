@@ -123,6 +123,16 @@ namespace Bus_Mangement_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_key_2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_key_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_menu_80px {
             get {
                 object obj = ResourceManager.GetObject("icons8_menu_80px", resourceCulture);
@@ -186,6 +196,16 @@ namespace Bus_Mangement_system.Properties {
         internal static System.Drawing.Bitmap icons8_ticket_80px {
             get {
                 object obj = ResourceManager.GetObject("icons8_ticket_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_male {
+            get {
+                object obj = ResourceManager.GetObject("icons8_user_male", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -12,7 +12,7 @@ namespace Bus_Mangement_system
 {
     public partial class Loading : MetroFramework.Forms.MetroForm
     {
-        Main obj = new Main();
+        login obj = new login();
         public Loading()
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace Bus_Mangement_system
             }
             else
             {
+                timer1.Stop();
                 obj.Show();
                 this.Hide();
             }
