@@ -134,6 +134,8 @@ namespace Bus_Mangement_system
         private void addStudent_Click(object sender, EventArgs e)
         {
             customizeDesign();
+            SCR.Student.AddStuent asObj = new SCR.Student.AddStuent();
+            openChildForm(asObj);
         }
 
         private void editStudent_Click(object sender, EventArgs e)
