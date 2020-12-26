@@ -17,7 +17,7 @@ namespace Bus_Mangement_system
             InitializeComponent();
             customizeDesign();
         }
-        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -115,6 +115,9 @@ namespace Bus_Mangement_system
         {
             customizeDesign();
         }
+
+
+
         #endregion
 
         #region Student
@@ -125,7 +128,7 @@ namespace Bus_Mangement_system
             showSubMenu(studentSubPanel, paneliconStudent);
         }
 
-        private void btniconStudent_Click_1(object sender, EventArgs e)
+        private void btniconStudent_Click(object sender, EventArgs e)
         {
             panelMenu.Visible = true;
             showSubMenu(studentSubPanel, paneliconStudent);
@@ -164,7 +167,7 @@ namespace Bus_Mangement_system
             showSubMenu(busSubPanel, paneliconBus);
         }
 
-        private void btniconBus_Click_1(object sender, EventArgs e)
+        private void btniconBus_Click(object sender, EventArgs e)
         {
             panelMenu.Visible = true;
             showSubMenu(busSubPanel, paneliconBus);
@@ -200,13 +203,11 @@ namespace Bus_Mangement_system
         {
             showSubMenu(driverSubPanel, paneliconDriver);
         }
-
-        private void btniconDriver_Click_1(object sender, EventArgs e)
+        private void btniconDriver_Click(object sender, EventArgs e)
         {
             panelMenu.Visible = true;
             showSubMenu(driverSubPanel, paneliconDriver);
         }
-
         private void addDriver_Click(object sender, EventArgs e)
         {
             customizeDesign();
@@ -238,7 +239,7 @@ namespace Bus_Mangement_system
             showSubMenu(dailyticketSubPanel, paneliconDailyTicket/*, dailyticketPanelHeight*/);
         }
 
-        private void btniconDailyTicket_Click_1(object sender, EventArgs e)
+        private void btniconDailyTicket_Click(object sender, EventArgs e)
         {
             panelMenu.Visible = true;
             showSubMenu(dailyticketSubPanel, paneliconDailyTicket/*, dailyticketPanelHeight*/);
@@ -256,7 +257,7 @@ namespace Bus_Mangement_system
         {
             showSubMenu(reportSubPanel, paneliconReport/*, reportPanelHeight*/);
         }
-        private void btniconReport_Click_1(object sender, EventArgs e)
+        private void btniconReport_Click(object sender, EventArgs e)
         {
             panelMenu.Visible = true;
             showSubMenu(reportSubPanel, paneliconReport/*, reportPanelHeight*/);
@@ -278,6 +279,24 @@ namespace Bus_Mangement_system
             customizeDesign();
             //new form
         }
+        #endregion
+
+        #region Setting
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            customizeDesign();
+            //new form
+
+        }
+
+        private void btniconSetting_Click(object sender, EventArgs e)
+        {
+            customizeDesign();
+            //new form
+
+        }
+
+
         #endregion
 
     }

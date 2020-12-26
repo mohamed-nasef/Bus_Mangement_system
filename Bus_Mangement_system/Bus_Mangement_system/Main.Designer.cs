@@ -29,50 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.panelDrawer = new System.Windows.Forms.Panel();
-            this.paneliconSetting = new System.Windows.Forms.Panel();
-            this.btniconSetting = new System.Windows.Forms.Button();
-            this.paneliconReport = new System.Windows.Forms.Panel();
-            this.btniconReport = new System.Windows.Forms.Button();
-            this.paneliconDailyTicket = new System.Windows.Forms.Panel();
-            this.btniconDailyTicket = new System.Windows.Forms.Button();
-            this.paneliconDriver = new System.Windows.Forms.Panel();
-            this.btniconDriver = new System.Windows.Forms.Button();
-            this.paneliconBus = new System.Windows.Forms.Panel();
-            this.btniconBus = new System.Windows.Forms.Button();
-            this.paneliconStudent = new System.Windows.Forms.Panel();
-            this.btniconStudent = new System.Windows.Forms.Button();
-            this.paneliconMenu = new System.Windows.Forms.Panel();
-            this.btnDrawer = new System.Windows.Forms.Button();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnSetting = new System.Windows.Forms.Button();
-            this.reportSubPanel = new System.Windows.Forms.Panel();
-            this.universityReport = new System.Windows.Forms.Button();
-            this.monthlyReport = new System.Windows.Forms.Button();
-            this.dailyReport = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.dailyticketSubPanel = new System.Windows.Forms.Panel();
-            this.addDailyTicket = new System.Windows.Forms.Button();
-            this.btnDailyTickets = new System.Windows.Forms.Button();
-            this.driverSubPanel = new System.Windows.Forms.Panel();
-            this.reportDriver = new System.Windows.Forms.Button();
-            this.salary = new System.Windows.Forms.Button();
-            this.editDriver = new System.Windows.Forms.Button();
-            this.addDriver = new System.Windows.Forms.Button();
-            this.btnDriver = new System.Windows.Forms.Button();
-            this.busSubPanel = new System.Windows.Forms.Panel();
-            this.reportBus = new System.Windows.Forms.Button();
-            this.Fees = new System.Windows.Forms.Button();
-            this.editBus = new System.Windows.Forms.Button();
-            this.addBus = new System.Windows.Forms.Button();
-            this.btnBus = new System.Windows.Forms.Button();
-            this.studentSubPanel = new System.Windows.Forms.Panel();
-            this.reportStudent = new System.Windows.Forms.Button();
-            this.booking = new System.Windows.Forms.Button();
-            this.editStudent = new System.Windows.Forms.Button();
-            this.addStudent = new System.Windows.Forms.Button();
-            this.btnStudent = new System.Windows.Forms.Button();
-            this.Logo = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.cardDrivers = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -110,17 +66,53 @@
             this.labelMonthlyDetailsIncome = new System.Windows.Forms.Label();
             this.labelIncome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.panelDrawer = new System.Windows.Forms.Panel();
+            this.paneliconSetting = new System.Windows.Forms.Panel();
+            this.btniconSetting = new System.Windows.Forms.Button();
+            this.paneliconReport = new System.Windows.Forms.Panel();
+            this.btniconReport = new System.Windows.Forms.Button();
+            this.paneliconDailyTicket = new System.Windows.Forms.Panel();
+            this.btniconDailyTicket = new System.Windows.Forms.Button();
+            this.paneliconDriver = new System.Windows.Forms.Panel();
+            this.btniconDriver = new System.Windows.Forms.Button();
+            this.paneliconBus = new System.Windows.Forms.Panel();
+            this.btniconBus = new System.Windows.Forms.Button();
+            this.paneliconStudent = new System.Windows.Forms.Panel();
+            this.btniconStudent = new System.Windows.Forms.Button();
+            this.paneliconMenu = new System.Windows.Forms.Panel();
+            this.btnDrawer = new System.Windows.Forms.Button();
             this.panelDraft = new System.Windows.Forms.Panel();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.panelDrawer.SuspendLayout();
-            this.paneliconSetting.SuspendLayout();
-            this.paneliconMenu.SuspendLayout();
-            this.panelMenu.SuspendLayout();
-            this.reportSubPanel.SuspendLayout();
-            this.dailyticketSubPanel.SuspendLayout();
-            this.driverSubPanel.SuspendLayout();
-            this.busSubPanel.SuspendLayout();
-            this.studentSubPanel.SuspendLayout();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.reportSubPanel = new System.Windows.Forms.Panel();
+            this.universityReport = new System.Windows.Forms.Button();
+            this.monthlyReport = new System.Windows.Forms.Button();
+            this.dailyReport = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.dailyticketSubPanel = new System.Windows.Forms.Panel();
+            this.addDailyTicket = new System.Windows.Forms.Button();
+            this.btnDailyTickets = new System.Windows.Forms.Button();
+            this.driverSubPanel = new System.Windows.Forms.Panel();
+            this.reportDriver = new System.Windows.Forms.Button();
+            this.salary = new System.Windows.Forms.Button();
+            this.editDriver = new System.Windows.Forms.Button();
+            this.addDriver = new System.Windows.Forms.Button();
+            this.btnDriver = new System.Windows.Forms.Button();
+            this.busSubPanel = new System.Windows.Forms.Panel();
+            this.reportBus = new System.Windows.Forms.Button();
+            this.Fees = new System.Windows.Forms.Button();
+            this.editBus = new System.Windows.Forms.Button();
+            this.addBus = new System.Windows.Forms.Button();
+            this.btnBus = new System.Windows.Forms.Button();
+            this.studentSubPanel = new System.Windows.Forms.Panel();
+            this.reportStudent = new System.Windows.Forms.Button();
+            this.booking = new System.Windows.Forms.Button();
+            this.editStudent = new System.Windows.Forms.Button();
+            this.addStudent = new System.Windows.Forms.Button();
+            this.btnStudent = new System.Windows.Forms.Button();
+            this.Logo = new System.Windows.Forms.Panel();
             this.panelChildForm.SuspendLayout();
             this.cardDrivers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -138,7 +130,492 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.cardIncome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panelDrawer.SuspendLayout();
+            this.paneliconSetting.SuspendLayout();
+            this.paneliconMenu.SuspendLayout();
+            this.panelMenu.SuspendLayout();
+            this.reportSubPanel.SuspendLayout();
+            this.dailyticketSubPanel.SuspendLayout();
+            this.driverSubPanel.SuspendLayout();
+            this.busSubPanel.SuspendLayout();
+            this.studentSubPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.panelChildForm.Controls.Add(this.cardDrivers);
+            this.panelChildForm.Controls.Add(this.cardValidStudents);
+            this.panelChildForm.Controls.Add(this.cardExpiredStudents);
+            this.panelChildForm.Controls.Add(this.cardDailyTickets);
+            this.panelChildForm.Controls.Add(this.cardBuses);
+            this.panelChildForm.Controls.Add(this.cardProfits);
+            this.panelChildForm.Controls.Add(this.cardPayments);
+            this.panelChildForm.Controls.Add(this.cardIncome);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(0, 0);
+            this.panelChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1491, 896);
+            this.panelChildForm.TabIndex = 3;
+            // 
+            // cardDrivers
+            // 
+            this.cardDrivers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardDrivers.Controls.Add(this.pictureBox7);
+            this.cardDrivers.Controls.Add(this.labelDrivers);
+            this.cardDrivers.Controls.Add(this.label21);
+            this.cardDrivers.Location = new System.Drawing.Point(704, 558);
+            this.cardDrivers.Name = "cardDrivers";
+            this.cardDrivers.Size = new System.Drawing.Size(280, 142);
+            this.cardDrivers.TabIndex = 11;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Bus_Mangement_system.Properties.Resources.icons8_driver_80px;
+            this.pictureBox7.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 3;
+            this.pictureBox7.TabStop = false;
+            // 
+            // labelDrivers
+            // 
+            this.labelDrivers.AutoSize = true;
+            this.labelDrivers.BackColor = System.Drawing.Color.Transparent;
+            this.labelDrivers.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDrivers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.labelDrivers.Location = new System.Drawing.Point(19, 55);
+            this.labelDrivers.Name = "labelDrivers";
+            this.labelDrivers.Size = new System.Drawing.Size(33, 38);
+            this.labelDrivers.TabIndex = 1;
+            this.labelDrivers.Text = "8";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(21, 17);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(71, 25);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Drivers";
+            // 
+            // cardValidStudents
+            // 
+            this.cardValidStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardValidStudents.Controls.Add(this.pictureBox9);
+            this.cardValidStudents.Controls.Add(this.labelValidStudents);
+            this.cardValidStudents.Controls.Add(this.label22);
+            this.cardValidStudents.Location = new System.Drawing.Point(1048, 338);
+            this.cardValidStudents.Name = "cardValidStudents";
+            this.cardValidStudents.Size = new System.Drawing.Size(280, 142);
+            this.cardValidStudents.TabIndex = 9;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::Bus_Mangement_system.Properties.Resources.icons8_checkmark_80px;
+            this.pictureBox9.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
+            // 
+            // labelValidStudents
+            // 
+            this.labelValidStudents.AutoSize = true;
+            this.labelValidStudents.BackColor = System.Drawing.Color.Transparent;
+            this.labelValidStudents.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValidStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(225)))), ((int)(((byte)(175)))));
+            this.labelValidStudents.Location = new System.Drawing.Point(19, 55);
+            this.labelValidStudents.Name = "labelValidStudents";
+            this.labelValidStudents.Size = new System.Drawing.Size(65, 38);
+            this.labelValidStudents.TabIndex = 1;
+            this.labelValidStudents.Text = "948";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(21, 17);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(131, 25);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Valid Students";
+            // 
+            // cardExpiredStudents
+            // 
+            this.cardExpiredStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardExpiredStudents.Controls.Add(this.pictureBox4);
+            this.cardExpiredStudents.Controls.Add(this.labelExpiredStudents);
+            this.cardExpiredStudents.Controls.Add(this.label12);
+            this.cardExpiredStudents.Location = new System.Drawing.Point(704, 338);
+            this.cardExpiredStudents.Name = "cardExpiredStudents";
+            this.cardExpiredStudents.Size = new System.Drawing.Size(280, 142);
+            this.cardExpiredStudents.TabIndex = 8;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Bus_Mangement_system.Properties.Resources.icons8_delete_80px;
+            this.pictureBox4.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // labelExpiredStudents
+            // 
+            this.labelExpiredStudents.AutoSize = true;
+            this.labelExpiredStudents.BackColor = System.Drawing.Color.Transparent;
+            this.labelExpiredStudents.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExpiredStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.labelExpiredStudents.Location = new System.Drawing.Point(19, 55);
+            this.labelExpiredStudents.Name = "labelExpiredStudents";
+            this.labelExpiredStudents.Size = new System.Drawing.Size(49, 38);
+            this.labelExpiredStudents.TabIndex = 1;
+            this.labelExpiredStudents.Text = "69";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(21, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(152, 25);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Expired Students";
+            // 
+            // cardDailyTickets
+            // 
+            this.cardDailyTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardDailyTickets.Controls.Add(this.pictureBox5);
+            this.cardDailyTickets.Controls.Add(this.labelDateDailyTicket);
+            this.cardDailyTickets.Controls.Add(this.labelDailyTickets);
+            this.cardDailyTickets.Controls.Add(this.label15);
+            this.cardDailyTickets.Location = new System.Drawing.Point(347, 338);
+            this.cardDailyTickets.Name = "cardDailyTickets";
+            this.cardDailyTickets.Size = new System.Drawing.Size(280, 142);
+            this.cardDailyTickets.TabIndex = 7;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Bus_Mangement_system.Properties.Resources.icons8_ticket_80px;
+            this.pictureBox5.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
+            // 
+            // labelDateDailyTicket
+            // 
+            this.labelDateDailyTicket.AutoSize = true;
+            this.labelDateDailyTicket.BackColor = System.Drawing.Color.Transparent;
+            this.labelDateDailyTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateDailyTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
+            this.labelDateDailyTicket.Location = new System.Drawing.Point(23, 105);
+            this.labelDateDailyTicket.Name = "labelDateDailyTicket";
+            this.labelDateDailyTicket.Size = new System.Drawing.Size(133, 17);
+            this.labelDateDailyTicket.TabIndex = 2;
+            this.labelDateDailyTicket.Text = "Details of 26/12/2020";
+            // 
+            // labelDailyTickets
+            // 
+            this.labelDailyTickets.AutoSize = true;
+            this.labelDailyTickets.BackColor = System.Drawing.Color.Transparent;
+            this.labelDailyTickets.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDailyTickets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.labelDailyTickets.Location = new System.Drawing.Point(19, 55);
+            this.labelDailyTickets.Name = "labelDailyTickets";
+            this.labelDailyTickets.Size = new System.Drawing.Size(49, 38);
+            this.labelDailyTickets.TabIndex = 1;
+            this.labelDailyTickets.Text = "32";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(21, 17);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(116, 25);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Daily Tickets";
+            // 
+            // cardBuses
+            // 
+            this.cardBuses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardBuses.Controls.Add(this.pictureBox6);
+            this.cardBuses.Controls.Add(this.labelBuses);
+            this.cardBuses.Controls.Add(this.label18);
+            this.cardBuses.Location = new System.Drawing.Point(347, 558);
+            this.cardBuses.Name = "cardBuses";
+            this.cardBuses.Size = new System.Drawing.Size(280, 142);
+            this.cardBuses.TabIndex = 6;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Bus_Mangement_system.Properties.Resources.icons8_bus_80px;
+            this.pictureBox6.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 3;
+            this.pictureBox6.TabStop = false;
+            // 
+            // labelBuses
+            // 
+            this.labelBuses.AutoSize = true;
+            this.labelBuses.BackColor = System.Drawing.Color.Transparent;
+            this.labelBuses.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBuses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.labelBuses.Location = new System.Drawing.Point(19, 55);
+            this.labelBuses.Name = "labelBuses";
+            this.labelBuses.Size = new System.Drawing.Size(33, 38);
+            this.labelBuses.TabIndex = 1;
+            this.labelBuses.Text = "4";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(21, 17);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(60, 25);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Buses";
+            // 
+            // cardProfits
+            // 
+            this.cardProfits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardProfits.Controls.Add(this.pictureBox3);
+            this.cardProfits.Controls.Add(this.labelMonthlyDetailsProfits);
+            this.cardProfits.Controls.Add(this.labelProfits);
+            this.cardProfits.Controls.Add(this.label9);
+            this.cardProfits.Location = new System.Drawing.Point(1048, 123);
+            this.cardProfits.Name = "cardProfits";
+            this.cardProfits.Size = new System.Drawing.Size(280, 142);
+            this.cardProfits.TabIndex = 5;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_100px_1;
+            this.pictureBox3.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // labelMonthlyDetailsProfits
+            // 
+            this.labelMonthlyDetailsProfits.AutoSize = true;
+            this.labelMonthlyDetailsProfits.BackColor = System.Drawing.Color.Transparent;
+            this.labelMonthlyDetailsProfits.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMonthlyDetailsProfits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
+            this.labelMonthlyDetailsProfits.Location = new System.Drawing.Point(23, 105);
+            this.labelMonthlyDetailsProfits.Name = "labelMonthlyDetailsProfits";
+            this.labelMonthlyDetailsProfits.Size = new System.Drawing.Size(140, 17);
+            this.labelMonthlyDetailsProfits.TabIndex = 2;
+            this.labelMonthlyDetailsProfits.Text = "Details of Last 26 Days";
+            // 
+            // labelProfits
+            // 
+            this.labelProfits.AutoSize = true;
+            this.labelProfits.BackColor = System.Drawing.Color.Transparent;
+            this.labelProfits.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProfits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(225)))), ((int)(((byte)(175)))));
+            this.labelProfits.Location = new System.Drawing.Point(19, 55);
+            this.labelProfits.Name = "labelProfits";
+            this.labelProfits.Size = new System.Drawing.Size(121, 38);
+            this.labelProfits.TabIndex = 1;
+            this.labelProfits.Text = "$ 25000";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(21, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 25);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Profits";
+            // 
+            // cardPayments
+            // 
+            this.cardPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardPayments.Controls.Add(this.pictureBox2);
+            this.cardPayments.Controls.Add(this.labelMonthlyDetailsPayments);
+            this.cardPayments.Controls.Add(this.labelPayments);
+            this.cardPayments.Controls.Add(this.label6);
+            this.cardPayments.Location = new System.Drawing.Point(704, 123);
+            this.cardPayments.Name = "cardPayments";
+            this.cardPayments.Size = new System.Drawing.Size(280, 142);
+            this.cardPayments.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Bus_Mangement_system.Properties.Resources.icons8_cash_in_hand_80px;
+            this.pictureBox2.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // labelMonthlyDetailsPayments
+            // 
+            this.labelMonthlyDetailsPayments.AutoSize = true;
+            this.labelMonthlyDetailsPayments.BackColor = System.Drawing.Color.Transparent;
+            this.labelMonthlyDetailsPayments.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMonthlyDetailsPayments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
+            this.labelMonthlyDetailsPayments.Location = new System.Drawing.Point(23, 105);
+            this.labelMonthlyDetailsPayments.Name = "labelMonthlyDetailsPayments";
+            this.labelMonthlyDetailsPayments.Size = new System.Drawing.Size(140, 17);
+            this.labelMonthlyDetailsPayments.TabIndex = 2;
+            this.labelMonthlyDetailsPayments.Text = "Details of Last 26 Days";
+            // 
+            // labelPayments
+            // 
+            this.labelPayments.AutoSize = true;
+            this.labelPayments.BackColor = System.Drawing.Color.Transparent;
+            this.labelPayments.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPayments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.labelPayments.Location = new System.Drawing.Point(19, 55);
+            this.labelPayments.Name = "labelPayments";
+            this.labelPayments.Size = new System.Drawing.Size(121, 38);
+            this.labelPayments.TabIndex = 1;
+            this.labelPayments.Text = "$ 44000";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(21, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Payments";
+            // 
+            // cardIncome
+            // 
+            this.cardIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardIncome.Controls.Add(this.pictureBox1);
+            this.cardIncome.Controls.Add(this.labelMonthlyDetailsIncome);
+            this.cardIncome.Controls.Add(this.labelIncome);
+            this.cardIncome.Controls.Add(this.label1);
+            this.cardIncome.Location = new System.Drawing.Point(347, 123);
+            this.cardIncome.Name = "cardIncome";
+            this.cardIncome.Size = new System.Drawing.Size(280, 142);
+            this.cardIncome.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Bus_Mangement_system.Properties.Resources.icons8_refund_80px;
+            this.pictureBox1.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelMonthlyDetailsIncome
+            // 
+            this.labelMonthlyDetailsIncome.AutoSize = true;
+            this.labelMonthlyDetailsIncome.BackColor = System.Drawing.Color.Transparent;
+            this.labelMonthlyDetailsIncome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMonthlyDetailsIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
+            this.labelMonthlyDetailsIncome.Location = new System.Drawing.Point(23, 105);
+            this.labelMonthlyDetailsIncome.Name = "labelMonthlyDetailsIncome";
+            this.labelMonthlyDetailsIncome.Size = new System.Drawing.Size(140, 17);
+            this.labelMonthlyDetailsIncome.TabIndex = 2;
+            this.labelMonthlyDetailsIncome.Text = "Details of Last 26 Days";
+            // 
+            // labelIncome
+            // 
+            this.labelIncome.AutoSize = true;
+            this.labelIncome.BackColor = System.Drawing.Color.Transparent;
+            this.labelIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.labelIncome.Location = new System.Drawing.Point(19, 55);
+            this.labelIncome.Name = "labelIncome";
+            this.labelIncome.Size = new System.Drawing.Size(121, 38);
+            this.labelIncome.TabIndex = 1;
+            this.labelIncome.Text = "$ 69000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(21, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Incomes";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1491, 29);
+            this.panel1.TabIndex = 4;
+            // 
+            // btnExit
+            // 
+            this.btnExit.AnimationHoverSpeed = 0.07F;
+            this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BaseColor = System.Drawing.Color.Transparent;
+            this.btnExit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
+            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
+            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = null;
+            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.Location = new System.Drawing.Point(1461, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExit.OnHoverImage = null;
+            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExit.Radius = 10;
+            this.btnExit.Size = new System.Drawing.Size(30, 29);
+            this.btnExit.TabIndex = 22;
+            this.btnExit.Text = "X";
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panelDrawer
             // 
@@ -157,11 +634,11 @@
             this.panelDrawer.Controls.Add(this.btniconStudent);
             this.panelDrawer.Controls.Add(this.paneliconMenu);
             this.panelDrawer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelDrawer.Location = new System.Drawing.Point(0, 0);
+            this.panelDrawer.Location = new System.Drawing.Point(0, 29);
             this.panelDrawer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDrawer.Name = "panelDrawer";
-            this.panelDrawer.Size = new System.Drawing.Size(73, 884);
-            this.panelDrawer.TabIndex = 0;
+            this.panelDrawer.Size = new System.Drawing.Size(73, 867);
+            this.panelDrawer.TabIndex = 5;
             // 
             // paneliconSetting
             // 
@@ -188,6 +665,7 @@
             this.btniconSetting.Size = new System.Drawing.Size(56, 75);
             this.btniconSetting.TabIndex = 12;
             this.btniconSetting.UseVisualStyleBackColor = true;
+            this.btniconSetting.Click += new System.EventHandler(this.btniconSetting_Click);
             // 
             // paneliconReport
             // 
@@ -213,7 +691,7 @@
             this.btniconReport.Size = new System.Drawing.Size(56, 75);
             this.btniconReport.TabIndex = 14;
             this.btniconReport.UseVisualStyleBackColor = true;
-            this.btniconReport.Click += new System.EventHandler(this.btniconReport_Click_1);
+            this.btniconReport.Click += new System.EventHandler(this.btniconReport_Click);
             // 
             // paneliconDailyTicket
             // 
@@ -239,7 +717,7 @@
             this.btniconDailyTicket.Size = new System.Drawing.Size(56, 75);
             this.btniconDailyTicket.TabIndex = 12;
             this.btniconDailyTicket.UseVisualStyleBackColor = true;
-            this.btniconDailyTicket.Click += new System.EventHandler(this.btniconDailyTicket_Click_1);
+            this.btniconDailyTicket.Click += new System.EventHandler(this.btniconDailyTicket_Click);
             // 
             // paneliconDriver
             // 
@@ -265,7 +743,7 @@
             this.btniconDriver.Size = new System.Drawing.Size(56, 75);
             this.btniconDriver.TabIndex = 10;
             this.btniconDriver.UseVisualStyleBackColor = true;
-            this.btniconDriver.Click += new System.EventHandler(this.btniconDriver_Click_1);
+            this.btniconDriver.Click += new System.EventHandler(this.btniconDriver_Click);
             // 
             // paneliconBus
             // 
@@ -291,7 +769,7 @@
             this.btniconBus.Size = new System.Drawing.Size(56, 75);
             this.btniconBus.TabIndex = 8;
             this.btniconBus.UseVisualStyleBackColor = true;
-            this.btniconBus.Click += new System.EventHandler(this.btniconBus_Click_1);
+            this.btniconBus.Click += new System.EventHandler(this.btniconBus_Click);
             // 
             // paneliconStudent
             // 
@@ -317,7 +795,7 @@
             this.btniconStudent.Size = new System.Drawing.Size(56, 75);
             this.btniconStudent.TabIndex = 2;
             this.btniconStudent.UseVisualStyleBackColor = true;
-            this.btniconStudent.Click += new System.EventHandler(this.btniconStudent_Click_1);
+            this.btniconStudent.Click += new System.EventHandler(this.btniconStudent_Click);
             // 
             // paneliconMenu
             // 
@@ -346,6 +824,15 @@
             this.btnDrawer.UseVisualStyleBackColor = true;
             this.btnDrawer.Click += new System.EventHandler(this.btnDrawer_Click);
             // 
+            // panelDraft
+            // 
+            this.panelDraft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.panelDraft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelDraft.Location = new System.Drawing.Point(73, 29);
+            this.panelDraft.Name = "panelDraft";
+            this.panelDraft.Size = new System.Drawing.Size(20, 867);
+            this.panelDraft.TabIndex = 7;
+            // 
             // panelMenu
             // 
             this.panelMenu.AutoScroll = true;
@@ -363,11 +850,11 @@
             this.panelMenu.Controls.Add(this.btnStudent);
             this.panelMenu.Controls.Add(this.Logo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(73, 0);
+            this.panelMenu.Location = new System.Drawing.Point(93, 29);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(201, 884);
-            this.panelMenu.TabIndex = 1;
+            this.panelMenu.Size = new System.Drawing.Size(201, 867);
+            this.panelMenu.TabIndex = 8;
             // 
             // btnSetting
             // 
@@ -387,6 +874,7 @@
             this.btnSetting.Text = "Settings";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // reportSubPanel
             // 
@@ -862,489 +1350,16 @@
             this.Logo.Size = new System.Drawing.Size(184, 94);
             this.Logo.TabIndex = 1;
             // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.panelChildForm.Controls.Add(this.gunaAdvenceButton1);
-            this.panelChildForm.Controls.Add(this.cardDrivers);
-            this.panelChildForm.Controls.Add(this.cardValidStudents);
-            this.panelChildForm.Controls.Add(this.cardExpiredStudents);
-            this.panelChildForm.Controls.Add(this.cardDailyTickets);
-            this.panelChildForm.Controls.Add(this.cardBuses);
-            this.panelChildForm.Controls.Add(this.cardProfits);
-            this.panelChildForm.Controls.Add(this.cardPayments);
-            this.panelChildForm.Controls.Add(this.cardIncome);
-            this.panelChildForm.Controls.Add(this.panelDraft);
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(73, 0);
-            this.panelChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1381, 884);
-            this.panelChildForm.TabIndex = 3;
-            // 
-            // cardDrivers
-            // 
-            this.cardDrivers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
-            this.cardDrivers.Controls.Add(this.pictureBox7);
-            this.cardDrivers.Controls.Add(this.labelDrivers);
-            this.cardDrivers.Controls.Add(this.label21);
-            this.cardDrivers.Location = new System.Drawing.Point(614, 529);
-            this.cardDrivers.Name = "cardDrivers";
-            this.cardDrivers.Size = new System.Drawing.Size(280, 142);
-            this.cardDrivers.TabIndex = 11;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::Bus_Mangement_system.Properties.Resources.icons8_driver_80px;
-            this.pictureBox7.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 3;
-            this.pictureBox7.TabStop = false;
-            // 
-            // labelDrivers
-            // 
-            this.labelDrivers.AutoSize = true;
-            this.labelDrivers.BackColor = System.Drawing.Color.Transparent;
-            this.labelDrivers.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDrivers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.labelDrivers.Location = new System.Drawing.Point(19, 55);
-            this.labelDrivers.Name = "labelDrivers";
-            this.labelDrivers.Size = new System.Drawing.Size(33, 38);
-            this.labelDrivers.TabIndex = 1;
-            this.labelDrivers.Text = "8";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(21, 17);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(71, 25);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Drivers";
-            // 
-            // cardValidStudents
-            // 
-            this.cardValidStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
-            this.cardValidStudents.Controls.Add(this.pictureBox9);
-            this.cardValidStudents.Controls.Add(this.labelValidStudents);
-            this.cardValidStudents.Controls.Add(this.label22);
-            this.cardValidStudents.Location = new System.Drawing.Point(958, 309);
-            this.cardValidStudents.Name = "cardValidStudents";
-            this.cardValidStudents.Size = new System.Drawing.Size(280, 142);
-            this.cardValidStudents.TabIndex = 9;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::Bus_Mangement_system.Properties.Resources.icons8_checkmark_80px;
-            this.pictureBox9.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
-            // 
-            // labelValidStudents
-            // 
-            this.labelValidStudents.AutoSize = true;
-            this.labelValidStudents.BackColor = System.Drawing.Color.Transparent;
-            this.labelValidStudents.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValidStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(225)))), ((int)(((byte)(175)))));
-            this.labelValidStudents.Location = new System.Drawing.Point(19, 55);
-            this.labelValidStudents.Name = "labelValidStudents";
-            this.labelValidStudents.Size = new System.Drawing.Size(65, 38);
-            this.labelValidStudents.TabIndex = 1;
-            this.labelValidStudents.Text = "948";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(21, 17);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(131, 25);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Valid Students";
-            // 
-            // cardExpiredStudents
-            // 
-            this.cardExpiredStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
-            this.cardExpiredStudents.Controls.Add(this.pictureBox4);
-            this.cardExpiredStudents.Controls.Add(this.labelExpiredStudents);
-            this.cardExpiredStudents.Controls.Add(this.label12);
-            this.cardExpiredStudents.Location = new System.Drawing.Point(614, 309);
-            this.cardExpiredStudents.Name = "cardExpiredStudents";
-            this.cardExpiredStudents.Size = new System.Drawing.Size(280, 142);
-            this.cardExpiredStudents.TabIndex = 8;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Bus_Mangement_system.Properties.Resources.icons8_delete_80px;
-            this.pictureBox4.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // labelExpiredStudents
-            // 
-            this.labelExpiredStudents.AutoSize = true;
-            this.labelExpiredStudents.BackColor = System.Drawing.Color.Transparent;
-            this.labelExpiredStudents.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExpiredStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.labelExpiredStudents.Location = new System.Drawing.Point(19, 55);
-            this.labelExpiredStudents.Name = "labelExpiredStudents";
-            this.labelExpiredStudents.Size = new System.Drawing.Size(49, 38);
-            this.labelExpiredStudents.TabIndex = 1;
-            this.labelExpiredStudents.Text = "69";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(21, 17);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(152, 25);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Expired Students";
-            // 
-            // cardDailyTickets
-            // 
-            this.cardDailyTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
-            this.cardDailyTickets.Controls.Add(this.pictureBox5);
-            this.cardDailyTickets.Controls.Add(this.labelDateDailyTicket);
-            this.cardDailyTickets.Controls.Add(this.labelDailyTickets);
-            this.cardDailyTickets.Controls.Add(this.label15);
-            this.cardDailyTickets.Location = new System.Drawing.Point(257, 309);
-            this.cardDailyTickets.Name = "cardDailyTickets";
-            this.cardDailyTickets.Size = new System.Drawing.Size(280, 142);
-            this.cardDailyTickets.TabIndex = 7;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Bus_Mangement_system.Properties.Resources.icons8_ticket_80px;
-            this.pictureBox5.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
-            // 
-            // labelDateDailyTicket
-            // 
-            this.labelDateDailyTicket.AutoSize = true;
-            this.labelDateDailyTicket.BackColor = System.Drawing.Color.Transparent;
-            this.labelDateDailyTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateDailyTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
-            this.labelDateDailyTicket.Location = new System.Drawing.Point(23, 105);
-            this.labelDateDailyTicket.Name = "labelDateDailyTicket";
-            this.labelDateDailyTicket.Size = new System.Drawing.Size(133, 17);
-            this.labelDateDailyTicket.TabIndex = 2;
-            this.labelDateDailyTicket.Text = "Details of 26/12/2020";
-            // 
-            // labelDailyTickets
-            // 
-            this.labelDailyTickets.AutoSize = true;
-            this.labelDailyTickets.BackColor = System.Drawing.Color.Transparent;
-            this.labelDailyTickets.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDailyTickets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.labelDailyTickets.Location = new System.Drawing.Point(19, 55);
-            this.labelDailyTickets.Name = "labelDailyTickets";
-            this.labelDailyTickets.Size = new System.Drawing.Size(49, 38);
-            this.labelDailyTickets.TabIndex = 1;
-            this.labelDailyTickets.Text = "32";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(21, 17);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(116, 25);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Daily Tickets";
-            // 
-            // cardBuses
-            // 
-            this.cardBuses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
-            this.cardBuses.Controls.Add(this.pictureBox6);
-            this.cardBuses.Controls.Add(this.labelBuses);
-            this.cardBuses.Controls.Add(this.label18);
-            this.cardBuses.Location = new System.Drawing.Point(257, 529);
-            this.cardBuses.Name = "cardBuses";
-            this.cardBuses.Size = new System.Drawing.Size(280, 142);
-            this.cardBuses.TabIndex = 6;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Bus_Mangement_system.Properties.Resources.icons8_bus_80px;
-            this.pictureBox6.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 3;
-            this.pictureBox6.TabStop = false;
-            // 
-            // labelBuses
-            // 
-            this.labelBuses.AutoSize = true;
-            this.labelBuses.BackColor = System.Drawing.Color.Transparent;
-            this.labelBuses.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.labelBuses.Location = new System.Drawing.Point(19, 55);
-            this.labelBuses.Name = "labelBuses";
-            this.labelBuses.Size = new System.Drawing.Size(33, 38);
-            this.labelBuses.TabIndex = 1;
-            this.labelBuses.Text = "4";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(21, 17);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 25);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Buses";
-            // 
-            // cardProfits
-            // 
-            this.cardProfits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
-            this.cardProfits.Controls.Add(this.pictureBox3);
-            this.cardProfits.Controls.Add(this.labelMonthlyDetailsProfits);
-            this.cardProfits.Controls.Add(this.labelProfits);
-            this.cardProfits.Controls.Add(this.label9);
-            this.cardProfits.Location = new System.Drawing.Point(958, 94);
-            this.cardProfits.Name = "cardProfits";
-            this.cardProfits.Size = new System.Drawing.Size(280, 142);
-            this.cardProfits.TabIndex = 5;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_100px_1;
-            this.pictureBox3.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // labelMonthlyDetailsProfits
-            // 
-            this.labelMonthlyDetailsProfits.AutoSize = true;
-            this.labelMonthlyDetailsProfits.BackColor = System.Drawing.Color.Transparent;
-            this.labelMonthlyDetailsProfits.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMonthlyDetailsProfits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
-            this.labelMonthlyDetailsProfits.Location = new System.Drawing.Point(23, 105);
-            this.labelMonthlyDetailsProfits.Name = "labelMonthlyDetailsProfits";
-            this.labelMonthlyDetailsProfits.Size = new System.Drawing.Size(140, 17);
-            this.labelMonthlyDetailsProfits.TabIndex = 2;
-            this.labelMonthlyDetailsProfits.Text = "Details of Last 26 Days";
-            // 
-            // labelProfits
-            // 
-            this.labelProfits.AutoSize = true;
-            this.labelProfits.BackColor = System.Drawing.Color.Transparent;
-            this.labelProfits.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProfits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(225)))), ((int)(((byte)(175)))));
-            this.labelProfits.Location = new System.Drawing.Point(19, 55);
-            this.labelProfits.Name = "labelProfits";
-            this.labelProfits.Size = new System.Drawing.Size(121, 38);
-            this.labelProfits.TabIndex = 1;
-            this.labelProfits.Text = "$ 25000";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(21, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 25);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Profits";
-            // 
-            // cardPayments
-            // 
-            this.cardPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
-            this.cardPayments.Controls.Add(this.pictureBox2);
-            this.cardPayments.Controls.Add(this.labelMonthlyDetailsPayments);
-            this.cardPayments.Controls.Add(this.labelPayments);
-            this.cardPayments.Controls.Add(this.label6);
-            this.cardPayments.Location = new System.Drawing.Point(614, 94);
-            this.cardPayments.Name = "cardPayments";
-            this.cardPayments.Size = new System.Drawing.Size(280, 142);
-            this.cardPayments.TabIndex = 4;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Bus_Mangement_system.Properties.Resources.icons8_cash_in_hand_80px;
-            this.pictureBox2.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // labelMonthlyDetailsPayments
-            // 
-            this.labelMonthlyDetailsPayments.AutoSize = true;
-            this.labelMonthlyDetailsPayments.BackColor = System.Drawing.Color.Transparent;
-            this.labelMonthlyDetailsPayments.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMonthlyDetailsPayments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
-            this.labelMonthlyDetailsPayments.Location = new System.Drawing.Point(23, 105);
-            this.labelMonthlyDetailsPayments.Name = "labelMonthlyDetailsPayments";
-            this.labelMonthlyDetailsPayments.Size = new System.Drawing.Size(140, 17);
-            this.labelMonthlyDetailsPayments.TabIndex = 2;
-            this.labelMonthlyDetailsPayments.Text = "Details of Last 26 Days";
-            // 
-            // labelPayments
-            // 
-            this.labelPayments.AutoSize = true;
-            this.labelPayments.BackColor = System.Drawing.Color.Transparent;
-            this.labelPayments.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPayments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.labelPayments.Location = new System.Drawing.Point(19, 55);
-            this.labelPayments.Name = "labelPayments";
-            this.labelPayments.Size = new System.Drawing.Size(121, 38);
-            this.labelPayments.TabIndex = 1;
-            this.labelPayments.Text = "$ 44000";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(21, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Payments";
-            // 
-            // cardIncome
-            // 
-            this.cardIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
-            this.cardIncome.Controls.Add(this.pictureBox1);
-            this.cardIncome.Controls.Add(this.labelMonthlyDetailsIncome);
-            this.cardIncome.Controls.Add(this.labelIncome);
-            this.cardIncome.Controls.Add(this.label1);
-            this.cardIncome.Location = new System.Drawing.Point(257, 94);
-            this.cardIncome.Name = "cardIncome";
-            this.cardIncome.Size = new System.Drawing.Size(280, 142);
-            this.cardIncome.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Bus_Mangement_system.Properties.Resources.icons8_refund_80px;
-            this.pictureBox1.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // labelMonthlyDetailsIncome
-            // 
-            this.labelMonthlyDetailsIncome.AutoSize = true;
-            this.labelMonthlyDetailsIncome.BackColor = System.Drawing.Color.Transparent;
-            this.labelMonthlyDetailsIncome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMonthlyDetailsIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
-            this.labelMonthlyDetailsIncome.Location = new System.Drawing.Point(23, 105);
-            this.labelMonthlyDetailsIncome.Name = "labelMonthlyDetailsIncome";
-            this.labelMonthlyDetailsIncome.Size = new System.Drawing.Size(140, 17);
-            this.labelMonthlyDetailsIncome.TabIndex = 2;
-            this.labelMonthlyDetailsIncome.Text = "Details of Last 26 Days";
-            // 
-            // labelIncome
-            // 
-            this.labelIncome.AutoSize = true;
-            this.labelIncome.BackColor = System.Drawing.Color.Transparent;
-            this.labelIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.labelIncome.Location = new System.Drawing.Point(19, 55);
-            this.labelIncome.Name = "labelIncome";
-            this.labelIncome.Size = new System.Drawing.Size(121, 38);
-            this.labelIncome.TabIndex = 1;
-            this.labelIncome.Text = "$ 69000";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Incomes";
-            // 
-            // panelDraft
-            // 
-            this.panelDraft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
-            this.panelDraft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelDraft.Location = new System.Drawing.Point(0, 0);
-            this.panelDraft.Name = "panelDraft";
-            this.panelDraft.Size = new System.Drawing.Size(20, 884);
-            this.panelDraft.TabIndex = 0;
-            // 
-            // gunaAdvenceButton1
-            // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = null;
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(1350, 1);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Radius = 10;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(30, 24);
-            this.gunaAdvenceButton1.TabIndex = 22;
-            this.gunaAdvenceButton1.Text = "X";
-            this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1454, 884);
+            this.ClientSize = new System.Drawing.Size(1491, 896);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelChildForm);
+            this.Controls.Add(this.panelDraft);
             this.Controls.Add(this.panelDrawer);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelChildForm);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1354,15 +1369,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Main_Shown);
-            this.panelDrawer.ResumeLayout(false);
-            this.paneliconSetting.ResumeLayout(false);
-            this.paneliconMenu.ResumeLayout(false);
-            this.panelMenu.ResumeLayout(false);
-            this.reportSubPanel.ResumeLayout(false);
-            this.dailyticketSubPanel.ResumeLayout(false);
-            this.driverSubPanel.ResumeLayout(false);
-            this.busSubPanel.ResumeLayout(false);
-            this.studentSubPanel.ResumeLayout(false);
             this.panelChildForm.ResumeLayout(false);
             this.cardDrivers.ResumeLayout(false);
             this.cardDrivers.PerformLayout();
@@ -1388,58 +1394,22 @@
             this.cardIncome.ResumeLayout(false);
             this.cardIncome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panelDrawer.ResumeLayout(false);
+            this.paneliconSetting.ResumeLayout(false);
+            this.paneliconMenu.ResumeLayout(false);
+            this.panelMenu.ResumeLayout(false);
+            this.reportSubPanel.ResumeLayout(false);
+            this.dailyticketSubPanel.ResumeLayout(false);
+            this.driverSubPanel.ResumeLayout(false);
+            this.busSubPanel.ResumeLayout(false);
+            this.studentSubPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelDrawer;
-        private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel paneliconMenu;
-        private System.Windows.Forms.Panel Logo;
-        private System.Windows.Forms.Button btnDrawer;
-        private System.Windows.Forms.Panel studentSubPanel;
-        private System.Windows.Forms.Button reportStudent;
-        private System.Windows.Forms.Button booking;
-        private System.Windows.Forms.Button editStudent;
-        private System.Windows.Forms.Button addStudent;
-        private System.Windows.Forms.Button btnStudent;
-        private System.Windows.Forms.Panel dailyticketSubPanel;
-        private System.Windows.Forms.Button addDailyTicket;
-        private System.Windows.Forms.Button btnDailyTickets;
-        private System.Windows.Forms.Panel driverSubPanel;
-        private System.Windows.Forms.Button reportDriver;
-        private System.Windows.Forms.Button salary;
-        private System.Windows.Forms.Button editDriver;
-        private System.Windows.Forms.Button addDriver;
-        private System.Windows.Forms.Button btnDriver;
-        private System.Windows.Forms.Panel busSubPanel;
-        private System.Windows.Forms.Button reportBus;
-        private System.Windows.Forms.Button Fees;
-        private System.Windows.Forms.Button editBus;
-        private System.Windows.Forms.Button addBus;
-        private System.Windows.Forms.Button btnBus;
-        private System.Windows.Forms.Panel reportSubPanel;
-        private System.Windows.Forms.Button universityReport;
-        private System.Windows.Forms.Button monthlyReport;
-        private System.Windows.Forms.Button dailyReport;
-        private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnSetting;
-        private System.Windows.Forms.Panel paneliconReport;
-        private System.Windows.Forms.Button btniconReport;
-        private System.Windows.Forms.Panel paneliconDailyTicket;
-        private System.Windows.Forms.Button btniconDailyTicket;
-        private System.Windows.Forms.Panel paneliconDriver;
-        private System.Windows.Forms.Button btniconDriver;
-        private System.Windows.Forms.Panel paneliconBus;
-        private System.Windows.Forms.Button btniconBus;
-        private System.Windows.Forms.Panel paneliconStudent;
-        private System.Windows.Forms.Button btniconStudent;
-        private System.Windows.Forms.Panel paneliconSetting;
-        private System.Windows.Forms.Button btniconSetting;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Panel panelDraft;
         private System.Windows.Forms.Panel cardIncome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelMonthlyDetailsIncome;
@@ -1476,6 +1446,52 @@
         private System.Windows.Forms.Label labelMonthlyDetailsPayments;
         private System.Windows.Forms.Label labelPayments;
         private System.Windows.Forms.Label label6;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDrawer;
+        private System.Windows.Forms.Panel paneliconSetting;
+        private System.Windows.Forms.Button btniconSetting;
+        private System.Windows.Forms.Panel paneliconReport;
+        private System.Windows.Forms.Button btniconReport;
+        private System.Windows.Forms.Panel paneliconDailyTicket;
+        private System.Windows.Forms.Button btniconDailyTicket;
+        private System.Windows.Forms.Panel paneliconDriver;
+        private System.Windows.Forms.Button btniconDriver;
+        private System.Windows.Forms.Panel paneliconBus;
+        private System.Windows.Forms.Button btniconBus;
+        private System.Windows.Forms.Panel paneliconStudent;
+        private System.Windows.Forms.Button btniconStudent;
+        private System.Windows.Forms.Panel paneliconMenu;
+        private System.Windows.Forms.Button btnDrawer;
+        private System.Windows.Forms.Panel panelDraft;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Panel reportSubPanel;
+        private System.Windows.Forms.Button universityReport;
+        private System.Windows.Forms.Button monthlyReport;
+        private System.Windows.Forms.Button dailyReport;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Panel dailyticketSubPanel;
+        private System.Windows.Forms.Button addDailyTicket;
+        private System.Windows.Forms.Button btnDailyTickets;
+        private System.Windows.Forms.Panel driverSubPanel;
+        private System.Windows.Forms.Button reportDriver;
+        private System.Windows.Forms.Button salary;
+        private System.Windows.Forms.Button editDriver;
+        private System.Windows.Forms.Button addDriver;
+        private System.Windows.Forms.Button btnDriver;
+        private System.Windows.Forms.Panel busSubPanel;
+        private System.Windows.Forms.Button reportBus;
+        private System.Windows.Forms.Button Fees;
+        private System.Windows.Forms.Button editBus;
+        private System.Windows.Forms.Button addBus;
+        private System.Windows.Forms.Button btnBus;
+        private System.Windows.Forms.Panel studentSubPanel;
+        private System.Windows.Forms.Button reportStudent;
+        private System.Windows.Forms.Button booking;
+        private System.Windows.Forms.Button editStudent;
+        private System.Windows.Forms.Button addStudent;
+        private System.Windows.Forms.Button btnStudent;
+        private System.Windows.Forms.Panel Logo;
+        private Guna.UI.WinForms.GunaAdvenceButton btnExit;
     }
 }

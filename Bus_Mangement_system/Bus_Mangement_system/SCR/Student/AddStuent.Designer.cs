@@ -39,9 +39,9 @@ namespace Bus_Mangement_system.SCR.Student
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::Bus_Mangement_system.Properties.Resources.icons8_arrow_pointing_left_80px;
-            this.button1.Location = new System.Drawing.Point(234, 12);
+            this.button1.Location = new System.Drawing.Point(344, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 46);
+            this.button1.Size = new System.Drawing.Size(73, 62);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

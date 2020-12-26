@@ -16,7 +16,7 @@ namespace Bus_Mangement_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loading());
+            Application.Run(new Main());
         }
     }
 }
