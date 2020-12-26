@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Bus_Mangement_system
 {
-    public partial class Loading : MetroFramework.Forms.MetroForm
+    public partial class Loading : Form
     {
         login obj = new login();
         public Loading()
