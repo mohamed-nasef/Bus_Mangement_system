@@ -73,6 +73,16 @@ namespace Bus_Mangement_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_back_64px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_back_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bus_80px {
             get {
                 object obj = ResourceManager.GetObject("icons8_bus_80px", resourceCulture);
