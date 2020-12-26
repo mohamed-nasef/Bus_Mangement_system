@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace Bus_Mangement_system
 {
-    public partial class Main : MetroFramework.Forms.MetroForm
+    public partial class Main : Form
     {
         public Main()
         {
             InitializeComponent();
             customizeDesign();
         }
-
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
         private void Main_Shown(object sender, EventArgs e)
         {
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -206,7 +206,7 @@ namespace Bus_Mangement_system
             panelMenu.Visible = true;
             showSubMenu(driverSubPanel, paneliconDriver);
         }
-        
+
         private void addDriver_Click(object sender, EventArgs e)
         {
             customizeDesign();
@@ -279,6 +279,6 @@ namespace Bus_Mangement_system
             //new form
         }
         #endregion
+
     }
 }
-//fuck us brooo
