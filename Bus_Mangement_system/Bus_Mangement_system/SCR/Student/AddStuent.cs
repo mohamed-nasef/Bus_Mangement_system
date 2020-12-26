@@ -21,5 +21,10 @@ namespace Bus_Mangement_system.SCR.Student
         {
             this.Close();
         }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
