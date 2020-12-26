@@ -83,6 +83,36 @@ namespace Bus_Mangement_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cash_in_hand_80px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_cash_in_hand_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_checkmark_80px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_checkmark_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_80px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_delete_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_driver_80px {
             get {
                 object obj = ResourceManager.GetObject("icons8_driver_80px", resourceCulture);
@@ -116,6 +146,16 @@ namespace Bus_Mangement_system.Properties {
         internal static System.Drawing.Bitmap icons8_profit_report_80px {
             get {
                 object obj = ResourceManager.GetObject("icons8_profit_report_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_refund_80px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_refund_80px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
