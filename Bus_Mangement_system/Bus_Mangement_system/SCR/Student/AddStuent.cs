@@ -17,14 +17,21 @@ namespace Bus_Mangement_system.SCR.Student
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //Validition
+            //DB Commands
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtPhone.Clear();
+            cmbAddress.SelectedIndex = cmbBookingType.SelectedIndex = cmbUniversity.SelectedIndex = -1;
+            MetroFramework.MetroMessageBox.Show(this, "\n\nStudent Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Bus_Mangement_system
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 159);
+            this.label1.Location = new System.Drawing.Point(166, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 30);
             this.label1.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace Bus_Mangement_system
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(48, 242);
+            this.label2.Location = new System.Drawing.Point(166, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 30);
             this.label2.TabIndex = 2;
@@ -102,7 +102,7 @@ namespace Bus_Mangement_system
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
             this.btnLogin.LineBottom = 1;
             this.btnLogin.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnLogin.Location = new System.Drawing.Point(121, 404);
+            this.btnLogin.Location = new System.Drawing.Point(334, 323);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
             this.btnLogin.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -111,7 +111,7 @@ namespace Bus_Mangement_system
             this.btnLogin.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
             this.btnLogin.OnPressedColor = System.Drawing.Color.Black;
             this.btnLogin.Radius = 10;
-            this.btnLogin.Size = new System.Drawing.Size(180, 42);
+            this.btnLogin.Size = new System.Drawing.Size(205, 42);
             this.btnLogin.TabIndex = 17;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -129,7 +129,7 @@ namespace Bus_Mangement_system
             this.txtUserName.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
             this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtUserName.Location = new System.Drawing.Point(199, 159);
+            this.txtUserName.Location = new System.Drawing.Point(334, 120);
             this.txtUserName.MaxLength = 10;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
@@ -144,7 +144,7 @@ namespace Bus_Mangement_system
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.pictureBox2.Image = global::Bus_Mangement_system.Properties.Resources.icons8_user_male;
-            this.pictureBox2.Location = new System.Drawing.Point(206, 164);
+            this.pictureBox2.Location = new System.Drawing.Point(341, 125);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,7 +171,7 @@ namespace Bus_Mangement_system
             this.gunaAdvenceButton1.Image = null;
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(397, 0);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(817, 0);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -189,7 +189,7 @@ namespace Bus_Mangement_system
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.pictureBox4.Image = global::Bus_Mangement_system.Properties.Resources.icons8_key_2;
-            this.pictureBox4.Location = new System.Drawing.Point(206, 246);
+            this.pictureBox4.Location = new System.Drawing.Point(341, 207);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,7 +208,7 @@ namespace Bus_Mangement_system
             this.txtPassword.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtPassword.Location = new System.Drawing.Point(199, 242);
+            this.txtPassword.Location = new System.Drawing.Point(334, 203);
             this.txtPassword.MaxLength = 10;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -228,7 +228,7 @@ namespace Bus_Mangement_system
             this.panelToolbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelToolbar.Location = new System.Drawing.Point(0, 0);
             this.panelToolbar.Name = "panelToolbar";
-            this.panelToolbar.Size = new System.Drawing.Size(427, 29);
+            this.panelToolbar.Size = new System.Drawing.Size(847, 29);
             this.panelToolbar.TabIndex = 24;
             // 
             // login
@@ -237,7 +237,7 @@ namespace Bus_Mangement_system
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(427, 481);
+            this.ClientSize = new System.Drawing.Size(847, 396);
             this.ControlBox = false;
             this.Controls.Add(this.panelToolbar);
             this.Controls.Add(this.pictureBox4);
