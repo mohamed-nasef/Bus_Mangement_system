@@ -24,13 +24,28 @@ namespace Bus_Mangement_system.SCR.Student
             this.Close();
         }
 
-        #region ValidationFun
-        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt ,string errorMessage,ref string str ,CancelEventArgs e)
+        #region Function
+
+        #region WaterMark
+
+        private void waterMark(Guna.UI.WinForms.GunaTextBox txt,Label lbl)
         {
-            if(string.IsNullOrEmpty(txt.Text))
+            if (txt.Text == "")
+                lbl.Visible = true;
+            else
+                lbl.Visible = false;
+        }
+
+        #endregion
+
+        #region Validation
+        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt ,string errorMessage,Label lbl,ref string str ,CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt.Text))
             {
+
                 e.Cancel = true;
-                txt.Focus();
+                //txt.Focus();
                 errorProvider1.SetError(txt, errorMessage);
             }        
             else
@@ -56,7 +71,44 @@ namespace Bus_Mangement_system.SCR.Student
         }
         #endregion
 
-        #region CmbValidation
+        #endregion
+
+        #region TextBox Watermark
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            waterMark(txtFirstName, lblFirstName);
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+            waterMark(txtLastName, lblLastName);
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            waterMark(txtPhone, lblPhone);
+        }
+
+        #endregion
+
+        #region TextBox Validation
+        private void txtFirstName_Validating(object sender, CancelEventArgs e)
+        {
+            validationTxt(txtFirstName, "Please Enter First Name",lblFirstName,ref firstName,e);
+        }
+        private void txtLastName_Validating(object sender, CancelEventArgs e)
+        {
+            validationTxt(txtLastName, "Please Enter Last Name",lblLastName, ref lastName, e);
+        }
+
+        private void txtPhone_Validating(object sender, CancelEventArgs e)
+        {
+            validationTxt(txtPhone, "Please Enter Phone Number",lblPhone, ref phone, e);
+        }
+
+        #endregion
+
+        #region ComboBox Validation
         private void cmbAddress_Validating(object sender, CancelEventArgs e)
         {
             validationcmb(cmbAddress, "Please Select Address",ref addressID, e);
@@ -71,23 +123,6 @@ namespace Bus_Mangement_system.SCR.Student
         private void cmbBookingType_Validating(object sender, CancelEventArgs e)
         {
             validationcmb(cmbBookingType, "Please Select University", ref bookingID, e);
-        }
-
-        #endregion
-
-        #region TextValidation
-        private void txtFirstName_Validating(object sender, CancelEventArgs e)
-        {
-            validationTxt(txtFirstName, "Please Enter First Name",ref firstName,e);
-        }
-        private void txtLastName_Validating(object sender, CancelEventArgs e)
-        {
-            validationTxt(txtLastName, "Please Enter Last Name", ref lastName, e);
-        }
-
-        private void txtPhone_Validating(object sender, CancelEventArgs e)
-        {
-            validationTxt(txtPhone, "Please Enter Phone Number", ref phone, e);
         }
 
         #endregion

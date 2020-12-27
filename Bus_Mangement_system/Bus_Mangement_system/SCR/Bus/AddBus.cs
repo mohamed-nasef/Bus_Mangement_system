@@ -24,13 +24,27 @@ namespace Bus_Mangement_system.SCR.Bus
             this.Close();
         }
 
-        #region ValidationFun
+        #region Function
+
+        #region WaterMark
+
+        private void waterMark(Guna.UI.WinForms.GunaTextBox txt, Label lbl)
+        {
+            if (txt.Text == "")
+                lbl.Visible = true;
+            else
+                lbl.Visible = false;
+        }
+
+        #endregion
+
+        # region Validation
         private void validationTxt(Guna.UI.WinForms.GunaTextBox txt, string errorMessage, ref string str, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txt.Text))
             {
                 e.Cancel = true;
-                txt.Focus();
+                //txt.Focus();
                 errorProvider1.SetError(txt, errorMessage);
             }
             else
@@ -55,11 +69,24 @@ namespace Bus_Mangement_system.SCR.Bus
                 index = cmb.SelectedIndex;
             }
         }
-
+        #endregion
 
         #endregion
 
-        #region TextValidation
+        #region TextBox Watermark
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            waterMark(txtName, lblName);
+        }
+
+        private void txtLicenseNumber_TextChanged(object sender, EventArgs e)
+        {
+            waterMark(txtLicenseNumber, lblLicenseNumber);
+        }
+
+        #endregion
+
+        #region TextBox Validation
         private void txtName_Validating(object sender, CancelEventArgs e)
         {
             validationTxt(txtName, "Please Enter Name", ref name, e);
@@ -72,7 +99,7 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #endregion
 
-        #region CmbValidation
+        #region ComboBox Validation
         private void cmbCapacity_Validating(object sender, CancelEventArgs e)
         {
 

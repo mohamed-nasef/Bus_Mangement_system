@@ -49,6 +49,9 @@ namespace Bus_Mangement_system.SCR.Student
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAddStudent = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.panelBody.SuspendLayout();
             this.grbAddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -74,6 +77,9 @@ namespace Bus_Mangement_system.SCR.Student
             // 
             // grbAddStudent
             // 
+            this.grbAddStudent.Controls.Add(this.lblPhone);
+            this.grbAddStudent.Controls.Add(this.lblLastName);
+            this.grbAddStudent.Controls.Add(this.lblFirstName);
             this.grbAddStudent.Controls.Add(this.cmbBookingType);
             this.grbAddStudent.Controls.Add(this.cmbUniversity);
             this.grbAddStudent.Controls.Add(this.cmbAddress);
@@ -198,6 +204,7 @@ namespace Bus_Mangement_system.SCR.Student
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(461, 32);
             this.txtPhone.TabIndex = 38;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.txtPhone_Validating);
             // 
             // label5
@@ -244,6 +251,7 @@ namespace Bus_Mangement_system.SCR.Student
             this.txtLastName.SelectedText = "";
             this.txtLastName.Size = new System.Drawing.Size(218, 32);
             this.txtLastName.TabIndex = 30;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
             // 
             // label1
@@ -302,6 +310,7 @@ namespace Bus_Mangement_system.SCR.Student
             this.txtFirstName.SelectedText = "";
             this.txtFirstName.Size = new System.Drawing.Size(218, 32);
             this.txtFirstName.TabIndex = 26;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
             // label3
@@ -371,6 +380,42 @@ namespace Bus_Mangement_system.SCR.Student
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.lblFirstName.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.Gray;
+            this.lblFirstName.Location = new System.Drawing.Point(69, 155);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(83, 17);
+            this.lblFirstName.TabIndex = 38;
+            this.lblFirstName.Text = "ex: Mohamed";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.lblLastName.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.Gray;
+            this.lblLastName.Location = new System.Drawing.Point(308, 155);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(58, 17);
+            this.lblLastName.TabIndex = 42;
+            this.lblLastName.Text = "ex: Nasef";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.lblPhone.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.ForeColor = System.Drawing.Color.Gray;
+            this.lblPhone.Location = new System.Drawing.Point(69, 279);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(99, 17);
+            this.lblPhone.TabIndex = 43;
+            this.lblPhone.Text = "ex: 01021782433";
+            // 
             // AddStuent
             // 
             this.AcceptButton = this.btnAddStudent;
@@ -415,5 +460,8 @@ namespace Bus_Mangement_system.SCR.Student
         private Guna.UI.WinForms.GunaComboBox cmbBookingType;
         private Guna.UI.WinForms.GunaComboBox cmbUniversity;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblLastName;
     }
 }
