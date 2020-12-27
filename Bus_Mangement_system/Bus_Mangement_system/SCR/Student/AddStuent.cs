@@ -92,7 +92,7 @@ namespace Bus_Mangement_system.SCR.Student
 
         #endregion
 
-        #region AddButton
+        #region Add Student Button
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             //Validition

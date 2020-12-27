@@ -180,6 +180,8 @@ namespace Bus_Mangement_system
         private void addBus_Click(object sender, EventArgs e)
         {
             customizeDesign();
+            SCR.Bus.AddBus abObj = new SCR.Bus.AddBus();
+            openChildForm(abObj);
             //new form
         }
 
@@ -215,6 +217,8 @@ namespace Bus_Mangement_system
         private void addDriver_Click(object sender, EventArgs e)
         {
             customizeDesign();
+            SCR.Driver.AddDriver adObj = new SCR.Driver.AddDriver();
+            openChildForm(adObj);
             //new form
         }
 

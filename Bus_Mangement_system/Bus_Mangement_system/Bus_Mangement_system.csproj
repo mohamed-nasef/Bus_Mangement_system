@@ -78,6 +78,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCR\Bus\AddBus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Bus\AddBus.Designer.cs">
+      <DependentUpon>AddBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCR\Driver\AddDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Driver\AddDriver.Designer.cs">
+      <DependentUpon>AddDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="SCR\Student\AddStuent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +109,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Bus\AddBus.resx">
+      <DependentUpon>AddBus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Driver\AddDriver.resx">
+      <DependentUpon>AddDriver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Student\AddStuent.resx">
       <DependentUpon>AddStuent.cs</DependentUpon>
