@@ -70,7 +70,7 @@ namespace Bus_Mangement_system.SCR.Student
 
         private void cmbBookingType_Validating(object sender, CancelEventArgs e)
         {
-            validationcmb(cmbUniversity, "Please Select University", ref bookingID, e);
+            validationcmb(cmbBookingType, "Please Select University", ref bookingID, e);
         }
 
         #endregion
