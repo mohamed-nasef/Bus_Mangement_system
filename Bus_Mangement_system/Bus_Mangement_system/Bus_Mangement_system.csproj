@@ -96,6 +96,12 @@
     <Compile Include="SCR\Student\AddStuent.Designer.cs">
       <DependentUpon>AddStuent.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Student\EditStuent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Student\EditStuent.Designer.cs">
+      <DependentUpon>EditStuent.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Student\AddStuent.resx">
       <DependentUpon>AddStuent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Student\EditStuent.resx">
+      <DependentUpon>EditStuent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,17 +10,37 @@ using System.Windows.Forms;
 
 namespace Bus_Mangement_system.SCR.Student
 {
-    public partial class AddStuent : Form
+    public partial class EditStuent : Form
     {
-        string firstName,lastName, phone,address;
+        string firstName, lastName, phone, address;
         int addressID = -1, universityID, bookingID;
-        public AddStuent()
+        public EditStuent()
         {
             InitializeComponent();
         }
-        //
+        private void EditStuent_Load(object sender, EventArgs e)
+        {
+            //waterwark
+            lblFirstName.Visible = false;
+            lblLastName.Visible = false;
+            lblPhone.Visible = false;
 
-        private void btnClose_Click(object sender, EventArgs e)
+
+            //data from database
+
+            firstName = txtFirstName.Text = "Moustafa";
+            lastName = txtLastName.Text = "Ibrahem";
+            phone = txtPhone.Text = "01067893079";
+            addressID = 1;
+            cmbAddress.SelectedIndex = addressID;
+            address= cmbAddress.Items[addressID].ToString();
+            universityID = 1;
+            cmbUniversity.SelectedIndex = universityID;
+            bookingID = 0;
+            cmbBookingType.SelectedIndex = bookingID;
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -29,7 +49,7 @@ namespace Bus_Mangement_system.SCR.Student
 
         #region WaterMark
 
-        private void waterMark(Guna.UI.WinForms.GunaTextBox txt,Label lbl)
+        private void waterMark(Guna.UI.WinForms.GunaTextBox txt, Label lbl)
         {
             if (txt.Text == "")
                 lbl.Visible = true;
@@ -40,7 +60,7 @@ namespace Bus_Mangement_system.SCR.Student
         #endregion
 
         #region Validation
-        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt ,string errorMessage,Label lbl,ref string str ,CancelEventArgs e)
+        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt, string errorMessage, Label lbl, ref string str, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txt.Text))
             {
@@ -48,7 +68,7 @@ namespace Bus_Mangement_system.SCR.Student
                 e.Cancel = true;
                 //txt.Focus();
                 errorProvider1.SetError(txt, errorMessage);
-            }        
+            }
             else
             {
                 e.Cancel = false;
@@ -58,7 +78,7 @@ namespace Bus_Mangement_system.SCR.Student
         }
         private void validationcmb(Guna.UI.WinForms.GunaComboBox cmb, string errorMessage, ref int index, CancelEventArgs e)
         {
-            if(cmb.SelectedItem==null)
+            if (cmb.SelectedItem == null)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(cmb, errorMessage);
@@ -95,16 +115,16 @@ namespace Bus_Mangement_system.SCR.Student
         #region TextBox Validation
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtFirstName, "Please Enter First Name",lblFirstName,ref firstName,e);
+            validationTxt(txtFirstName, "Please Enter First Name", lblFirstName, ref firstName, e);
         }
         private void txtLastName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtLastName, "Please Enter Last Name",lblLastName, ref lastName, e);
+            validationTxt(txtLastName, "Please Enter Last Name", lblLastName, ref lastName, e);
         }
 
         private void txtPhone_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtPhone, "Please Enter Phone Number",lblPhone, ref phone, e);
+            validationTxt(txtPhone, "Please Enter Phone Number", lblPhone, ref phone, e);
         }
 
         #endregion
@@ -112,7 +132,7 @@ namespace Bus_Mangement_system.SCR.Student
         #region ComboBox Validation
         private void cmbAddress_Validating(object sender, CancelEventArgs e)
         {
-            validationcmb(cmbAddress, "Please Select Address",ref addressID, e);
+            validationcmb(cmbAddress, "Please Select Address", ref addressID, e);
             if (addressID != -1)
                 address = cmbAddress.Items[addressID].ToString();
         }
@@ -128,8 +148,8 @@ namespace Bus_Mangement_system.SCR.Student
 
         #endregion
 
-        #region Add Student Button
-        private void btnAddStudent_Click(object sender, EventArgs e)
+        #region Edit Student Button
+        private void BtnEditStudent_Click(object sender, EventArgs e)
         {
             //Validition
             if (ValidateChildren(ValidationConstraints.Enabled))
@@ -145,14 +165,13 @@ namespace Bus_Mangement_system.SCR.Student
                     txtLastName.Clear();
                     txtPhone.Clear();
                     cmbAddress.SelectedIndex = cmbBookingType.SelectedIndex = cmbUniversity.SelectedIndex = -1;
-                    MetroFramework.MetroMessageBox.Show(this, "\n\nStudent Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
+
             }
-            
-            
 
         }
-        #endregion
 
+        #endregion
     }
 }

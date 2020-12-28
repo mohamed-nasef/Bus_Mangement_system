@@ -116,15 +116,22 @@ namespace Bus_Mangement_system.SCR.Driver
             //Validition
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                //DB Commands
-                MetroFramework.MetroMessageBox.Show(this, $"name is :{name}\n{phone}\n{address}\n", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                txtName.Clear();
-                txtPhone.Clear();
-                txtAddress.Clear();
-                MetroFramework.MetroMessageBox.Show(this, "\n\nDriver Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {name}\nphone:   {phone}\naddress: {address}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result==DialogResult.Yes)
+                {
+                    //DB Commands
+
+                    //clear
+                    txtName.Clear();
+                    txtPhone.Clear();
+                    txtAddress.Clear();
+                    MetroFramework.MetroMessageBox.Show(this, "\n\nDriver Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
             }
         }
 
         #endregion
+
     }
 }

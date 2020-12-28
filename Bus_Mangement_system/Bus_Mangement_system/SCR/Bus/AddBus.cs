@@ -118,14 +118,21 @@ namespace Bus_Mangement_system.SCR.Bus
             //Validition
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                //DB Commands
-                MetroFramework.MetroMessageBox.Show(this, $"name is :{name}\n{LicenseNumber}\n{capacity}\n", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                txtName.Clear();
-                txtLicenseNumber.Clear();
-                cmbCapacity.SelectedIndex = -1;
-                MetroFramework.MetroMessageBox.Show(this, "\n\nBus Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:                  {name}\nlicense Number: {LicenseNumber}\ncapacity:              {capacity}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(result==DialogResult.Yes)
+                {
+                    //DB Commands
+
+                    //clear
+                    txtName.Clear();
+                    txtLicenseNumber.Clear();
+                    cmbCapacity.SelectedIndex = -1;
+                    MetroFramework.MetroMessageBox.Show(this, "\n\nBus Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
             }
         }
         #endregion
+
     }
 }

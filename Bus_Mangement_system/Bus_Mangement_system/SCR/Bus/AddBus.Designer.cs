@@ -61,7 +61,7 @@ namespace Bus_Mangement_system.SCR.Bus
             this.panelDraft.Location = new System.Drawing.Point(0, 0);
             this.panelDraft.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelDraft.Name = "panelDraft";
-            this.panelDraft.Size = new System.Drawing.Size(338, 1061);
+            this.panelDraft.Size = new System.Drawing.Size(338, 881);
             this.panelDraft.TabIndex = 1;
             // 
             // panelBody
@@ -72,7 +72,7 @@ namespace Bus_Mangement_system.SCR.Bus
             this.panelBody.Location = new System.Drawing.Point(338, 0);
             this.panelBody.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(1377, 1061);
+            this.panelBody.Size = new System.Drawing.Size(1377, 881);
             this.panelBody.TabIndex = 2;
             // 
             // grbAddBus
@@ -117,9 +117,9 @@ namespace Bus_Mangement_system.SCR.Bus
             this.lblName.ForeColor = System.Drawing.Color.Gray;
             this.lblName.Location = new System.Drawing.Point(69, 279);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(58, 17);
+            this.lblName.Size = new System.Drawing.Size(68, 17);
             this.lblName.TabIndex = 45;
-            this.lblName.Text = "ex: Foton";
+            this.lblName.Text = "ex: Hashim";
             // 
             // cmbCapacity
             // 
@@ -136,8 +136,8 @@ namespace Bus_Mangement_system.SCR.Bus
             this.cmbCapacity.FormattingEnabled = true;
             this.cmbCapacity.Items.AddRange(new object[] {
             "14",
-            "33",
-            "50"});
+            "32",
+            "52"});
             this.cmbCapacity.Location = new System.Drawing.Point(63, 520);
             this.cmbCapacity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbCapacity.Name = "cmbCapacity";
@@ -294,7 +294,7 @@ namespace Bus_Mangement_system.SCR.Bus
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1715, 1061);
+            this.ClientSize = new System.Drawing.Size(1715, 881);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelDraft);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

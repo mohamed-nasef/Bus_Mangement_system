@@ -1,7 +1,6 @@
-﻿
-namespace Bus_Mangement_system.SCR.Student
+﻿namespace Bus_Mangement_system.SCR.Student
 {
-    partial class AddStuent
+    partial class EditStuent
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +29,12 @@ namespace Bus_Mangement_system.SCR.Student
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStuent));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditStuent));
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.grbAddStudent = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.grbEditStudent = new System.Windows.Forms.GroupBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -44,18 +45,21 @@ namespace Bus_Mangement_system.SCR.Student
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtLastName = new Guna.UI.WinForms.GunaTextBox();
+            this.btnEditStudent = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFirstName = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAddStudent = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.panelBody.SuspendLayout();
-            this.grbAddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panelBody.SuspendLayout();
+            this.grbEditStudent.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // panelDraft
             // 
@@ -63,44 +67,59 @@ namespace Bus_Mangement_system.SCR.Student
             this.panelDraft.Location = new System.Drawing.Point(0, 0);
             this.panelDraft.Name = "panelDraft";
             this.panelDraft.Size = new System.Drawing.Size(338, 881);
-            this.panelDraft.TabIndex = 1;
+            this.panelDraft.TabIndex = 0;
             // 
             // panelBody
             // 
-            this.panelBody.Controls.Add(this.grbAddStudent);
+            this.panelBody.Controls.Add(this.grbEditStudent);
             this.panelBody.Controls.Add(this.btnClose);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(338, 0);
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
-            this.panelBody.TabIndex = 2;
+            this.panelBody.TabIndex = 1;
             // 
-            // grbAddStudent
+            // btnClose
             // 
-            this.grbAddStudent.Controls.Add(this.lblPhone);
-            this.grbAddStudent.Controls.Add(this.lblLastName);
-            this.grbAddStudent.Controls.Add(this.lblFirstName);
-            this.grbAddStudent.Controls.Add(this.cmbBookingType);
-            this.grbAddStudent.Controls.Add(this.cmbUniversity);
-            this.grbAddStudent.Controls.Add(this.cmbAddress);
-            this.grbAddStudent.Controls.Add(this.txtPhone);
-            this.grbAddStudent.Controls.Add(this.label5);
-            this.grbAddStudent.Controls.Add(this.label4);
-            this.grbAddStudent.Controls.Add(this.txtLastName);
-            this.grbAddStudent.Controls.Add(this.btnAddStudent);
-            this.grbAddStudent.Controls.Add(this.label1);
-            this.grbAddStudent.Controls.Add(this.label2);
-            this.grbAddStudent.Controls.Add(this.label6);
-            this.grbAddStudent.Controls.Add(this.txtFirstName);
-            this.grbAddStudent.Controls.Add(this.label3);
-            this.grbAddStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbAddStudent.ForeColor = System.Drawing.Color.White;
-            this.grbAddStudent.Location = new System.Drawing.Point(368, 30);
-            this.grbAddStudent.Name = "grbAddStudent";
-            this.grbAddStudent.Size = new System.Drawing.Size(576, 833);
-            this.grbAddStudent.TabIndex = 36;
-            this.grbAddStudent.TabStop = false;
-            this.grbAddStudent.Text = "Add Student";
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64px;
+            this.btnClose.Location = new System.Drawing.Point(6, 30);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(73, 62);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // grbEditStudent
+            // 
+            this.grbEditStudent.Controls.Add(this.lblPhone);
+            this.grbEditStudent.Controls.Add(this.lblLastName);
+            this.grbEditStudent.Controls.Add(this.lblFirstName);
+            this.grbEditStudent.Controls.Add(this.cmbBookingType);
+            this.grbEditStudent.Controls.Add(this.cmbUniversity);
+            this.grbEditStudent.Controls.Add(this.cmbAddress);
+            this.grbEditStudent.Controls.Add(this.txtPhone);
+            this.grbEditStudent.Controls.Add(this.label5);
+            this.grbEditStudent.Controls.Add(this.label4);
+            this.grbEditStudent.Controls.Add(this.txtLastName);
+            this.grbEditStudent.Controls.Add(this.btnEditStudent);
+            this.grbEditStudent.Controls.Add(this.label1);
+            this.grbEditStudent.Controls.Add(this.label2);
+            this.grbEditStudent.Controls.Add(this.label6);
+            this.grbEditStudent.Controls.Add(this.txtFirstName);
+            this.grbEditStudent.Controls.Add(this.label3);
+            this.grbEditStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbEditStudent.ForeColor = System.Drawing.Color.White;
+            this.grbEditStudent.Location = new System.Drawing.Point(368, 30);
+            this.grbEditStudent.Name = "grbEditStudent";
+            this.grbEditStudent.Size = new System.Drawing.Size(576, 833);
+            this.grbEditStudent.TabIndex = 37;
+            this.grbEditStudent.TabStop = false;
+            this.grbEditStudent.Text = "Edit Student";
             // 
             // lblPhone
             // 
@@ -162,7 +181,6 @@ namespace Bus_Mangement_system.SCR.Student
             this.cmbBookingType.Radius = 8;
             this.cmbBookingType.Size = new System.Drawing.Size(461, 31);
             this.cmbBookingType.TabIndex = 41;
-            this.cmbBookingType.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBookingType_Validating);
             // 
             // cmbUniversity
             // 
@@ -189,7 +207,6 @@ namespace Bus_Mangement_system.SCR.Student
             this.cmbUniversity.Radius = 8;
             this.cmbUniversity.Size = new System.Drawing.Size(461, 31);
             this.cmbUniversity.TabIndex = 40;
-            this.cmbUniversity.Validating += new System.ComponentModel.CancelEventHandler(this.cmbUniversity_Validating);
             // 
             // cmbAddress
             // 
@@ -218,7 +235,6 @@ namespace Bus_Mangement_system.SCR.Student
             this.cmbAddress.Radius = 8;
             this.cmbAddress.Size = new System.Drawing.Size(461, 31);
             this.cmbAddress.TabIndex = 39;
-            this.cmbAddress.Validating += new System.ComponentModel.CancelEventHandler(this.cmbAddress_Validating);
             // 
             // txtPhone
             // 
@@ -240,8 +256,6 @@ namespace Bus_Mangement_system.SCR.Student
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(461, 32);
             this.txtPhone.TabIndex = 38;
-            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
-            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.txtPhone_Validating);
             // 
             // label5
             // 
@@ -287,8 +301,41 @@ namespace Bus_Mangement_system.SCR.Student
             this.txtLastName.SelectedText = "";
             this.txtLastName.Size = new System.Drawing.Size(218, 32);
             this.txtLastName.TabIndex = 30;
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
-            this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
+            // 
+            // btnEditStudent
+            // 
+            this.btnEditStudent.AnimationHoverSpeed = 0.07F;
+            this.btnEditStudent.AnimationSpeed = 0.03F;
+            this.btnEditStudent.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditStudent.BaseColor = System.Drawing.Color.Transparent;
+            this.btnEditStudent.BorderColor = System.Drawing.Color.Black;
+            this.btnEditStudent.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnEditStudent.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnEditStudent.CheckedForeColor = System.Drawing.Color.White;
+            this.btnEditStudent.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEditStudent.CheckedImage")));
+            this.btnEditStudent.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnEditStudent.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEditStudent.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEditStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStudent.ForeColor = System.Drawing.Color.White;
+            this.btnEditStudent.Image = null;
+            this.btnEditStudent.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEditStudent.LineBottom = 1;
+            this.btnEditStudent.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnEditStudent.Location = new System.Drawing.Point(59, 758);
+            this.btnEditStudent.Name = "btnEditStudent";
+            this.btnEditStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btnEditStudent.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEditStudent.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEditStudent.OnHoverImage = null;
+            this.btnEditStudent.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnEditStudent.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEditStudent.Radius = 10;
+            this.btnEditStudent.Size = new System.Drawing.Size(461, 42);
+            this.btnEditStudent.TabIndex = 25;
+            this.btnEditStudent.Text = "Edit";
+            this.btnEditStudent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEditStudent.Click += new System.EventHandler(this.BtnEditStudent_Click);
             // 
             // label1
             // 
@@ -346,8 +393,6 @@ namespace Bus_Mangement_system.SCR.Student
             this.txtFirstName.SelectedText = "";
             this.txtFirstName.Size = new System.Drawing.Size(218, 32);
             this.txtFirstName.TabIndex = 26;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
-            this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
             // label3
             // 
@@ -361,64 +406,8 @@ namespace Bus_Mangement_system.SCR.Student
             this.label3.TabIndex = 29;
             this.label3.Text = "University";
             // 
-            // errorProvider1
+            // EditStuent
             // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // btnAddStudent
-            // 
-            this.btnAddStudent.AnimationHoverSpeed = 0.07F;
-            this.btnAddStudent.AnimationSpeed = 0.03F;
-            this.btnAddStudent.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddStudent.BaseColor = System.Drawing.Color.Transparent;
-            this.btnAddStudent.BorderColor = System.Drawing.Color.Black;
-            this.btnAddStudent.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAddStudent.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAddStudent.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddStudent.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddStudent.CheckedImage")));
-            this.btnAddStudent.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAddStudent.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddStudent.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStudent.ForeColor = System.Drawing.Color.White;
-            this.btnAddStudent.Image = null;
-            this.btnAddStudent.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddStudent.LineBottom = 1;
-            this.btnAddStudent.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddStudent.Location = new System.Drawing.Point(59, 758);
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnAddStudent.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddStudent.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddStudent.OnHoverImage = null;
-            this.btnAddStudent.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddStudent.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddStudent.Radius = 10;
-            this.btnAddStudent.Size = new System.Drawing.Size(461, 42);
-            this.btnAddStudent.TabIndex = 25;
-            this.btnAddStudent.Text = "Add";
-            this.btnAddStudent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64px;
-            this.btnClose.Location = new System.Drawing.Point(6, 30);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(73, 62);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // AddStuent
-            // 
-            this.AcceptButton = this.btnAddStudent;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
@@ -428,40 +417,40 @@ namespace Bus_Mangement_system.SCR.Student
             this.Controls.Add(this.panelDraft);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "AddStuent";
-            this.Text = "AddStuent";
-            this.panelBody.ResumeLayout(false);
-            this.grbAddStudent.ResumeLayout(false);
-            this.grbAddStudent.PerformLayout();
+            this.Name = "EditStuent";
+            this.Text = "EditStuent";
+            this.Load += new System.EventHandler(this.EditStuent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panelBody.ResumeLayout(false);
+            this.grbEditStudent.ResumeLayout(false);
+            this.grbEditStudent.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panelDraft;
         private System.Windows.Forms.Panel panelBody;
-        private Guna.UI.WinForms.GunaTextBox txtLastName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI.WinForms.GunaTextBox txtFirstName;
-        private Guna.UI.WinForms.GunaAdvenceButton btnAddStudent;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox grbAddStudent;
-        private Guna.UI.WinForms.GunaTextBox txtPhone;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI.WinForms.GunaComboBox cmbAddress;
-        private Guna.UI.WinForms.GunaComboBox cmbBookingType;
-        private Guna.UI.WinForms.GunaComboBox cmbUniversity;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox grbEditStudent;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFirstName;
+        private Guna.UI.WinForms.GunaComboBox cmbBookingType;
+        private Guna.UI.WinForms.GunaComboBox cmbUniversity;
+        private Guna.UI.WinForms.GunaComboBox cmbAddress;
+        private Guna.UI.WinForms.GunaTextBox txtPhone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI.WinForms.GunaTextBox txtLastName;
+        private Guna.UI.WinForms.GunaAdvenceButton btnEditStudent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI.WinForms.GunaTextBox txtFirstName;
+        private System.Windows.Forms.Label label3;
     }
 }

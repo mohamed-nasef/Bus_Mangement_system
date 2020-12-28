@@ -136,7 +136,7 @@ namespace Bus_Mangement_system
         {
             panelMenu.Visible = true;
             showSubMenu(studentSubPanel, paneliconStudent);
-            //new form
+           
         }
         private void addStudent_Click(object sender, EventArgs e)
         {
@@ -148,7 +148,8 @@ namespace Bus_Mangement_system
         private void editStudent_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Student.EditStuent esObj = new SCR.Student.EditStuent();
+            openChildForm(esObj);
         }
 
         private void booking_Click(object sender, EventArgs e)
