@@ -194,6 +194,78 @@
   <ItemGroup>
     <None Include="Resources\icons8_back_64px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-student-male-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-student-male-80-concept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-student-male-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bus-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-student-male-80-final1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-driving-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ticket-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-combi-ticket-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-two-tickets-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-profit-report-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-playlist-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-present-to-all-64-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-final-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-receive-euro-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-receive-euro-80-final1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-recieve-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-dollar-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-dollar-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-dollar-80-final1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-paper-money-80-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-money-circulation-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-check-dollar-80-final.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

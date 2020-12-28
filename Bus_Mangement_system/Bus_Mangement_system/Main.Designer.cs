@@ -31,58 +31,42 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.cardDrivers = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.labelDrivers = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cardValidStudents = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.labelValidStudents = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.cardExpiredStudents = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labelExpiredStudents = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cardDailyTickets = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.labelDateDailyTicket = new System.Windows.Forms.Label();
             this.labelDailyTickets = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cardBuses = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.labelBuses = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.cardProfits = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.labelMonthlyDetailsProfits = new System.Windows.Forms.Label();
             this.labelProfits = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cardPayments = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelMonthlyDetailsPayments = new System.Windows.Forms.Label();
             this.labelPayments = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cardIncome = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelMonthlyDetailsIncome = new System.Windows.Forms.Label();
             this.labelIncome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelToolbar = new System.Windows.Forms.Panel();
-            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panelDrawer = new System.Windows.Forms.Panel();
             this.paneliconSetting = new System.Windows.Forms.Panel();
-            this.btniconSetting = new System.Windows.Forms.Button();
             this.paneliconReport = new System.Windows.Forms.Panel();
-            this.btniconReport = new System.Windows.Forms.Button();
             this.paneliconDailyTicket = new System.Windows.Forms.Panel();
-            this.btniconDailyTicket = new System.Windows.Forms.Button();
             this.paneliconDriver = new System.Windows.Forms.Panel();
-            this.btniconDriver = new System.Windows.Forms.Button();
             this.paneliconBus = new System.Windows.Forms.Panel();
-            this.btniconBus = new System.Windows.Forms.Button();
             this.paneliconStudent = new System.Windows.Forms.Panel();
-            this.btniconStudent = new System.Windows.Forms.Button();
             this.paneliconMenu = new System.Windows.Forms.Panel();
-            this.btnDrawer = new System.Windows.Forms.Button();
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
@@ -113,24 +97,34 @@
             this.addStudent = new System.Windows.Forms.Button();
             this.btnStudent = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.Panel();
+            this.btniconSetting = new System.Windows.Forms.Button();
+            this.btniconReport = new System.Windows.Forms.Button();
+            this.btniconDailyTicket = new System.Windows.Forms.Button();
+            this.btniconDriver = new System.Windows.Forms.Button();
+            this.btniconBus = new System.Windows.Forms.Button();
+            this.btniconStudent = new System.Windows.Forms.Button();
+            this.btnDrawer = new System.Windows.Forms.Button();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm.SuspendLayout();
             this.cardDrivers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.cardValidStudents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.cardExpiredStudents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.cardDailyTickets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.cardBuses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.cardProfits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.cardPayments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.cardIncome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelToolbar.SuspendLayout();
             this.panelDrawer.SuspendLayout();
             this.paneliconSetting.SuspendLayout();
@@ -141,6 +135,16 @@
             this.driverSubPanel.SuspendLayout();
             this.busSubPanel.SuspendLayout();
             this.studentSubPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelChildForm
@@ -158,7 +162,7 @@
             this.panelChildForm.Location = new System.Drawing.Point(0, 0);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1491, 896);
+            this.panelChildForm.Size = new System.Drawing.Size(1491, 881);
             this.panelChildForm.TabIndex = 3;
             // 
             // cardDrivers
@@ -171,16 +175,6 @@
             this.cardDrivers.Name = "cardDrivers";
             this.cardDrivers.Size = new System.Drawing.Size(280, 142);
             this.cardDrivers.TabIndex = 11;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::Bus_Mangement_system.Properties.Resources.icons8_driver_80px;
-            this.pictureBox7.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 3;
-            this.pictureBox7.TabStop = false;
             // 
             // labelDrivers
             // 
@@ -209,6 +203,7 @@
             // cardValidStudents
             // 
             this.cardValidStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardValidStudents.Controls.Add(this.pictureBox10);
             this.cardValidStudents.Controls.Add(this.pictureBox9);
             this.cardValidStudents.Controls.Add(this.labelValidStudents);
             this.cardValidStudents.Controls.Add(this.label22);
@@ -216,16 +211,6 @@
             this.cardValidStudents.Name = "cardValidStudents";
             this.cardValidStudents.Size = new System.Drawing.Size(280, 142);
             this.cardValidStudents.TabIndex = 9;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::Bus_Mangement_system.Properties.Resources.icons8_checkmark_80px;
-            this.pictureBox9.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
             // 
             // labelValidStudents
             // 
@@ -254,6 +239,7 @@
             // cardExpiredStudents
             // 
             this.cardExpiredStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(24)))));
+            this.cardExpiredStudents.Controls.Add(this.pictureBox11);
             this.cardExpiredStudents.Controls.Add(this.pictureBox4);
             this.cardExpiredStudents.Controls.Add(this.labelExpiredStudents);
             this.cardExpiredStudents.Controls.Add(this.label12);
@@ -261,16 +247,6 @@
             this.cardExpiredStudents.Name = "cardExpiredStudents";
             this.cardExpiredStudents.Size = new System.Drawing.Size(280, 142);
             this.cardExpiredStudents.TabIndex = 8;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Bus_Mangement_system.Properties.Resources.icons8_delete_80px;
-            this.pictureBox4.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
             // 
             // labelExpiredStudents
             // 
@@ -307,16 +283,6 @@
             this.cardDailyTickets.Name = "cardDailyTickets";
             this.cardDailyTickets.Size = new System.Drawing.Size(280, 142);
             this.cardDailyTickets.TabIndex = 7;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Bus_Mangement_system.Properties.Resources.icons8_ticket_80px;
-            this.pictureBox5.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
             // 
             // labelDateDailyTicket
             // 
@@ -365,16 +331,6 @@
             this.cardBuses.Size = new System.Drawing.Size(280, 142);
             this.cardBuses.TabIndex = 6;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Bus_Mangement_system.Properties.Resources.icons8_bus_80px;
-            this.pictureBox6.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 3;
-            this.pictureBox6.TabStop = false;
-            // 
             // labelBuses
             // 
             this.labelBuses.AutoSize = true;
@@ -410,16 +366,6 @@
             this.cardProfits.Name = "cardProfits";
             this.cardProfits.Size = new System.Drawing.Size(280, 142);
             this.cardProfits.TabIndex = 5;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_100px_1;
-            this.pictureBox3.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
             // 
             // labelMonthlyDetailsProfits
             // 
@@ -469,16 +415,6 @@
             this.cardPayments.Size = new System.Drawing.Size(280, 142);
             this.cardPayments.TabIndex = 4;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Bus_Mangement_system.Properties.Resources.icons8_cash_in_hand_80px;
-            this.pictureBox2.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
             // labelMonthlyDetailsPayments
             // 
             this.labelMonthlyDetailsPayments.AutoSize = true;
@@ -527,16 +463,6 @@
             this.cardIncome.Size = new System.Drawing.Size(280, 142);
             this.cardIncome.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Bus_Mangement_system.Properties.Resources.icons8_refund_80px;
-            this.pictureBox1.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // labelMonthlyDetailsIncome
             // 
             this.labelMonthlyDetailsIncome.AutoSize = true;
@@ -584,40 +510,6 @@
             this.panelToolbar.Size = new System.Drawing.Size(1491, 29);
             this.panelToolbar.TabIndex = 4;
             // 
-            // btnExit
-            // 
-            this.btnExit.AnimationHoverSpeed = 0.07F;
-            this.btnExit.AnimationSpeed = 0.03F;
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BaseColor = System.Drawing.Color.Transparent;
-            this.btnExit.BorderColor = System.Drawing.Color.Transparent;
-            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
-            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
-            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = null;
-            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.Location = new System.Drawing.Point(1461, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnExit.OnHoverImage = null;
-            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExit.Size = new System.Drawing.Size(30, 29);
-            this.btnExit.TabIndex = 22;
-            this.btnExit.Text = "X";
-            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // panelDrawer
             // 
             this.panelDrawer.AutoScroll = true;
@@ -638,7 +530,7 @@
             this.panelDrawer.Location = new System.Drawing.Point(0, 29);
             this.panelDrawer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDrawer.Name = "panelDrawer";
-            this.panelDrawer.Size = new System.Drawing.Size(73, 867);
+            this.panelDrawer.Size = new System.Drawing.Size(73, 852);
             this.panelDrawer.TabIndex = 5;
             // 
             // paneliconSetting
@@ -651,23 +543,6 @@
             this.paneliconSetting.Size = new System.Drawing.Size(56, 75);
             this.paneliconSetting.TabIndex = 16;
             // 
-            // btniconSetting
-            // 
-            this.btniconSetting.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_services_80px;
-            this.btniconSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btniconSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btniconSetting.FlatAppearance.BorderSize = 0;
-            this.btniconSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btniconSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btniconSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btniconSetting.Location = new System.Drawing.Point(0, 0);
-            this.btniconSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btniconSetting.Name = "btniconSetting";
-            this.btniconSetting.Size = new System.Drawing.Size(56, 75);
-            this.btniconSetting.TabIndex = 12;
-            this.btniconSetting.UseVisualStyleBackColor = true;
-            this.btniconSetting.Click += new System.EventHandler(this.btniconSetting_Click);
-            // 
             // paneliconReport
             // 
             this.paneliconReport.Dock = System.Windows.Forms.DockStyle.Top;
@@ -676,23 +551,6 @@
             this.paneliconReport.Name = "paneliconReport";
             this.paneliconReport.Size = new System.Drawing.Size(56, 131);
             this.paneliconReport.TabIndex = 15;
-            // 
-            // btniconReport
-            // 
-            this.btniconReport.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_profit_report_80px;
-            this.btniconReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btniconReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btniconReport.FlatAppearance.BorderSize = 0;
-            this.btniconReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btniconReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btniconReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btniconReport.Location = new System.Drawing.Point(0, 950);
-            this.btniconReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btniconReport.Name = "btniconReport";
-            this.btniconReport.Size = new System.Drawing.Size(56, 75);
-            this.btniconReport.TabIndex = 14;
-            this.btniconReport.UseVisualStyleBackColor = true;
-            this.btniconReport.Click += new System.EventHandler(this.btniconReport_Click);
             // 
             // paneliconDailyTicket
             // 
@@ -703,23 +561,6 @@
             this.paneliconDailyTicket.Size = new System.Drawing.Size(56, 52);
             this.paneliconDailyTicket.TabIndex = 13;
             // 
-            // btniconDailyTicket
-            // 
-            this.btniconDailyTicket.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_ticket_80px;
-            this.btniconDailyTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btniconDailyTicket.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btniconDailyTicket.FlatAppearance.BorderSize = 0;
-            this.btniconDailyTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btniconDailyTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btniconDailyTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btniconDailyTicket.Location = new System.Drawing.Point(0, 823);
-            this.btniconDailyTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btniconDailyTicket.Name = "btniconDailyTicket";
-            this.btniconDailyTicket.Size = new System.Drawing.Size(56, 75);
-            this.btniconDailyTicket.TabIndex = 12;
-            this.btniconDailyTicket.UseVisualStyleBackColor = true;
-            this.btniconDailyTicket.Click += new System.EventHandler(this.btniconDailyTicket_Click);
-            // 
             // paneliconDriver
             // 
             this.paneliconDriver.Dock = System.Windows.Forms.DockStyle.Top;
@@ -728,23 +569,6 @@
             this.paneliconDriver.Name = "paneliconDriver";
             this.paneliconDriver.Size = new System.Drawing.Size(56, 168);
             this.paneliconDriver.TabIndex = 11;
-            // 
-            // btniconDriver
-            // 
-            this.btniconDriver.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_driver_80px;
-            this.btniconDriver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btniconDriver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btniconDriver.FlatAppearance.BorderSize = 0;
-            this.btniconDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btniconDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btniconDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btniconDriver.Location = new System.Drawing.Point(0, 580);
-            this.btniconDriver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btniconDriver.Name = "btniconDriver";
-            this.btniconDriver.Size = new System.Drawing.Size(56, 75);
-            this.btniconDriver.TabIndex = 10;
-            this.btniconDriver.UseVisualStyleBackColor = true;
-            this.btniconDriver.Click += new System.EventHandler(this.btniconDriver_Click);
             // 
             // paneliconBus
             // 
@@ -755,23 +579,6 @@
             this.paneliconBus.Size = new System.Drawing.Size(56, 168);
             this.paneliconBus.TabIndex = 9;
             // 
-            // btniconBus
-            // 
-            this.btniconBus.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_bus_80px;
-            this.btniconBus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btniconBus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btniconBus.FlatAppearance.BorderSize = 0;
-            this.btniconBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btniconBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btniconBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btniconBus.Location = new System.Drawing.Point(0, 337);
-            this.btniconBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btniconBus.Name = "btniconBus";
-            this.btniconBus.Size = new System.Drawing.Size(56, 75);
-            this.btniconBus.TabIndex = 8;
-            this.btniconBus.UseVisualStyleBackColor = true;
-            this.btniconBus.Click += new System.EventHandler(this.btniconBus_Click);
-            // 
             // paneliconStudent
             // 
             this.paneliconStudent.Dock = System.Windows.Forms.DockStyle.Top;
@@ -780,23 +587,6 @@
             this.paneliconStudent.Name = "paneliconStudent";
             this.paneliconStudent.Size = new System.Drawing.Size(56, 168);
             this.paneliconStudent.TabIndex = 7;
-            // 
-            // btniconStudent
-            // 
-            this.btniconStudent.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_student_male_80px;
-            this.btniconStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btniconStudent.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btniconStudent.FlatAppearance.BorderSize = 0;
-            this.btniconStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btniconStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btniconStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btniconStudent.Location = new System.Drawing.Point(0, 94);
-            this.btniconStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btniconStudent.Name = "btniconStudent";
-            this.btniconStudent.Size = new System.Drawing.Size(56, 75);
-            this.btniconStudent.TabIndex = 2;
-            this.btniconStudent.UseVisualStyleBackColor = true;
-            this.btniconStudent.Click += new System.EventHandler(this.btniconStudent_Click);
             // 
             // paneliconMenu
             // 
@@ -809,29 +599,13 @@
             this.paneliconMenu.Size = new System.Drawing.Size(56, 94);
             this.paneliconMenu.TabIndex = 0;
             // 
-            // btnDrawer
-            // 
-            this.btnDrawer.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_menu_80px;
-            this.btnDrawer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDrawer.FlatAppearance.BorderSize = 0;
-            this.btnDrawer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btnDrawer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btnDrawer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDrawer.Location = new System.Drawing.Point(0, 0);
-            this.btnDrawer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDrawer.Name = "btnDrawer";
-            this.btnDrawer.Size = new System.Drawing.Size(73, 62);
-            this.btnDrawer.TabIndex = 2;
-            this.btnDrawer.UseVisualStyleBackColor = true;
-            this.btnDrawer.Click += new System.EventHandler(this.btnDrawer_Click);
-            // 
             // panelDraft
             // 
             this.panelDraft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
             this.panelDraft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelDraft.Location = new System.Drawing.Point(73, 29);
             this.panelDraft.Name = "panelDraft";
-            this.panelDraft.Size = new System.Drawing.Size(20, 867);
+            this.panelDraft.Size = new System.Drawing.Size(20, 852);
             this.panelDraft.TabIndex = 7;
             // 
             // panelMenu
@@ -854,7 +628,7 @@
             this.panelMenu.Location = new System.Drawing.Point(93, 29);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(201, 867);
+            this.panelMenu.Size = new System.Drawing.Size(201, 852);
             this.panelMenu.TabIndex = 8;
             // 
             // btnSetting
@@ -1279,7 +1053,7 @@
             this.booking.Name = "booking";
             this.booking.Size = new System.Drawing.Size(184, 39);
             this.booking.TabIndex = 2;
-            this.booking.Text = "Book";
+            this.booking.Text = "Renewed Booking";
             this.booking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.booking.UseVisualStyleBackColor = false;
             this.booking.Click += new System.EventHandler(this.booking_Click);
@@ -1351,6 +1125,124 @@
             this.Logo.Size = new System.Drawing.Size(184, 94);
             this.Logo.TabIndex = 1;
             // 
+            // btniconSetting
+            // 
+            this.btniconSetting.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_settings_80_final;
+            this.btniconSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btniconSetting.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btniconSetting.FlatAppearance.BorderSize = 0;
+            this.btniconSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btniconSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btniconSetting.Location = new System.Drawing.Point(0, 0);
+            this.btniconSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btniconSetting.Name = "btniconSetting";
+            this.btniconSetting.Size = new System.Drawing.Size(56, 75);
+            this.btniconSetting.TabIndex = 12;
+            this.btniconSetting.UseVisualStyleBackColor = true;
+            this.btniconSetting.Click += new System.EventHandler(this.btniconSetting_Click);
+            // 
+            // btniconReport
+            // 
+            this.btniconReport.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_profit_report_80_final;
+            this.btniconReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btniconReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btniconReport.FlatAppearance.BorderSize = 0;
+            this.btniconReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btniconReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btniconReport.Location = new System.Drawing.Point(0, 950);
+            this.btniconReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btniconReport.Name = "btniconReport";
+            this.btniconReport.Size = new System.Drawing.Size(56, 75);
+            this.btniconReport.TabIndex = 14;
+            this.btniconReport.UseVisualStyleBackColor = true;
+            this.btniconReport.Click += new System.EventHandler(this.btniconReport_Click);
+            // 
+            // btniconDailyTicket
+            // 
+            this.btniconDailyTicket.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_two_tickets_80_final;
+            this.btniconDailyTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btniconDailyTicket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btniconDailyTicket.FlatAppearance.BorderSize = 0;
+            this.btniconDailyTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconDailyTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btniconDailyTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btniconDailyTicket.Location = new System.Drawing.Point(0, 823);
+            this.btniconDailyTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btniconDailyTicket.Name = "btniconDailyTicket";
+            this.btniconDailyTicket.Size = new System.Drawing.Size(56, 75);
+            this.btniconDailyTicket.TabIndex = 12;
+            this.btniconDailyTicket.UseVisualStyleBackColor = true;
+            this.btniconDailyTicket.Click += new System.EventHandler(this.btniconDailyTicket_Click);
+            // 
+            // btniconDriver
+            // 
+            this.btniconDriver.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_driving_80_final;
+            this.btniconDriver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btniconDriver.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btniconDriver.FlatAppearance.BorderSize = 0;
+            this.btniconDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btniconDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btniconDriver.Location = new System.Drawing.Point(0, 580);
+            this.btniconDriver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btniconDriver.Name = "btniconDriver";
+            this.btniconDriver.Size = new System.Drawing.Size(56, 75);
+            this.btniconDriver.TabIndex = 10;
+            this.btniconDriver.UseVisualStyleBackColor = true;
+            this.btniconDriver.Click += new System.EventHandler(this.btniconDriver_Click);
+            // 
+            // btniconBus
+            // 
+            this.btniconBus.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_bus_80_final;
+            this.btniconBus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btniconBus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btniconBus.FlatAppearance.BorderSize = 0;
+            this.btniconBus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconBus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btniconBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btniconBus.Location = new System.Drawing.Point(0, 337);
+            this.btniconBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btniconBus.Name = "btniconBus";
+            this.btniconBus.Size = new System.Drawing.Size(56, 75);
+            this.btniconBus.TabIndex = 8;
+            this.btniconBus.UseVisualStyleBackColor = true;
+            this.btniconBus.Click += new System.EventHandler(this.btniconBus_Click);
+            // 
+            // btniconStudent
+            // 
+            this.btniconStudent.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_student_male_80_final1;
+            this.btniconStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btniconStudent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btniconStudent.FlatAppearance.BorderSize = 0;
+            this.btniconStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btniconStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btniconStudent.Location = new System.Drawing.Point(0, 94);
+            this.btniconStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btniconStudent.Name = "btniconStudent";
+            this.btniconStudent.Size = new System.Drawing.Size(56, 75);
+            this.btniconStudent.TabIndex = 2;
+            this.btniconStudent.UseVisualStyleBackColor = true;
+            this.btniconStudent.Click += new System.EventHandler(this.btniconStudent_Click);
+            // 
+            // btnDrawer
+            // 
+            this.btnDrawer.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_playlist_80_final;
+            this.btnDrawer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDrawer.FlatAppearance.BorderSize = 0;
+            this.btnDrawer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnDrawer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btnDrawer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrawer.Location = new System.Drawing.Point(0, 0);
+            this.btnDrawer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDrawer.Name = "btnDrawer";
+            this.btnDrawer.Size = new System.Drawing.Size(73, 62);
+            this.btnDrawer.TabIndex = 2;
+            this.btnDrawer.UseVisualStyleBackColor = true;
+            this.btnDrawer.Click += new System.EventHandler(this.btnDrawer_Click);
+            // 
             // gunaAdvenceButton1
             // 
             this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
@@ -1385,11 +1277,147 @@
             this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.AnimationHoverSpeed = 0.07F;
+            this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BaseColor = System.Drawing.Color.Transparent;
+            this.btnExit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnExit.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnExit.CheckedForeColor = System.Drawing.Color.White;
+            this.btnExit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExit.CheckedImage")));
+            this.btnExit.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = null;
+            this.btnExit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.Location = new System.Drawing.Point(1461, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnExit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExit.OnHoverImage = null;
+            this.btnExit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExit.Size = new System.Drawing.Size(30, 29);
+            this.btnExit.TabIndex = 22;
+            this.btnExit.Text = "X";
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Bus_Mangement_system.Properties.Resources.icons8_driving_80_final;
+            this.pictureBox7.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 3;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(111)))), ((int)(((byte)(116)))));
+            this.pictureBox10.Image = global::Bus_Mangement_system.Properties.Resources.icons8_checked_48_final_final;
+            this.pictureBox10.Location = new System.Drawing.Point(238, 87);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(18, 16);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 5;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::Bus_Mangement_system.Properties.Resources.icons8_student_male_80_final1;
+            this.pictureBox9.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(111)))), ((int)(((byte)(116)))));
+            this.pictureBox11.Image = global::Bus_Mangement_system.Properties.Resources.icons8_cancel_48;
+            this.pictureBox11.Location = new System.Drawing.Point(238, 87);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(18, 16);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 6;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Bus_Mangement_system.Properties.Resources.icons8_student_male_80_final1;
+            this.pictureBox4.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Bus_Mangement_system.Properties.Resources.icons8_two_tickets_80_final;
+            this.pictureBox5.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Bus_Mangement_system.Properties.Resources.icons8_bus_80_final;
+            this.pictureBox6.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 3;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Bus_Mangement_system.Properties.Resources.icons8_check_dollar_80_final;
+            this.pictureBox3.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Bus_Mangement_system.Properties.Resources.icons8_delete_dollar_80_final;
+            this.pictureBox2.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Bus_Mangement_system.Properties.Resources.icons8_add_dollar_80_final1;
+            this.pictureBox1.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(92, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 896);
+            this.ClientSize = new System.Drawing.Size(1491, 881);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelDraft);
             this.Controls.Add(this.panelDrawer);
@@ -1399,7 +1427,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(1454, 884);
+            this.MinimumSize = new System.Drawing.Size(1454, 858);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1407,28 +1435,20 @@
             this.panelChildForm.ResumeLayout(false);
             this.cardDrivers.ResumeLayout(false);
             this.cardDrivers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.cardValidStudents.ResumeLayout(false);
             this.cardValidStudents.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.cardExpiredStudents.ResumeLayout(false);
             this.cardExpiredStudents.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.cardDailyTickets.ResumeLayout(false);
             this.cardDailyTickets.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.cardBuses.ResumeLayout(false);
             this.cardBuses.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.cardProfits.ResumeLayout(false);
             this.cardProfits.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.cardPayments.ResumeLayout(false);
             this.cardPayments.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.cardIncome.ResumeLayout(false);
             this.cardIncome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelToolbar.ResumeLayout(false);
             this.panelDrawer.ResumeLayout(false);
             this.paneliconSetting.ResumeLayout(false);
@@ -1439,6 +1459,16 @@
             this.driverSubPanel.ResumeLayout(false);
             this.busSubPanel.ResumeLayout(false);
             this.studentSubPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1529,5 +1559,7 @@
         private System.Windows.Forms.Panel Logo;
         private Guna.UI.WinForms.GunaAdvenceButton btnExit;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
     }
 }
