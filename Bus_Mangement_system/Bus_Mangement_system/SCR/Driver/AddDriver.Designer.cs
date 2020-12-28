@@ -39,13 +39,13 @@ namespace Bus_Mangement_system.SCR.Driver
             this.txtAddress = new Guna.UI.WinForms.GunaTextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtPhone = new Guna.UI.WinForms.GunaTextBox();
-            this.btnAddDriver = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI.WinForms.GunaTextBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAddDriver = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.grbAddBus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -175,42 +175,6 @@ namespace Bus_Mangement_system.SCR.Driver
             this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.txtPhone_Validating);
             // 
-            // btnAddDriver
-            // 
-            this.btnAddDriver.AnimationHoverSpeed = 0.07F;
-            this.btnAddDriver.AnimationSpeed = 0.03F;
-            this.btnAddDriver.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddDriver.BaseColor = System.Drawing.Color.Transparent;
-            this.btnAddDriver.BorderColor = System.Drawing.Color.Black;
-            this.btnAddDriver.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAddDriver.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAddDriver.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddDriver.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddDriver.CheckedImage")));
-            this.btnAddDriver.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAddDriver.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddDriver.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDriver.ForeColor = System.Drawing.Color.White;
-            this.btnAddDriver.Image = null;
-            this.btnAddDriver.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddDriver.LineBottom = 1;
-            this.btnAddDriver.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddDriver.Location = new System.Drawing.Point(59, 758);
-            this.btnAddDriver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAddDriver.Name = "btnAddDriver";
-            this.btnAddDriver.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnAddDriver.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddDriver.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddDriver.OnHoverImage = null;
-            this.btnAddDriver.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddDriver.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddDriver.Radius = 10;
-            this.btnAddDriver.Size = new System.Drawing.Size(461, 42);
-            this.btnAddDriver.TabIndex = 25;
-            this.btnAddDriver.Text = "Add";
-            this.btnAddDriver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddDriver.Click += new System.EventHandler(this.btnAddDriver_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -274,6 +238,47 @@ namespace Bus_Mangement_system.SCR.Driver
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // btnAddDriver
+            // 
+            this.btnAddDriver.AnimationHoverSpeed = 0.07F;
+            this.btnAddDriver.AnimationSpeed = 0.03F;
+            this.btnAddDriver.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddDriver.BaseColor = System.Drawing.Color.Transparent;
+            this.btnAddDriver.BorderColor = System.Drawing.Color.Black;
+            this.btnAddDriver.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnAddDriver.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnAddDriver.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddDriver.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddDriver.CheckedImage")));
+            this.btnAddDriver.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAddDriver.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddDriver.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDriver.ForeColor = System.Drawing.Color.White;
+            this.btnAddDriver.Image = null;
+            this.btnAddDriver.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddDriver.LineBottom = 1;
+            this.btnAddDriver.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnAddDriver.Location = new System.Drawing.Point(59, 758);
+            this.btnAddDriver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddDriver.Name = "btnAddDriver";
+            this.btnAddDriver.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btnAddDriver.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddDriver.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddDriver.OnHoverImage = null;
+            this.btnAddDriver.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnAddDriver.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddDriver.Radius = 10;
+            this.btnAddDriver.Size = new System.Drawing.Size(461, 42);
+            this.btnAddDriver.TabIndex = 25;
+            this.btnAddDriver.Text = "Add";
+            this.btnAddDriver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddDriver.Click += new System.EventHandler(this.btnAddDriver_Click);
+            // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -281,18 +286,13 @@ namespace Bus_Mangement_system.SCR.Driver
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_present_to_all_64_final;
+            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
             this.btnClose.Location = new System.Drawing.Point(6, 30);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(73, 62);
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // AddDriver
             // 
