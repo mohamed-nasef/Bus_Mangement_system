@@ -281,6 +281,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-menu-rounded-80-fina1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-file-80-final.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
