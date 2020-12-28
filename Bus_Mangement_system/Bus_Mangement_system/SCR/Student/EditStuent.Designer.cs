@@ -44,13 +44,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtLastName = new Guna.UI.WinForms.GunaTextBox();
+            this.btnEditStudent = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFirstName = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnEditStudent = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panelBody.SuspendLayout();
             this.grbEditStudent.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // grbEditStudent
             // 
+            this.grbEditStudent.Controls.Add(this.lblID);
             this.grbEditStudent.Controls.Add(this.lblPhone);
             this.grbEditStudent.Controls.Add(this.lblLastName);
             this.grbEditStudent.Controls.Add(this.lblFirstName);
@@ -287,6 +289,41 @@
             this.txtLastName.Size = new System.Drawing.Size(218, 32);
             this.txtLastName.TabIndex = 30;
             // 
+            // btnEditStudent
+            // 
+            this.btnEditStudent.AnimationHoverSpeed = 0.07F;
+            this.btnEditStudent.AnimationSpeed = 0.03F;
+            this.btnEditStudent.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditStudent.BaseColor = System.Drawing.Color.Transparent;
+            this.btnEditStudent.BorderColor = System.Drawing.Color.Black;
+            this.btnEditStudent.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnEditStudent.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnEditStudent.CheckedForeColor = System.Drawing.Color.White;
+            this.btnEditStudent.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEditStudent.CheckedImage")));
+            this.btnEditStudent.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnEditStudent.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEditStudent.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEditStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStudent.ForeColor = System.Drawing.Color.White;
+            this.btnEditStudent.Image = null;
+            this.btnEditStudent.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEditStudent.LineBottom = 1;
+            this.btnEditStudent.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnEditStudent.Location = new System.Drawing.Point(59, 758);
+            this.btnEditStudent.Name = "btnEditStudent";
+            this.btnEditStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btnEditStudent.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEditStudent.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEditStudent.OnHoverImage = null;
+            this.btnEditStudent.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnEditStudent.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEditStudent.Radius = 10;
+            this.btnEditStudent.Size = new System.Drawing.Size(461, 42);
+            this.btnEditStudent.TabIndex = 25;
+            this.btnEditStudent.Text = "Edit";
+            this.btnEditStudent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEditStudent.Click += new System.EventHandler(this.BtnEditStudent_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -371,40 +408,17 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // btnEditStudent
+            // lblID
             // 
-            this.btnEditStudent.AnimationHoverSpeed = 0.07F;
-            this.btnEditStudent.AnimationSpeed = 0.03F;
-            this.btnEditStudent.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditStudent.BaseColor = System.Drawing.Color.Transparent;
-            this.btnEditStudent.BorderColor = System.Drawing.Color.Black;
-            this.btnEditStudent.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnEditStudent.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnEditStudent.CheckedForeColor = System.Drawing.Color.White;
-            this.btnEditStudent.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEditStudent.CheckedImage")));
-            this.btnEditStudent.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnEditStudent.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEditStudent.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEditStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditStudent.ForeColor = System.Drawing.Color.White;
-            this.btnEditStudent.Image = null;
-            this.btnEditStudent.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditStudent.LineBottom = 1;
-            this.btnEditStudent.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnEditStudent.Location = new System.Drawing.Point(59, 758);
-            this.btnEditStudent.Name = "btnEditStudent";
-            this.btnEditStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnEditStudent.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEditStudent.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEditStudent.OnHoverImage = null;
-            this.btnEditStudent.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnEditStudent.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEditStudent.Radius = 10;
-            this.btnEditStudent.Size = new System.Drawing.Size(461, 42);
-            this.btnEditStudent.TabIndex = 25;
-            this.btnEditStudent.Text = "Edit";
-            this.btnEditStudent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnEditStudent.Click += new System.EventHandler(this.BtnEditStudent_Click);
+            this.lblID.AutoSize = true;
+            this.lblID.BackColor = System.Drawing.Color.Transparent;
+            this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.White;
+            this.lblID.Location = new System.Drawing.Point(186, 63);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(117, 30);
+            this.lblID.TabIndex = 44;
+            this.lblID.Text = "First Name";
             // 
             // EditStuent
             // 
@@ -452,5 +466,6 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaTextBox txtFirstName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblID;
     }
 }

@@ -97,8 +97,8 @@ namespace Bus_Mangement_system
             }
         }
 
-        private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        private  Form activeForm = null;
+        public  void openChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -148,8 +148,20 @@ namespace Bus_Mangement_system
         private void editStudent_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            SCR.Student.EditStuent esObj = new SCR.Student.EditStuent();
-            openChildForm(esObj);
+            //SCR.Student.EditStuent esObj = new SCR.Student.EditStuent();
+            //openChildForm(esObj);
+
+            SCR.Search sObj = new SCR.Search();
+            sObj.path = "Edit";
+            openChildForm(sObj);
+
+            //if (sObj.ID!=0)
+            //{
+            //    SCR.Student.EditStuent esObj = new SCR.Student.EditStuent();
+            //    esObj.ID = sObj.ID;
+            //    openChildForm(esObj);
+            //}
+
         }
 
         private void booking_Click(object sender, EventArgs e)

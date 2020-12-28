@@ -12,6 +12,7 @@ namespace Bus_Mangement_system.SCR.Student
 {
     public partial class EditStuent : Form
     {
+        public int ID { get; set; }
         string firstName, lastName, phone, address;
         int addressID = -1, universityID, bookingID;
         public EditStuent()
@@ -25,6 +26,7 @@ namespace Bus_Mangement_system.SCR.Student
             lblLastName.Visible = false;
             lblPhone.Visible = false;
 
+            lblID.Text = this.ID.ToString();
 
             //data from database
 

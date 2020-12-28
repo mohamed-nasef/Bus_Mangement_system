@@ -90,6 +90,12 @@
     <Compile Include="SCR\Driver\AddDriver.Designer.cs">
       <DependentUpon>AddDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
     <Compile Include="SCR\Student\AddStuent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Driver\AddDriver.resx">
       <DependentUpon>AddDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Student\AddStuent.resx">
       <DependentUpon>AddStuent.cs</DependentUpon>
