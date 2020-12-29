@@ -17,12 +17,15 @@ namespace Bus_Mangement_system.SCR.Driver
         {
             InitializeComponent();
         }
+
+        #region Close Form
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-       
+        #endregion
 
         #region TextBox Watermark
         private void txtName_TextChanged(object sender, EventArgs e)

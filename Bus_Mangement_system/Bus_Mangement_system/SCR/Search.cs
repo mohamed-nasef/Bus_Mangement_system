@@ -25,12 +25,15 @@ namespace Bus_Mangement_system.SCR
             InitializeComponent();
             ID = 0;
         }
+
+        #region Close Form
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-       
+        #endregion
 
         #region TextBox Watermark
         private void TxtStudentId_TextChanged(object sender, EventArgs e)
@@ -68,6 +71,21 @@ namespace Bus_Mangement_system.SCR
                             esObj.ID = this.ID;
                             this.Close();
                             esObj.ShowDialog();
+                        }
+                        else if (path == "Renewed Booking")
+                        {
+                            Student.RenewedBooking rbObj = new Student.RenewedBooking();
+                            rbObj.ID = this.ID;
+                            this.Close();
+                            rbObj.ShowDialog();
+                            
+                        }
+                        else if(path == "Report Student")
+                        {
+                            Student.ReportStudent rsObj = new Student.ReportStudent();
+                            rsObj.ID = this.ID;
+                            this.Close();
+                            rsObj.ShowDialog();
                         }
                     }
 

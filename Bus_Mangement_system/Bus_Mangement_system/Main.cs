@@ -157,13 +157,18 @@ namespace Bus_Mangement_system
         private void booking_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Search sObj = new SCR.Search();
+            sObj.path = "Renewed Booking";
+            openChildForm(sObj);
+            
         }
 
         private void reportStudent_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Search sObj = new SCR.Search();
+            sObj.path = "Report Student";
+            openChildForm(sObj);
         }
 
         #endregion

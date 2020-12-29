@@ -12,11 +12,12 @@ namespace Bus_Mangement_system.SCR.Student
 {
     public partial class EditStuent : Form
     {
+        #region Prop
         public int ID { get; set; }
         string firstName, lastName, phone, address;
         int addressID = -1, universityID, bookingID;
 
-
+        #endregion
 
         public EditStuent()
         {
@@ -47,11 +48,14 @@ namespace Bus_Mangement_system.SCR.Student
             cmbBookingType.SelectedIndex = bookingID;
         }
 
+        #region Close Form
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        #endregion
 
         #region TextBox Watermark
         private void TxtLastName_TextChanged(object sender, EventArgs e)
@@ -105,7 +109,7 @@ namespace Bus_Mangement_system.SCR.Student
 
         private void CmbBookingType_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbBookingType, "Please Select University", ref bookingID, e, errorProvider1);
+            Functions.validationcmb(cmbBookingType, "Please Select Type", ref bookingID, e, errorProvider1);
 
         }
         #endregion
