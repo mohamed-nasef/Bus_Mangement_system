@@ -30,46 +30,12 @@ namespace Bus_Mangement_system.SCR
             this.Close();
         }
 
-        #region Function
-
-        #region WaterMark
-
-        private void waterMark(Guna.UI.WinForms.GunaTextBox txt, Label lbl)
-        {
-            if (txt.Text == "")
-                lbl.Visible = true;
-            else
-                lbl.Visible = false;
-        }
-
-        #endregion
-
-        #region Validation
-        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt, string errorMessage, ref string str, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt.Text))
-            {
-
-                e.Cancel = true;
-                //txt.Focus();
-                errorProvider1.SetError(txt, errorMessage);
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txt, null);
-                str = txt.Text;
-            }
-        }
-        #endregion
-
-
-        #endregion
+       
 
         #region TextBox Watermark
         private void TxtStudentId_TextChanged(object sender, EventArgs e)
         {
-            waterMark(txtStudentId, lblStudentId);
+            Functions.waterMark(txtStudentId, lblStudentId);
         }
 
         #endregion
@@ -78,7 +44,7 @@ namespace Bus_Mangement_system.SCR
 
         private void TxtStudentId_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtStudentId, "Please Enter ID", ref strid, e);
+            Functions.validationTxt(txtStudentId, "Please Enter ID", ref strid, e,errorProvider1);
         }
 
         #endregion
