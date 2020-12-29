@@ -142,7 +142,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #endregion
 
-        #region Selected Bus
+        #region Selected Driver
 
         private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
         {

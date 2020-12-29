@@ -252,7 +252,8 @@ namespace Bus_Mangement_system
         private void reportDriver_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Driver.DriverReport drObj = new SCR.Driver.DriverReport();
+            openChildForm(drObj);
         }
         #endregion
 

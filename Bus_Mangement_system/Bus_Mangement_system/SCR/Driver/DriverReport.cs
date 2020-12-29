@@ -8,24 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bus_Mangement_system.SCR.Bus
+namespace Bus_Mangement_system.SCR.Driver
 {
-    public partial class BusReport : Form
+    public partial class DriverReport : Form
     {
-
         #region Prop
-        int busindex = -1;
-        string name, LicenseNumber, strCapacity = "0";
-        int capacity = 0, index = -1;
+        int driverindex = -1;
+        string name, phone, address, salary;
+        int iSalary = 0;
 
         #endregion
-
-        public BusReport()
+        public DriverReport()
         {
             InitializeComponent();
         }
 
-        private void BusReport_Load(object sender, EventArgs e)
+        private void DriverReport_Load(object sender, EventArgs e)
         {
             visible();
 
@@ -33,10 +31,12 @@ namespace Bus_Mangement_system.SCR.Bus
         }
 
         #region Close Form
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         #endregion
 
         #region Funcation
@@ -47,20 +47,22 @@ namespace Bus_Mangement_system.SCR.Bus
                 label1.Visible = false;
                 label2.Visible = false;
                 label4.Visible = false;
+                label5.Visible = false;
                 txtName.Visible = false;
-                txtLicenseNumber.Visible = false;
-                txtCapacity.Visible = false;
-              
+                txtAddress.Visible = false;
+                txtPhone.Visible = false;
+                txtSalary.Visible = false;
             }
             else
             {
                 label1.Visible = true;
                 label2.Visible = true;
                 label4.Visible = true;
+                label5.Visible = true;
                 txtName.Visible = true;
-                txtLicenseNumber.Visible = true;
-                txtCapacity.Visible = true;
-
+                txtAddress.Visible = true;
+                txtPhone.Visible = true;
+                txtSalary.Visible = true;
             }
 
         }
@@ -71,28 +73,29 @@ namespace Bus_Mangement_system.SCR.Bus
                 label1.Visible = true;
                 label2.Visible = true;
                 label4.Visible = true;
+                label5.Visible = true;
                 txtName.Visible = true;
-                txtLicenseNumber.Visible = true;
-                txtCapacity.Visible = true;
-
+                txtAddress.Visible = true;
+                txtPhone.Visible = true;
+                txtSalary.Visible = true;
             }
            
 
         }
-
         #endregion
 
-        #region Selected Bus
-        private void CmbBus_SelectedIndexChanged(object sender, EventArgs e)
+        #region Selected Driver
+
+        private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
             True();
-
             //db 
-            txtName.Text = "Bus 1";
-            txtLicenseNumber.Text = "123KFC";
-            txtCapacity.Text="32";
+            txtName.Text = "Driver";
+            txtPhone.Text = "01067893079";
+            txtAddress.Text = "aga";
+            txtSalary.Text = "5000";
         }
-        #endregion
 
+        #endregion
     }
 }

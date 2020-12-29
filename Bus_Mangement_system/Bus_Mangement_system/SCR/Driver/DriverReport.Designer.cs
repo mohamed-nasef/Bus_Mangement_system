@@ -1,6 +1,6 @@
 ﻿namespace Bus_Mangement_system.SCR.Driver
 {
-    partial class EditDriver
+    partial class DriverReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDriver));
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.grbEditDriver = new System.Windows.Forms.GroupBox();
+            this.grbDriverReport = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbDriver = new Guna.UI.WinForms.GunaComboBox();
-            this.lblSalary = new System.Windows.Forms.Label();
             this.txtSalary = new Guna.UI.WinForms.GunaTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
             this.txtAddress = new Guna.UI.WinForms.GunaTextBox();
-            this.lblName = new System.Windows.Forms.Label();
             this.txtPhone = new Guna.UI.WinForms.GunaTextBox();
-            this.btnEditDriver = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI.WinForms.GunaTextBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBody.SuspendLayout();
-            this.grbEditDriver.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.grbDriverReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDraft
@@ -65,7 +56,7 @@
             // 
             // panelBody
             // 
-            this.panelBody.Controls.Add(this.grbEditDriver);
+            this.panelBody.Controls.Add(this.grbDriverReport);
             this.panelBody.Controls.Add(this.btnClose);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(338, 0);
@@ -73,33 +64,28 @@
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
             this.panelBody.TabIndex = 1;
             // 
-            // grbEditDriver
+            // grbDriverReport
             // 
-            this.grbEditDriver.Controls.Add(this.label3);
-            this.grbEditDriver.Controls.Add(this.cmbDriver);
-            this.grbEditDriver.Controls.Add(this.lblSalary);
-            this.grbEditDriver.Controls.Add(this.txtSalary);
-            this.grbEditDriver.Controls.Add(this.label5);
-            this.grbEditDriver.Controls.Add(this.lblAddress);
-            this.grbEditDriver.Controls.Add(this.lblPhone);
-            this.grbEditDriver.Controls.Add(this.txtAddress);
-            this.grbEditDriver.Controls.Add(this.lblName);
-            this.grbEditDriver.Controls.Add(this.txtPhone);
-            this.grbEditDriver.Controls.Add(this.btnEditDriver);
-            this.grbEditDriver.Controls.Add(this.label4);
-            this.grbEditDriver.Controls.Add(this.label1);
-            this.grbEditDriver.Controls.Add(this.label2);
-            this.grbEditDriver.Controls.Add(this.txtName);
-            this.grbEditDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEditDriver.ForeColor = System.Drawing.Color.White;
-            this.grbEditDriver.Location = new System.Drawing.Point(368, 30);
-            this.grbEditDriver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbEditDriver.Name = "grbEditDriver";
-            this.grbEditDriver.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbEditDriver.Size = new System.Drawing.Size(576, 833);
-            this.grbEditDriver.TabIndex = 39;
-            this.grbEditDriver.TabStop = false;
-            this.grbEditDriver.Text = "Edit Driver";
+            this.grbDriverReport.Controls.Add(this.label3);
+            this.grbDriverReport.Controls.Add(this.cmbDriver);
+            this.grbDriverReport.Controls.Add(this.txtSalary);
+            this.grbDriverReport.Controls.Add(this.label5);
+            this.grbDriverReport.Controls.Add(this.txtAddress);
+            this.grbDriverReport.Controls.Add(this.txtPhone);
+            this.grbDriverReport.Controls.Add(this.label4);
+            this.grbDriverReport.Controls.Add(this.label1);
+            this.grbDriverReport.Controls.Add(this.label2);
+            this.grbDriverReport.Controls.Add(this.txtName);
+            this.grbDriverReport.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDriverReport.ForeColor = System.Drawing.Color.White;
+            this.grbDriverReport.Location = new System.Drawing.Point(368, 30);
+            this.grbDriverReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbDriverReport.Name = "grbDriverReport";
+            this.grbDriverReport.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbDriverReport.Size = new System.Drawing.Size(576, 833);
+            this.grbDriverReport.TabIndex = 41;
+            this.grbDriverReport.TabStop = false;
+            this.grbDriverReport.Text = "Driver Report";
             // 
             // label3
             // 
@@ -142,19 +128,6 @@
             this.cmbDriver.Size = new System.Drawing.Size(461, 31);
             this.cmbDriver.TabIndex = 52;
             this.cmbDriver.SelectedIndexChanged += new System.EventHandler(this.CmbDriver_SelectedIndexChanged);
-            this.cmbDriver.Validating += new System.ComponentModel.CancelEventHandler(this.CmbDriver_Validating);
-            // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.lblSalary.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.ForeColor = System.Drawing.Color.Gray;
-            this.lblSalary.Location = new System.Drawing.Point(69, 651);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(55, 17);
-            this.lblSalary.TabIndex = 50;
-            this.lblSalary.Text = "ex: 5000";
             // 
             // txtSalary
             // 
@@ -173,11 +146,10 @@
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.PasswordChar = '\0';
             this.txtSalary.Radius = 8;
+            this.txtSalary.ReadOnly = true;
             this.txtSalary.SelectedText = "";
             this.txtSalary.Size = new System.Drawing.Size(461, 32);
             this.txtSalary.TabIndex = 51;
-            this.txtSalary.TextChanged += new System.EventHandler(this.TxtSalary_TextChanged);
-            this.txtSalary.Validating += new System.ComponentModel.CancelEventHandler(this.TxtSalary_Validating);
             // 
             // label5
             // 
@@ -191,30 +163,6 @@
             this.label5.Size = new System.Drawing.Size(71, 30);
             this.label5.TabIndex = 49;
             this.label5.Text = "Salary";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.ForeColor = System.Drawing.Color.Gray;
-            this.lblAddress.Location = new System.Drawing.Point(69, 527);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(80, 17);
-            this.lblAddress.TabIndex = 46;
-            this.lblAddress.Text = "ex: Mansoura";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.lblPhone.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.ForeColor = System.Drawing.Color.Gray;
-            this.lblPhone.Location = new System.Drawing.Point(69, 403);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(99, 17);
-            this.lblPhone.TabIndex = 48;
-            this.lblPhone.Text = "ex: 01021782433";
             // 
             // txtAddress
             // 
@@ -233,23 +181,10 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.Radius = 8;
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(461, 32);
             this.txtAddress.TabIndex = 47;
-            this.txtAddress.TextChanged += new System.EventHandler(this.TxtAddress_TextChanged);
-            this.txtAddress.Validating += new System.ComponentModel.CancelEventHandler(this.TxtAddress_Validating);
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.lblName.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.Gray;
-            this.lblName.Location = new System.Drawing.Point(69, 279);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(83, 17);
-            this.lblName.TabIndex = 45;
-            this.lblName.Text = "ex: Mohamed";
             // 
             // txtPhone
             // 
@@ -269,47 +204,10 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.Radius = 8;
+            this.txtPhone.ReadOnly = true;
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(461, 32);
             this.txtPhone.TabIndex = 38;
-            this.txtPhone.TextChanged += new System.EventHandler(this.TxtPhone_TextChanged);
-            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPhone_Validating);
-            // 
-            // btnEditDriver
-            // 
-            this.btnEditDriver.AnimationHoverSpeed = 0.07F;
-            this.btnEditDriver.AnimationSpeed = 0.03F;
-            this.btnEditDriver.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditDriver.BaseColor = System.Drawing.Color.Transparent;
-            this.btnEditDriver.BorderColor = System.Drawing.Color.Black;
-            this.btnEditDriver.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnEditDriver.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnEditDriver.CheckedForeColor = System.Drawing.Color.White;
-            this.btnEditDriver.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEditDriver.CheckedImage")));
-            this.btnEditDriver.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnEditDriver.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEditDriver.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEditDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditDriver.ForeColor = System.Drawing.Color.White;
-            this.btnEditDriver.Image = null;
-            this.btnEditDriver.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditDriver.LineBottom = 1;
-            this.btnEditDriver.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnEditDriver.Location = new System.Drawing.Point(59, 758);
-            this.btnEditDriver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEditDriver.Name = "btnEditDriver";
-            this.btnEditDriver.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnEditDriver.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEditDriver.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEditDriver.OnHoverImage = null;
-            this.btnEditDriver.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnEditDriver.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEditDriver.Radius = 10;
-            this.btnEditDriver.Size = new System.Drawing.Size(461, 42);
-            this.btnEditDriver.TabIndex = 25;
-            this.btnEditDriver.Text = "Edit";
-            this.btnEditDriver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnEditDriver.Click += new System.EventHandler(this.BtnEditDriver_Click);
             // 
             // label4
             // 
@@ -368,11 +266,10 @@
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.Radius = 8;
+            this.txtName.ReadOnly = true;
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(461, 32);
             this.txtName.TabIndex = 26;
-            this.txtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtName_Validating);
             // 
             // btnClose
             // 
@@ -385,16 +282,11 @@
             this.btnClose.Location = new System.Drawing.Point(6, 30);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(73, 62);
-            this.btnClose.TabIndex = 38;
+            this.btnClose.TabIndex = 40;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // EditDriver
+            // DriverReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -405,13 +297,12 @@
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "EditDriver";
-            this.Text = "EditDriver";
-            this.Load += new System.EventHandler(this.EditDriver_Load);
+            this.Name = "DriverReport";
+            this.Text = "DriverReport";
+            this.Load += new System.EventHandler(this.DriverReport_Load);
             this.panelBody.ResumeLayout(false);
-            this.grbEditDriver.ResumeLayout(false);
-            this.grbEditDriver.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.grbDriverReport.ResumeLayout(false);
+            this.grbDriverReport.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -420,23 +311,17 @@
 
         private System.Windows.Forms.Panel panelDraft;
         private System.Windows.Forms.Panel panelBody;
-        private System.Windows.Forms.GroupBox grbEditDriver;
-        private System.Windows.Forms.Label lblSalary;
+        private System.Windows.Forms.GroupBox grbDriverReport;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI.WinForms.GunaComboBox cmbDriver;
         private Guna.UI.WinForms.GunaTextBox txtSalary;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblPhone;
         private Guna.UI.WinForms.GunaTextBox txtAddress;
-        private System.Windows.Forms.Label lblName;
         private Guna.UI.WinForms.GunaTextBox txtPhone;
-        private Guna.UI.WinForms.GunaAdvenceButton btnEditDriver;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaTextBox txtName;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaComboBox cmbDriver;
     }
 }

@@ -102,6 +102,12 @@
     <Compile Include="SCR\Driver\AddDriver.Designer.cs">
       <DependentUpon>AddDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Driver\DriverReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Driver\DriverReport.Designer.cs">
+      <DependentUpon>DriverReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="SCR\Driver\EditDriver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Driver\AddDriver.resx">
       <DependentUpon>AddDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Driver\DriverReport.resx">
+      <DependentUpon>DriverReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Driver\EditDriver.resx">
       <DependentUpon>EditDriver.cs</DependentUpon>
