@@ -1,6 +1,6 @@
 ﻿namespace Bus_Mangement_system.SCR.Student
 {
-    partial class EditStuent
+    partial class TestEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditStuent));
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panelDraft = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestEdit));
             this.panelBody = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.grbEditStudent = new System.Windows.Forms.GroupBox();
             this.lblID = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -51,35 +50,36 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtFirstName = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBody.SuspendLayout();
             this.grbEditStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // panelDraft
-            // 
-            this.panelDraft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelDraft.Location = new System.Drawing.Point(0, 0);
-            this.panelDraft.Name = "panelDraft";
-            this.panelDraft.Size = new System.Drawing.Size(338, 881);
-            this.panelDraft.TabIndex = 0;
-            this.panelDraft.Visible = false;
             // 
             // panelBody
             // 
             this.panelBody.Controls.Add(this.grbEditStudent);
             this.panelBody.Controls.Add(this.btnClose);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBody.Location = new System.Drawing.Point(338, 0);
+            this.panelBody.Location = new System.Drawing.Point(0, 0);
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
-            this.panelBody.TabIndex = 1;
+            this.panelBody.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
+            this.btnClose.Location = new System.Drawing.Point(50, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(73, 62);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // grbEditStudent
             // 
@@ -102,10 +102,10 @@
             this.grbEditStudent.Controls.Add(this.label3);
             this.grbEditStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEditStudent.ForeColor = System.Drawing.Color.White;
-            this.grbEditStudent.Location = new System.Drawing.Point(368, 30);
+            this.grbEditStudent.Location = new System.Drawing.Point(412, 0);
             this.grbEditStudent.Name = "grbEditStudent";
             this.grbEditStudent.Size = new System.Drawing.Size(576, 833);
-            this.grbEditStudent.TabIndex = 37;
+            this.grbEditStudent.TabIndex = 38;
             this.grbEditStudent.TabStop = false;
             this.grbEditStudent.Text = "Edit Student";
             // 
@@ -406,52 +406,40 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "University";
             // 
-            // btnClose
+            // errorProvider1
             // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
-            this.btnClose.Location = new System.Drawing.Point(6, 30);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(73, 62);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // EditStuent
+            // TestEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1491, 881);
+            this.ClientSize = new System.Drawing.Size(1153, 881);
             this.Controls.Add(this.panelBody);
-            this.Controls.Add(this.panelDraft);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "EditStuent";
+            this.Name = "TestEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "EditStuent";
-            this.Load += new System.EventHandler(this.EditStuent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.Text = "TestEdit";
+            this.Load += new System.EventHandler(this.TestEdit_Load);
             this.panelBody.ResumeLayout(false);
             this.grbEditStudent.ResumeLayout(false);
             this.grbEditStudent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Panel panelDraft;
         private System.Windows.Forms.Panel panelBody;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox grbEditStudent;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
@@ -468,6 +456,6 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaTextBox txtFirstName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -148,19 +148,12 @@ namespace Bus_Mangement_system
         private void editStudent_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //SCR.Student.EditStuent esObj = new SCR.Student.EditStuent();
-            //openChildForm(esObj);
-
             SCR.Search sObj = new SCR.Search();
             sObj.path = "Edit";
             openChildForm(sObj);
+            SCR.Student.TestEdit o = new SCR.Student.TestEdit();
+            o.MdiParent = this.MdiParent;
 
-            //if (sObj.ID!=0)
-            //{
-            //    SCR.Student.EditStuent esObj = new SCR.Student.EditStuent();
-            //    esObj.ID = sObj.ID;
-            //    openChildForm(esObj);
-            //}
 
         }
 

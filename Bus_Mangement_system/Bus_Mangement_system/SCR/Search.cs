@@ -89,20 +89,17 @@ namespace Bus_Mangement_system.SCR
                 bool isNumber = int.TryParse(strid, out id);
                 if (isNumber&&id!=0)
                 {
-                    this.ID = id;
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"ID: {ID}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                   
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"ID: {id}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        if (this.ID != 0)
+                        this.ID = id;
+                        if (path == "Edit")
                         {
-                            Main mObj = new Main();
-                            if (path=="Edit")
-                            {
-                                SCR.Student.EditStuent esObj = new SCR.Student.EditStuent();
-                                esObj.ID = this.ID;
-                                mObj.openChildForm(esObj);
-                            }
-                           
+                            Student.TestEdit esObj = new Student.TestEdit();
+                            esObj.ID = this.ID;
+                            this.Hide();
+                            esObj.Show();
                         }
                     }
 
@@ -115,6 +112,5 @@ namespace Bus_Mangement_system.SCR
             }
 
         }
-        
     }
 }

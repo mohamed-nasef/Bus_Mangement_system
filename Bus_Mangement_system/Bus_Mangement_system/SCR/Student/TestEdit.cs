@@ -10,19 +10,15 @@ using System.Windows.Forms;
 
 namespace Bus_Mangement_system.SCR.Student
 {
-    public partial class EditStuent : Form
+    public partial class TestEdit : Form
     {
         public int ID { get; set; }
         string firstName, lastName, phone, address;
         int addressID = -1, universityID, bookingID;
-        public EditStuent()
+
+        private void TestEdit_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(294, 30);
-        }
-        private void EditStuent_Load(object sender, EventArgs e)
-        {
+
             //waterwark
             lblFirstName.Visible = false;
             lblLastName.Visible = false;
@@ -37,18 +33,24 @@ namespace Bus_Mangement_system.SCR.Student
             phone = txtPhone.Text = "01067893079";
             addressID = 1;
             cmbAddress.SelectedIndex = addressID;
-            address= cmbAddress.Items[addressID].ToString();
+            address = cmbAddress.Items[addressID].ToString();
             universityID = 1;
             cmbUniversity.SelectedIndex = universityID;
             bookingID = 0;
             cmbBookingType.SelectedIndex = bookingID;
         }
 
+        public TestEdit()
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(294, 30);
+        }
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         #region Function
 
         #region WaterMark
@@ -160,7 +162,7 @@ namespace Bus_Mangement_system.SCR.Student
             {
 
                 DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {firstName} {lastName}\nphone:             {phone}\naddress:           {address}\nUniversity:        {cmbUniversity.Items[universityID]}\nBooking Type: {cmbBookingType.Items[bookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result==DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     //DB Commands
 
