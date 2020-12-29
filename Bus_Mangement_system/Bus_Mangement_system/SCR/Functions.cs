@@ -98,10 +98,10 @@ namespace Bus_Mangement_system.SCR
                     }
                 }
 
-                //StudentId
-                else if(txt.Name== "txtStudentId")
+                //StudentId SalaryDriver
+                else if (txt.Name== "txtStudentId"||txt.Name== "txtSalary")
                 {
-                    Regex r = new Regex(@"^[0-9]+$");
+                    Regex r = new Regex(@"^[1-9]{1}[0-9]+$");
                     if (!(r.IsMatch(txt.Text)))
                     {
                         e.Cancel = true;

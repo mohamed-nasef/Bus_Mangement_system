@@ -39,13 +39,16 @@ namespace Bus_Mangement_system.SCR.Driver
             this.txtAddress = new Guna.UI.WinForms.GunaTextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtPhone = new Guna.UI.WinForms.GunaTextBox();
+            this.btnAddDriver = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI.WinForms.GunaTextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAddDriver = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnClose = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblSalary = new System.Windows.Forms.Label();
+            this.txtSalary = new Guna.UI.WinForms.GunaTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.grbAddBus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -71,6 +74,9 @@ namespace Bus_Mangement_system.SCR.Driver
             // 
             // grbAddBus
             // 
+            this.grbAddBus.Controls.Add(this.lblSalary);
+            this.grbAddBus.Controls.Add(this.txtSalary);
+            this.grbAddBus.Controls.Add(this.label5);
             this.grbAddBus.Controls.Add(this.lblAddress);
             this.grbAddBus.Controls.Add(this.lblPhone);
             this.grbAddBus.Controls.Add(this.txtAddress);
@@ -175,6 +181,42 @@ namespace Bus_Mangement_system.SCR.Driver
             this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.txtPhone_Validating);
             // 
+            // btnAddDriver
+            // 
+            this.btnAddDriver.AnimationHoverSpeed = 0.07F;
+            this.btnAddDriver.AnimationSpeed = 0.03F;
+            this.btnAddDriver.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddDriver.BaseColor = System.Drawing.Color.Transparent;
+            this.btnAddDriver.BorderColor = System.Drawing.Color.Black;
+            this.btnAddDriver.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnAddDriver.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnAddDriver.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddDriver.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddDriver.CheckedImage")));
+            this.btnAddDriver.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAddDriver.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddDriver.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDriver.ForeColor = System.Drawing.Color.White;
+            this.btnAddDriver.Image = null;
+            this.btnAddDriver.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddDriver.LineBottom = 1;
+            this.btnAddDriver.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnAddDriver.Location = new System.Drawing.Point(59, 758);
+            this.btnAddDriver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddDriver.Name = "btnAddDriver";
+            this.btnAddDriver.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btnAddDriver.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddDriver.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddDriver.OnHoverImage = null;
+            this.btnAddDriver.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnAddDriver.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddDriver.Radius = 10;
+            this.btnAddDriver.Size = new System.Drawing.Size(461, 42);
+            this.btnAddDriver.TabIndex = 25;
+            this.btnAddDriver.Text = "Add";
+            this.btnAddDriver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddDriver.Click += new System.EventHandler(this.btnAddDriver_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -238,47 +280,6 @@ namespace Bus_Mangement_system.SCR.Driver
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // btnAddDriver
-            // 
-            this.btnAddDriver.AnimationHoverSpeed = 0.07F;
-            this.btnAddDriver.AnimationSpeed = 0.03F;
-            this.btnAddDriver.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddDriver.BaseColor = System.Drawing.Color.Transparent;
-            this.btnAddDriver.BorderColor = System.Drawing.Color.Black;
-            this.btnAddDriver.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAddDriver.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAddDriver.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddDriver.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddDriver.CheckedImage")));
-            this.btnAddDriver.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAddDriver.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddDriver.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddDriver.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDriver.ForeColor = System.Drawing.Color.White;
-            this.btnAddDriver.Image = null;
-            this.btnAddDriver.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddDriver.LineBottom = 1;
-            this.btnAddDriver.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddDriver.Location = new System.Drawing.Point(59, 758);
-            this.btnAddDriver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAddDriver.Name = "btnAddDriver";
-            this.btnAddDriver.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnAddDriver.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddDriver.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddDriver.OnHoverImage = null;
-            this.btnAddDriver.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddDriver.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddDriver.Radius = 10;
-            this.btnAddDriver.Size = new System.Drawing.Size(461, 42);
-            this.btnAddDriver.TabIndex = 25;
-            this.btnAddDriver.Text = "Add";
-            this.btnAddDriver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddDriver.Click += new System.EventHandler(this.btnAddDriver_Click);
-            // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -293,6 +294,59 @@ namespace Bus_Mangement_system.SCR.Driver
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // lblSalary
+            // 
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.lblSalary.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.ForeColor = System.Drawing.Color.Gray;
+            this.lblSalary.Location = new System.Drawing.Point(69, 651);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(55, 17);
+            this.lblSalary.TabIndex = 50;
+            this.lblSalary.Text = "ex: 5000";
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.BackColor = System.Drawing.Color.Transparent;
+            this.txtSalary.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtSalary.BorderColor = System.Drawing.Color.Silver;
+            this.txtSalary.BorderSize = 0;
+            this.txtSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSalary.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtSalary.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtSalary.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.txtSalary.Location = new System.Drawing.Point(63, 644);
+            this.txtSalary.MaxLength = 25;
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.PasswordChar = '\0';
+            this.txtSalary.Radius = 8;
+            this.txtSalary.SelectedText = "";
+            this.txtSalary.Size = new System.Drawing.Size(461, 32);
+            this.txtSalary.TabIndex = 51;
+            this.txtSalary.TextChanged += new System.EventHandler(this.TxtSalary_TextChanged);
+            this.txtSalary.Validating += new System.ComponentModel.CancelEventHandler(this.TxtSalary_Validating);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(58, 598);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 30);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Salary";
             // 
             // AddDriver
             // 
@@ -334,5 +388,8 @@ namespace Bus_Mangement_system.SCR.Driver
         private System.Windows.Forms.Label lblPhone;
         private Guna.UI.WinForms.GunaTextBox txtAddress;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblSalary;
+        private Guna.UI.WinForms.GunaTextBox txtSalary;
+        private System.Windows.Forms.Label label5;
     }
 }

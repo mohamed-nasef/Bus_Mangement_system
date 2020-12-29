@@ -12,13 +12,17 @@ namespace Bus_Mangement_system.SCR.Student
 {
     public partial class AddStuent : Form
     {
+        #region Prop
+
         string firstName,lastName, phone,address;
         int addressID = -1, universityID, bookingID;
+
+        #endregion
         public AddStuent()
         {
             InitializeComponent();
         }
-        //
+
         #region Close Form
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -132,6 +132,7 @@ namespace Bus_Mangement_system.SCR.Student
                     txtPhone.Clear();
                     cmbAddress.SelectedIndex = cmbBookingType.SelectedIndex = cmbUniversity.SelectedIndex = -1;
                     MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    this.Close();
                 }
 
             }

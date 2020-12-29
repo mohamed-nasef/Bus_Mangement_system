@@ -26,7 +26,6 @@ namespace Bus_Mangement_system.SCR.Student
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(294, 30);
         }
-
         private void ReportStudent_Load(object sender, EventArgs e)
         {
             lblID.Text = this.ID.ToString();

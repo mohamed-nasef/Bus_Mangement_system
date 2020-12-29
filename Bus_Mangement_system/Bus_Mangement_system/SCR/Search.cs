@@ -91,7 +91,7 @@ namespace Bus_Mangement_system.SCR
 
                 }
                 else 
-                    MetroFramework.MetroMessageBox.Show(this, "\n\nPlease enter number ", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MetroFramework.MetroMessageBox.Show(this, "\n\nPlease enter number ", "\nError", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

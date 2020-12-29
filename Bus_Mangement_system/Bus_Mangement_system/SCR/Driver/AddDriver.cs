@@ -12,7 +12,8 @@ namespace Bus_Mangement_system.SCR.Driver
 {
     public partial class AddDriver : Form
     {
-        string name, phone, address;
+        string name, phone, address,salary;
+        int iSalary=0;
         public AddDriver()
         {
             InitializeComponent();
@@ -43,6 +44,12 @@ namespace Bus_Mangement_system.SCR.Driver
             Functions.waterMark(txtAddress, lblAddress);
         }
 
+        private void TxtSalary_TextChanged(object sender, EventArgs e)
+        {
+            Functions.waterMark(txtSalary, lblSalary);
+
+        }
+
         #endregion
 
         #region TextBox Validation
@@ -51,6 +58,7 @@ namespace Bus_Mangement_system.SCR.Driver
         {
             Functions.validationTxt(txtName, "Please Enter Name", ref name, e, errorProvider1);
         }
+
 
         private void txtPhone_Validating(object sender, CancelEventArgs e)
         {
@@ -62,6 +70,12 @@ namespace Bus_Mangement_system.SCR.Driver
             Functions.validationTxt(txtAddress, "Please Enter Address", ref address, e, errorProvider1);
         }
 
+        private void TxtSalary_Validating(object sender, CancelEventArgs e)
+        {
+            Functions.validationTxt(txtSalary, "Please Enter Salary", ref salary, e, errorProvider1);
+
+        }
+
         #endregion
 
         #region Add Driver Button
@@ -71,18 +85,25 @@ namespace Bus_Mangement_system.SCR.Driver
             //Validition
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {name}\nphone:   {phone}\naddress: {address}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result==DialogResult.Yes)
+                bool isNumber = int.TryParse(salary, out iSalary);
+                if (isNumber && iSalary != 0)
                 {
-                    //DB Commands
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {name}\nsalary:    {iSalary}\nphone:   {phone}\naddress: {address}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        //DB Commands
 
-                    //clear
-                    txtName.Clear();
-                    txtPhone.Clear();
-                    txtAddress.Clear();
-                    MetroFramework.MetroMessageBox.Show(this, "\n\nDriver Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        //clear
+                        txtName.Clear();
+                        txtPhone.Clear();
+                        txtAddress.Clear();
+                        MetroFramework.MetroMessageBox.Show(this, "\n\nDriver Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    }
                 }
+                else
+                    MetroFramework.MetroMessageBox.Show(this, "\n\nPlease Enter a correct monthly salary ", "\nError", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
             }
         }
 

@@ -26,7 +26,6 @@ namespace Bus_Mangement_system.SCR.Student
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(294, 30);
         }
-
         private void RenewedBooking_Load(object sender, EventArgs e)
         {
           
@@ -47,10 +46,7 @@ namespace Bus_Mangement_system.SCR.Student
             university = txtUniversity.Text = "MET";
             //cmbUniversity.SelectedIndex = universityID;
 
-            bookingID = 0;
-            cmbBookingType.SelectedIndex = bookingID;
         }
-
 
         #region Close Form
 
@@ -74,6 +70,24 @@ namespace Bus_Mangement_system.SCR.Student
 
         private void BtnRenewedBooking_Click(object sender, EventArgs e)
         {
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"\nBooking Type: {cmbBookingType.Items[bookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    //DB Commands
+
+                    //clear
+                    txtFirstName.Clear();
+                    txtLastName.Clear();
+                    txtPhone.Clear();
+                    txtAddress.Clear();
+                    txtUniversity.Clear();
+                    cmbBookingType.SelectedIndex = -1;
+                    MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been RenewedBooking successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    this.Close();
+                }
+            }
 
         }
 
