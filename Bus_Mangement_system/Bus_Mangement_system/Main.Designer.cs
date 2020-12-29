@@ -1341,7 +1341,7 @@
             this.booking.Name = "booking";
             this.booking.Size = new System.Drawing.Size(184, 39);
             this.booking.TabIndex = 2;
-            this.booking.Text = "Renewed Booking";
+            this.booking.Text = "Renew Booking";
             this.booking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.booking.UseVisualStyleBackColor = false;
             this.booking.Click += new System.EventHandler(this.booking_Click);
@@ -1522,7 +1522,6 @@
         private System.Windows.Forms.Panel paneliconDriver;
         private System.Windows.Forms.Button btniconDriver;
         private System.Windows.Forms.Panel paneliconBus;
-        private System.Windows.Forms.Button btniconBus;
         private System.Windows.Forms.Panel paneliconStudent;
         private System.Windows.Forms.Button btniconStudent;
         private System.Windows.Forms.Panel paneliconMenu;
@@ -1561,5 +1560,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
+        public System.Windows.Forms.Button btniconBus;
     }
 }

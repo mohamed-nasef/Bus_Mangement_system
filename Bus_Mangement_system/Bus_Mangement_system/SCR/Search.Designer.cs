@@ -192,6 +192,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Search";
             this.Text = "Search";
+            this.Load += new System.EventHandler(this.Search_Load);
             this.panelBody.ResumeLayout(false);
             this.grbSearch.ResumeLayout(false);
             this.grbSearch.PerformLayout();

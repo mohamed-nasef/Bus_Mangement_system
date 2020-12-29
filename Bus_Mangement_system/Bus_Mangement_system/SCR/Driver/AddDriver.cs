@@ -97,6 +97,7 @@ namespace Bus_Mangement_system.SCR.Driver
                         txtName.Clear();
                         txtPhone.Clear();
                         txtAddress.Clear();
+                        txtSalary.Clear();
                         MetroFramework.MetroMessageBox.Show(this, "\n\nDriver Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     }
                 }

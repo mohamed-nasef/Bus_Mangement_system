@@ -25,6 +25,19 @@ namespace Bus_Mangement_system.SCR
             InitializeComponent();
             ID = 0;
         }
+        private void Search_Load(object sender, EventArgs e)
+        {
+            if (path == "Renew Booking")
+            {
+                grbSearch.Text = $"Search to {path}";
+            }
+            else if (path== "Report")
+            {
+                grbSearch.Text = $"Search to Student {path}";
+            }
+            else
+                grbSearch.Text = $"Search to {path} Student";
+        }
 
         #region Close Form
 
@@ -72,7 +85,7 @@ namespace Bus_Mangement_system.SCR
                             this.Close();
                             esObj.ShowDialog();
                         }
-                        else if (path == "Renewed Booking")
+                        else if (path == "Renew Booking")
                         {
                             Student.RenewedBooking rbObj = new Student.RenewedBooking();
                             rbObj.ID = this.ID;
@@ -80,7 +93,7 @@ namespace Bus_Mangement_system.SCR
                             rbObj.ShowDialog();
                             
                         }
-                        else if(path == "Report Student")
+                        else if(path == "Report")
                         {
                             Student.ReportStudent rsObj = new Student.ReportStudent();
                             rsObj.ID = this.ID;
@@ -98,5 +111,6 @@ namespace Bus_Mangement_system.SCR
         }
         #endregion
 
+       
     }
 }

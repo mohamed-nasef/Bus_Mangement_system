@@ -12,8 +12,13 @@ namespace Bus_Mangement_system.SCR.Bus
 {
     public partial class AddBus : Form
     {
+
+        #region Prop
+
         string name, LicenseNumber , strCapacity="0";
         int capacity=0,index=-1;
+
+        #endregion
         public AddBus()
         {
             InitializeComponent();

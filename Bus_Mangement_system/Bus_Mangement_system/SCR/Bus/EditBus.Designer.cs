@@ -28,22 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBus));
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
             this.grbEditBus = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbBus = new Guna.UI.WinForms.GunaComboBox();
             this.lblLicenseNumber = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.cmbCapacity = new Guna.UI.WinForms.GunaComboBox();
             this.txtLicenseNumber = new Guna.UI.WinForms.GunaTextBox();
-            this.btnAddBus = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnEditBus = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI.WinForms.GunaTextBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBody.SuspendLayout();
             this.grbEditBus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDraft
@@ -66,11 +71,13 @@
             // 
             // grbEditBus
             // 
+            this.grbEditBus.Controls.Add(this.label3);
+            this.grbEditBus.Controls.Add(this.cmbBus);
             this.grbEditBus.Controls.Add(this.lblLicenseNumber);
             this.grbEditBus.Controls.Add(this.lblName);
             this.grbEditBus.Controls.Add(this.cmbCapacity);
             this.grbEditBus.Controls.Add(this.txtLicenseNumber);
-            this.grbEditBus.Controls.Add(this.btnAddBus);
+            this.grbEditBus.Controls.Add(this.btnEditBus);
             this.grbEditBus.Controls.Add(this.label4);
             this.grbEditBus.Controls.Add(this.label1);
             this.grbEditBus.Controls.Add(this.label2);
@@ -85,6 +92,49 @@
             this.grbEditBus.TabIndex = 38;
             this.grbEditBus.TabStop = false;
             this.grbEditBus.Text = "Edit Bus";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(58, 102);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 30);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Choose Bus";
+            // 
+            // cmbBus
+            // 
+            this.cmbBus.BackColor = System.Drawing.Color.Transparent;
+            this.cmbBus.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.cmbBus.BorderColor = System.Drawing.Color.Black;
+            this.cmbBus.BorderSize = 0;
+            this.cmbBus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbBus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.cmbBus.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.cmbBus.FormattingEnabled = true;
+            this.cmbBus.Items.AddRange(new object[] {
+            "Bus 1",
+            "Bus 2",
+            "Bus 3",
+            "Bus 4"});
+            this.cmbBus.Location = new System.Drawing.Point(63, 148);
+            this.cmbBus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbBus.MaxDropDownItems = 10;
+            this.cmbBus.Name = "cmbBus";
+            this.cmbBus.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmbBus.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbBus.Radius = 8;
+            this.cmbBus.Size = new System.Drawing.Size(461, 31);
+            this.cmbBus.TabIndex = 47;
+            this.cmbBus.SelectedIndexChanged += new System.EventHandler(this.CmbBus_SelectedIndexChanged);
+            this.cmbBus.Validating += new System.ComponentModel.CancelEventHandler(this.CmbBus_Validating);
             // 
             // lblLicenseNumber
             // 
@@ -135,6 +185,7 @@
             this.cmbCapacity.Radius = 8;
             this.cmbCapacity.Size = new System.Drawing.Size(461, 31);
             this.cmbCapacity.TabIndex = 44;
+            this.cmbCapacity.Validating += new System.ComponentModel.CancelEventHandler(this.CmbCapacity_Validating);
             // 
             // txtLicenseNumber
             // 
@@ -157,41 +208,44 @@
             this.txtLicenseNumber.SelectedText = "";
             this.txtLicenseNumber.Size = new System.Drawing.Size(461, 32);
             this.txtLicenseNumber.TabIndex = 38;
+            this.txtLicenseNumber.TextChanged += new System.EventHandler(this.TxtLicenseNumber_TextChanged);
+            this.txtLicenseNumber.Validating += new System.ComponentModel.CancelEventHandler(this.TxtLicenseNumber_Validating);
             // 
-            // btnAddBus
+            // btnEditBus
             // 
-            this.btnAddBus.AnimationHoverSpeed = 0.07F;
-            this.btnAddBus.AnimationSpeed = 0.03F;
-            this.btnAddBus.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddBus.BaseColor = System.Drawing.Color.Transparent;
-            this.btnAddBus.BorderColor = System.Drawing.Color.Black;
-            this.btnAddBus.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAddBus.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAddBus.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddBus.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddBus.CheckedImage")));
-            this.btnAddBus.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAddBus.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddBus.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddBus.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBus.ForeColor = System.Drawing.Color.White;
-            this.btnAddBus.Image = null;
-            this.btnAddBus.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddBus.LineBottom = 1;
-            this.btnAddBus.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddBus.Location = new System.Drawing.Point(59, 758);
-            this.btnAddBus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAddBus.Name = "btnAddBus";
-            this.btnAddBus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnAddBus.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddBus.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddBus.OnHoverImage = null;
-            this.btnAddBus.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddBus.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddBus.Radius = 10;
-            this.btnAddBus.Size = new System.Drawing.Size(461, 42);
-            this.btnAddBus.TabIndex = 25;
-            this.btnAddBus.Text = "Edit";
-            this.btnAddBus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEditBus.AnimationHoverSpeed = 0.07F;
+            this.btnEditBus.AnimationSpeed = 0.03F;
+            this.btnEditBus.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditBus.BaseColor = System.Drawing.Color.Transparent;
+            this.btnEditBus.BorderColor = System.Drawing.Color.Black;
+            this.btnEditBus.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnEditBus.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnEditBus.CheckedForeColor = System.Drawing.Color.White;
+            this.btnEditBus.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEditBus.CheckedImage")));
+            this.btnEditBus.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnEditBus.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEditBus.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEditBus.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditBus.ForeColor = System.Drawing.Color.White;
+            this.btnEditBus.Image = null;
+            this.btnEditBus.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEditBus.LineBottom = 1;
+            this.btnEditBus.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnEditBus.Location = new System.Drawing.Point(59, 758);
+            this.btnEditBus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEditBus.Name = "btnEditBus";
+            this.btnEditBus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btnEditBus.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEditBus.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEditBus.OnHoverImage = null;
+            this.btnEditBus.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnEditBus.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEditBus.Radius = 10;
+            this.btnEditBus.Size = new System.Drawing.Size(461, 42);
+            this.btnEditBus.TabIndex = 25;
+            this.btnEditBus.Text = "Edit";
+            this.btnEditBus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEditBus.Click += new System.EventHandler(this.BtnEditBus_Click);
             // 
             // label4
             // 
@@ -253,6 +307,8 @@
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(461, 32);
             this.txtName.TabIndex = 26;
+            this.txtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
+            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtName_Validating);
             // 
             // btnClose
             // 
@@ -268,6 +324,12 @@
             this.btnClose.Size = new System.Drawing.Size(73, 62);
             this.btnClose.TabIndex = 37;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // EditBus
             // 
@@ -282,9 +344,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditBus";
             this.Text = "EditBus";
+            this.Load += new System.EventHandler(this.EditBus_Load);
             this.panelBody.ResumeLayout(false);
             this.grbEditBus.ResumeLayout(false);
             this.grbEditBus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,11 +362,14 @@
         private System.Windows.Forms.Label lblName;
         private Guna.UI.WinForms.GunaComboBox cmbCapacity;
         private Guna.UI.WinForms.GunaTextBox txtLicenseNumber;
-        private Guna.UI.WinForms.GunaAdvenceButton btnAddBus;
+        private Guna.UI.WinForms.GunaAdvenceButton btnEditBus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaTextBox txtName;
         private System.Windows.Forms.Button btnClose;
+        private Guna.UI.WinForms.GunaComboBox cmbBus;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

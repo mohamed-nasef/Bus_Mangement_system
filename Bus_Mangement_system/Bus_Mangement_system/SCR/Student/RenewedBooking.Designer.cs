@@ -91,7 +91,7 @@
             this.grbRenewedBooking.Size = new System.Drawing.Size(576, 833);
             this.grbRenewedBooking.TabIndex = 38;
             this.grbRenewedBooking.TabStop = false;
-            this.grbRenewedBooking.Text = "Renewed Booking";
+            this.grbRenewedBooking.Text = "Renew Booking";
             // 
             // txtUniversity
             // 
@@ -274,7 +274,7 @@
             this.btnRenewedBooking.Radius = 10;
             this.btnRenewedBooking.Size = new System.Drawing.Size(461, 42);
             this.btnRenewedBooking.TabIndex = 25;
-            this.btnRenewedBooking.Text = "Renewed";
+            this.btnRenewedBooking.Text = "Renew";
             this.btnRenewedBooking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRenewedBooking.Click += new System.EventHandler(this.BtnRenewedBooking_Click);
             // 

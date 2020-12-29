@@ -158,7 +158,7 @@ namespace Bus_Mangement_system
         {
             customizeDesign();
             SCR.Search sObj = new SCR.Search();
-            sObj.path = "Renewed Booking";
+            sObj.path = "Renew Booking";
             openChildForm(sObj);
             
         }
@@ -167,7 +167,7 @@ namespace Bus_Mangement_system
         {
             customizeDesign();
             SCR.Search sObj = new SCR.Search();
-            sObj.path = "Report Student";
+            sObj.path = "Report";
             openChildForm(sObj);
         }
 
@@ -188,6 +188,7 @@ namespace Bus_Mangement_system
         private void addBus_Click(object sender, EventArgs e)
         {
             customizeDesign();
+            //btniconBus.BackColor = ColorTranslator.FromHtml("#5487BE");
             SCR.Bus.AddBus abObj = new SCR.Bus.AddBus();
             openChildForm(abObj);
 
