@@ -211,7 +211,8 @@ namespace Bus_Mangement_system
         private void reportBus_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Bus.BusReport rbObj = new SCR.Bus.BusReport();
+            openChildForm(rbObj);
         }
         #endregion
 

@@ -112,6 +112,7 @@ namespace Bus_Mangement_system.SCR.Bus
             txtLicenseNumber.Visible = true;
             cmbCapacity.Visible = true;
 
+
             //db 
             txtName.Text = "Bus 1";
             txtLicenseNumber.Text = "123KFC";

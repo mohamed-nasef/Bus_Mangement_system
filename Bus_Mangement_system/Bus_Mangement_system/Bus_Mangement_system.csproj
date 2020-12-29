@@ -84,6 +84,12 @@
     <Compile Include="SCR\Bus\AddBus.Designer.cs">
       <DependentUpon>AddBus.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Bus\BusReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Bus\BusReport.Designer.cs">
+      <DependentUpon>BusReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="SCR\Bus\EditBus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Bus\AddBus.resx">
       <DependentUpon>AddBus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Bus\BusReport.resx">
+      <DependentUpon>BusReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Bus\EditBus.resx">
       <DependentUpon>EditBus.cs</DependentUpon>
