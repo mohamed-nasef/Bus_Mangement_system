@@ -96,7 +96,8 @@ namespace Bus_Mangement_system.SCR
                         this.ID = id;
                         if (path == "Edit")
                         {
-                            Student.TestEdit esObj = new Student.TestEdit();
+                            //Student.TestEdit esObj = new Student.TestEdit();
+                            Student.EditStuent esObj = new Student.EditStuent();
                             esObj.ID = this.ID;
                             this.Hide();
                             esObj.Show();
