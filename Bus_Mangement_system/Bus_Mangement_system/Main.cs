@@ -214,6 +214,7 @@ namespace Bus_Mangement_system
             SCR.Bus.BusReport rbObj = new SCR.Bus.BusReport();
             openChildForm(rbObj);
         }
+
         #endregion
 
         #region Driver
@@ -231,13 +232,15 @@ namespace Bus_Mangement_system
             customizeDesign();
             SCR.Driver.AddDriver adObj = new SCR.Driver.AddDriver();
             openChildForm(adObj);
-            //new form
+            
         }
 
         private void editDriver_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Driver.EditDriver edObj = new SCR.Driver.EditDriver();
+            openChildForm(edObj);
+           
         }
 
         private void salary_Click(object sender, EventArgs e)

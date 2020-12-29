@@ -26,20 +26,42 @@ namespace Bus_Mangement_system.SCR.Bus
         }
         private void EditBus_Load(object sender, EventArgs e)
         {
-            label1.Visible = false;
-            label2.Visible = false;
-            label4.Visible = false;
-            lblName.Visible = false;
-            lblLicenseNumber.Visible = false;
-            txtName.Visible = false;
-            txtLicenseNumber.Visible = false;
-            cmbCapacity.Visible = false;
+            visible();
+
 
             //db 3alashan ageb mn goah
 
 
         }
 
+        #region Funcation
+        private void visible()
+        {
+            if (label1.Visible == true)
+            {
+                label1.Visible = false;
+                label2.Visible = false;
+                label4.Visible = false;
+                lblName.Visible = false;
+                lblLicenseNumber.Visible = false;
+                txtName.Visible = false;
+                txtLicenseNumber.Visible = false;
+                cmbCapacity.Visible = false;
+            }
+            else
+            {
+                label1.Visible = true;
+                label2.Visible = true;
+                label4.Visible = true;
+                lblName.Visible = true;
+                lblLicenseNumber.Visible = true;
+                txtName.Visible = true;
+                txtLicenseNumber.Visible = true;
+                cmbCapacity.Visible = true;
+            }
+
+        }
+        #endregion
 
         #region Close Form
         private void BtnClose_Click(object sender, EventArgs e)
@@ -103,19 +125,13 @@ namespace Bus_Mangement_system.SCR.Bus
         #region Selected Bus
         private void CmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label1.Visible = true;
-            label2.Visible = true;
-            label4.Visible = true;
-            lblName.Visible = true;
-            lblLicenseNumber.Visible = true;
-            txtName.Visible = true;
-            txtLicenseNumber.Visible = true;
-            cmbCapacity.Visible = true;
+
+            visible();
 
 
             //db 
-            txtName.Text = "Bus 1";
-            txtLicenseNumber.Text = "123KFC";
+            txtName.Text = "Bus";
+            txtLicenseNumber.Text = "123kfc";
             cmbCapacity.SelectedIndex = 1;
 
         }
@@ -138,7 +154,7 @@ namespace Bus_Mangement_system.SCR.Bus
                     //clear
                     txtName.Clear();
                     txtLicenseNumber.Clear();
-                    cmbCapacity.SelectedIndex = -1;
+                    cmbCapacity.SelectedIndex = cmbBus.SelectedIndex = -1;
                     MetroFramework.MetroMessageBox.Show(this, "\n\nBus has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
             }

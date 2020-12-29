@@ -83,7 +83,7 @@ namespace Bus_Mangement_system.SCR
                 //LicenseNumber
                 else if (txt.Name== "txtLicenseNumber")
                 {
-                    Regex r = new Regex(@"^[0-9]{1,4}[a-z]{1,4}$");
+                    Regex r = new Regex(@"^[0-9]{1,4}[a-zA-Z]{1,4}$");
                     if (!(r.IsMatch(txt.Text)))
                     {
                         e.Cancel = true;

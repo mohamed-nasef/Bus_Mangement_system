@@ -12,8 +12,13 @@ namespace Bus_Mangement_system.SCR.Driver
 {
     public partial class AddDriver : Form
     {
+
+        #region Prop
         string name, phone, address,salary;
         int iSalary=0;
+
+        #endregion
+
         public AddDriver()
         {
             InitializeComponent();
