@@ -84,6 +84,12 @@
     <Compile Include="SCR\Bus\AddBus.Designer.cs">
       <DependentUpon>AddBus.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Bus\EditBus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Bus\EditBus.Designer.cs">
+      <DependentUpon>EditBus.cs</DependentUpon>
+    </Compile>
     <Compile Include="SCR\Driver\AddDriver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Bus\AddBus.resx">
       <DependentUpon>AddBus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Bus\EditBus.resx">
+      <DependentUpon>EditBus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Driver\AddDriver.resx">
       <DependentUpon>AddDriver.cs</DependentUpon>

@@ -190,13 +190,15 @@ namespace Bus_Mangement_system
             customizeDesign();
             SCR.Bus.AddBus abObj = new SCR.Bus.AddBus();
             openChildForm(abObj);
-            //new form
+
         }
 
         private void editBus_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Bus.EditBus ebObj = new SCR.Bus.EditBus();
+            openChildForm(ebObj);
+
         }
 
         private void Fees_Click(object sender, EventArgs e)
