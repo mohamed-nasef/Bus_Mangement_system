@@ -205,7 +205,8 @@ namespace Bus_Mangement_system
         private void Fees_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Bus.AddFees afObj = new SCR.Bus.AddFees();
+            openChildForm(afObj);
         }
 
         private void reportBus_Click(object sender, EventArgs e)

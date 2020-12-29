@@ -134,6 +134,24 @@ namespace Bus_Mangement_system.SCR
                     }
                 }
 
+                //Money
+                else if (txt.Name == "txtMoney")
+                {
+                    Regex r = new Regex(@"^[1-9]{1}[0-9]*$");
+                    if (!(r.IsMatch(txt.Text)))
+                    {
+                        e.Cancel = true;
+                        //txt.Focus();
+                        errorProvider.SetError(txt, errorMessage);
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider.SetError(txt, null);
+                        str = txt.Text;
+                    }
+                }
+
                 //Name
                 else
                 {
