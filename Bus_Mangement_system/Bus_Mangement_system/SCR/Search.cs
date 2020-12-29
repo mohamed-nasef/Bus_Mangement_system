@@ -12,10 +12,14 @@ namespace Bus_Mangement_system.SCR
 {
     public partial class Search : Form
     {
+
+        #region prop
         public int ID { get; set; }
         public string path { get; set; }
         string strid ="";
         int id;
+        #endregion
+
         public Search()
         {
             InitializeComponent();
@@ -25,7 +29,6 @@ namespace Bus_Mangement_system.SCR
         {
             this.Close();
         }
-
 
         #region Function
 
@@ -80,8 +83,7 @@ namespace Bus_Mangement_system.SCR
 
         #endregion
 
-
-
+        #region Search Student Button
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
@@ -96,11 +98,10 @@ namespace Bus_Mangement_system.SCR
                         this.ID = id;
                         if (path == "Edit")
                         {
-                            //Student.TestEdit esObj = new Student.TestEdit();
                             Student.EditStuent esObj = new Student.EditStuent();
                             esObj.ID = this.ID;
-                            this.Hide();
-                            esObj.Show();
+                            this.Close();
+                            esObj.ShowDialog();
                         }
                     }
 
@@ -113,5 +114,7 @@ namespace Bus_Mangement_system.SCR
             }
 
         }
+        #endregion
+
     }
 }

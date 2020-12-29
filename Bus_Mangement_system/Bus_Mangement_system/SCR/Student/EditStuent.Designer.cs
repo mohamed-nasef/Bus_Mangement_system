@@ -171,6 +171,7 @@
             this.cmbBookingType.Radius = 8;
             this.cmbBookingType.Size = new System.Drawing.Size(461, 31);
             this.cmbBookingType.TabIndex = 41;
+            this.cmbBookingType.Validating += new System.ComponentModel.CancelEventHandler(this.CmbBookingType_Validating);
             // 
             // cmbUniversity
             // 
@@ -197,6 +198,7 @@
             this.cmbUniversity.Radius = 8;
             this.cmbUniversity.Size = new System.Drawing.Size(461, 31);
             this.cmbUniversity.TabIndex = 40;
+            this.cmbUniversity.Validating += new System.ComponentModel.CancelEventHandler(this.CmbUniversity_Validating);
             // 
             // cmbAddress
             // 
@@ -225,6 +227,7 @@
             this.cmbAddress.Radius = 8;
             this.cmbAddress.Size = new System.Drawing.Size(461, 31);
             this.cmbAddress.TabIndex = 39;
+            this.cmbAddress.Validating += new System.ComponentModel.CancelEventHandler(this.CmbAddress_Validating);
             // 
             // txtPhone
             // 
@@ -246,6 +249,8 @@
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(461, 32);
             this.txtPhone.TabIndex = 38;
+            this.txtPhone.TextChanged += new System.EventHandler(this.TxtPhone_TextChanged);
+            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPhone_Validating);
             // 
             // label5
             // 
@@ -291,6 +296,8 @@
             this.txtLastName.SelectedText = "";
             this.txtLastName.Size = new System.Drawing.Size(218, 32);
             this.txtLastName.TabIndex = 30;
+            this.txtLastName.TextChanged += new System.EventHandler(this.TxtLastName_TextChanged);
+            this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtLastName_Validating);
             // 
             // btnEditStudent
             // 
@@ -383,6 +390,8 @@
             this.txtFirstName.SelectedText = "";
             this.txtFirstName.Size = new System.Drawing.Size(218, 32);
             this.txtFirstName.TabIndex = 26;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.TxtFirstName_TextChanged);
+            this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtFirstName_Validating);
             // 
             // label3
             // 

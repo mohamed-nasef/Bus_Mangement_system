@@ -15,6 +15,9 @@ namespace Bus_Mangement_system.SCR.Student
         public int ID { get; set; }
         string firstName, lastName, phone, address;
         int addressID = -1, universityID, bookingID;
+
+
+
         public EditStuent()
         {
             InitializeComponent();
@@ -64,7 +67,7 @@ namespace Bus_Mangement_system.SCR.Student
         #endregion
 
         #region Validation
-        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt, string errorMessage, Label lbl, ref string str, CancelEventArgs e)
+        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt, string errorMessage, ref string str, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txt.Text))
             {
@@ -99,57 +102,60 @@ namespace Bus_Mangement_system.SCR.Student
         #endregion
 
         #region TextBox Watermark
-        private void txtFirstName_TextChanged(object sender, EventArgs e)
-        {
-            waterMark(txtFirstName, lblFirstName);
-        }
-
-        private void txtLastName_TextChanged(object sender, EventArgs e)
+        private void TxtLastName_TextChanged(object sender, EventArgs e)
         {
             waterMark(txtLastName, lblLastName);
+
         }
 
-        private void txtPhone_TextChanged(object sender, EventArgs e)
+        private void TxtPhone_TextChanged(object sender, EventArgs e)
         {
             waterMark(txtPhone, lblPhone);
+
         }
 
+        private void TxtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            waterMark(txtFirstName, lblFirstName);
+
+        }
         #endregion
 
         #region TextBox Validation
-        private void txtFirstName_Validating(object sender, CancelEventArgs e)
+        private void TxtFirstName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtFirstName, "Please Enter First Name", lblFirstName, ref firstName, e);
+            validationTxt(txtFirstName, "Please Enter First Name", ref firstName, e);
         }
-        private void txtLastName_Validating(object sender, CancelEventArgs e)
+        private void TxtLastName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtLastName, "Please Enter Last Name", lblLastName, ref lastName, e);
+            validationTxt(txtLastName, "Please Enter Last Name", ref lastName, e);
         }
+        private void TxtPhone_Validating(object sender, CancelEventArgs e)
+        {
+            validationTxt(txtPhone, "Please Enter Phone Number", ref phone, e);
 
-        private void txtPhone_Validating(object sender, CancelEventArgs e)
-        {
-            validationTxt(txtPhone, "Please Enter Phone Number", lblPhone, ref phone, e);
         }
-
         #endregion
 
         #region ComboBox Validation
-        private void cmbAddress_Validating(object sender, CancelEventArgs e)
+        private void CmbAddress_Validating(object sender, CancelEventArgs e)
         {
             validationcmb(cmbAddress, "Please Select Address", ref addressID, e);
             if (addressID != -1)
                 address = cmbAddress.Items[addressID].ToString();
         }
-        private void cmbUniversity_Validating(object sender, CancelEventArgs e)
+
+        private void CmbUniversity_Validating(object sender, CancelEventArgs e)
         {
             validationcmb(cmbUniversity, "Please Select University", ref universityID, e);
+
         }
 
-        private void cmbBookingType_Validating(object sender, CancelEventArgs e)
+        private void CmbBookingType_Validating(object sender, CancelEventArgs e)
         {
             validationcmb(cmbBookingType, "Please Select University", ref bookingID, e);
-        }
 
+        }
         #endregion
 
         #region Edit Student Button

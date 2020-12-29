@@ -40,7 +40,7 @@ namespace Bus_Mangement_system.SCR.Student
         #endregion
 
         #region Validation
-        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt ,string errorMessage,Label lbl,ref string str ,CancelEventArgs e)
+        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt ,string errorMessage,ref string str ,CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txt.Text))
             {
@@ -95,16 +95,16 @@ namespace Bus_Mangement_system.SCR.Student
         #region TextBox Validation
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtFirstName, "Please Enter First Name",lblFirstName,ref firstName,e);
+            validationTxt(txtFirstName, "Please Enter First Name",ref firstName,e);
         }
         private void txtLastName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtLastName, "Please Enter Last Name",lblLastName, ref lastName, e);
+            validationTxt(txtLastName, "Please Enter Last Name", ref lastName, e);
         }
 
         private void txtPhone_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtPhone, "Please Enter Phone Number",lblPhone, ref phone, e);
+            validationTxt(txtPhone, "Please Enter Phone Number", ref phone, e);
         }
 
         #endregion

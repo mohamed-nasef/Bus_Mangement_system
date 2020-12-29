@@ -151,9 +151,6 @@ namespace Bus_Mangement_system
             SCR.Search sObj = new SCR.Search();
             sObj.path = "Edit";
             openChildForm(sObj);
-            SCR.Student.TestEdit o = new SCR.Student.TestEdit();
-            o.MdiParent = this.MdiParent;
-
 
         }
 
