@@ -52,71 +52,23 @@ namespace Bus_Mangement_system.SCR.Student
             this.Close();
         }
 
-        #region Function
-
-        #region WaterMark
-
-        private void waterMark(Guna.UI.WinForms.GunaTextBox txt, Label lbl)
-        {
-            if (txt.Text == "")
-                lbl.Visible = true;
-            else
-                lbl.Visible = false;
-        }
-
-        #endregion
-
-        #region Validation
-        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt, string errorMessage, ref string str, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt.Text))
-            {
-
-                e.Cancel = true;
-                //txt.Focus();
-                errorProvider1.SetError(txt, errorMessage);
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txt, null);
-                str = txt.Text;
-            }
-        }
-        private void validationcmb(Guna.UI.WinForms.GunaComboBox cmb, string errorMessage, ref int index, CancelEventArgs e)
-        {
-            if (cmb.SelectedItem == null)
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(cmb, errorMessage);
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(cmb, null);
-                index = cmb.SelectedIndex;
-            }
-        }
-        #endregion
-
-        #endregion
 
         #region TextBox Watermark
         private void TxtLastName_TextChanged(object sender, EventArgs e)
         {
-            waterMark(txtLastName, lblLastName);
+            Functions.waterMark(txtLastName, lblLastName);
 
         }
 
         private void TxtPhone_TextChanged(object sender, EventArgs e)
         {
-            waterMark(txtPhone, lblPhone);
+            Functions.waterMark(txtPhone, lblPhone);
 
         }
 
         private void TxtFirstName_TextChanged(object sender, EventArgs e)
         {
-            waterMark(txtFirstName, lblFirstName);
+            Functions.waterMark(txtFirstName, lblFirstName);
 
         }
         #endregion
@@ -124,15 +76,15 @@ namespace Bus_Mangement_system.SCR.Student
         #region TextBox Validation
         private void TxtFirstName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtFirstName, "Please Enter First Name", ref firstName, e);
+            Functions.validationTxt(txtFirstName, "Please Enter First Name", ref firstName, e, errorProvider1);
         }
         private void TxtLastName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtLastName, "Please Enter Last Name", ref lastName, e);
+            Functions.validationTxt(txtLastName, "Please Enter Last Name", ref lastName, e, errorProvider1);
         }
         private void TxtPhone_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtPhone, "Please Enter Phone Number", ref phone, e);
+            Functions.validationTxt(txtPhone, "Please Enter Phone Number", ref phone, e, errorProvider1);
 
         }
         #endregion
@@ -140,20 +92,20 @@ namespace Bus_Mangement_system.SCR.Student
         #region ComboBox Validation
         private void CmbAddress_Validating(object sender, CancelEventArgs e)
         {
-            validationcmb(cmbAddress, "Please Select Address", ref addressID, e);
+            Functions.validationcmb(cmbAddress, "Please Select Address", ref addressID, e, errorProvider1);
             if (addressID != -1)
                 address = cmbAddress.Items[addressID].ToString();
         }
 
         private void CmbUniversity_Validating(object sender, CancelEventArgs e)
         {
-            validationcmb(cmbUniversity, "Please Select University", ref universityID, e);
+            Functions.validationcmb(cmbUniversity, "Please Select University", ref universityID, e, errorProvider1);
 
         }
 
         private void CmbBookingType_Validating(object sender, CancelEventArgs e)
         {
-            validationcmb(cmbBookingType, "Please Select University", ref bookingID, e);
+            Functions.validationcmb(cmbBookingType, "Please Select University", ref bookingID, e, errorProvider1);
 
         }
         #endregion

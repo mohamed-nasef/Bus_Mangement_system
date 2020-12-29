@@ -24,64 +24,17 @@ namespace Bus_Mangement_system.SCR.Bus
             this.Close();
         }
 
-        #region Function
-
-        #region WaterMark
-
-        private void waterMark(Guna.UI.WinForms.GunaTextBox txt, Label lbl)
-        {
-            if (txt.Text == "")
-                lbl.Visible = true;
-            else
-                lbl.Visible = false;
-        }
-
-        #endregion
-
-        # region Validation
-        private void validationTxt(Guna.UI.WinForms.GunaTextBox txt, string errorMessage, ref string str, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt.Text))
-            {
-                e.Cancel = true;
-                //txt.Focus();
-                errorProvider1.SetError(txt, errorMessage);
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txt, null);
-                str = txt.Text;
-            }
-        }
-
-        private void validationcmb(Guna.UI.WinForms.GunaComboBox cmb, string errorMessage, ref int index, CancelEventArgs e)
-        {
-            if (cmb.SelectedItem == null)
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(cmb, errorMessage);
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(cmb, null);
-                index = cmb.SelectedIndex;
-            }
-        }
-        #endregion
-
-        #endregion
+      
 
         #region TextBox Watermark
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            waterMark(txtName, lblName);
+            Functions.waterMark(txtName, lblName);
         }
 
         private void txtLicenseNumber_TextChanged(object sender, EventArgs e)
         {
-            waterMark(txtLicenseNumber, lblLicenseNumber);
+            Functions.waterMark(txtLicenseNumber, lblLicenseNumber);
         }
 
         #endregion
@@ -89,12 +42,12 @@ namespace Bus_Mangement_system.SCR.Bus
         #region TextBox Validation
         private void txtName_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtName, "Please Enter Name", ref name, e);
+            Functions.validationTxt(txtName, "Please Enter Name", ref name, e, errorProvider1);
         }
 
         private void txtLicenseNumber_Validating(object sender, CancelEventArgs e)
         {
-            validationTxt(txtLicenseNumber, "Please Enter License Number", ref LicenseNumber, e);
+            Functions.validationTxt(txtLicenseNumber, "Please Enter License Number", ref LicenseNumber, e, errorProvider1);
         }
 
         #endregion
@@ -103,7 +56,7 @@ namespace Bus_Mangement_system.SCR.Bus
         private void cmbCapacity_Validating(object sender, CancelEventArgs e)
         {
 
-            validationcmb(cmbCapacity, "Please Select Number", ref index, e);
+            Functions.validationcmb(cmbCapacity, "Please Select Number", ref index, e, errorProvider1);
             if (index != -1)
             {
                 strCapacity = cmbCapacity.Items[index].ToString();

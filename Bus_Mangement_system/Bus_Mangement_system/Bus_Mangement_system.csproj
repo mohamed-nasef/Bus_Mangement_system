@@ -90,6 +90,7 @@
     <Compile Include="SCR\Driver\AddDriver.Designer.cs">
       <DependentUpon>AddDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Functions.cs" />
     <Compile Include="SCR\Search.cs">
       <SubType>Form</SubType>
     </Compile>
