@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,6 +36,8 @@ namespace Bus_Mangement_system.SCR
             }
             else
             {
+
+                //Phone
                 if (txt.Name == "txtPhone"&& txt.Text.Length == 11)
                 {
                     bool isnumber = false;
@@ -76,11 +79,44 @@ namespace Bus_Mangement_system.SCR
                     //txt.Focus();
                     errorProvider.SetError(txt, errorMessage);
                 }
+
+                //LicenseNumber
+                else if (txt.Name== "txtLicenseNumber")
+                {
+                    Regex r = new Regex(@"^[1-9]{1,4}[a-z]{1,4}$");
+                    if (!(r.IsMatch(txt.Text)))
+                    {
+                        e.Cancel = true;
+                        //txt.Focus();
+                        errorProvider.SetError(txt, errorMessage);
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider.SetError(txt, null);
+                        str = txt.Text;
+                    }
+                }
+
+                //Name
                 else
                 {
-                    e.Cancel = false;
-                    errorProvider.SetError(txt, null);
-                    str = txt.Text;
+                    Regex r = new Regex(@"^[a-zA-Z]{3,25}$");
+                    if (!(r.IsMatch(txt.Text)))
+                    {
+                        e.Cancel = true;
+                        //txt.Focus();
+                        errorProvider.SetError(txt, errorMessage);
+
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider.SetError(txt, null);
+                        str = txt.Text;
+
+                    }
+
                 }
                
             }
