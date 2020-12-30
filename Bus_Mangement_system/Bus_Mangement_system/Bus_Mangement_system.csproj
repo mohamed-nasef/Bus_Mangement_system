@@ -369,6 +369,24 @@
   <ItemGroup>
     <None Include="Resources\icons8-gas-station-30.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-engine-oil-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wrench-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-renew-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clean-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-card-payment-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-money-bag-301.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
