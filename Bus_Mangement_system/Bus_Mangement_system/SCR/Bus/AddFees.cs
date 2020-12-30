@@ -60,7 +60,15 @@ namespace Bus_Mangement_system.SCR.Bus
                 txtMoney.Visible = false;
                 btnClear.Visible = false;
                 btnAssign.Visible = false;
-                grbDetails.Visible = false;
+                label4.Visible = false;
+                btnTotal.Visible = false;
+                btnPeriodicMaintenance.Visible = false;
+                btnSolar.Visible = false;
+                btnChangeOil.Visible = false;
+                btnBusWash.Visible = false;
+                btnLicenseRenewal.Visible = false;
+                btnOther.Visible = false;
+                
 
             }
             else
@@ -72,10 +80,10 @@ namespace Bus_Mangement_system.SCR.Bus
                 txtMoney.Visible = true;
                 btnClear.Visible = true;
                 btnAssign.Visible = true;
-                grbDetails.Visible = true;
             }
 
         }
+
         private void show()
         {
             if (label2.Visible == false)
@@ -92,12 +100,21 @@ namespace Bus_Mangement_system.SCR.Bus
           
         }
 
-        private void grbShow()
+        private void Buttons()
         {
-            if (btnClear.Visible==true)
+
+            if (label4.Visible == false)
             {
-                grbDetails.Visible = true;
+                label4.Visible = true;
+                btnTotal.Visible = true;
+                btnPeriodicMaintenance.Visible = true;
+                btnSolar.Visible = true;
+                btnChangeOil.Visible = true;
+                btnBusWash.Visible = true;
+                btnLicenseRenewal.Visible = true;
+                btnOther.Visible = true;
             }
+
         }
 
         protected bool valid()
@@ -195,16 +212,19 @@ namespace Bus_Mangement_system.SCR.Bus
         {
             if (valid())
             {
-                grbShow();
+                Buttons();
                 string selected = this.cmbFeesType.GetItemText(this.cmbFeesType.SelectedItem);
                 if (selected == "Other")
                 {
                     if (iOther != 0)
                         total -= iOther;
                     strOther = money;
-                    lblOther.Text = $"Other= {strOther}";
+                    btnOther.Text = $"$ {strOther}";
                     int.TryParse(strOther, out iOther);
                     total += iOther;
+                    btnOther.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
+                    btnOther.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
+
 
                 }
                 else if (selected == "License Renewal")
@@ -212,9 +232,12 @@ namespace Bus_Mangement_system.SCR.Bus
                     if (iLicenseRenewal != 0)
                         total -= iLicenseRenewal;
                     strLicenseRenewal = money;
-                    lblLicenseRenewal.Text = $"License Renewal= {strLicenseRenewal}";
+                    btnLicenseRenewal.Text = $"$ {strLicenseRenewal}";
                     int.TryParse(strLicenseRenewal, out iLicenseRenewal);
                     total += iLicenseRenewal;
+                    btnLicenseRenewal.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
+                    btnLicenseRenewal.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
+
 
                 }
                 else if (selected == "Bus Wash")
@@ -222,18 +245,24 @@ namespace Bus_Mangement_system.SCR.Bus
                     if (iBusWash != 0)
                         total -= iBusWash;
                     strBusWash = money;
-                    lblBusWash.Text = $"Bus Wash= {strBusWash}";
+                    btnBusWash.Text = $"$ {strBusWash}";
                     int.TryParse(strBusWash, out iBusWash);
                     total += iBusWash;
+                    btnBusWash.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
+                    btnBusWash.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
+
                 }
                 else if (selected == "Change Oil")
                 {
                     if (iChangeOil != 0)
                         total -= iChangeOil;
                     strChangeOil = money;
-                    lblChangeOil.Text = $"Change Oil= {strChangeOil}";
+                    btnChangeOil.Text = $"$ {strChangeOil}";
                     int.TryParse(strChangeOil, out iChangeOil);
                     total += iChangeOil;
+                    btnChangeOil.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
+                    btnChangeOil.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
+
 
                 }
                 else if (selected == "Solar")
@@ -241,9 +270,12 @@ namespace Bus_Mangement_system.SCR.Bus
                     if (iSolar != 0)
                         total -= iSolar;
                     strSolar = money;
-                    lblSolar.Text = $"Solar= {strSolar}";
+                    btnSolar.Text = $"$ {strSolar}";
                     int.TryParse(strSolar, out iSolar);
                     total += iSolar;
+                    btnSolar.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
+                    btnSolar.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
+
 
                 }
                 else if (selected == "Periodic Maintenance")
@@ -251,13 +283,16 @@ namespace Bus_Mangement_system.SCR.Bus
                     if (iPeriodicMaintenance != 0)
                         total -= iPeriodicMaintenance;
                     strPeriodicMaintenance = money;
-                    lblPeriodicMaintenance.Text = $"Periodic Maintenance= {strPeriodicMaintenance}";
+                    btnPeriodicMaintenance.Text = $"$ {strPeriodicMaintenance}";
                     int.TryParse(strPeriodicMaintenance, out iPeriodicMaintenance);
                     total += iPeriodicMaintenance;
+                    btnPeriodicMaintenance.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
+                    btnPeriodicMaintenance.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
+
 
                 }
 
-                lblTotal.Text = $"Total = {total}";
+                btnTotal.Text = $"$ {total}";
             }
 
         }
@@ -277,49 +312,50 @@ namespace Bus_Mangement_system.SCR.Bus
                 {
                     if (selected == "Other")
                     {
-                        lblOther.Text = $"Other=";
+                        btnOther.Text = $"$ 0";
                         total -= iOther;
                         iOther = 0;
+                        btnOther.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
 
                     }
                     else if (selected == "License Renewal")
                     {
-                        lblLicenseRenewal.Text = $"License Renewal=";
+                        btnLicenseRenewal.Text = $"$ 0";
                         total -= iLicenseRenewal;
                         iLicenseRenewal = 0;
-
+                        btnLicenseRenewal.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
 
                     }
                     else if (selected == "Bus Wash")
                     {
-                        lblBusWash.Text = $"Bus Wash=";
+                        btnBusWash.Text = $"$ 0";
                         total -= iBusWash;
                         iBusWash = 0;
-
+                        btnBusWash.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
                     }
                     else if (selected == "Change Oil")
                     {
-                        lblChangeOil.Text = $"Change Oil=";
+                        btnChangeOil.Text = $"$ 0";
                         total -= iChangeOil;
                         iChangeOil = 0;
-
+                        btnChangeOil.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
                     }
                     else if (selected == "Solar")
                     {
-                        lblChangeOil.Text = $"Change Oil=";
+                        btnChangeOil.Text = $"$ 0";
                         total -= iSolar;
                         iSolar = 0;
-
+                        btnSolar.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
                     }
                     else if (selected == "Periodic Maintenance")
                     {
-                        lblPeriodicMaintenance.Text = $"Periodic Maintenance=";
+                        btnPeriodicMaintenance.Text = $"$ 0";
                         total -= iPeriodicMaintenance;
                         iPeriodicMaintenance = 0;
-
+                        btnPeriodicMaintenance.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
                     }
 
-                    lblTotal.Text = $"Total = {total}";
+                    btnTotal.Text = $"$ {total}";
                 }
                 txtMoney.Clear();
 
@@ -349,12 +385,12 @@ namespace Bus_Mangement_system.SCR.Bus
                     visible();
                     cmbBus.SelectedIndex = -1;
                     cmbFeesType.SelectedIndex = -1;
-                    lblOther.Text = $"Other=";
-                    lblLicenseRenewal.Text = $"License Renewal=";
-                    lblBusWash.Text = $"Bus Wash=";
-                    lblChangeOil.Text = $"Change Oil=";
-                    lblPeriodicMaintenance.Text = $"Periodic Maintenance=";
-                    lblTotal.Text = $"Total =";
+                    btnOther.Text = $"$ 0";
+                    btnLicenseRenewal.Text = $"$ 0";
+                    btnBusWash.Text = $"$ 0";
+                    btnChangeOil.Text = $"$ 0";
+                    btnPeriodicMaintenance.Text = $"$ 0";
+                    btnTotal.Text = $"$ 0";
                     iOther = iLicenseRenewal = iBusWash = iChangeOil = iPeriodicMaintenance = total = 0;
                     money =strOther=strLicenseRenewal=strBusWash=strChangeOil=strPeriodicMaintenance= "";
                     BusID = FeesTypeID =- 1;
