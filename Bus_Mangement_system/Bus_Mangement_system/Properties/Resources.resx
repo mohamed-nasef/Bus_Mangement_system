@@ -127,11 +127,8 @@
   <data name="icons8-back-64-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-back-64-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_arrow_pointing_left_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8_arrow_pointing_left_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_back_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_back_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-check-dollar-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-check-dollar-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-student-male-80-final1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-student-male-80-final1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +139,8 @@
   <data name="icons8-recieve-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-recieve-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-receive-euro-80-final1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-receive-euro-80-final1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-student-male-80-concept" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-student-male-80-concept.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-student-male-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-student-male-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,14 +157,14 @@
   <data name="icons8_services_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\icons8_services_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-check-dollar-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-check-dollar-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_delete_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_delete_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_money_bag_100px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_money_bag_100px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_cash_in_hand_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_cash_in_hand_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-report-file-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-report-file-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_student_male_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\icons8_student_male_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,17 +181,20 @@
   <data name="icons8-delete-dollar-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-delete-dollar-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_money_bag_100px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_money_bag_100px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-add-dollar-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-add-dollar-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-combi-ticket-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-combi-ticket-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_arrow_pointing_left_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8_arrow_pointing_left_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_ticket_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\icons8_ticket_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_cash_in_hand_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_cash_in_hand_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-back-64-final1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-back-64-final1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,11 +220,14 @@
   <data name="icons8-menu-rounded-80-fina1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-menu-rounded-80-fina1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_driver_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8_driver_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_menu_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\icons8_menu_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_driver_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8_driver_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-receive-euro-80-final1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-receive-euro-80-final1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-bus-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-bus-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,8 +247,8 @@
   <data name="icons8-playlist-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-playlist-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-student-male-80-concept" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-student-male-80-concept.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_back_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_back_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-present-to-all-64-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-present-to-all-64-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,7 +256,7 @@
   <data name="icons8-profit-report-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-profit-report-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-report-file-80-final" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-report-file-80-final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-gas-station-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-gas-station-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

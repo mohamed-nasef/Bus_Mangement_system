@@ -13,6 +13,7 @@ namespace Bus_Mangement_system.SCR.Bus
 {
     public partial class AddFees : Form
     {
+
         #region Prop
 
         int BusID, FeesTypeID;
@@ -171,6 +172,19 @@ namespace Bus_Mangement_system.SCR.Bus
         {
             //select FeesType id 
             FeesTypeID = cmbFeesType.SelectedIndex + 1;//sdasdasdasdasdasdasdasdfdsafadf
+            string selected = this.cmbFeesType.GetItemText(this.cmbFeesType.SelectedItem);
+            if (selected == "Other")
+                txtMoney.Text = iOther.ToString();
+            else if (selected == "License Renewal")
+                txtMoney.Text = iLicenseRenewal.ToString();
+            else if (selected == "Bus Wash")
+                txtMoney.Text = iBusWash.ToString();
+            else if (selected == "Change Oil")
+                txtMoney.Text = iChangeOil.ToString();
+            else if (selected == "Solar")
+                txtMoney.Text = iSolar.ToString();
+            else if (selected == "Periodic Maintenance")
+                txtMoney.Text = iPeriodicMaintenance.ToString();
 
         }
 
@@ -192,7 +206,6 @@ namespace Bus_Mangement_system.SCR.Bus
                     int.TryParse(strOther, out iOther);
                     total += iOther;
 
-                    //db go to db and insert BusId and  FeesType and money and date to table Fees
                 }
                 else if (selected == "License Renewal")
                 {
@@ -203,7 +216,6 @@ namespace Bus_Mangement_system.SCR.Bus
                     int.TryParse(strLicenseRenewal, out iLicenseRenewal);
                     total += iLicenseRenewal;
 
-                    //db go to db and insert BusId and  FeesType and money and date to table Fees
                 }
                 else if (selected == "Bus Wash")
                 {
@@ -213,7 +225,6 @@ namespace Bus_Mangement_system.SCR.Bus
                     lblBusWash.Text = $"Bus Wash= {strBusWash}";
                     int.TryParse(strBusWash, out iBusWash);
                     total += iBusWash;
-                    //db go to db and insert BusId and  FeesType and money and date to table Fees
                 }
                 else if (selected == "Change Oil")
                 {
@@ -224,7 +235,6 @@ namespace Bus_Mangement_system.SCR.Bus
                     int.TryParse(strChangeOil, out iChangeOil);
                     total += iChangeOil;
 
-                    //db go to db and insert BusId and  FeesType and money and date to table Fees
                 }
                 else if (selected == "Solar")
                 {
@@ -235,7 +245,6 @@ namespace Bus_Mangement_system.SCR.Bus
                     int.TryParse(strSolar, out iSolar);
                     total += iSolar;
 
-                    //db go to db and insert BusId and  FeesType and money and date to table Fees
                 }
                 else if (selected == "Periodic Maintenance")
                 {
@@ -246,11 +255,9 @@ namespace Bus_Mangement_system.SCR.Bus
                     int.TryParse(strPeriodicMaintenance, out iPeriodicMaintenance);
                     total += iPeriodicMaintenance;
 
-                    //db go to db and insert BusId and  FeesType and money and date to table Fees
                 }
 
                 lblTotal.Text = $"Total = {total}";
-                txtMoney.Clear();
             }
 
         }
@@ -274,7 +281,6 @@ namespace Bus_Mangement_system.SCR.Bus
                         total -= iOther;
                         iOther = 0;
 
-                        //db go to db and delet the row by the date and the BusId and  FeesType from table Fees
                     }
                     else if (selected == "License Renewal")
                     {
@@ -282,7 +288,6 @@ namespace Bus_Mangement_system.SCR.Bus
                         total -= iLicenseRenewal;
                         iLicenseRenewal = 0;
 
-                        //db go to db and delet the row by the date and the BusId and  FeesType from table Fees
 
                     }
                     else if (selected == "Bus Wash")
@@ -291,7 +296,6 @@ namespace Bus_Mangement_system.SCR.Bus
                         total -= iBusWash;
                         iBusWash = 0;
 
-                        //db go to db and delet the row by the date and the BusId and  FeesType from table Fees
                     }
                     else if (selected == "Change Oil")
                     {
@@ -299,15 +303,13 @@ namespace Bus_Mangement_system.SCR.Bus
                         total -= iChangeOil;
                         iChangeOil = 0;
 
-                        //db go to db and delet the row by the date and the BusId and  FeesType from table Fees
                     }
                     else if (selected == "Solar")
                     {
-                        lblSolar.Text = $"Solar=";
+                        lblChangeOil.Text = $"Change Oil=";
                         total -= iSolar;
                         iSolar = 0;
 
-                        //db go to db and delet the row by the date and the BusId and  FeesType from table Fees
                     }
                     else if (selected == "Periodic Maintenance")
                     {
@@ -315,7 +317,6 @@ namespace Bus_Mangement_system.SCR.Bus
                         total -= iPeriodicMaintenance;
                         iPeriodicMaintenance = 0;
 
-                        //db go to db and delet the row by the date and the BusId and  FeesType from table Fees
                     }
 
                     lblTotal.Text = $"Total = {total}";
@@ -340,10 +341,25 @@ namespace Bus_Mangement_system.SCR.Bus
                 DialogResult result = MetroFramework.MetroMessageBox.Show(this, $" ", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    //DB Commands
+                    //DB Commands insert into table Bus Fees with BusId and type fees in multible row with date
+
+
 
                     //clear
+                    visible();
+                    cmbBus.SelectedIndex = -1;
+                    cmbFeesType.SelectedIndex = -1;
+                    lblOther.Text = $"Other=";
+                    lblLicenseRenewal.Text = $"License Renewal=";
+                    lblBusWash.Text = $"Bus Wash=";
+                    lblChangeOil.Text = $"Change Oil=";
+                    lblPeriodicMaintenance.Text = $"Periodic Maintenance=";
+                    lblTotal.Text = $"Total =";
+                    iOther = iLicenseRenewal = iBusWash = iChangeOil = iPeriodicMaintenance = total = 0;
+                    money =strOther=strLicenseRenewal=strBusWash=strChangeOil=strPeriodicMaintenance= "";
+                    BusID = FeesTypeID =- 1;
 
+                    visible();
                     MetroFramework.MetroMessageBox.Show(this, "\n\nBus Fees Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
             }
