@@ -98,7 +98,7 @@ namespace Bus_Mangement_system.SCR
                     }
                 }
 
-                //StudentId SalaryDriver
+                //StudentId
                 else if (txt.Name== "txtStudentId")
                 {
                     Regex r = new Regex(@"^[1-9]{1}[0-9]*$");
