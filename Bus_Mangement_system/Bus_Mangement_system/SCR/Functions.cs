@@ -99,7 +99,7 @@ namespace Bus_Mangement_system.SCR
                 }
 
                 //StudentId
-                else if (txt.Name== "txtStudentId")
+                else if (txt.Name== "txtStudentId" || txt.Name== "txtOneWay" || txt.Name== "txtRoundTrip")
                 {
                     Regex r = new Regex(@"^[1-9]{1}[0-9]*$");
                     if (!(r.IsMatch(txt.Text)))

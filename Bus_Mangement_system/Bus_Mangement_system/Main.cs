@@ -273,7 +273,8 @@ namespace Bus_Mangement_system
         private void addDailyTicket_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Daily_Ticket.AddDailyTickets adtObj = new SCR.Daily_Ticket.AddDailyTickets();
+            openChildForm(adtObj);
         }
         #endregion
 
