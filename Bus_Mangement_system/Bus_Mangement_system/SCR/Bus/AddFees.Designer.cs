@@ -136,7 +136,6 @@ namespace Bus_Mangement_system.SCR.Bus
             this.txtMoney.Size = new System.Drawing.Size(218, 32);
             this.txtMoney.TabIndex = 51;
             this.txtMoney.TextChanged += new System.EventHandler(this.TxtMoney_TextChanged);
-            this.txtMoney.Validating += new System.ComponentModel.CancelEventHandler(this.TxtMoney_Validating);
             // 
             // label1
             // 

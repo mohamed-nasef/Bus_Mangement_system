@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -98,6 +99,26 @@ namespace Bus_Mangement_system.SCR.Bus
             }
         }
 
+        protected bool valid()
+        {
+            bool flag = false;
+            Regex r = new Regex(@"^[1-9]{1}[0-9]*$");
+            if (!(r.IsMatch(txtMoney.Text)))
+            {
+                
+                errorProvider1.SetError(txtMoney, "Enter valid money like $ 500");
+                flag = false;
+            }
+            else
+            {
+                
+                errorProvider1.SetError(txtMoney, null);
+                money = txtMoney.Text;
+                flag = true;
+            }
+            return flag;
+        }
+
         #endregion
 
         #region Watermark
@@ -110,10 +131,10 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #region TextBox Validation
 
-        private void TxtMoney_Validating(object sender, CancelEventArgs e)
-        {
-            Functions.validationTxt(txtMoney, "Enter valid money like $ 500", ref money, e, errorProvider1);
-        }
+        //private void TxtMoney_Validating(object sender, CancelEventArgs e)
+        //{
+        //    Functions.validationTxt(txtMoney, "Enter valid money like $ 500", ref money, e, errorProvider1);
+        //}
 
         #endregion
 
@@ -158,9 +179,7 @@ namespace Bus_Mangement_system.SCR.Bus
         #region Assign Button
         private void BtnAssign_Click(object sender, EventArgs e)
         {
-            int iMoney;
-            bool isNumber = int.TryParse(money, out iMoney);
-            if (isNumber)
+            if (valid())
             {
                 grbShow();
                 string selected = this.cmbFeesType.GetItemText(this.cmbFeesType.SelectedItem);
