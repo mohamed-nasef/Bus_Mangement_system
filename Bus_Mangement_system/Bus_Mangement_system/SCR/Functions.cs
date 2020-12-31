@@ -132,6 +132,7 @@ namespace Bus_Mangement_system.SCR
                         errorProvider.SetError(txt, null);
                         str = txt.Text;
                     }
+
                 }
 
                 //Money

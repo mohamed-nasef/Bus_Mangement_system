@@ -142,6 +142,7 @@
             this.cmbDriver.Radius = 8;
             this.cmbDriver.Size = new System.Drawing.Size(461, 31);
             this.cmbDriver.TabIndex = 52;
+            this.cmbDriver.SelectedIndexChanged += new System.EventHandler(this.CmbDriver_SelectedIndexChanged);
             // 
             // txtSalary
             // 
@@ -163,6 +164,7 @@
             this.txtSalary.SelectedText = "";
             this.txtSalary.Size = new System.Drawing.Size(461, 32);
             this.txtSalary.TabIndex = 51;
+            this.txtSalary.TextChanged += new System.EventHandler(this.TxtSalary_TextChanged);
             // 
             // label5
             // 
@@ -234,6 +236,7 @@
             this.btnAddSalary.TabIndex = 25;
             this.btnAddSalary.Text = "Add";
             this.btnAddSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddSalary.Click += new System.EventHandler(this.BtnAddSalary_Click);
             // 
             // label1
             // 
@@ -295,6 +298,7 @@
             this.numMonth.TabIndex = 54;
             this.numMonth.Text = "numMonth";
             this.numMonth.Value = ((long)(1));
+            this.numMonth.ValueChanged += new System.EventHandler(this.NumMonth_ValueChanged);
             // 
             // btnSearch
             // 
@@ -319,17 +323,18 @@
             this.btnSearch.Location = new System.Drawing.Point(306, 272);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSearch.OnHoverImage = null;
             this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
             this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Radius = 8;
+            this.btnSearch.Radius = 6;
             this.btnSearch.Size = new System.Drawing.Size(218, 31);
             this.btnSearch.TabIndex = 56;
             this.btnSearch.Text = "Search";
             this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // lblSalary
             // 
@@ -392,6 +397,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Salary";
             this.Text = "Salary";
+            this.Load += new System.EventHandler(this.Salary_Load);
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.grbSalary.ResumeLayout(false);

@@ -119,7 +119,7 @@ namespace Bus_Mangement_system.SCR.Bus
 
         protected bool valid()
         {
-            bool flag = false;
+            bool flag;
             Regex r = new Regex(@"^[1-9]{1}[0-9]*$");
             if (!(r.IsMatch(txtMoney.Text)))
             {
