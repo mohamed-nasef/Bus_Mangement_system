@@ -30,8 +30,8 @@
         {
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.grbBusReport = new System.Windows.Forms.GroupBox();
+            this.txtCapacity = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbBus = new Guna.UI.WinForms.GunaComboBox();
             this.txtLicenseNumber = new Guna.UI.WinForms.GunaTextBox();
@@ -39,7 +39,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI.WinForms.GunaTextBox();
-            this.txtCapacity = new Guna.UI.WinForms.GunaTextBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.txtTotalFees = new Guna.UI.WinForms.GunaTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelBody.SuspendLayout();
             this.grbBusReport.SuspendLayout();
             this.SuspendLayout();
@@ -62,24 +64,10 @@
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
             this.panelBody.TabIndex = 1;
             // 
-            // btnClose
-            // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
-            this.btnClose.Location = new System.Drawing.Point(6, 30);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(73, 62);
-            this.btnClose.TabIndex = 38;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
             // grbBusReport
             // 
+            this.grbBusReport.Controls.Add(this.txtTotalFees);
+            this.grbBusReport.Controls.Add(this.label5);
             this.grbBusReport.Controls.Add(this.txtCapacity);
             this.grbBusReport.Controls.Add(this.label3);
             this.grbBusReport.Controls.Add(this.cmbBus);
@@ -98,6 +86,29 @@
             this.grbBusReport.TabIndex = 39;
             this.grbBusReport.TabStop = false;
             this.grbBusReport.Text = "Bus Report";
+            // 
+            // txtCapacity
+            // 
+            this.txtCapacity.BackColor = System.Drawing.Color.Transparent;
+            this.txtCapacity.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtCapacity.BorderColor = System.Drawing.Color.Silver;
+            this.txtCapacity.BorderSize = 0;
+            this.txtCapacity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCapacity.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtCapacity.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtCapacity.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapacity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.txtCapacity.Location = new System.Drawing.Point(63, 520);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCapacity.MaxLength = 9;
+            this.txtCapacity.Name = "txtCapacity";
+            this.txtCapacity.PasswordChar = '\0';
+            this.txtCapacity.Radius = 8;
+            this.txtCapacity.ReadOnly = true;
+            this.txtCapacity.SelectedText = "";
+            this.txtCapacity.Size = new System.Drawing.Size(461, 32);
+            this.txtCapacity.TabIndex = 49;
             // 
             // label3
             // 
@@ -226,28 +237,57 @@
             this.txtName.Size = new System.Drawing.Size(461, 32);
             this.txtName.TabIndex = 26;
             // 
-            // txtCapacity
+            // btnClose
             // 
-            this.txtCapacity.BackColor = System.Drawing.Color.Transparent;
-            this.txtCapacity.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtCapacity.BorderColor = System.Drawing.Color.Silver;
-            this.txtCapacity.BorderSize = 0;
-            this.txtCapacity.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCapacity.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtCapacity.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtCapacity.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapacity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtCapacity.Location = new System.Drawing.Point(63, 520);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCapacity.MaxLength = 9;
-            this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.PasswordChar = '\0';
-            this.txtCapacity.Radius = 8;
-            this.txtCapacity.ReadOnly = true;
-            this.txtCapacity.SelectedText = "";
-            this.txtCapacity.Size = new System.Drawing.Size(461, 32);
-            this.txtCapacity.TabIndex = 49;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
+            this.btnClose.Location = new System.Drawing.Point(6, 30);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(73, 62);
+            this.btnClose.TabIndex = 38;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // txtTotalFees
+            // 
+            this.txtTotalFees.BackColor = System.Drawing.Color.Transparent;
+            this.txtTotalFees.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtTotalFees.BorderColor = System.Drawing.Color.Silver;
+            this.txtTotalFees.BorderSize = 0;
+            this.txtTotalFees.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalFees.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtTotalFees.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtTotalFees.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtTotalFees.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalFees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.txtTotalFees.Location = new System.Drawing.Point(63, 644);
+            this.txtTotalFees.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTotalFees.MaxLength = 9;
+            this.txtTotalFees.Name = "txtTotalFees";
+            this.txtTotalFees.PasswordChar = '\0';
+            this.txtTotalFees.Radius = 8;
+            this.txtTotalFees.ReadOnly = true;
+            this.txtTotalFees.SelectedText = "";
+            this.txtTotalFees.Size = new System.Drawing.Size(461, 32);
+            this.txtTotalFees.TabIndex = 51;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(58, 598);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 30);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Total Fees";
             // 
             // BusReport
             // 
@@ -284,5 +324,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaTextBox txtName;
+        private Guna.UI.WinForms.GunaTextBox txtTotalFees;
+        private System.Windows.Forms.Label label5;
     }
 }

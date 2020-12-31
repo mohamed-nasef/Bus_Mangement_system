@@ -17,6 +17,7 @@ namespace Bus_Mangement_system.SCR.Bus
         int busindex = -1;
         string name, LicenseNumber, strCapacity = "0";
         int capacity = 0, index = -1;
+        int totalFees = 0;
 
         #endregion
 
@@ -29,7 +30,7 @@ namespace Bus_Mangement_system.SCR.Bus
         {
             visible();
 
-            //db 3alashan ageb mn goah
+            //db 3alashan ageb mn goah 
         }
 
         #region Close Form
@@ -47,9 +48,11 @@ namespace Bus_Mangement_system.SCR.Bus
                 label1.Visible = false;
                 label2.Visible = false;
                 label4.Visible = false;
+                label5.Visible = false;
                 txtName.Visible = false;
                 txtLicenseNumber.Visible = false;
                 txtCapacity.Visible = false;
+                txtTotalFees.Visible = false;
               
             }
             else
@@ -57,9 +60,11 @@ namespace Bus_Mangement_system.SCR.Bus
                 label1.Visible = true;
                 label2.Visible = true;
                 label4.Visible = true;
+                label5.Visible = true;
                 txtName.Visible = true;
                 txtLicenseNumber.Visible = true;
                 txtCapacity.Visible = true;
+                txtTotalFees.Visible = true;
 
             }
 
@@ -71,9 +76,11 @@ namespace Bus_Mangement_system.SCR.Bus
                 label1.Visible = true;
                 label2.Visible = true;
                 label4.Visible = true;
+                label5.Visible = true;
                 txtName.Visible = true;
                 txtLicenseNumber.Visible = true;
                 txtCapacity.Visible = true;
+                txtTotalFees.Visible = true;
 
             }
            
@@ -87,10 +94,11 @@ namespace Bus_Mangement_system.SCR.Bus
         {
             True();
 
-            //db 
+            //db select bus data ------ هنجيب ال fees بتاع الباص
             txtName.Text = "Bus 1";
             txtLicenseNumber.Text = "123KFC";
             txtCapacity.Text="32";
+            txtTotalFees.Text = "1450";
         }
         #endregion
 

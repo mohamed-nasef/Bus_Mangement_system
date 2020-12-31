@@ -13,17 +13,27 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
 {
     public partial class AddDailyTickets : Form
     {
-        string oneWay="", roundTrip="";
+
+        #region Prop
+
+        string oneWay ="", roundTrip="";
         int iOneWay, iRoundTrip;
+
+        #endregion
+
         public AddDailyTickets()
         {
             InitializeComponent();
         }
 
+
+        #region Close Form
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
 
         #region Function
         protected bool validtxtOneWay()
@@ -108,6 +118,7 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                     DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A one-way ticket: {oneWay}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
+                        int.TryParse(oneWay, out iOneWay);
                         //DB Commands
 
                         //clear
@@ -121,9 +132,11 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             {
                 if (validtxtRoundTrip())
                 {
+                    
                     DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A Round Trip ticket: {roundTrip}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
+                        int.TryParse(roundTrip, out iRoundTrip);
                         //DB Commands
 
                         //clear
@@ -137,9 +150,12 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             {
                 if (validtxtRoundTrip()&&validtxtOneWay())
                 {
+
                     DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A one-way ticket: {oneWay}\nA Round Trip ticket: {roundTrip}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
+                        int.TryParse(roundTrip, out iRoundTrip);
+                        int.TryParse(oneWay, out iOneWay);
                         //DB Commands
 
                         //clear
