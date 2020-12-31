@@ -32,10 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Salary));
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbSalary = new System.Windows.Forms.GroupBox();
+            this.txtRestOfSalary = new Guna.UI.WinForms.GunaTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.numMonth = new Guna.UI.WinForms.GunaNumeric();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbDriver = new Guna.UI.WinForms.GunaComboBox();
+            this.lblSalary = new System.Windows.Forms.Label();
             this.txtSalary = new Guna.UI.WinForms.GunaTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSalaryTaken = new Guna.UI.WinForms.GunaTextBox();
@@ -43,14 +47,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.numMonth = new Guna.UI.WinForms.GunaNumeric();
-            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.lblSalary = new System.Windows.Forms.Label();
-            this.txtRestOfSalary = new Guna.UI.WinForms.GunaTextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBody.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.grbSalary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDraft
@@ -70,11 +70,6 @@
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
             this.panelBody.TabIndex = 1;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // grbSalary
             // 
@@ -101,6 +96,99 @@
             this.grbSalary.TabIndex = 41;
             this.grbSalary.TabStop = false;
             this.grbSalary.Text = "Driver Salary";
+            // 
+            // txtRestOfSalary
+            // 
+            this.txtRestOfSalary.BackColor = System.Drawing.Color.Transparent;
+            this.txtRestOfSalary.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtRestOfSalary.BorderColor = System.Drawing.Color.Silver;
+            this.txtRestOfSalary.BorderSize = 0;
+            this.txtRestOfSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRestOfSalary.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtRestOfSalary.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtRestOfSalary.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtRestOfSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRestOfSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.txtRestOfSalary.Location = new System.Drawing.Point(305, 397);
+            this.txtRestOfSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRestOfSalary.MaxLength = 11;
+            this.txtRestOfSalary.Name = "txtRestOfSalary";
+            this.txtRestOfSalary.PasswordChar = '\0';
+            this.txtRestOfSalary.Radius = 8;
+            this.txtRestOfSalary.ReadOnly = true;
+            this.txtRestOfSalary.SelectedText = "";
+            this.txtRestOfSalary.Size = new System.Drawing.Size(218, 32);
+            this.txtRestOfSalary.TabIndex = 58;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(300, 351);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(141, 30);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "Rest of salary";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.AnimationHoverSpeed = 0.07F;
+            this.btnSearch.AnimationSpeed = 0.03F;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BaseColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSearch.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.CheckedImage")));
+            this.btnSearch.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = null;
+            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSearch.LineBottom = 1;
+            this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnSearch.Location = new System.Drawing.Point(306, 272);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSearch.OnHoverImage = null;
+            this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSearch.Radius = 6;
+            this.btnSearch.Size = new System.Drawing.Size(218, 31);
+            this.btnSearch.TabIndex = 56;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // numMonth
+            // 
+            this.numMonth.BackColor = System.Drawing.Color.Transparent;
+            this.numMonth.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.numMonth.BorderColor = System.Drawing.Color.Silver;
+            this.numMonth.BorderSize = 0;
+            this.numMonth.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.numMonth.ButtonForeColor = System.Drawing.Color.White;
+            this.numMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.numMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.numMonth.Location = new System.Drawing.Point(63, 272);
+            this.numMonth.Maximum = ((long)(12));
+            this.numMonth.Minimum = ((long)(1));
+            this.numMonth.Name = "numMonth";
+            this.numMonth.Radius = 8;
+            this.numMonth.Size = new System.Drawing.Size(218, 30);
+            this.numMonth.TabIndex = 54;
+            this.numMonth.Text = "numMonth";
+            this.numMonth.Value = ((long)(1));
+            this.numMonth.ValueChanged += new System.EventHandler(this.NumMonth_ValueChanged);
             // 
             // label3
             // 
@@ -143,6 +231,18 @@
             this.cmbDriver.Size = new System.Drawing.Size(461, 31);
             this.cmbDriver.TabIndex = 52;
             this.cmbDriver.SelectedIndexChanged += new System.EventHandler(this.CmbDriver_SelectedIndexChanged);
+            // 
+            // lblSalary
+            // 
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.lblSalary.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.ForeColor = System.Drawing.Color.Gray;
+            this.lblSalary.Location = new System.Drawing.Point(69, 527);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(55, 17);
+            this.lblSalary.TabIndex = 50;
+            this.lblSalary.Text = "ex: 5000";
             // 
             // txtSalary
             // 
@@ -279,116 +379,18 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // numMonth
+            // errorProvider1
             // 
-            this.numMonth.BackColor = System.Drawing.Color.Transparent;
-            this.numMonth.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.numMonth.BorderColor = System.Drawing.Color.Silver;
-            this.numMonth.BorderSize = 0;
-            this.numMonth.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.numMonth.ButtonForeColor = System.Drawing.Color.White;
-            this.numMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.numMonth.Location = new System.Drawing.Point(63, 272);
-            this.numMonth.Maximum = ((long)(12));
-            this.numMonth.Minimum = ((long)(1));
-            this.numMonth.Name = "numMonth";
-            this.numMonth.Radius = 8;
-            this.numMonth.Size = new System.Drawing.Size(218, 30);
-            this.numMonth.TabIndex = 54;
-            this.numMonth.Text = "numMonth";
-            this.numMonth.Value = ((long)(1));
-            this.numMonth.ValueChanged += new System.EventHandler(this.NumMonth_ValueChanged);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.AnimationHoverSpeed = 0.07F;
-            this.btnSearch.AnimationSpeed = 0.03F;
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BaseColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BorderColor = System.Drawing.Color.Black;
-            this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnSearch.CheckedForeColor = System.Drawing.Color.White;
-            this.btnSearch.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.CheckedImage")));
-            this.btnSearch.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = null;
-            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSearch.LineBottom = 1;
-            this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnSearch.Location = new System.Drawing.Point(306, 272);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSearch.OnHoverImage = null;
-            this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Radius = 6;
-            this.btnSearch.Size = new System.Drawing.Size(218, 31);
-            this.btnSearch.TabIndex = 56;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.lblSalary.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.ForeColor = System.Drawing.Color.Gray;
-            this.lblSalary.Location = new System.Drawing.Point(69, 527);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(55, 17);
-            this.lblSalary.TabIndex = 50;
-            this.lblSalary.Text = "ex: 5000";
-            // 
-            // txtRestOfSalary
-            // 
-            this.txtRestOfSalary.BackColor = System.Drawing.Color.Transparent;
-            this.txtRestOfSalary.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtRestOfSalary.BorderColor = System.Drawing.Color.Silver;
-            this.txtRestOfSalary.BorderSize = 0;
-            this.txtRestOfSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRestOfSalary.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtRestOfSalary.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtRestOfSalary.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.txtRestOfSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRestOfSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtRestOfSalary.Location = new System.Drawing.Point(305, 397);
-            this.txtRestOfSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtRestOfSalary.MaxLength = 11;
-            this.txtRestOfSalary.Name = "txtRestOfSalary";
-            this.txtRestOfSalary.PasswordChar = '\0';
-            this.txtRestOfSalary.Radius = 8;
-            this.txtRestOfSalary.ReadOnly = true;
-            this.txtRestOfSalary.SelectedText = "";
-            this.txtRestOfSalary.Size = new System.Drawing.Size(218, 32);
-            this.txtRestOfSalary.TabIndex = 58;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(300, 351);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 30);
-            this.label6.TabIndex = 57;
-            this.label6.Text = "Rest of salary";
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // Salary
             // 
+            this.AcceptButton = this.btnAddSalary;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1491, 881);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelDraft);
@@ -399,9 +401,9 @@
             this.Text = "Salary";
             this.Load += new System.EventHandler(this.Salary_Load);
             this.panelBody.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.grbSalary.ResumeLayout(false);
             this.grbSalary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

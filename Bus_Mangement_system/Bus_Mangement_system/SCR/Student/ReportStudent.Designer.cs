@@ -30,6 +30,7 @@
         {
             this.panelBody = new System.Windows.Forms.Panel();
             this.grbReportStudent = new System.Windows.Forms.GroupBox();
+            this.txtBookingType = new Guna.UI.WinForms.GunaTextBox();
             this.txtUniversity = new Guna.UI.WinForms.GunaTextBox();
             this.txtAddress = new Guna.UI.WinForms.GunaTextBox();
             this.lblID = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.txtFirstName = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtBookingType = new Guna.UI.WinForms.GunaTextBox();
             this.panelBody.SuspendLayout();
             this.grbReportStudent.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,28 @@
             this.grbReportStudent.TabIndex = 40;
             this.grbReportStudent.TabStop = false;
             this.grbReportStudent.Text = "Report Student";
+            // 
+            // txtBookingType
+            // 
+            this.txtBookingType.BackColor = System.Drawing.Color.Transparent;
+            this.txtBookingType.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtBookingType.BorderColor = System.Drawing.Color.Silver;
+            this.txtBookingType.BorderSize = 0;
+            this.txtBookingType.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBookingType.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtBookingType.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtBookingType.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtBookingType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBookingType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.txtBookingType.Location = new System.Drawing.Point(63, 644);
+            this.txtBookingType.MaxLength = 11;
+            this.txtBookingType.Name = "txtBookingType";
+            this.txtBookingType.PasswordChar = '\0';
+            this.txtBookingType.Radius = 8;
+            this.txtBookingType.ReadOnly = true;
+            this.txtBookingType.SelectedText = "";
+            this.txtBookingType.Size = new System.Drawing.Size(461, 32);
+            this.txtBookingType.TabIndex = 47;
             // 
             // txtUniversity
             // 
@@ -291,33 +313,12 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // txtBookingType
-            // 
-            this.txtBookingType.BackColor = System.Drawing.Color.Transparent;
-            this.txtBookingType.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtBookingType.BorderColor = System.Drawing.Color.Silver;
-            this.txtBookingType.BorderSize = 0;
-            this.txtBookingType.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBookingType.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtBookingType.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtBookingType.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.txtBookingType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookingType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtBookingType.Location = new System.Drawing.Point(63, 644);
-            this.txtBookingType.MaxLength = 11;
-            this.txtBookingType.Name = "txtBookingType";
-            this.txtBookingType.PasswordChar = '\0';
-            this.txtBookingType.Radius = 8;
-            this.txtBookingType.ReadOnly = true;
-            this.txtBookingType.SelectedText = "";
-            this.txtBookingType.Size = new System.Drawing.Size(461, 32);
-            this.txtBookingType.TabIndex = 47;
-            // 
             // ReportStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1153, 881);
             this.Controls.Add(this.panelBody);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);

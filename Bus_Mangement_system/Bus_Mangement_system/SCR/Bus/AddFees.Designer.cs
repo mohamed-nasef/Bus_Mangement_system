@@ -34,26 +34,26 @@ namespace Bus_Mangement_system.SCR.Bus
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
             this.grbAddBusFees = new System.Windows.Forms.GroupBox();
-            this.btnAssign = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnTotal = new Guna.UI.WinForms.GunaButton();
-            this.btnOther = new Guna.UI.WinForms.GunaButton();
-            this.btnLicenseRenewal = new Guna.UI.WinForms.GunaButton();
-            this.btnPeriodicMaintenance = new Guna.UI.WinForms.GunaButton();
-            this.btnBusWash = new Guna.UI.WinForms.GunaButton();
-            this.btnChangeOil = new Guna.UI.WinForms.GunaButton();
-            this.btnSolar = new Guna.UI.WinForms.GunaButton();
+            this.btnAssign = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnClear = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnOther = new Guna.UI.WinForms.GunaButton();
             this.lblMoney = new System.Windows.Forms.Label();
             this.txtMoney = new Guna.UI.WinForms.GunaTextBox();
+            this.btnLicenseRenewal = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnPeriodicMaintenance = new Guna.UI.WinForms.GunaButton();
             this.cmbBus = new Guna.UI.WinForms.GunaComboBox();
             this.cmbFeesType = new Guna.UI.WinForms.GunaComboBox();
+            this.btnBusWash = new Guna.UI.WinForms.GunaButton();
             this.btnAddBusFees = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnChangeOil = new Guna.UI.WinForms.GunaButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSolar = new Guna.UI.WinForms.GunaButton();
             this.btnClose = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.panelBody.SuspendLayout();
             this.grbAddBusFees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -108,6 +108,45 @@ namespace Bus_Mangement_system.SCR.Bus
             this.grbAddBusFees.TabStop = false;
             this.grbAddBusFees.Text = "Add Bus Fees";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(55, 430);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 50);
+            this.label4.TabIndex = 75;
+            this.label4.Text = "Details";
+            // 
+            // btnTotal
+            // 
+            this.btnTotal.AnimationHoverSpeed = 0.07F;
+            this.btnTotal.AnimationSpeed = 0.03F;
+            this.btnTotal.BackColor = System.Drawing.Color.Transparent;
+            this.btnTotal.BaseColor = System.Drawing.Color.Transparent;
+            this.btnTotal.BorderColor = System.Drawing.Color.Black;
+            this.btnTotal.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnTotal.FocusedColor = System.Drawing.Color.Empty;
+            this.btnTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotal.ForeColor = System.Drawing.Color.White;
+            this.btnTotal.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_30;
+            this.btnTotal.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnTotal.Location = new System.Drawing.Point(385, 430);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnTotal.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnTotal.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnTotal.OnHoverImage = null;
+            this.btnTotal.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnTotal.Radius = 8;
+            this.btnTotal.Size = new System.Drawing.Size(159, 51);
+            this.btnTotal.TabIndex = 74;
+            this.btnTotal.Text = "$ 0";
+            this.btnTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnAssign
             // 
             this.btnAssign.AnimationHoverSpeed = 0.07F;
@@ -143,188 +182,6 @@ namespace Bus_Mangement_system.SCR.Bus
             this.btnAssign.Text = "Assign";
             this.btnAssign.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAssign.Click += new System.EventHandler(this.BtnAssign_Click);
-            // 
-            // btnTotal
-            // 
-            this.btnTotal.AnimationHoverSpeed = 0.07F;
-            this.btnTotal.AnimationSpeed = 0.03F;
-            this.btnTotal.BackColor = System.Drawing.Color.Transparent;
-            this.btnTotal.BaseColor = System.Drawing.Color.Transparent;
-            this.btnTotal.BorderColor = System.Drawing.Color.Black;
-            this.btnTotal.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnTotal.FocusedColor = System.Drawing.Color.Empty;
-            this.btnTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotal.ForeColor = System.Drawing.Color.White;
-            this.btnTotal.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_30;
-            this.btnTotal.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnTotal.Location = new System.Drawing.Point(385, 430);
-            this.btnTotal.Name = "btnTotal";
-            this.btnTotal.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnTotal.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnTotal.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnTotal.OnHoverImage = null;
-            this.btnTotal.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnTotal.Radius = 8;
-            this.btnTotal.Size = new System.Drawing.Size(159, 51);
-            this.btnTotal.TabIndex = 74;
-            this.btnTotal.Text = "$ 0";
-            this.btnTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnOther
-            // 
-            this.btnOther.AnimationHoverSpeed = 0.07F;
-            this.btnOther.AnimationSpeed = 0.03F;
-            this.btnOther.BackColor = System.Drawing.Color.Transparent;
-            this.btnOther.BaseColor = System.Drawing.Color.Transparent;
-            this.btnOther.BorderColor = System.Drawing.Color.Black;
-            this.btnOther.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnOther.FocusedColor = System.Drawing.Color.Empty;
-            this.btnOther.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOther.ForeColor = System.Drawing.Color.White;
-            this.btnOther.Image = global::Bus_Mangement_system.Properties.Resources.icons8_card_payment_30;
-            this.btnOther.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnOther.Location = new System.Drawing.Point(385, 642);
-            this.btnOther.Name = "btnOther";
-            this.btnOther.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnOther.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnOther.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnOther.OnHoverImage = null;
-            this.btnOther.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnOther.Radius = 8;
-            this.btnOther.Size = new System.Drawing.Size(159, 51);
-            this.btnOther.TabIndex = 73;
-            this.btnOther.Text = "$ 0";
-            this.btnOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnLicenseRenewal
-            // 
-            this.btnLicenseRenewal.AnimationHoverSpeed = 0.07F;
-            this.btnLicenseRenewal.AnimationSpeed = 0.03F;
-            this.btnLicenseRenewal.BackColor = System.Drawing.Color.Transparent;
-            this.btnLicenseRenewal.BaseColor = System.Drawing.Color.Transparent;
-            this.btnLicenseRenewal.BorderColor = System.Drawing.Color.Black;
-            this.btnLicenseRenewal.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLicenseRenewal.FocusedColor = System.Drawing.Color.Empty;
-            this.btnLicenseRenewal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLicenseRenewal.ForeColor = System.Drawing.Color.White;
-            this.btnLicenseRenewal.Image = global::Bus_Mangement_system.Properties.Resources.icons8_renew_30;
-            this.btnLicenseRenewal.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnLicenseRenewal.Location = new System.Drawing.Point(63, 642);
-            this.btnLicenseRenewal.Name = "btnLicenseRenewal";
-            this.btnLicenseRenewal.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnLicenseRenewal.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnLicenseRenewal.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnLicenseRenewal.OnHoverImage = null;
-            this.btnLicenseRenewal.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnLicenseRenewal.Radius = 8;
-            this.btnLicenseRenewal.Size = new System.Drawing.Size(159, 51);
-            this.btnLicenseRenewal.TabIndex = 72;
-            this.btnLicenseRenewal.Text = "$ 0";
-            this.btnLicenseRenewal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnPeriodicMaintenance
-            // 
-            this.btnPeriodicMaintenance.AnimationHoverSpeed = 0.07F;
-            this.btnPeriodicMaintenance.AnimationSpeed = 0.03F;
-            this.btnPeriodicMaintenance.BackColor = System.Drawing.Color.Transparent;
-            this.btnPeriodicMaintenance.BaseColor = System.Drawing.Color.Transparent;
-            this.btnPeriodicMaintenance.BorderColor = System.Drawing.Color.Black;
-            this.btnPeriodicMaintenance.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPeriodicMaintenance.FocusedColor = System.Drawing.Color.Empty;
-            this.btnPeriodicMaintenance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPeriodicMaintenance.ForeColor = System.Drawing.Color.White;
-            this.btnPeriodicMaintenance.Image = global::Bus_Mangement_system.Properties.Resources.icons8_wrench_30;
-            this.btnPeriodicMaintenance.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPeriodicMaintenance.Location = new System.Drawing.Point(63, 575);
-            this.btnPeriodicMaintenance.Name = "btnPeriodicMaintenance";
-            this.btnPeriodicMaintenance.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnPeriodicMaintenance.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnPeriodicMaintenance.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnPeriodicMaintenance.OnHoverImage = null;
-            this.btnPeriodicMaintenance.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnPeriodicMaintenance.Radius = 8;
-            this.btnPeriodicMaintenance.Size = new System.Drawing.Size(159, 51);
-            this.btnPeriodicMaintenance.TabIndex = 71;
-            this.btnPeriodicMaintenance.Text = "$ 0";
-            this.btnPeriodicMaintenance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnBusWash
-            // 
-            this.btnBusWash.AnimationHoverSpeed = 0.07F;
-            this.btnBusWash.AnimationSpeed = 0.03F;
-            this.btnBusWash.BackColor = System.Drawing.Color.Transparent;
-            this.btnBusWash.BaseColor = System.Drawing.Color.Transparent;
-            this.btnBusWash.BorderColor = System.Drawing.Color.Black;
-            this.btnBusWash.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnBusWash.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBusWash.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusWash.ForeColor = System.Drawing.Color.White;
-            this.btnBusWash.Image = global::Bus_Mangement_system.Properties.Resources.icons8_clean_30;
-            this.btnBusWash.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnBusWash.Location = new System.Drawing.Point(385, 508);
-            this.btnBusWash.Name = "btnBusWash";
-            this.btnBusWash.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnBusWash.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnBusWash.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnBusWash.OnHoverImage = null;
-            this.btnBusWash.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnBusWash.Radius = 8;
-            this.btnBusWash.Size = new System.Drawing.Size(159, 51);
-            this.btnBusWash.TabIndex = 70;
-            this.btnBusWash.Text = "$ 0";
-            this.btnBusWash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnChangeOil
-            // 
-            this.btnChangeOil.AnimationHoverSpeed = 0.07F;
-            this.btnChangeOil.AnimationSpeed = 0.03F;
-            this.btnChangeOil.BackColor = System.Drawing.Color.Transparent;
-            this.btnChangeOil.BaseColor = System.Drawing.Color.Transparent;
-            this.btnChangeOil.BorderColor = System.Drawing.Color.Black;
-            this.btnChangeOil.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnChangeOil.FocusedColor = System.Drawing.Color.Empty;
-            this.btnChangeOil.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeOil.ForeColor = System.Drawing.Color.White;
-            this.btnChangeOil.Image = global::Bus_Mangement_system.Properties.Resources.icons8_engine_oil_30;
-            this.btnChangeOil.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnChangeOil.Location = new System.Drawing.Point(63, 508);
-            this.btnChangeOil.Name = "btnChangeOil";
-            this.btnChangeOil.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnChangeOil.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnChangeOil.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnChangeOil.OnHoverImage = null;
-            this.btnChangeOil.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnChangeOil.Radius = 8;
-            this.btnChangeOil.Size = new System.Drawing.Size(159, 51);
-            this.btnChangeOil.TabIndex = 69;
-            this.btnChangeOil.Text = "$ 0";
-            this.btnChangeOil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnSolar
-            // 
-            this.btnSolar.AnimationHoverSpeed = 0.07F;
-            this.btnSolar.AnimationSpeed = 0.03F;
-            this.btnSolar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSolar.BaseColor = System.Drawing.Color.Transparent;
-            this.btnSolar.BorderColor = System.Drawing.Color.Black;
-            this.btnSolar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSolar.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSolar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSolar.ForeColor = System.Drawing.Color.White;
-            this.btnSolar.Image = global::Bus_Mangement_system.Properties.Resources.icons8_gas_station_30;
-            this.btnSolar.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSolar.Location = new System.Drawing.Point(385, 575);
-            this.btnSolar.Name = "btnSolar";
-            this.btnSolar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnSolar.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSolar.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSolar.OnHoverImage = null;
-            this.btnSolar.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnSolar.Radius = 8;
-            this.btnSolar.Size = new System.Drawing.Size(159, 51);
-            this.btnSolar.TabIndex = 68;
-            this.btnSolar.Text = "$ 0";
-            this.btnSolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnClear
             // 
@@ -362,6 +219,32 @@ namespace Bus_Mangement_system.SCR.Bus
             this.btnClear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
+            // btnOther
+            // 
+            this.btnOther.AnimationHoverSpeed = 0.07F;
+            this.btnOther.AnimationSpeed = 0.03F;
+            this.btnOther.BackColor = System.Drawing.Color.Transparent;
+            this.btnOther.BaseColor = System.Drawing.Color.Transparent;
+            this.btnOther.BorderColor = System.Drawing.Color.Black;
+            this.btnOther.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnOther.FocusedColor = System.Drawing.Color.Empty;
+            this.btnOther.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOther.ForeColor = System.Drawing.Color.White;
+            this.btnOther.Image = global::Bus_Mangement_system.Properties.Resources.icons8_card_payment_30;
+            this.btnOther.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnOther.Location = new System.Drawing.Point(385, 642);
+            this.btnOther.Name = "btnOther";
+            this.btnOther.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnOther.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnOther.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnOther.OnHoverImage = null;
+            this.btnOther.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnOther.Radius = 8;
+            this.btnOther.Size = new System.Drawing.Size(159, 51);
+            this.btnOther.TabIndex = 73;
+            this.btnOther.Text = "$ 0";
+            this.btnOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lblMoney
             // 
             this.lblMoney.AutoSize = true;
@@ -397,6 +280,32 @@ namespace Bus_Mangement_system.SCR.Bus
             this.txtMoney.TabIndex = 51;
             this.txtMoney.TextChanged += new System.EventHandler(this.TxtMoney_TextChanged);
             // 
+            // btnLicenseRenewal
+            // 
+            this.btnLicenseRenewal.AnimationHoverSpeed = 0.07F;
+            this.btnLicenseRenewal.AnimationSpeed = 0.03F;
+            this.btnLicenseRenewal.BackColor = System.Drawing.Color.Transparent;
+            this.btnLicenseRenewal.BaseColor = System.Drawing.Color.Transparent;
+            this.btnLicenseRenewal.BorderColor = System.Drawing.Color.Black;
+            this.btnLicenseRenewal.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLicenseRenewal.FocusedColor = System.Drawing.Color.Empty;
+            this.btnLicenseRenewal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLicenseRenewal.ForeColor = System.Drawing.Color.White;
+            this.btnLicenseRenewal.Image = global::Bus_Mangement_system.Properties.Resources.icons8_renew_30;
+            this.btnLicenseRenewal.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnLicenseRenewal.Location = new System.Drawing.Point(63, 642);
+            this.btnLicenseRenewal.Name = "btnLicenseRenewal";
+            this.btnLicenseRenewal.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnLicenseRenewal.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnLicenseRenewal.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnLicenseRenewal.OnHoverImage = null;
+            this.btnLicenseRenewal.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnLicenseRenewal.Radius = 8;
+            this.btnLicenseRenewal.Size = new System.Drawing.Size(159, 51);
+            this.btnLicenseRenewal.TabIndex = 72;
+            this.btnLicenseRenewal.Text = "$ 0";
+            this.btnLicenseRenewal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -422,6 +331,32 @@ namespace Bus_Mangement_system.SCR.Bus
             this.label3.Size = new System.Drawing.Size(124, 30);
             this.label3.TabIndex = 48;
             this.label3.Text = "Choose Bus";
+            // 
+            // btnPeriodicMaintenance
+            // 
+            this.btnPeriodicMaintenance.AnimationHoverSpeed = 0.07F;
+            this.btnPeriodicMaintenance.AnimationSpeed = 0.03F;
+            this.btnPeriodicMaintenance.BackColor = System.Drawing.Color.Transparent;
+            this.btnPeriodicMaintenance.BaseColor = System.Drawing.Color.Transparent;
+            this.btnPeriodicMaintenance.BorderColor = System.Drawing.Color.Black;
+            this.btnPeriodicMaintenance.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPeriodicMaintenance.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPeriodicMaintenance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeriodicMaintenance.ForeColor = System.Drawing.Color.White;
+            this.btnPeriodicMaintenance.Image = global::Bus_Mangement_system.Properties.Resources.icons8_wrench_30;
+            this.btnPeriodicMaintenance.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPeriodicMaintenance.Location = new System.Drawing.Point(63, 575);
+            this.btnPeriodicMaintenance.Name = "btnPeriodicMaintenance";
+            this.btnPeriodicMaintenance.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnPeriodicMaintenance.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPeriodicMaintenance.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPeriodicMaintenance.OnHoverImage = null;
+            this.btnPeriodicMaintenance.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnPeriodicMaintenance.Radius = 8;
+            this.btnPeriodicMaintenance.Size = new System.Drawing.Size(159, 51);
+            this.btnPeriodicMaintenance.TabIndex = 71;
+            this.btnPeriodicMaintenance.Text = "$ 0";
+            this.btnPeriodicMaintenance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbBus
             // 
@@ -484,6 +419,32 @@ namespace Bus_Mangement_system.SCR.Bus
             this.cmbFeesType.SelectedIndexChanged += new System.EventHandler(this.CmbFeesType_SelectedIndexChanged);
             this.cmbFeesType.Validating += new System.ComponentModel.CancelEventHandler(this.CmbFeesType_Validating);
             // 
+            // btnBusWash
+            // 
+            this.btnBusWash.AnimationHoverSpeed = 0.07F;
+            this.btnBusWash.AnimationSpeed = 0.03F;
+            this.btnBusWash.BackColor = System.Drawing.Color.Transparent;
+            this.btnBusWash.BaseColor = System.Drawing.Color.Transparent;
+            this.btnBusWash.BorderColor = System.Drawing.Color.Black;
+            this.btnBusWash.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBusWash.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBusWash.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusWash.ForeColor = System.Drawing.Color.White;
+            this.btnBusWash.Image = global::Bus_Mangement_system.Properties.Resources.icons8_clean_30;
+            this.btnBusWash.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnBusWash.Location = new System.Drawing.Point(385, 508);
+            this.btnBusWash.Name = "btnBusWash";
+            this.btnBusWash.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnBusWash.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBusWash.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBusWash.OnHoverImage = null;
+            this.btnBusWash.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnBusWash.Radius = 8;
+            this.btnBusWash.Size = new System.Drawing.Size(159, 51);
+            this.btnBusWash.TabIndex = 70;
+            this.btnBusWash.Text = "$ 0";
+            this.btnBusWash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnAddBusFees
             // 
             this.btnAddBusFees.AnimationHoverSpeed = 0.07F;
@@ -520,6 +481,32 @@ namespace Bus_Mangement_system.SCR.Bus
             this.btnAddBusFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddBusFees.Click += new System.EventHandler(this.BtnAddBusFees_Click);
             // 
+            // btnChangeOil
+            // 
+            this.btnChangeOil.AnimationHoverSpeed = 0.07F;
+            this.btnChangeOil.AnimationSpeed = 0.03F;
+            this.btnChangeOil.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangeOil.BaseColor = System.Drawing.Color.Transparent;
+            this.btnChangeOil.BorderColor = System.Drawing.Color.Black;
+            this.btnChangeOil.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnChangeOil.FocusedColor = System.Drawing.Color.Empty;
+            this.btnChangeOil.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeOil.ForeColor = System.Drawing.Color.White;
+            this.btnChangeOil.Image = global::Bus_Mangement_system.Properties.Resources.icons8_engine_oil_30;
+            this.btnChangeOil.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnChangeOil.Location = new System.Drawing.Point(63, 508);
+            this.btnChangeOil.Name = "btnChangeOil";
+            this.btnChangeOil.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnChangeOil.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnChangeOil.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnChangeOil.OnHoverImage = null;
+            this.btnChangeOil.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnChangeOil.Radius = 8;
+            this.btnChangeOil.Size = new System.Drawing.Size(159, 51);
+            this.btnChangeOil.TabIndex = 69;
+            this.btnChangeOil.Text = "$ 0";
+            this.btnChangeOil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -532,6 +519,32 @@ namespace Bus_Mangement_system.SCR.Bus
             this.label2.Size = new System.Drawing.Size(107, 30);
             this.label2.TabIndex = 24;
             this.label2.Text = "Fees Type";
+            // 
+            // btnSolar
+            // 
+            this.btnSolar.AnimationHoverSpeed = 0.07F;
+            this.btnSolar.AnimationSpeed = 0.03F;
+            this.btnSolar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSolar.BaseColor = System.Drawing.Color.Transparent;
+            this.btnSolar.BorderColor = System.Drawing.Color.Black;
+            this.btnSolar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSolar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSolar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSolar.ForeColor = System.Drawing.Color.White;
+            this.btnSolar.Image = global::Bus_Mangement_system.Properties.Resources.icons8_gas_station_30;
+            this.btnSolar.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnSolar.Location = new System.Drawing.Point(385, 575);
+            this.btnSolar.Name = "btnSolar";
+            this.btnSolar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnSolar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSolar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSolar.OnHoverImage = null;
+            this.btnSolar.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnSolar.Radius = 8;
+            this.btnSolar.Size = new System.Drawing.Size(159, 51);
+            this.btnSolar.TabIndex = 68;
+            this.btnSolar.Text = "$ 0";
+            this.btnSolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnClose
             // 
@@ -554,24 +567,13 @@ namespace Bus_Mangement_system.SCR.Bus
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(55, 430);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 50);
-            this.label4.TabIndex = 75;
-            this.label4.Text = "Details";
-            // 
             // AddFees
             // 
+            this.AcceptButton = this.btnAssign;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1491, 881);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelDraft);

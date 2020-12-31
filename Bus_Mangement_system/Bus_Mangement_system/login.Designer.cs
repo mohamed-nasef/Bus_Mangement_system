@@ -163,7 +163,7 @@ namespace Bus_Mangement_system
             this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
             this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
             this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.gunaAdvenceButton1.Dock = System.Windows.Forms.DockStyle.Right;
             this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
             this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -237,6 +237,7 @@ namespace Bus_Mangement_system
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.CancelButton = this.gunaAdvenceButton1;
             this.ClientSize = new System.Drawing.Size(847, 396);
             this.ControlBox = false;
             this.Controls.Add(this.panelToolbar);
