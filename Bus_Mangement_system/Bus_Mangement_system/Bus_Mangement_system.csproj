@@ -126,6 +126,12 @@
     <Compile Include="SCR\Driver\EditDriver.Designer.cs">
       <DependentUpon>EditDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Driver\Salary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Driver\Salary.Designer.cs">
+      <DependentUpon>Salary.cs</DependentUpon>
+    </Compile>
     <Compile Include="SCR\Functions.cs" />
     <Compile Include="SCR\Search.cs">
       <SubType>Form</SubType>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Driver\EditDriver.resx">
       <DependentUpon>EditDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Driver\Salary.resx">
+      <DependentUpon>Salary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>

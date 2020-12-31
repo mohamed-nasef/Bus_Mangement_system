@@ -31,6 +31,7 @@ namespace Bus_Mangement_system
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
+
         #region function
         private void customizeDesign()
         {
@@ -247,7 +248,9 @@ namespace Bus_Mangement_system
         private void salary_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Driver.Salary sObj = new SCR.Driver.Salary();
+            openChildForm(sObj);
+
         }
 
         private void reportDriver_Click(object sender, EventArgs e)
