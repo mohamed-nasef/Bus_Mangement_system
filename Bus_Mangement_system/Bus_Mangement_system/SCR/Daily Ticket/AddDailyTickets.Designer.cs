@@ -33,19 +33,19 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDailyTickets));
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbAddDailyTickets = new System.Windows.Forms.GroupBox();
+            this.lblRoundTrip = new System.Windows.Forms.Label();
+            this.txtRoundTrip = new Guna.UI.WinForms.GunaTextBox();
             this.lblOneWay = new System.Windows.Forms.Label();
             this.txtOneWay = new Guna.UI.WinForms.GunaTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAddDailyTickets = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblRoundTrip = new System.Windows.Forms.Label();
-            this.txtRoundTrip = new Guna.UI.WinForms.GunaTextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBody.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.grbAddDailyTickets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDraft
@@ -66,11 +66,6 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
             this.panelBody.TabIndex = 1;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
             // grbAddDailyTickets
             // 
             this.grbAddDailyTickets.Controls.Add(this.lblRoundTrip);
@@ -88,6 +83,40 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             this.grbAddDailyTickets.TabIndex = 38;
             this.grbAddDailyTickets.TabStop = false;
             this.grbAddDailyTickets.Text = "Add Daily Tickets";
+            // 
+            // lblRoundTrip
+            // 
+            this.lblRoundTrip.AutoSize = true;
+            this.lblRoundTrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.lblRoundTrip.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoundTrip.ForeColor = System.Drawing.Color.Gray;
+            this.lblRoundTrip.Location = new System.Drawing.Point(69, 403);
+            this.lblRoundTrip.Name = "lblRoundTrip";
+            this.lblRoundTrip.Size = new System.Drawing.Size(39, 17);
+            this.lblRoundTrip.TabIndex = 45;
+            this.lblRoundTrip.Text = "ex: 10";
+            // 
+            // txtRoundTrip
+            // 
+            this.txtRoundTrip.BackColor = System.Drawing.Color.Transparent;
+            this.txtRoundTrip.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtRoundTrip.BorderColor = System.Drawing.Color.Silver;
+            this.txtRoundTrip.BorderSize = 0;
+            this.txtRoundTrip.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRoundTrip.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtRoundTrip.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtRoundTrip.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtRoundTrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoundTrip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.txtRoundTrip.Location = new System.Drawing.Point(63, 396);
+            this.txtRoundTrip.MaxLength = 11;
+            this.txtRoundTrip.Name = "txtRoundTrip";
+            this.txtRoundTrip.PasswordChar = '\0';
+            this.txtRoundTrip.Radius = 8;
+            this.txtRoundTrip.SelectedText = "";
+            this.txtRoundTrip.Size = new System.Drawing.Size(461, 32);
+            this.txtRoundTrip.TabIndex = 44;
+            this.txtRoundTrip.TextChanged += new System.EventHandler(this.txtRoundTrip_TextChanged);
             // 
             // lblOneWay
             // 
@@ -122,7 +151,6 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             this.txtOneWay.Size = new System.Drawing.Size(461, 32);
             this.txtOneWay.TabIndex = 38;
             this.txtOneWay.TextChanged += new System.EventHandler(this.txtOneWay_TextChanged);
-            this.txtOneWay.Validating += new System.ComponentModel.CancelEventHandler(this.txtOneWay_Validating);
             // 
             // label4
             // 
@@ -198,40 +226,10 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblRoundTrip
+            // errorProvider1
             // 
-            this.lblRoundTrip.AutoSize = true;
-            this.lblRoundTrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.lblRoundTrip.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoundTrip.ForeColor = System.Drawing.Color.Gray;
-            this.lblRoundTrip.Location = new System.Drawing.Point(69, 403);
-            this.lblRoundTrip.Name = "lblRoundTrip";
-            this.lblRoundTrip.Size = new System.Drawing.Size(39, 17);
-            this.lblRoundTrip.TabIndex = 45;
-            this.lblRoundTrip.Text = "ex: 10";
-            // 
-            // txtRoundTrip
-            // 
-            this.txtRoundTrip.BackColor = System.Drawing.Color.Transparent;
-            this.txtRoundTrip.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtRoundTrip.BorderColor = System.Drawing.Color.Silver;
-            this.txtRoundTrip.BorderSize = 0;
-            this.txtRoundTrip.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRoundTrip.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtRoundTrip.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtRoundTrip.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.txtRoundTrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoundTrip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtRoundTrip.Location = new System.Drawing.Point(63, 396);
-            this.txtRoundTrip.MaxLength = 11;
-            this.txtRoundTrip.Name = "txtRoundTrip";
-            this.txtRoundTrip.PasswordChar = '\0';
-            this.txtRoundTrip.Radius = 8;
-            this.txtRoundTrip.SelectedText = "";
-            this.txtRoundTrip.Size = new System.Drawing.Size(461, 32);
-            this.txtRoundTrip.TabIndex = 44;
-            this.txtRoundTrip.TextChanged += new System.EventHandler(this.txtRoundTrip_TextChanged);
-            this.txtRoundTrip.Validating += new System.ComponentModel.CancelEventHandler(this.txtRoundTrip_Validating);
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // AddDailyTickets
             // 
@@ -247,9 +245,9 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             this.Name = "AddDailyTickets";
             this.Text = "AddDailyTickets";
             this.panelBody.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.grbAddDailyTickets.ResumeLayout(false);
             this.grbAddDailyTickets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
