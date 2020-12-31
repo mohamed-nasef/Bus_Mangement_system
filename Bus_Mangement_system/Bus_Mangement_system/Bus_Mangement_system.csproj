@@ -133,6 +133,12 @@
       <DependentUpon>Salary.cs</DependentUpon>
     </Compile>
     <Compile Include="SCR\Functions.cs" />
+    <Compile Include="SCR\Modify Price\ModifyPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR\Modify Price\ModifyPrice.Designer.cs">
+      <DependentUpon>ModifyPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="SCR\Search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Driver\Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR\Modify Price\ModifyPrice.resx">
+      <DependentUpon>ModifyPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SCR\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
@@ -395,6 +404,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-money-bag-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pricing-80-final.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

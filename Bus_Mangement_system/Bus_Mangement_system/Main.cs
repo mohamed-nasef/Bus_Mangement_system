@@ -314,14 +314,16 @@ namespace Bus_Mangement_system
         private void btnSetting_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Modify_Price.ModifyPrice mpObj = new SCR.Modify_Price.ModifyPrice();
+            openChildForm(mpObj);
 
         }
 
         private void btniconSetting_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Modify_Price.ModifyPrice mpObj = new SCR.Modify_Price.ModifyPrice();
+            openChildForm(mpObj);
 
         }
 

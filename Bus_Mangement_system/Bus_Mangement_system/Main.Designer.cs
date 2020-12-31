@@ -715,7 +715,7 @@
             // 
             // btniconSetting
             // 
-            this.btniconSetting.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_settings_80_final;
+            this.btniconSetting.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_pricing_80_final;
             this.btniconSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btniconSetting.Dock = System.Windows.Forms.DockStyle.Top;
             this.btniconSetting.FlatAppearance.BorderSize = 0;
@@ -934,7 +934,7 @@
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(184, 75);
             this.btnSetting.TabIndex = 12;
-            this.btnSetting.Text = "Settings";
+            this.btnSetting.Text = "Modify Price";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);

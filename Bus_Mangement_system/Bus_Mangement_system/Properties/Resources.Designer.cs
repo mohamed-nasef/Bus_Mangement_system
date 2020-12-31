@@ -383,6 +383,16 @@ namespace Bus_Mangement_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pricing_80_final {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pricing-80-final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_profit_report_80_final {
             get {
                 object obj = ResourceManager.GetObject("icons8-profit-report-80-final", resourceCulture);
