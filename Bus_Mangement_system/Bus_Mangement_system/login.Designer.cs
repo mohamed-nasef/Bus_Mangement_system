@@ -130,7 +130,7 @@ namespace Bus_Mangement_system
             this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.txtUserName.Location = new System.Drawing.Point(334, 120);
-            this.txtUserName.MaxLength = 10;
+            this.txtUserName.MaxLength = 15;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.Radius = 8;
@@ -209,7 +209,7 @@ namespace Bus_Mangement_system
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.txtPassword.Location = new System.Drawing.Point(334, 203);
-            this.txtPassword.MaxLength = 10;
+            this.txtPassword.MaxLength = 15;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Radius = 8;
