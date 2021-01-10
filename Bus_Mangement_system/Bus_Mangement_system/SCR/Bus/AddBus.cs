@@ -55,11 +55,11 @@ namespace Bus_Mangement_system.SCR.Bus
         #endregion
 
         #region TextBox Watermark
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            Functions.waterMark(txtName, lblName);
-        }
 
+        private void txtBusName_TextChanged(object sender, EventArgs e)
+        {
+            Functions.waterMark(txtBusName, lblName);
+        }
         private void txtLicenseNumber_TextChanged(object sender, EventArgs e)
         {
             Functions.waterMark(txtLicenseNumber, lblLicenseNumber);
@@ -68,12 +68,12 @@ namespace Bus_Mangement_system.SCR.Bus
         #endregion
 
         #region TextBox Validation
-        private void txtName_Validating(object sender, CancelEventArgs e)
+
+        private void txtBusName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtName, "Please Enter Name", ref name, e, errorProvider1);
+            Functions.validationTxt(txtBusName, "Please Enter Name", ref name, e, errorProvider1);
         }
 
-        
         private void txtLicenseNumber_Validating(object sender, CancelEventArgs e)
         {
             Functions.validationTxt(txtLicenseNumber, "Please Enter License Number", ref LicenseNumber, e, errorProvider1);
@@ -125,7 +125,7 @@ namespace Bus_Mangement_system.SCR.Bus
 
                     }
                     //clear
-                    txtName.Clear();
+                    txtBusName.Clear();
                     txtLicenseNumber.Clear();
                     cmbCapacity.SelectedIndex = -1;
                     connection.Close();

@@ -82,7 +82,7 @@ namespace Bus_Mangement_system.SCR
                 }
 
                 //Driver name and bus
-                else if (txt.Name == "txtDriverName")
+                else if (txt.Name == "txtDriverName"|| txt.Name == "txtBusName")
                 {
                     Regex r = new Regex(@"^[a-zA-Z\x20]{3,25}$");
                     if (!(r.IsMatch(txt.Text)))
