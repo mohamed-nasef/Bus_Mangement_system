@@ -311,6 +311,13 @@ namespace Bus_Mangement_system
             SCR.Report.UniversityReport urObj = new SCR.Report.UniversityReport();
             openChildForm(urObj);
         }
+        private void StudentReport_Click(object sender, EventArgs e)
+        {
+            customizeDesign();
+            SCR.Report.StudentReport srObj = new SCR.Report.StudentReport();
+            openChildForm(srObj);
+        }
+
         #endregion
 
         #region Setting

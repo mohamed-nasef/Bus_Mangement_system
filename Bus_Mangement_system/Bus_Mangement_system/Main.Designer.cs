@@ -116,6 +116,7 @@
             this.addStudent = new System.Windows.Forms.Button();
             this.btnStudent = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.Panel();
+            this.studentReport = new System.Windows.Forms.Button();
             this.panelChildForm.SuspendLayout();
             this.cardDrivers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -707,7 +708,7 @@
             // 
             this.paneliconSetting.Controls.Add(this.btniconSetting);
             this.paneliconSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneliconSetting.Location = new System.Drawing.Point(0, 1156);
+            this.paneliconSetting.Location = new System.Drawing.Point(0, 1195);
             this.paneliconSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paneliconSetting.Name = "paneliconSetting";
             this.paneliconSetting.Size = new System.Drawing.Size(56, 75);
@@ -736,7 +737,7 @@
             this.paneliconReport.Location = new System.Drawing.Point(0, 1025);
             this.paneliconReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paneliconReport.Name = "paneliconReport";
-            this.paneliconReport.Size = new System.Drawing.Size(56, 131);
+            this.paneliconReport.Size = new System.Drawing.Size(56, 170);
             this.paneliconReport.TabIndex = 15;
             // 
             // btniconReport
@@ -929,7 +930,7 @@
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetting.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetting.ForeColor = System.Drawing.Color.White;
-            this.btnSetting.Location = new System.Drawing.Point(0, 1156);
+            this.btnSetting.Location = new System.Drawing.Point(0, 1195);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(184, 75);
@@ -942,13 +943,14 @@
             // reportSubPanel
             // 
             this.reportSubPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.reportSubPanel.Controls.Add(this.studentReport);
             this.reportSubPanel.Controls.Add(this.universityReport);
             this.reportSubPanel.Controls.Add(this.monthlyReport);
             this.reportSubPanel.Controls.Add(this.dailyReport);
             this.reportSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.reportSubPanel.Location = new System.Drawing.Point(0, 1025);
             this.reportSubPanel.Name = "reportSubPanel";
-            this.reportSubPanel.Size = new System.Drawing.Size(184, 131);
+            this.reportSubPanel.Size = new System.Drawing.Size(184, 170);
             this.reportSubPanel.TabIndex = 11;
             // 
             // universityReport
@@ -1413,6 +1415,25 @@
             this.Logo.Size = new System.Drawing.Size(184, 94);
             this.Logo.TabIndex = 1;
             // 
+            // studentReport
+            // 
+            this.studentReport.BackColor = System.Drawing.Color.Transparent;
+            this.studentReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.studentReport.FlatAppearance.BorderSize = 0;
+            this.studentReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.studentReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.studentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.studentReport.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentReport.ForeColor = System.Drawing.Color.White;
+            this.studentReport.Location = new System.Drawing.Point(0, 117);
+            this.studentReport.Name = "studentReport";
+            this.studentReport.Size = new System.Drawing.Size(184, 39);
+            this.studentReport.TabIndex = 3;
+            this.studentReport.Text = "Student Report";
+            this.studentReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.studentReport.UseVisualStyleBackColor = false;
+            this.studentReport.Click += new System.EventHandler(this.StudentReport_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1561,5 +1582,6 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         public System.Windows.Forms.Button btniconBus;
+        private System.Windows.Forms.Button studentReport;
     }
 }

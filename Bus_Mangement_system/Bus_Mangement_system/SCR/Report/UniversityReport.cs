@@ -59,7 +59,7 @@ namespace Bus_Mangement_system.SCR.Report
         private void CmbUniversity_SelectedIndexChanged(object sender, EventArgs e)
         {
             iUnuversityId = cmbUniversity.SelectedIndex + 1;
-            SqlDataAdapter da = new SqlDataAdapter("select s.fName ,s.lName ,s.student_phone,u.university_name,a.address_name from studentInformation s inner join university u on s.university_id=u.university_id inner join address a on s.address_id=a.address_id where s.university_id = '" + iUnuversityId + "'", connection);
+            SqlDataAdapter da = new SqlDataAdapter("select  s.fName as 'First Name' ,s.lName as 'Last Name' ,s.student_phone as 'Phone',u.university_name as 'University',a.address_name as 'Address' from studentInformation s inner join university u on s.university_id=u.university_id inner join address a on s.address_id=a.address_id where s.university_id = '" + iUnuversityId + "'", connection);
             DataSet ds = new DataSet();
             da.Fill(ds, "Student");
             if (ds.Tables["Student"].Rows.Count > 0)
@@ -67,6 +67,8 @@ namespace Bus_Mangement_system.SCR.Report
                 dgvStudent.Visible = true;
                 btnStudentNumber.Visible = true;
                 dgvStudent.DataSource = ds.Tables["Student"];
+
+
                 da = new SqlDataAdapter("select COUNT(s.student_id) from studentInformation s where s.university_id = '" + iUnuversityId + "'", connection);
                 da.Fill(ds, "countStudent");
                 DataRow dr = ds.Tables["countStudent"].Rows[0];

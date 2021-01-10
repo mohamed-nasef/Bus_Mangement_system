@@ -42,7 +42,7 @@ namespace Bus_Mangement_system.SCR.Report
         {
             SqlConnection con = new SqlConnection(constr);
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("select * from profit where profit_date='" + date + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("select p.profit_date as 'Date', p.driverTakenSalary as 'Driver Salary',p.busFees as 'Bus Fees',p.dailyBooking as 'Daily Booking',p.monthlyBooking as 'Monthly Booking',p.termBooking as 'Term Booking'  from profit p where profit_date='" + date + "'", con);
             DataSet ds = new DataSet();
             da.Fill(ds, "daily");
             if (ds.Tables["daily"].Rows.Count > 0)

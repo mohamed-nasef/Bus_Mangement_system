@@ -48,7 +48,7 @@ namespace Bus_Mangement_system.SCR.Report
         {
             SqlConnection con = new SqlConnection(constr);
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM profit WHERE DATEPART(YEAR, profit_date) = '" + year + "' AND DATEPART(MONTH, profit_date) = '" + month + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT p.profit_date as 'Date', p.driverTakenSalary as 'Driver Salary',p.busFees as 'Bus Fees',p.dailyBooking as 'Daily Booking',p.monthlyBooking as 'Monthly Booking',p.termBooking as 'Term Booking' FROM profit p WHERE DATEPART(YEAR, profit_date) = '" + year + "' AND DATEPART(MONTH, profit_date) = '" + month + "'", con);
             DataSet ds = new DataSet();
             da.Fill(ds, "monthly");
             if (ds.Tables["monthly"].Rows.Count > 0)
