@@ -25,12 +25,6 @@ namespace Bus_Mangement_system.SCR.Report
         {
             InitializeComponent();
         }
-
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void StudentReport_Load(object sender, EventArgs e)
         {
             connection = new SqlConnection(conString);
@@ -40,5 +34,11 @@ namespace Bus_Mangement_system.SCR.Report
             da.Fill(ds, "AllStudent");
             dgvAllStudent.DataSource = ds.Tables["AllStudent"];
         }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
