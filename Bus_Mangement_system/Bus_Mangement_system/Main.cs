@@ -294,7 +294,8 @@ namespace Bus_Mangement_system
         private void monthlyReport_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Report.MonthlyReport mrObj = new SCR.Report.MonthlyReport();
+            openChildForm(mrObj);
         }
 
         private void dailyReport_Click(object sender, EventArgs e)
