@@ -308,7 +308,8 @@ namespace Bus_Mangement_system
         private void universityReport_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Report.UniversityReport urObj = new SCR.Report.UniversityReport();
+            openChildForm(urObj);
         }
         #endregion
 

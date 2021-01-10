@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthlyReport));
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.numYear = new Guna.UI.WinForms.GunaNumeric();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numMonth = new Guna.UI.WinForms.GunaNumeric();
             this.dgvMonthly = new Guna.UI.WinForms.GunaDataGridView();
             this.btnProfit = new Guna.UI.WinForms.GunaButton();
             this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numMonth = new Guna.UI.WinForms.GunaNumeric();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numYear = new Guna.UI.WinForms.GunaNumeric();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthly)).BeginInit();
@@ -70,104 +70,36 @@
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
             this.panelBody.TabIndex = 1;
             // 
-            // numYear
-            // 
-            this.numYear.BackColor = System.Drawing.Color.Transparent;
-            this.numYear.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.numYear.BorderColor = System.Drawing.Color.Silver;
-            this.numYear.BorderSize = 0;
-            this.numYear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.numYear.ButtonForeColor = System.Drawing.Color.White;
-            this.numYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.numYear.Location = new System.Drawing.Point(142, 178);
-            this.numYear.Maximum = ((long)(3000));
-            this.numYear.Minimum = ((long)(2020));
-            this.numYear.Name = "numYear";
-            this.numYear.Radius = 8;
-            this.numYear.Size = new System.Drawing.Size(218, 30);
-            this.numYear.TabIndex = 55;
-            this.numYear.Text = "numMonth";
-            this.numYear.Value = ((long)(2020));
-            this.numYear.ValueChanged += new System.EventHandler(this.NumYear_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(137, 132);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 30);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "Year";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(455, 132);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 30);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Month";
-            // 
-            // numMonth
-            // 
-            this.numMonth.BackColor = System.Drawing.Color.Transparent;
-            this.numMonth.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.numMonth.BorderColor = System.Drawing.Color.Silver;
-            this.numMonth.BorderSize = 0;
-            this.numMonth.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.numMonth.ButtonForeColor = System.Drawing.Color.White;
-            this.numMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.numMonth.Location = new System.Drawing.Point(460, 178);
-            this.numMonth.Maximum = ((long)(12));
-            this.numMonth.Minimum = ((long)(1));
-            this.numMonth.Name = "numMonth";
-            this.numMonth.Radius = 8;
-            this.numMonth.Size = new System.Drawing.Size(218, 30);
-            this.numMonth.TabIndex = 57;
-            this.numMonth.Text = "gunaNumeric1";
-            this.numMonth.Value = ((long)(1));
-            this.numMonth.ValueChanged += new System.EventHandler(this.NumMonth_ValueChanged);
-            // 
             // dgvMonthly
             // 
             this.dgvMonthly.AllowUserToAddRows = false;
             this.dgvMonthly.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.dgvMonthly.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.dgvMonthly.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMonthly.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonthly.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.dgvMonthly.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMonthly.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvMonthly.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMonthly.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMonthly.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMonthly.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMonthly.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMonthly.EnableHeadersVisualStyles = false;
             this.dgvMonthly.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.dgvMonthly.Location = new System.Drawing.Point(142, 364);
@@ -264,6 +196,74 @@
             this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(455, 132);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 30);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Month";
+            // 
+            // numMonth
+            // 
+            this.numMonth.BackColor = System.Drawing.Color.Transparent;
+            this.numMonth.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.numMonth.BorderColor = System.Drawing.Color.Silver;
+            this.numMonth.BorderSize = 0;
+            this.numMonth.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.numMonth.ButtonForeColor = System.Drawing.Color.White;
+            this.numMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.numMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.numMonth.Location = new System.Drawing.Point(460, 178);
+            this.numMonth.Maximum = ((long)(12));
+            this.numMonth.Minimum = ((long)(1));
+            this.numMonth.Name = "numMonth";
+            this.numMonth.Radius = 8;
+            this.numMonth.Size = new System.Drawing.Size(218, 30);
+            this.numMonth.TabIndex = 57;
+            this.numMonth.Text = "gunaNumeric1";
+            this.numMonth.Value = ((long)(1));
+            this.numMonth.ValueChanged += new System.EventHandler(this.NumMonth_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(137, 132);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 30);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Year";
+            // 
+            // numYear
+            // 
+            this.numYear.BackColor = System.Drawing.Color.Transparent;
+            this.numYear.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.numYear.BorderColor = System.Drawing.Color.Silver;
+            this.numYear.BorderSize = 0;
+            this.numYear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.numYear.ButtonForeColor = System.Drawing.Color.White;
+            this.numYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.numYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.numYear.Location = new System.Drawing.Point(142, 178);
+            this.numYear.Maximum = ((long)(3000));
+            this.numYear.Minimum = ((long)(2020));
+            this.numYear.Name = "numYear";
+            this.numYear.Radius = 8;
+            this.numYear.Size = new System.Drawing.Size(218, 30);
+            this.numYear.TabIndex = 55;
+            this.numYear.Text = "numMonth";
+            this.numYear.Value = ((long)(2020));
+            this.numYear.ValueChanged += new System.EventHandler(this.NumYear_ValueChanged);
+            // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -285,6 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1491, 881);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelDraft);

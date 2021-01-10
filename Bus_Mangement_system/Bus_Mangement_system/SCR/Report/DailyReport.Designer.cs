@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.dtpDaily = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnProfit = new Guna.UI.WinForms.GunaButton();
             this.dgvDaily = new Guna.UI.WinForms.GunaDataGridView();
+            this.btnProfit = new Guna.UI.WinForms.GunaButton();
+            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpDaily = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaily)).BeginInit();
             this.SuspendLayout();
@@ -66,59 +66,95 @@
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
             this.panelBody.TabIndex = 1;
             // 
-            // btnClose
+            // dgvDaily
             // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
-            this.btnClose.Location = new System.Drawing.Point(6, 30);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(73, 62);
-            this.btnClose.TabIndex = 39;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            this.dgvDaily.AllowUserToAddRows = false;
+            this.dgvDaily.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.dgvDaily.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDaily.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDaily.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dgvDaily.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDaily.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvDaily.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDaily.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDaily.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDaily.EnableHeadersVisualStyles = false;
+            this.dgvDaily.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dgvDaily.Location = new System.Drawing.Point(142, 364);
+            this.dgvDaily.Name = "dgvDaily";
+            this.dgvDaily.ReadOnly = true;
+            this.dgvDaily.RowHeadersVisible = false;
+            this.dgvDaily.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDaily.Size = new System.Drawing.Size(1038, 493);
+            this.dgvDaily.TabIndex = 72;
+            this.dgvDaily.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.dgvDaily.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dgvDaily.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dgvDaily.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.dgvDaily.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvDaily.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dgvDaily.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvDaily.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvDaily.ThemeStyle.HeaderStyle.Height = 23;
+            this.dgvDaily.ThemeStyle.ReadOnly = true;
+            this.dgvDaily.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dgvDaily.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvDaily.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dgvDaily.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.dgvDaily.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvDaily.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dgvDaily.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.dgvDaily.Visible = false;
             // 
-            // dtpDaily
+            // btnProfit
             // 
-            this.dtpDaily.BackColor = System.Drawing.Color.Transparent;
-            this.dtpDaily.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dtpDaily.BorderColor = System.Drawing.Color.Silver;
-            this.dtpDaily.BorderSize = 0;
-            this.dtpDaily.CustomFormat = "yyyy-mm-dd";
-            this.dtpDaily.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpDaily.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dtpDaily.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDaily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.dtpDaily.Location = new System.Drawing.Point(142, 178);
-            this.dtpDaily.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
-            this.dtpDaily.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.dtpDaily.Name = "dtpDaily";
-            this.dtpDaily.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dtpDaily.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dtpDaily.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.dtpDaily.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpDaily.Radius = 6;
-            this.dtpDaily.Size = new System.Drawing.Size(253, 30);
-            this.dtpDaily.TabIndex = 40;
-            this.dtpDaily.Text = "Sunday, January 10, 2021";
-            this.dtpDaily.Value = new System.DateTime(2021, 1, 10, 17, 13, 46, 138);
-            this.dtpDaily.ValueChanged += new System.EventHandler(this.DtpDaily_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(137, 132);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 30);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "Select Date";
+            this.btnProfit.AnimationHoverSpeed = 0.07F;
+            this.btnProfit.AnimationSpeed = 0.03F;
+            this.btnProfit.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfit.BaseColor = System.Drawing.Color.Transparent;
+            this.btnProfit.BorderColor = System.Drawing.Color.Black;
+            this.btnProfit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnProfit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnProfit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfit.ForeColor = System.Drawing.Color.White;
+            this.btnProfit.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_30;
+            this.btnProfit.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnProfit.Location = new System.Drawing.Point(142, 260);
+            this.btnProfit.Name = "btnProfit";
+            this.btnProfit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnProfit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnProfit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnProfit.OnHoverImage = null;
+            this.btnProfit.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnProfit.Radius = 8;
+            this.btnProfit.Size = new System.Drawing.Size(253, 51);
+            this.btnProfit.TabIndex = 71;
+            this.btnProfit.Text = "0";
+            this.btnProfit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnProfit.Visible = false;
             // 
             // btnSearch
             // 
@@ -156,95 +192,59 @@
             this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // btnProfit
+            // label3
             // 
-            this.btnProfit.AnimationHoverSpeed = 0.07F;
-            this.btnProfit.AnimationSpeed = 0.03F;
-            this.btnProfit.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfit.BaseColor = System.Drawing.Color.Transparent;
-            this.btnProfit.BorderColor = System.Drawing.Color.Black;
-            this.btnProfit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnProfit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnProfit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfit.ForeColor = System.Drawing.Color.White;
-            this.btnProfit.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_30;
-            this.btnProfit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnProfit.Location = new System.Drawing.Point(142, 260);
-            this.btnProfit.Name = "btnProfit";
-            this.btnProfit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnProfit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnProfit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnProfit.OnHoverImage = null;
-            this.btnProfit.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnProfit.Radius = 8;
-            this.btnProfit.Size = new System.Drawing.Size(253, 51);
-            this.btnProfit.TabIndex = 71;
-            this.btnProfit.Text = "0";
-            this.btnProfit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnProfit.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(137, 132);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 30);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "Select Date";
             // 
-            // dgvDaily
+            // dtpDaily
             // 
-            this.dgvDaily.AllowUserToAddRows = false;
-            this.dgvDaily.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.dgvDaily.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDaily.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDaily.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dgvDaily.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDaily.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvDaily.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDaily.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDaily.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDaily.EnableHeadersVisualStyles = false;
-            this.dgvDaily.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dgvDaily.Location = new System.Drawing.Point(142, 364);
-            this.dgvDaily.Name = "dgvDaily";
-            this.dgvDaily.ReadOnly = true;
-            this.dgvDaily.RowHeadersVisible = false;
-            this.dgvDaily.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDaily.Size = new System.Drawing.Size(1038, 493);
-            this.dgvDaily.TabIndex = 72;
-            this.dgvDaily.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dgvDaily.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.dgvDaily.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dgvDaily.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dgvDaily.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.dgvDaily.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvDaily.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dgvDaily.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvDaily.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvDaily.ThemeStyle.HeaderStyle.Height = 23;
-            this.dgvDaily.ThemeStyle.ReadOnly = true;
-            this.dgvDaily.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dgvDaily.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvDaily.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dgvDaily.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.dgvDaily.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvDaily.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.dgvDaily.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.dgvDaily.Visible = false;
+            this.dtpDaily.BackColor = System.Drawing.Color.Transparent;
+            this.dtpDaily.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dtpDaily.BorderColor = System.Drawing.Color.Silver;
+            this.dtpDaily.BorderSize = 0;
+            this.dtpDaily.CustomFormat = "yyyy-mm-dd";
+            this.dtpDaily.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpDaily.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dtpDaily.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDaily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.dtpDaily.Location = new System.Drawing.Point(142, 178);
+            this.dtpDaily.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            this.dtpDaily.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.dtpDaily.Name = "dtpDaily";
+            this.dtpDaily.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dtpDaily.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.dtpDaily.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.dtpDaily.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpDaily.Radius = 6;
+            this.dtpDaily.Size = new System.Drawing.Size(253, 30);
+            this.dtpDaily.TabIndex = 40;
+            this.dtpDaily.Text = "Sunday, January 10, 2021";
+            this.dtpDaily.Value = new System.DateTime(2021, 1, 10, 17, 13, 46, 138);
+            this.dtpDaily.ValueChanged += new System.EventHandler(this.DtpDaily_ValueChanged);
+            // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
+            this.btnClose.Location = new System.Drawing.Point(6, 30);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(73, 62);
+            this.btnClose.TabIndex = 39;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // DailyReport
             // 
@@ -252,6 +252,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1491, 881);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelDraft);
