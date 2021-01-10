@@ -26,7 +26,7 @@ namespace Bus_Mangement_system.SCR.Modify_Price
         #region Prop
 
         string strNewPrice, strOldPrice;
-        int iBookingTypeId,iNewPrice;
+        int iBookingTypeId,iNewPrice,iOldPrice;
 
         #endregion
 
@@ -126,9 +126,6 @@ namespace Bus_Mangement_system.SCR.Modify_Price
             visible();
             iBookingTypeId = cmbBookingType.SelectedIndex + 1;
 
-            //DB select booking type price from table where notnull
-            //index = cmb.SelectedIndex + 1; delete this
-
             cmd = new SqlCommand("select price from bookingPrice bp  where bp.bookingType_id ='" + iBookingTypeId + "'and bp.expiryDate is null", connection);
             connection.Open();
             cmd.ExecuteNonQuery();
@@ -137,11 +134,10 @@ namespace Bus_Mangement_system.SCR.Modify_Price
             {
                 strOldPrice = (string)dr["price"].ToString();
                 txtOldPrice.Text = strOldPrice;
+                int.TryParse(strOldPrice, out iOldPrice);
             }
-            connection.Close();
 
-            //iOldPrice = 350;
-            //txtOldPrice.Text = iOldPrice.ToString();
+            connection.Close();
         }
 
         #endregion
@@ -158,7 +154,7 @@ namespace Bus_Mangement_system.SCR.Modify_Price
                 {
                     //DB Commands
 
-                    cmd = new SqlCommand("update bookingPrice SET expiryDate='" + DateTime.Now + "' where bookingType_id = '" + iBookingTypeId + "'", connection);
+                    cmd = new SqlCommand("update bookingPrice SET expiryDate='" + DateTime.Now + "' where bookingType_id = '" + iBookingTypeId + "' and price = "+ iOldPrice+ "", connection);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     cmd = new SqlCommand("insert into bookingPrice (bookingType_id,price)values('" + iBookingTypeId + "','" + iNewPrice + "')", connection);

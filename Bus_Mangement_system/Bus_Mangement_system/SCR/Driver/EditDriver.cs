@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,24 @@ namespace Bus_Mangement_system.SCR.Driver
 {
     public partial class EditDriver : Form
     {
+
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
         #region Prop
         int driverindex = -1;
-        string name, phone, address, salary;
+        string name, phone, address, salary,strID;
         int iSalary = 0;
 
         #endregion
+
         public EditDriver()
         {
             InitializeComponent();
@@ -25,9 +38,19 @@ namespace Bus_Mangement_system.SCR.Driver
         private void EditDriver_Load(object sender, EventArgs e)
         {
             visible();
-
-            //db 3alashan ageb mn goah
-
+            cmbDriver.SelectedIndex = -1;
+            connection = new SqlConnection(conString);
+            connection.Open();
+            cmd = new SqlCommand("select driver_name from driverInformation", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbDriver.Items.Add(dr["driver_name"].ToString());
+            }
+            connection.Close();
         }
 
         #region Funcation
@@ -43,7 +66,7 @@ namespace Bus_Mangement_system.SCR.Driver
                 lblAddress.Visible = false;
                 lblPhone.Visible = false;
                 lblSalary.Visible = false;
-                txtName.Visible = false;
+                txtDriverName.Visible = false;
                 txtAddress.Visible = false;
                 txtPhone.Visible = false;
                 txtSalary.Visible = false;
@@ -58,7 +81,7 @@ namespace Bus_Mangement_system.SCR.Driver
                 lblAddress.Visible = true;
                 lblPhone.Visible = true;
                 lblSalary.Visible = true;
-                txtName.Visible = true;
+                txtDriverName.Visible = true;
                 txtAddress.Visible = true;
                 txtPhone.Visible = true;
                 txtSalary.Visible = true;
@@ -77,11 +100,9 @@ namespace Bus_Mangement_system.SCR.Driver
         #endregion
 
         #region TextBox Watermark
-
-        private void TxtName_TextChanged(object sender, EventArgs e)
+        private void TxtDriverName_TextChanged(object sender, EventArgs e)
         {
-            Functions.waterMark(txtName, lblName);
-
+            Functions.waterMark(txtDriverName, lblName);
         }
 
         private void TxtPhone_TextChanged(object sender, EventArgs e)
@@ -106,9 +127,10 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #region TextBox Validation
 
-        private void TxtName_Validating(object sender, CancelEventArgs e)
+       
+        private void TxtDriverName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtName, "Please Enter Name", ref name, e, errorProvider1);
+            Functions.validationTxt(txtDriverName, "Please Enter Name", ref name, e, errorProvider1);
 
         }
 
@@ -130,6 +152,8 @@ namespace Bus_Mangement_system.SCR.Driver
 
         }
 
+       
+
         #endregion
 
         #region ComboBox Validation
@@ -143,19 +167,34 @@ namespace Bus_Mangement_system.SCR.Driver
         #endregion
 
         #region Selected Driver
-
         private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             visible();
+            driverindex = cmbDriver.SelectedIndex + 1;
+            name = cmbDriver.SelectedText;
+            connection.Open();
+            cmd = new SqlCommand("select * from driverInformation where driver_id ='"+driverindex+"' ", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                strID = dr["driver_id"].ToString();
+                txtDriverName.Text = dr["driver_name"].ToString();
+                name = txtDriverName.Text;
+                txtPhone.Text = dr["driver_phone"].ToString();
+                phone = txtPhone.Text;
+                txtAddress.Text = dr["driver_address"].ToString();
+                address = txtAddress.Text;
+                txtSalary.Text = dr["basicSalary"].ToString();
+                salary = txtSalary.Text;
+                int.TryParse(salary, out iSalary);
 
-            //db 
-            txtName.Text = "Driver";
-            txtPhone.Text = "01067893079";
-            txtAddress.Text = "aga";
-            txtSalary.Text = "5000";
+            }
+            connection.Close();
 
-
+           
         }
 
         #endregion
@@ -173,15 +212,22 @@ namespace Bus_Mangement_system.SCR.Driver
                     DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {name}\nsalary:    {iSalary}\nphone:   {phone}\naddress: {address}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
+                        driverindex = cmbDriver.SelectedIndex + 1;
                         //DB Commands
+                        cmd = new SqlCommand("update driverInformation SET driver_name ='"+name+"',driver_phone ='"+phone+"', driver_address ='"+address+"',basicSalary ='"+iSalary+"' where driver_id ='"+strID+ "'", connection);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
 
                         //clear
-                        txtName.Clear();
+                        txtDriverName.Clear();
                         txtPhone.Clear();
                         txtAddress.Clear();
                         txtSalary.Clear();
                         cmbDriver.SelectedIndex = -1;
+
                         MetroFramework.MetroMessageBox.Show(this, "\n\nDriver has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        this.Close();
                     }
                 }
                 else
@@ -189,6 +235,7 @@ namespace Bus_Mangement_system.SCR.Driver
             }
 
             #endregion
+
         }
     }
 }

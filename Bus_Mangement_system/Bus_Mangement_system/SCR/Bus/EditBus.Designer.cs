@@ -43,7 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new Guna.UI.WinForms.GunaTextBox();
+            this.txtBusName = new Guna.UI.WinForms.GunaTextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBody.SuspendLayout();
@@ -81,7 +81,7 @@
             this.grbEditBus.Controls.Add(this.label4);
             this.grbEditBus.Controls.Add(this.label1);
             this.grbEditBus.Controls.Add(this.label2);
-            this.grbEditBus.Controls.Add(this.txtName);
+            this.grbEditBus.Controls.Add(this.txtBusName);
             this.grbEditBus.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEditBus.ForeColor = System.Drawing.Color.White;
             this.grbEditBus.Location = new System.Drawing.Point(368, 30);
@@ -119,11 +119,6 @@
             this.cmbBus.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.cmbBus.FormattingEnabled = true;
-            this.cmbBus.Items.AddRange(new object[] {
-            "Bus 1",
-            "Bus 2",
-            "Bus 3",
-            "Bus 4"});
             this.cmbBus.Location = new System.Drawing.Point(63, 148);
             this.cmbBus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbBus.MaxDropDownItems = 10;
@@ -286,29 +281,29 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Capacity";
             // 
-            // txtName
+            // txtBusName
             // 
-            this.txtName.BackColor = System.Drawing.Color.Transparent;
-            this.txtName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtName.BorderColor = System.Drawing.Color.Silver;
-            this.txtName.BorderSize = 0;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtName.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtName.Location = new System.Drawing.Point(63, 272);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtName.MaxLength = 25;
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.Radius = 8;
-            this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(461, 32);
-            this.txtName.TabIndex = 26;
-            this.txtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtName_Validating);
+            this.txtBusName.BackColor = System.Drawing.Color.Transparent;
+            this.txtBusName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtBusName.BorderColor = System.Drawing.Color.Silver;
+            this.txtBusName.BorderSize = 0;
+            this.txtBusName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBusName.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtBusName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtBusName.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtBusName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.txtBusName.Location = new System.Drawing.Point(63, 272);
+            this.txtBusName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBusName.MaxLength = 25;
+            this.txtBusName.Name = "txtBusName";
+            this.txtBusName.PasswordChar = '\0';
+            this.txtBusName.Radius = 8;
+            this.txtBusName.SelectedText = "";
+            this.txtBusName.Size = new System.Drawing.Size(461, 32);
+            this.txtBusName.TabIndex = 26;
+            this.txtBusName.TextChanged += new System.EventHandler(this.TxtBusName_TextChanged);
+            this.txtBusName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBusName_Validating);
             // 
             // btnClose
             // 
@@ -368,7 +363,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI.WinForms.GunaTextBox txtName;
+        private Guna.UI.WinForms.GunaTextBox txtBusName;
         private System.Windows.Forms.Button btnClose;
         private Guna.UI.WinForms.GunaComboBox cmbBus;
         private System.Windows.Forms.Label label3;
