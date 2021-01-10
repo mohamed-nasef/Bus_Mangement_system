@@ -62,13 +62,14 @@ namespace Bus_Mangement_system.SCR.Report
                 if ((int)dr.ItemArray.GetValue(0) > 0)
                 {
                     btnProfit.Text = $"Profit = {dr.ItemArray.GetValue(0).ToString()}";
+                    btnProfit.BaseColor = ColorTranslator.FromHtml("#4DE1AF");
                     btnProfit.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
                     btnProfit.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
                 }
                 else
                 {
                     btnProfit.Text = $"Financial losses = {dr.ItemArray.GetValue(0).ToString()}";
-                    btnProfit.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
+                    btnProfit.BaseColor = ColorTranslator.FromHtml("#E1184D");
                 }
 
             }
