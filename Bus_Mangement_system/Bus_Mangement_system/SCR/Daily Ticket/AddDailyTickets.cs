@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,33 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
     public partial class AddDailyTickets : Form
     {
 
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds;
+        DataRow dr;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
         #region Prop
 
-        string oneWay ="", roundTrip="";
-        int iOneWay, iRoundTrip;
+        string oneWay ="", roundTrip="",strPrice,date=DateTime.Now.ToShortDateString();
+        int iOneWay, iRoundTrip,iPrice,total=0;
+        
 
         #endregion
 
         public AddDailyTickets()
         {
             InitializeComponent();
+        }
+
+        private void AddDailyTickets_Load(object sender, EventArgs e)
+        {
+            connection = new SqlConnection(conString);
         }
 
 
@@ -119,7 +137,26 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                     if (result == DialogResult.Yes)
                     {
                         int.TryParse(oneWay, out iOneWay);
+
                         //DB Commands
+                        cmd = new SqlCommand("select price from bookingPrice bp  where bp.bookingType_id ='1' and bp.expiryDate is null", connection);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            strPrice = (string)dr["price"].ToString();
+                            int.TryParse(strPrice, out iPrice);
+                        }
+                        total = iOneWay * (iPrice/2);
+                        connection.Close();
+
+                        connection.Open();
+                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '"+date+"',"+total+"", connection);
+                        cmdproce.ExecuteNonQuery();
+
+                        connection.Close();
+
 
                         //clear
                         txtOneWay.Clear();
@@ -128,6 +165,7 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                     }
                 }
             }
+
             else if (txtRoundTrip.Text != ""&& txtOneWay.Text == "")
             {
                 if (validtxtRoundTrip())
@@ -137,7 +175,25 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                     if (result == DialogResult.Yes)
                     {
                         int.TryParse(roundTrip, out iRoundTrip);
+
                         //DB Commands
+                        cmd = new SqlCommand("select price from bookingPrice bp  where bp.bookingType_id ='1' and bp.expiryDate is null", connection);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            strPrice = (string)dr["price"].ToString();
+                            int.TryParse(strPrice, out iPrice);
+                        }
+                        total = iRoundTrip * iPrice;
+                        connection.Close();
+
+                        connection.Open();
+                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + date + "'," + total + "", connection);
+                        cmdproce.ExecuteNonQuery();
+
+                        connection.Close();
 
                         //clear
                         txtOneWay.Clear();
@@ -146,6 +202,7 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                     }
                 }
             }
+
             else if(txtRoundTrip.Text != "" && txtOneWay.Text != "")
             {
                 if (validtxtRoundTrip()&&validtxtOneWay())
@@ -156,7 +213,26 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                     {
                         int.TryParse(roundTrip, out iRoundTrip);
                         int.TryParse(oneWay, out iOneWay);
+
                         //DB Commands
+                        cmd = new SqlCommand("select price from bookingPrice bp  where bp.bookingType_id ='1' and bp.expiryDate is null", connection);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            strPrice = (string)dr["price"].ToString();
+                            int.TryParse(strPrice, out iPrice);
+                        }
+                        total = (iRoundTrip * iPrice) + (iOneWay * (iPrice / 2));
+                        connection.Close();
+
+                        connection.Open();
+                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + date + "'," + total + "", connection);
+                        cmdproce.ExecuteNonQuery();
+
+                        connection.Close();
+
 
                         //clear
                         txtOneWay.Clear();
@@ -164,7 +240,9 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                         MetroFramework.MetroMessageBox.Show(this, "\n\nDaily Tickets Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     }
                 }
+
             }
+
 
         }
 

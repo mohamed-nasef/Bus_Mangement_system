@@ -246,6 +246,7 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddDailyTickets";
             this.Text = "AddDailyTickets";
+            this.Load += new System.EventHandler(this.AddDailyTickets_Load);
             this.panelBody.ResumeLayout(false);
             this.grbAddDailyTickets.ResumeLayout(false);
             this.grbAddDailyTickets.PerformLayout();
