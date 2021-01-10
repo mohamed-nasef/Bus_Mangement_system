@@ -301,7 +301,8 @@ namespace Bus_Mangement_system
         private void dailyReport_Click(object sender, EventArgs e)
         {
             customizeDesign();
-            //new form
+            SCR.Report.DailyReport drObj = new SCR.Report.DailyReport();
+            openChildForm(drObj);
         }
 
         private void universityReport_Click(object sender, EventArgs e)

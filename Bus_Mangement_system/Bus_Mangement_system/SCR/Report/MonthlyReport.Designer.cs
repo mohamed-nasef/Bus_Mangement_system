@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthlyReport));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthlyReport));
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.numYear = new Guna.UI.WinForms.GunaNumeric();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.numMonth = new Guna.UI.WinForms.GunaNumeric();
-            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnProfit = new Guna.UI.WinForms.GunaButton();
             this.dgvMonthly = new Guna.UI.WinForms.GunaDataGridView();
+            this.btnProfit = new Guna.UI.WinForms.GunaButton();
+            this.btnSearch = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthly)).BeginInit();
             this.SuspendLayout();
@@ -69,21 +69,6 @@
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
             this.panelBody.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
-            this.btnClose.Location = new System.Drawing.Point(6, 30);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(73, 62);
-            this.btnClose.TabIndex = 38;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // numYear
             // 
@@ -153,69 +138,6 @@
             this.numMonth.Value = ((long)(1));
             this.numMonth.ValueChanged += new System.EventHandler(this.NumMonth_ValueChanged);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.AnimationHoverSpeed = 0.07F;
-            this.btnSearch.AnimationSpeed = 0.03F;
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BaseColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BorderColor = System.Drawing.Color.Black;
-            this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnSearch.CheckedForeColor = System.Drawing.Color.White;
-            this.btnSearch.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.CheckedImage")));
-            this.btnSearch.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = null;
-            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSearch.LineBottom = 1;
-            this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnSearch.Location = new System.Drawing.Point(962, 177);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSearch.OnHoverImage = null;
-            this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSearch.Radius = 6;
-            this.btnSearch.Size = new System.Drawing.Size(218, 31);
-            this.btnSearch.TabIndex = 59;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
-            // btnProfit
-            // 
-            this.btnProfit.AnimationHoverSpeed = 0.07F;
-            this.btnProfit.AnimationSpeed = 0.03F;
-            this.btnProfit.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfit.BaseColor = System.Drawing.Color.Transparent;
-            this.btnProfit.BorderColor = System.Drawing.Color.Black;
-            this.btnProfit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnProfit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnProfit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfit.ForeColor = System.Drawing.Color.White;
-            this.btnProfit.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_30;
-            this.btnProfit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnProfit.Location = new System.Drawing.Point(142, 260);
-            this.btnProfit.Name = "btnProfit";
-            this.btnProfit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnProfit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnProfit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnProfit.OnHoverImage = null;
-            this.btnProfit.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
-            this.btnProfit.Radius = 8;
-            this.btnProfit.Size = new System.Drawing.Size(536, 51);
-            this.btnProfit.TabIndex = 70;
-            this.btnProfit.Text = "0";
-            this.btnProfit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnProfit.Visible = false;
-            // 
             // dgvMonthly
             // 
             this.dgvMonthly.AllowUserToAddRows = false;
@@ -279,8 +201,87 @@
             this.dgvMonthly.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.dgvMonthly.Visible = false;
             // 
+            // btnProfit
+            // 
+            this.btnProfit.AnimationHoverSpeed = 0.07F;
+            this.btnProfit.AnimationSpeed = 0.03F;
+            this.btnProfit.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfit.BaseColor = System.Drawing.Color.Transparent;
+            this.btnProfit.BorderColor = System.Drawing.Color.Black;
+            this.btnProfit.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnProfit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnProfit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfit.ForeColor = System.Drawing.Color.White;
+            this.btnProfit.Image = global::Bus_Mangement_system.Properties.Resources.icons8_money_bag_30;
+            this.btnProfit.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnProfit.Location = new System.Drawing.Point(142, 260);
+            this.btnProfit.Name = "btnProfit";
+            this.btnProfit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnProfit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnProfit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnProfit.OnHoverImage = null;
+            this.btnProfit.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(24)))), ((int)(((byte)(77)))));
+            this.btnProfit.Radius = 8;
+            this.btnProfit.Size = new System.Drawing.Size(536, 51);
+            this.btnProfit.TabIndex = 70;
+            this.btnProfit.Text = "0";
+            this.btnProfit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnProfit.Visible = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.AnimationHoverSpeed = 0.07F;
+            this.btnSearch.AnimationSpeed = 0.03F;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BaseColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnSearch.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSearch.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.CheckedImage")));
+            this.btnSearch.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = null;
+            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSearch.LineBottom = 1;
+            this.btnSearch.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnSearch.Location = new System.Drawing.Point(962, 177);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSearch.OnHoverImage = null;
+            this.btnSearch.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSearch.Radius = 6;
+            this.btnSearch.Size = new System.Drawing.Size(218, 31);
+            this.btnSearch.TabIndex = 59;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
+            this.btnClose.Location = new System.Drawing.Point(6, 30);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(73, 62);
+            this.btnClose.TabIndex = 38;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
             // MonthlyReport
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
