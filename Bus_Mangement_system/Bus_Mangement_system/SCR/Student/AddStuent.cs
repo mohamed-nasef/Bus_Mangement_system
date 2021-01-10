@@ -164,7 +164,7 @@ namespace Bus_Mangement_system.SCR.Student
                         da.Fill(ds, "studentSearch");
                         dr = ds.Tables["studentSearch"].Rows[0];
                         if (ds.Tables["studentSearch"].Rows.Count > 0)
-                            MetroFramework.MetroMessageBox.Show(this, "\n\nYou have already added this student\nPlease go to Renew Booking or Edit", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MetroFramework.MetroMessageBox.Show(this, "\n\nYou have already added this student\nPlease go to Renew Booking or Edit", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     catch (Exception)

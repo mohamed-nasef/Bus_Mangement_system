@@ -39,11 +39,11 @@ namespace Bus_Mangement_system.SCR.Bus
             this.lblName = new System.Windows.Forms.Label();
             this.cmbCapacity = new Guna.UI.WinForms.GunaComboBox();
             this.txtLicenseNumber = new Guna.UI.WinForms.GunaTextBox();
+            this.btnAddBus = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI.WinForms.GunaTextBox();
-            this.btnAddBus = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panelBody.SuspendLayout();
@@ -172,6 +172,42 @@ namespace Bus_Mangement_system.SCR.Bus
             this.txtLicenseNumber.TextChanged += new System.EventHandler(this.txtLicenseNumber_TextChanged);
             this.txtLicenseNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txtLicenseNumber_Validating);
             // 
+            // btnAddBus
+            // 
+            this.btnAddBus.AnimationHoverSpeed = 0.07F;
+            this.btnAddBus.AnimationSpeed = 0.03F;
+            this.btnAddBus.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddBus.BaseColor = System.Drawing.Color.Transparent;
+            this.btnAddBus.BorderColor = System.Drawing.Color.Black;
+            this.btnAddBus.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnAddBus.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnAddBus.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddBus.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddBus.CheckedImage")));
+            this.btnAddBus.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAddBus.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddBus.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddBus.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBus.ForeColor = System.Drawing.Color.White;
+            this.btnAddBus.Image = null;
+            this.btnAddBus.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddBus.LineBottom = 1;
+            this.btnAddBus.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnAddBus.Location = new System.Drawing.Point(59, 758);
+            this.btnAddBus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddBus.Name = "btnAddBus";
+            this.btnAddBus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btnAddBus.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddBus.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddBus.OnHoverImage = null;
+            this.btnAddBus.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
+            this.btnAddBus.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddBus.Radius = 10;
+            this.btnAddBus.Size = new System.Drawing.Size(461, 42);
+            this.btnAddBus.TabIndex = 25;
+            this.btnAddBus.Text = "Add";
+            this.btnAddBus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddBus.Click += new System.EventHandler(this.btnAddBus_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -235,42 +271,6 @@ namespace Bus_Mangement_system.SCR.Bus
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
-            // btnAddBus
-            // 
-            this.btnAddBus.AnimationHoverSpeed = 0.07F;
-            this.btnAddBus.AnimationSpeed = 0.03F;
-            this.btnAddBus.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddBus.BaseColor = System.Drawing.Color.Transparent;
-            this.btnAddBus.BorderColor = System.Drawing.Color.Black;
-            this.btnAddBus.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnAddBus.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAddBus.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddBus.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddBus.CheckedImage")));
-            this.btnAddBus.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnAddBus.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddBus.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddBus.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBus.ForeColor = System.Drawing.Color.White;
-            this.btnAddBus.Image = null;
-            this.btnAddBus.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddBus.LineBottom = 1;
-            this.btnAddBus.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddBus.Location = new System.Drawing.Point(59, 758);
-            this.btnAddBus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAddBus.Name = "btnAddBus";
-            this.btnAddBus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btnAddBus.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddBus.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddBus.OnHoverImage = null;
-            this.btnAddBus.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(131)))), ((int)(((byte)(254)))));
-            this.btnAddBus.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddBus.Radius = 10;
-            this.btnAddBus.Size = new System.Drawing.Size(461, 42);
-            this.btnAddBus.TabIndex = 25;
-            this.btnAddBus.Text = "Add";
-            this.btnAddBus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddBus.Click += new System.EventHandler(this.btnAddBus_Click);
-            // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -303,6 +303,7 @@ namespace Bus_Mangement_system.SCR.Bus
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddBus";
             this.Text = "AddBus";
+            this.Load += new System.EventHandler(this.AddBus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panelBody.ResumeLayout(false);
             this.grbAddBus.ResumeLayout(false);

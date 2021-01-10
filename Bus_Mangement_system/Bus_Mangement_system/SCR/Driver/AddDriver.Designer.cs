@@ -46,7 +46,7 @@ namespace Bus_Mangement_system.SCR.Driver
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new Guna.UI.WinForms.GunaTextBox();
+            this.txtDriverName = new Guna.UI.WinForms.GunaTextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
@@ -86,7 +86,7 @@ namespace Bus_Mangement_system.SCR.Driver
             this.grbAddBus.Controls.Add(this.label4);
             this.grbAddBus.Controls.Add(this.label1);
             this.grbAddBus.Controls.Add(this.label2);
-            this.grbAddBus.Controls.Add(this.txtName);
+            this.grbAddBus.Controls.Add(this.txtDriverName);
             this.grbAddBus.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAddBus.ForeColor = System.Drawing.Color.White;
             this.grbAddBus.Location = new System.Drawing.Point(368, 30);
@@ -304,29 +304,29 @@ namespace Bus_Mangement_system.SCR.Driver
             this.label2.TabIndex = 24;
             this.label2.Text = "Phone";
             // 
-            // txtName
+            // txtDriverName
             // 
-            this.txtName.BackColor = System.Drawing.Color.Transparent;
-            this.txtName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtName.BorderColor = System.Drawing.Color.Silver;
-            this.txtName.BorderSize = 0;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtName.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtName.Location = new System.Drawing.Point(63, 148);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtName.MaxLength = 25;
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.Radius = 8;
-            this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(461, 32);
-            this.txtName.TabIndex = 26;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
+            this.txtDriverName.BackColor = System.Drawing.Color.Transparent;
+            this.txtDriverName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtDriverName.BorderColor = System.Drawing.Color.Silver;
+            this.txtDriverName.BorderSize = 0;
+            this.txtDriverName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDriverName.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.txtDriverName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtDriverName.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
+            this.txtDriverName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDriverName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
+            this.txtDriverName.Location = new System.Drawing.Point(63, 148);
+            this.txtDriverName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDriverName.MaxLength = 25;
+            this.txtDriverName.Name = "txtDriverName";
+            this.txtDriverName.PasswordChar = '\0';
+            this.txtDriverName.Radius = 8;
+            this.txtDriverName.SelectedText = "";
+            this.txtDriverName.Size = new System.Drawing.Size(461, 32);
+            this.txtDriverName.TabIndex = 26;
+            this.txtDriverName.TextChanged += new System.EventHandler(this.TxtDriverName_TextChanged);
+            this.txtDriverName.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDriverName_Validating);
             // 
             // btnClose
             // 
@@ -363,6 +363,7 @@ namespace Bus_Mangement_system.SCR.Driver
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddDriver";
             this.Text = "AddDriver";
+            this.Load += new System.EventHandler(this.AddDriver_Load);
             this.panel2.ResumeLayout(false);
             this.grbAddBus.ResumeLayout(false);
             this.grbAddBus.PerformLayout();
@@ -384,7 +385,7 @@ namespace Bus_Mangement_system.SCR.Driver
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI.WinForms.GunaTextBox txtName;
+        private Guna.UI.WinForms.GunaTextBox txtDriverName;
         private System.Windows.Forms.Label lblPhone;
         private Guna.UI.WinForms.GunaTextBox txtAddress;
         private System.Windows.Forms.ErrorProvider errorProvider1;

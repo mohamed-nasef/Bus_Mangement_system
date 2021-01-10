@@ -73,6 +73,7 @@ namespace Bus_Mangement_system.SCR
 
 
                 }
+
                 else if (txt.Name == "txtPhone" && txt.Text.Length != 11)
                 {
                     e.Cancel = true;
@@ -80,6 +81,25 @@ namespace Bus_Mangement_system.SCR
                     errorProvider.SetError(txt, errorMessage);
                 }
 
+                //Driver name and bus
+                else if (txt.Name == "txtDriverName")
+                {
+                    Regex r = new Regex(@"^[a-zA-Z\x20]{3,25}$");
+                    if (!(r.IsMatch(txt.Text)))
+                    {
+                        e.Cancel = true;
+                        //txt.Focus();
+                        errorProvider.SetError(txt, errorMessage);
+
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider.SetError(txt, null);
+                        str = txt.Text;
+
+                    }
+                }
                 //LicenseNumber
                 else if (txt.Name== "txtLicenseNumber")
                 {

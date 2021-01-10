@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,21 +14,41 @@ namespace Bus_Mangement_system.SCR.Bus
     public partial class AddBus : Form
     {
 
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds;
+        DataRow dr;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
         #region Prop
 
         string name, LicenseNumber , strCapacity="0";
         int capacity=0,index=-1;
 
         #endregion
+
         public AddBus()
         {
             InitializeComponent();
         }
 
+        private void AddBus_Load(object sender, EventArgs e)
+        {
+            connection = new SqlConnection(conString);
+
+        }
+
+
         #region Close Form
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
 
@@ -52,6 +73,7 @@ namespace Bus_Mangement_system.SCR.Bus
             Functions.validationTxt(txtName, "Please Enter Name", ref name, e, errorProvider1);
         }
 
+        
         private void txtLicenseNumber_Validating(object sender, CancelEventArgs e)
         {
             Functions.validationTxt(txtLicenseNumber, "Please Enter License Number", ref LicenseNumber, e, errorProvider1);
@@ -83,12 +105,30 @@ namespace Bus_Mangement_system.SCR.Bus
                 if(result==DialogResult.Yes)
                 {
                     //DB Commands
+                    connection = new SqlConnection(conString);
+                    connection.Open();
+                    da = new SqlDataAdapter("SELECT bus_id from busInformation where bus_name ='" + name+"'", connection);
+                    try
+                    {
+                        ds = new DataSet();
+                        da.Fill(ds, "busid");
+                        dr = ds.Tables["busid"].Rows[0];
+                        if (ds.Tables["busid"].Rows.Count > 0)
+                            MetroFramework.MetroMessageBox.Show(this, "\n\nYou have already added this Bus\nPlease go to Bus Fees or Edit", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                    }
+                    catch (Exception)
+                    {
+                        cmd = new SqlCommand("insert into busInformation (bus_name,bus_licenseNumber,bus_capacity)values('"+name+"','"+LicenseNumber+"',"+capacity+")", connection);
+                        cmd.ExecuteNonQuery();
+                        MetroFramework.MetroMessageBox.Show(this, "\n\nBus Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                    }
                     //clear
                     txtName.Clear();
                     txtLicenseNumber.Clear();
                     cmbCapacity.SelectedIndex = -1;
-                    MetroFramework.MetroMessageBox.Show(this, "\n\nBus Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    connection.Close();
                 }
             }
         }
