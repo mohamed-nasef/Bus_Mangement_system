@@ -197,6 +197,21 @@ namespace Bus_Mangement_system.SCR.Student
                         //insert into studentBooking
                         cmd = new SqlCommand("insert into studentBooking(student_id,bookingType_id,price,bookingFrom,bookingTo)values('" + stid + "','" + bookingID + "','" + price + "','" + bookingFrom + "','" + bookingTo + "')", connection);
                         cmd.ExecuteNonQuery();
+                        connection.Close();
+
+                        //insert into profit
+                        connection.Open();
+                        SqlCommand cmdproce=new SqlCommand();
+                        if (bookingID==1)
+                            cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+                        else if (bookingID==2)
+                            cmdproce = new SqlCommand("exec monthlyBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+
+                        else if (bookingID==3)
+                            cmdproce = new SqlCommand("exec termBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+
+                        cmdproce.ExecuteNonQuery();
+                        connection.Close();
 
                         //msg
                         MetroFramework.MetroMessageBox.Show(this, "\n\nStudent Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
@@ -207,7 +222,6 @@ namespace Bus_Mangement_system.SCR.Student
                     txtLastName.Clear();
                     txtPhone.Clear();
                     cmbAddress.SelectedIndex = cmbBookingType.SelectedIndex = cmbUniversity.SelectedIndex = -1;
-                    connection.Close();
                 }
             }
             

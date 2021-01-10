@@ -125,7 +125,7 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
         #region Add Daily Tickets Button
         private void btnAddDailyTickets_Click(object sender, EventArgs e)
         {
-
+            total = 0;
             //validtxtOneWay();
             //validtxtRoundTrip();
             //Validition
