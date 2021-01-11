@@ -371,11 +371,6 @@ namespace Bus_Mangement_system.SCR.Bus
             this.cmbBus.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.cmbBus.FormattingEnabled = true;
-            this.cmbBus.Items.AddRange(new object[] {
-            "Bus 1",
-            "Bus 2",
-            "Bus 3",
-            "Bus 4"});
             this.cmbBus.Location = new System.Drawing.Point(63, 148);
             this.cmbBus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbBus.MaxDropDownItems = 10;
@@ -401,13 +396,6 @@ namespace Bus_Mangement_system.SCR.Bus
             this.cmbFeesType.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFeesType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.cmbFeesType.FormattingEnabled = true;
-            this.cmbFeesType.Items.AddRange(new object[] {
-            "Change Oil",
-            "Periodic Maintenance",
-            "License Renewal",
-            "Bus Wash",
-            "Solar",
-            "Other"});
             this.cmbFeesType.Location = new System.Drawing.Point(63, 272);
             this.cmbFeesType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbFeesType.Name = "cmbFeesType";

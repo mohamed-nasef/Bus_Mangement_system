@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,16 @@ namespace Bus_Mangement_system.SCR.Bus
     public partial class AddFees : Form
     {
 
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
         #region Prop
 
         int BusID, FeesTypeID;
@@ -22,7 +33,7 @@ namespace Bus_Mangement_system.SCR.Bus
 
         int total = 0;
 
-        string strChangeOil, strOther, strLicenseRenewal, strBusWash, strPeriodicMaintenance, strSolar;
+        string strChangeOil, strOther, strLicenseRenewal, strBusWash, strPeriodicMaintenance, strSolar, date = DateTime.Now.ToShortDateString();
 
         string money;
 
@@ -35,8 +46,35 @@ namespace Bus_Mangement_system.SCR.Bus
         private void AddFees_Load(object sender, EventArgs e)
         {
             visible();
+            connection = new SqlConnection(conString);
+
             //db
-            //cmbBus and cmbFeesType
+            cmbBus.SelectedIndex = -1;
+
+            connection = new SqlConnection(conString);
+            connection.Open();
+            cmd = new SqlCommand("select bus_name from busInformation", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbBus.Items.Add(dr["bus_name"].ToString());
+            }
+
+            cmd = new SqlCommand("select feesType_name from feesType", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbFeesType.Items.Add(dr["feesType_name"].ToString());
+            }
+
+            connection.Close();
+
         }
 
 
@@ -147,15 +185,6 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #endregion
 
-        #region TextBox Validation
-
-        //private void TxtMoney_Validating(object sender, CancelEventArgs e)
-        //{
-        //    Functions.validationTxt(txtMoney, "Enter valid money like $ 500", ref money, e, errorProvider1);
-        //}
-
-        #endregion
-
         #region ComboBox Validation
 
         private void CmbBus_Validating(object sender, CancelEventArgs e)
@@ -175,9 +204,7 @@ namespace Bus_Mangement_system.SCR.Bus
         private void CmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
             show();
-
-            //select bus id from comboBox
-            BusID = cmbBus.SelectedIndex + 1;//dfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfasdfasdf
+            BusID = cmbBus.SelectedIndex + 1;
 
         }
 
@@ -374,11 +401,67 @@ namespace Bus_Mangement_system.SCR.Bus
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
 
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $" ", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"Total = {total}\n\nChange Oil = {iChangeOil}   \t\t Periodic Maintenance = {iPeriodicMaintenance}   \t\t License Renewal = {iLicenseRenewal}\nBus Wash = {iBusWash}        \t\t Solar = {iSolar}             \t\t Other = {iOther}", "Are you sure to add this ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    //DB Commands insert into table Bus Fees with BusId and type fees in multible row with date
 
+                    BusID = cmbBus.SelectedIndex + 1;
+                    //db
+                    //insert into table BusFees
+                    connection.Open();
+                    if (iPeriodicMaintenance != 0)
+                    {
+                        FeesTypeID= cmbFeesType.Items.IndexOf("Periodic Maintenance");
+                        FeesTypeID++;
+                        cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + BusID + "','" + FeesTypeID + "','" + iPeriodicMaintenance + "')", connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                    if (iSolar != 0)
+                    {
+                        FeesTypeID = cmbFeesType.Items.IndexOf("Solar");
+                        FeesTypeID++;
+                        cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + BusID + "','" + FeesTypeID + "','" + iSolar + "')", connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                    if (iChangeOil != 0)
+                    {
+                        FeesTypeID = cmbFeesType.Items.IndexOf("Change Oil");
+                        FeesTypeID++;
+                        cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + BusID + "','" + FeesTypeID + "','" + iChangeOil + "')", connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                    if (iBusWash != 0)
+                    {
+                        FeesTypeID = cmbFeesType.Items.IndexOf("Bus Wash");
+                        FeesTypeID++;
+                        cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + BusID + "','" + FeesTypeID + "','" + iBusWash + "')", connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                    if (iLicenseRenewal != 0)
+                    {
+                        FeesTypeID = cmbFeesType.Items.IndexOf("License Renewal");
+                        FeesTypeID++;
+                        cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + BusID + "','" + FeesTypeID + "','" + iLicenseRenewal + "')", connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                    if (iOther != 0)
+                    {
+                        FeesTypeID = cmbFeesType.Items.IndexOf("Other");
+                        FeesTypeID++;
+                        cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + BusID + "','" + FeesTypeID + "','" + iOther + "')", connection);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    //update fees in businformation
+                    cmd = new SqlCommand("update busInformation SET bus_fees = bus_fees +" + total + " where bus_id ='" + BusID + "'", connection);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+
+                    //insert into profit
+                    connection.Open();
+                    SqlCommand cmdproce = new SqlCommand();
+                    cmdproce = new SqlCommand("exec busFeesCheckExist '" + date + "'," + total + "", connection);
+                    connection.Close();
 
 
                     //clear
