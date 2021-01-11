@@ -44,11 +44,11 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             connection = new SqlConnection(conString);
         }
 
-
         #region Close Form
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
         #endregion

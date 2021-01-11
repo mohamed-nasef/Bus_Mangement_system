@@ -55,6 +55,15 @@ namespace Bus_Mangement_system.SCR.Bus
 
         }
 
+        #region Close Form
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            connection.Close();
+            this.Close();
+        }
+
+        #endregion
+
         #region Funcation
         private void visible()
         {
@@ -82,14 +91,6 @@ namespace Bus_Mangement_system.SCR.Bus
             }
 
         }
-        #endregion
-
-        #region Close Form
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         #endregion
 
         #region TextBox Watermark
