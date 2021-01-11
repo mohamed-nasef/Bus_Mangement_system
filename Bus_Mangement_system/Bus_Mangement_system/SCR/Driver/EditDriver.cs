@@ -31,6 +31,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #endregion
 
+        #region Form
         public EditDriver()
         {
             InitializeComponent();
@@ -52,6 +53,17 @@ namespace Bus_Mangement_system.SCR.Driver
             }
             connection.Close();
         }
+        #endregion
+
+        #region Close Form
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            connection.Close();
+            this.Close();
+        }
+
+        #endregion
 
         #region Funcation
         private void visible()
@@ -88,15 +100,6 @@ namespace Bus_Mangement_system.SCR.Driver
             }
            
         }
-        #endregion
-
-        #region Close Form
-
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         #endregion
 
         #region TextBox Watermark

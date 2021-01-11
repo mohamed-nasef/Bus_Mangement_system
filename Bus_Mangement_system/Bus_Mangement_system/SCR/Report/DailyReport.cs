@@ -13,36 +13,56 @@ namespace Bus_Mangement_system.SCR.Report
 {
     public partial class DailyReport : Form
     {
+
+        #region DB
+
         string date;
         //dasdl;as,l;d,asld,as;ld,asdl;,asl;d,asdl;,asdlas,dlasd
         string constr = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";
+        SqlConnection connection = new SqlConnection();
+        #endregion
+
+        #region Form
+
         public DailyReport()
         {
             InitializeComponent();
         }
-
         private void DailyReport_Load(object sender, EventArgs e)
         {
+            connection = new SqlConnection(constr);
             //this.profitTableAdapter.Fill(this.testDataSet.profit);
             dgvDaily.Visible = false;
             date= dtpDaily.Value.ToShortDateString();
         }
 
+        #endregion
+
+        #region Close Form
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
+
+        #endregion
+
+        #region Select Date
 
         private void DtpDaily_ValueChanged(object sender, EventArgs e)
         {
             date = dtpDaily.Value.ToShortDateString();
         }
 
+        #endregion
+
+        #region Search Button
+
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(constr);
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("select p.profit_date as 'Date', p.driverTakenSalary as 'Driver Salary',p.busFees as 'Bus Fees',p.dailyBooking as 'Daily Booking',p.monthlyBooking as 'Monthly Booking',p.termBooking as 'Term Booking'  from profit p where profit_date='" + date + "'", con);
+            connection.Open();
+            SqlDataAdapter da = new SqlDataAdapter("select p.profit_date as 'Date', p.driverTakenSalary as 'Driver Salary',p.busFees as 'Bus Fees',p.dailyBooking as 'Daily Booking',p.monthlyBooking as 'Monthly Booking',p.termBooking as 'Term Booking'  from profit p where profit_date='" + date + "'", connection);
             DataSet ds = new DataSet();
             da.Fill(ds, "daily");
             if (ds.Tables["daily"].Rows.Count > 0)
@@ -50,7 +70,7 @@ namespace Bus_Mangement_system.SCR.Report
                 dgvDaily.Visible = true;
                 btnProfit.Visible = true;
                 dgvDaily.DataSource = ds.Tables["daily"];
-                da = new SqlDataAdapter("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking))-(SUM(driverTakenSalary)+sum(busFees)) as profit FROM profit where profit_date='" + date + "'", con);
+                da = new SqlDataAdapter("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking))-(SUM(driverTakenSalary)+sum(busFees)) as profit FROM profit where profit_date='" + date + "'", connection);
                 da.Fill(ds, "profitDaily");
                 DataRow dr = ds.Tables["profitDaily"].Rows[0];
                 if ((int)dr.ItemArray.GetValue(0) > 0)
@@ -77,6 +97,8 @@ namespace Bus_Mangement_system.SCR.Report
 
             }
         }
+
+        #endregion
 
     }
 }

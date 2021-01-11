@@ -13,6 +13,7 @@ namespace Bus_Mangement_system.SCR.Report
 {
     public partial class UniversityReport : Form
     {
+
         #region DB
 
         string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
@@ -26,6 +27,8 @@ namespace Bus_Mangement_system.SCR.Report
         int iUnuversityId;
 
         #endregion
+
+        #region Form
 
         public UniversityReport()
         {
@@ -51,11 +54,19 @@ namespace Bus_Mangement_system.SCR.Report
             connection.Close();
         }
 
+        #endregion
+
+        #region Close Form
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
 
+        #endregion
+
+        #region Select University
         private void CmbUniversity_SelectedIndexChanged(object sender, EventArgs e)
         {
             iUnuversityId = cmbUniversity.SelectedIndex + 1;
@@ -92,5 +103,8 @@ namespace Bus_Mangement_system.SCR.Report
 
             }
         }
+
+        #endregion
+
     }
 }

@@ -32,6 +32,8 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #endregion
 
+        #region Form
+
         public AddDriver()
         {
             InitializeComponent();
@@ -41,6 +43,8 @@ namespace Bus_Mangement_system.SCR.Driver
         {
             connection = new SqlConnection(conString);
         }
+
+        #endregion
 
         #region Close Form
 

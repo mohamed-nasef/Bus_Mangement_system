@@ -31,6 +31,8 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #endregion
 
+        #region Form
+
         public EditBus()
         {
             InitializeComponent();
@@ -54,6 +56,8 @@ namespace Bus_Mangement_system.SCR.Bus
             connection.Close();
 
         }
+
+        #endregion
 
         #region Close Form
         private void BtnClose_Click(object sender, EventArgs e)

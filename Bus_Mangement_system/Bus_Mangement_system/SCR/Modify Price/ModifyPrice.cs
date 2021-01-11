@@ -30,6 +30,8 @@ namespace Bus_Mangement_system.SCR.Modify_Price
 
         #endregion
 
+        #region Form
+
         public ModifyPrice()
         {
             InitializeComponent();
@@ -54,10 +56,13 @@ namespace Bus_Mangement_system.SCR.Modify_Price
             connection.Close();
         }
 
+        #endregion
+
         #region Close Form
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
 

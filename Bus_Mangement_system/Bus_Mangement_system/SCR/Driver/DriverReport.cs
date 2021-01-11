@@ -33,6 +33,8 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #endregion
 
+        #region Form
+
         public DriverReport()
         {
             InitializeComponent();
@@ -56,10 +58,13 @@ namespace Bus_Mangement_system.SCR.Driver
             connection.Close();
         }
 
+        #endregion
+
         #region Close Form
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
 

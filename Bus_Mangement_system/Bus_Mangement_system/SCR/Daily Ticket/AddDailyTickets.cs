@@ -30,9 +30,11 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
 
         string oneWay ="", roundTrip="",strPrice,date=DateTime.Now.ToShortDateString();
         int iOneWay, iRoundTrip,iPrice,total=0;
-        
+
 
         #endregion
+
+        #region Form
 
         public AddDailyTickets()
         {
@@ -43,6 +45,8 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
         {
             connection = new SqlConnection(conString);
         }
+
+        #endregion
 
         #region Close Form
 

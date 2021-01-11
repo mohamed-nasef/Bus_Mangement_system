@@ -33,6 +33,8 @@ namespace Bus_Mangement_system.SCR.Student
 
         #endregion
 
+        #region Form
+
         public ReportStudent()
         {
             InitializeComponent();
@@ -104,6 +106,8 @@ namespace Bus_Mangement_system.SCR.Student
                 type = txtBookingType.Text = "Term";
 
         }
+
+        #endregion
 
         #region Clode Form
 

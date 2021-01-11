@@ -13,26 +13,44 @@ namespace Bus_Mangement_system.SCR.Report
 {
     public partial class MonthlyReport : Form
     {
+
+        #region DB
+
         int year, month;
         //dasdl;as,l;d,asld,as;ld,asdl;,asl;d,asdl;,asdlas,dlasd
         string constr = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
+        #region Form
+
         public MonthlyReport()
         {
             InitializeComponent();
         }
-
         private void MonthlyReport_Load(object sender, EventArgs e)
         {
+            connection = new SqlConnection(constr);
             //this.profitTableAdapter.Fill(this.testDataSet.profit);
             dgvMonthly.Visible = false;
             year = (int)numYear.Value;
             month = (int)numMonth.Value;
         }
+
+        #endregion
+
+        #region Close Form
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
 
+        #endregion
+
+        #region Select Date
 
         private void NumYear_ValueChanged(object sender, EventArgs e)
         {
@@ -44,11 +62,14 @@ namespace Bus_Mangement_system.SCR.Report
             month = (int)numMonth.Value;
         }
 
+        #endregion
+
+        #region Search Button
+
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(constr);
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT p.profit_date as 'Date', p.driverTakenSalary as 'Driver Salary',p.busFees as 'Bus Fees',p.dailyBooking as 'Daily Booking',p.monthlyBooking as 'Monthly Booking',p.termBooking as 'Term Booking' FROM profit p WHERE DATEPART(YEAR, profit_date) = '" + year + "' AND DATEPART(MONTH, profit_date) = '" + month + "'", con);
+            connection.Open();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT p.profit_date as 'Date', p.driverTakenSalary as 'Driver Salary',p.busFees as 'Bus Fees',p.dailyBooking as 'Daily Booking',p.monthlyBooking as 'Monthly Booking',p.termBooking as 'Term Booking' FROM profit p WHERE DATEPART(YEAR, profit_date) = '" + year + "' AND DATEPART(MONTH, profit_date) = '" + month + "'", connection);
             DataSet ds = new DataSet();
             da.Fill(ds, "monthly");
             if (ds.Tables["monthly"].Rows.Count > 0)
@@ -56,7 +77,7 @@ namespace Bus_Mangement_system.SCR.Report
                 dgvMonthly.Visible = true;
                 btnProfit.Visible = true;
                 dgvMonthly.DataSource = ds.Tables["monthly"];
-                da = new SqlDataAdapter("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking))-(SUM(driverTakenSalary)+sum(busFees)) as profit FROM profit WHERE DATEPART(YEAR, profit_date) = '" + year + "'  AND DATEPART(MONTH, profit_date) ='" + month + "'", con);
+                da = new SqlDataAdapter("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking))-(SUM(driverTakenSalary)+sum(busFees)) as profit FROM profit WHERE DATEPART(YEAR, profit_date) = '" + year + "'  AND DATEPART(MONTH, profit_date) ='" + month + "'", connection);
                 da.Fill(ds, "profit");
                 DataRow dr = ds.Tables["profit"].Rows[0];
                 if ((int)dr.ItemArray.GetValue(0) > 0)
@@ -83,6 +104,8 @@ namespace Bus_Mangement_system.SCR.Report
 
             }
         }
+
+        #endregion
 
     }
 }

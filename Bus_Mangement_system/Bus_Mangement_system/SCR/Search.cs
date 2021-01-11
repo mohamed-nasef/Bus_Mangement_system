@@ -33,6 +33,8 @@ namespace Bus_Mangement_system.SCR
         int id;
         #endregion
 
+        #region Form
+
         public Search()
         {
             InitializeComponent();
@@ -52,10 +54,13 @@ namespace Bus_Mangement_system.SCR
                 grbSearch.Text = $"Search to {path} Student";
         }
 
+        #endregion
+
         #region Close Form
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
 

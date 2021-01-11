@@ -35,6 +35,8 @@ namespace Bus_Mangement_system.SCR.Student
 
         #endregion
 
+        #region Form
+
         public RenewedBooking()
         {
             InitializeComponent();
@@ -100,6 +102,8 @@ namespace Bus_Mangement_system.SCR.Student
 
 
         }
+
+        #endregion
 
         #region Close Form
 

@@ -27,9 +27,11 @@ namespace Bus_Mangement_system.SCR.Bus
         #region Prop
         int busindex = -1;
         string name, LicenseNumber, strCapacity = "0",strID;
-       
+
 
         #endregion
+
+        #region Form
 
         public BusReport()
         {
@@ -54,6 +56,8 @@ namespace Bus_Mangement_system.SCR.Bus
             }
             connection.Close();
         }
+
+        #endregion
 
         #region Close Form
         private void BtnClose_Click(object sender, EventArgs e)

@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.dgvAllStudent = new Guna.UI.WinForms.GunaDataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllStudent)).BeginInit();
             this.SuspendLayout();
@@ -56,21 +56,6 @@
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(1153, 881);
             this.panelBody.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
-            this.btnClose.Location = new System.Drawing.Point(6, 30);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(73, 62);
-            this.btnClose.TabIndex = 39;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // dgvAllStudent
             // 
@@ -134,11 +119,27 @@
             this.dgvAllStudent.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.dgvAllStudent.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Bus_Mangement_system.Properties.Resources.icons8_back_64_final1;
+            this.btnClose.Location = new System.Drawing.Point(6, 30);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(73, 62);
+            this.btnClose.TabIndex = 39;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
             // StudentReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1491, 881);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelDraft);

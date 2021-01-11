@@ -32,6 +32,8 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #endregion
 
+        #region Form
+
         public AddBus()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace Bus_Mangement_system.SCR.Bus
 
         }
 
+        #endregion
 
         #region Close Form
 

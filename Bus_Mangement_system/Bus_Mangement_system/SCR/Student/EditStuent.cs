@@ -33,6 +33,8 @@ namespace Bus_Mangement_system.SCR.Student
 
         #endregion
 
+        #region Form
+
         public EditStuent()
         {
             InitializeComponent();
@@ -98,6 +100,8 @@ namespace Bus_Mangement_system.SCR.Student
 
             
         }
+
+        #endregion
 
         #region Close Form
 
@@ -193,5 +197,6 @@ namespace Bus_Mangement_system.SCR.Student
         }
 
         #endregion
+
     }
 }

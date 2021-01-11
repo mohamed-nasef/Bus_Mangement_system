@@ -37,6 +37,9 @@ namespace Bus_Mangement_system.SCR.Student
         DateTime d;
 
         #endregion
+
+        #region Form
+
         public AddStuent()
         {
             InitializeComponent();
@@ -78,6 +81,8 @@ namespace Bus_Mangement_system.SCR.Student
 
             connection.Close();
         }
+
+        #endregion
 
         #region Close Form
 

@@ -11,6 +11,7 @@ namespace Bus_Mangement_system.SCR
 {
     class Functions
     {
+
         #region WaterMark
 
         public static void waterMark(Guna.UI.WinForms.GunaTextBox txt, Label lbl)
@@ -212,7 +213,6 @@ namespace Bus_Mangement_system.SCR
         }
         
         #endregion
-
 
     }
 }
