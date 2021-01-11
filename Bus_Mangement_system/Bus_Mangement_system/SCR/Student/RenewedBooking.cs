@@ -46,6 +46,7 @@ namespace Bus_Mangement_system.SCR.Student
             bool flag = false;
             DateTime sys = DateTime.Now;
             DateTime expire;
+
             connection = new SqlConnection(conString);
             connection.Open();
             cmd = new SqlCommand("select * from studentBooking where student_id = "+this.ID+" ", connection);

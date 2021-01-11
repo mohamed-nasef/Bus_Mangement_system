@@ -30,6 +30,7 @@
         {
             this.panelBody = new System.Windows.Forms.Panel();
             this.grbReportStudent = new System.Windows.Forms.GroupBox();
+            this.btnStudentActive = new Guna.UI.WinForms.GunaButton();
             this.txtBookingType = new Guna.UI.WinForms.GunaTextBox();
             this.txtUniversity = new Guna.UI.WinForms.GunaTextBox();
             this.txtAddress = new Guna.UI.WinForms.GunaTextBox();
@@ -59,6 +60,7 @@
             // 
             // grbReportStudent
             // 
+            this.grbReportStudent.Controls.Add(this.btnStudentActive);
             this.grbReportStudent.Controls.Add(this.txtBookingType);
             this.grbReportStudent.Controls.Add(this.txtUniversity);
             this.grbReportStudent.Controls.Add(this.txtAddress);
@@ -79,6 +81,31 @@
             this.grbReportStudent.TabIndex = 40;
             this.grbReportStudent.TabStop = false;
             this.grbReportStudent.Text = "Report Student";
+            // 
+            // btnStudentActive
+            // 
+            this.btnStudentActive.AnimationHoverSpeed = 0.07F;
+            this.btnStudentActive.AnimationSpeed = 0.03F;
+            this.btnStudentActive.BackColor = System.Drawing.Color.Transparent;
+            this.btnStudentActive.BaseColor = System.Drawing.Color.Transparent;
+            this.btnStudentActive.BorderColor = System.Drawing.Color.Black;
+            this.btnStudentActive.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnStudentActive.FocusedColor = System.Drawing.Color.Empty;
+            this.btnStudentActive.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentActive.ForeColor = System.Drawing.Color.White;
+            this.btnStudentActive.Image = global::Bus_Mangement_system.Properties.Resources.icons8_student_male_80_final1;
+            this.btnStudentActive.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnStudentActive.Location = new System.Drawing.Point(63, 737);
+            this.btnStudentActive.Name = "btnStudentActive";
+            this.btnStudentActive.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(225)))), ((int)(((byte)(175)))));
+            this.btnStudentActive.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnStudentActive.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnStudentActive.OnHoverImage = null;
+            this.btnStudentActive.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(225)))), ((int)(((byte)(175)))));
+            this.btnStudentActive.Radius = 8;
+            this.btnStudentActive.Size = new System.Drawing.Size(457, 51);
+            this.btnStudentActive.TabIndex = 74;
+            this.btnStudentActive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtBookingType
             // 
@@ -338,5 +365,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClose;
         private Guna.UI.WinForms.GunaTextBox txtBookingType;
+        private Guna.UI.WinForms.GunaButton btnStudentActive;
     }
 }
