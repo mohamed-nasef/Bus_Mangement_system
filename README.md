@@ -1,7 +1,7 @@
 # Bus Mangement System
 
 
-# Devolop by:
+# Devoloped by:
 #               Mohamed Nasef Abdelhalim
 #               Moustafa Ibrahem Abdelbaset
 #               Mahmoud Ahned Elwasef
