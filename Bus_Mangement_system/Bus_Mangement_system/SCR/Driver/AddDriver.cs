@@ -21,7 +21,6 @@ namespace Bus_Mangement_system.SCR.Driver
         SqlDataAdapter da;
         DataSet ds;
         DataRow dr;
-        DataTable dt;
         SqlConnection connection = new SqlConnection();
 
         #endregion

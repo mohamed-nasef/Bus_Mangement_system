@@ -20,8 +20,6 @@ namespace Bus_Mangement_system
         string conString = Program.GetConnectionStringByName();
         SqlCommand cmd;
         SqlDataAdapter da;
-        DataSet ds;
-        DataRow dr;
         DataTable dt;
         SqlConnection connection = new SqlConnection();
 

@@ -19,8 +19,6 @@ namespace Bus_Mangement_system.SCR.Student
         string conString = Program.GetConnectionStringByName();
         SqlCommand cmd;
         SqlDataAdapter da;
-        DataSet ds;
-        DataRow dr;
         DataTable dt;
         SqlConnection connection = new SqlConnection();
 
@@ -29,7 +27,7 @@ namespace Bus_Mangement_system.SCR.Student
         #region Prop
         public int ID { get; set; }
         string firstName, lastName, phone, address;
-        int addressID = -1, universityID, bookingID;
+        int addressID = -1, universityID;
 
         #endregion
 

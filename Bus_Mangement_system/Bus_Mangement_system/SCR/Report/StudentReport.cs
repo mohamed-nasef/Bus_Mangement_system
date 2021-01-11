@@ -17,7 +17,6 @@ namespace Bus_Mangement_system.SCR.Report
         #region DB
 
         string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
         SqlConnection connection = new SqlConnection();
 
         #endregion

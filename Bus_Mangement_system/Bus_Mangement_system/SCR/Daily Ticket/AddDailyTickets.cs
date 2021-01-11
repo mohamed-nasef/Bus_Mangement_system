@@ -19,11 +19,7 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
 
         string conString = Program.GetConnectionStringByName();
         SqlCommand cmd;
-        SqlDataAdapter da;
-        DataSet ds;
-        DataRow dr;
         SqlConnection connection = new SqlConnection();
-
         #endregion
 
         #region Prop
