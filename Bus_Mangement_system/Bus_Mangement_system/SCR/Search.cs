@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,18 @@ namespace Bus_Mangement_system.SCR
 {
     public partial class Search : Form
     {
+
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds;
+        DataRow dr;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
 
         #region prop
         public int ID { get; set; }
@@ -77,29 +90,45 @@ namespace Bus_Mangement_system.SCR
                     DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"ID: {id}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        this.ID = id;
-                        if (path == "Edit")
+                        connection = new SqlConnection(conString);
+                        connection.Open();
+                        // check student
+                        da = new SqlDataAdapter("SELECT student_id from studentInformation where student_id = "+id+"", connection);
+                        try
                         {
-                            Student.EditStuent esObj = new Student.EditStuent();
-                            esObj.ID = this.ID;
-                            this.Close();
-                            esObj.ShowDialog();
+                            ds = new DataSet();
+                            da.Fill(ds, "studentSearch");
+                            dr = ds.Tables["studentSearch"].Rows[0];
+
+                            this.ID = id;
+                            if (path == "Edit")
+                            {
+                                Student.EditStuent esObj = new Student.EditStuent();
+                                esObj.ID = this.ID;
+                                this.Close();
+                                esObj.ShowDialog();
+                            }
+                            else if (path == "Renew Booking")
+                            {
+                                Student.RenewedBooking rbObj = new Student.RenewedBooking();
+                                rbObj.ID = this.ID;
+                                this.Close();
+                                rbObj.ShowDialog();
+
+                            }
+                            else if (path == "Report")
+                            {
+                                Student.ReportStudent rsObj = new Student.ReportStudent();
+                                rsObj.ID = this.ID;
+                                this.Close();
+                                rsObj.ShowDialog();
+                            }
                         }
-                        else if (path == "Renew Booking")
+                        catch (Exception)
                         {
-                            Student.RenewedBooking rbObj = new Student.RenewedBooking();
-                            rbObj.ID = this.ID;
-                            this.Close();
-                            rbObj.ShowDialog();
-                            
+                            MetroFramework.MetroMessageBox.Show(this, "\n\nThis ID not found ", "\nError", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        else if(path == "Report")
-                        {
-                            Student.ReportStudent rsObj = new Student.ReportStudent();
-                            rsObj.ID = this.ID;
-                            this.Close();
-                            rsObj.ShowDialog();
-                        }
+
                     }
 
                 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,19 @@ namespace Bus_Mangement_system.SCR.Student
 {
     public partial class EditStuent : Form
     {
+
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds;
+        DataRow dr;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
         #region Prop
         public int ID { get; set; }
         string firstName, lastName, phone, address;
@@ -32,20 +46,57 @@ namespace Bus_Mangement_system.SCR.Student
             lblLastName.Visible = false;
             lblPhone.Visible = false;
 
-            lblID.Text = this.ID.ToString();
+            //db
+            connection = new SqlConnection(conString);
+            connection.Open();
+            cmd = new SqlCommand("select university_name from university", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbUniversity.Items.Add(dr["university_name"].ToString());
+            }
 
-            //data from database
+            cmd = new SqlCommand("select address_name from address", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbAddress.Items.Add(dr["address_name"].ToString());
+            }
 
-            firstName = txtFirstName.Text = "Moustafa";
-            lastName = txtLastName.Text = "Ibrahem";
-            phone = txtPhone.Text = "01067893079";
-            addressID = 1;
-            cmbAddress.SelectedIndex = addressID;
-            address= cmbAddress.Items[addressID].ToString();
-            universityID = 1;
-            cmbUniversity.SelectedIndex = universityID;
-            bookingID = 0;
-            cmbBookingType.SelectedIndex = bookingID;
+            cmd = new SqlCommand("select * from studentInformation where student_id =" + this.ID + " ", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                
+                
+                firstName = txtFirstName.Text = dr["fName"].ToString();
+                lastName = txtLastName.Text = dr["lName"].ToString();
+                phone = txtPhone.Text = dr["student_phone"].ToString();
+
+                addressID = (int)dr["address_id"];
+                cmbAddress.SelectedIndex = addressID-1;
+                address = cmbAddress.Items[addressID-1].ToString();
+
+                universityID = (int)dr["university_id"];
+                cmbUniversity.SelectedIndex = universityID-1;
+
+
+            }
+
+            
+
+            connection.Close();
+
+            
         }
 
         #region Close Form
@@ -107,11 +158,6 @@ namespace Bus_Mangement_system.SCR.Student
 
         }
 
-        private void CmbBookingType_Validating(object sender, CancelEventArgs e)
-        {
-            Functions.validationcmb(cmbBookingType, "Please Select Type", ref bookingID, e, errorProvider1);
-
-        }
         #endregion
 
         #region Edit Student Button
@@ -121,16 +167,23 @@ namespace Bus_Mangement_system.SCR.Student
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
 
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {firstName} {lastName}\nphone:             {phone}\naddress:           {address}\nUniversity:        {cmbUniversity.Items[universityID]}\nBooking Type: {cmbBookingType.Items[bookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {firstName} {lastName}\nphone:             {phone}\naddress:           {address}\nUniversity:        {cmbUniversity.Items[universityID]}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result==DialogResult.Yes)
                 {
                     //DB Commands
+                    addressID = cmbAddress.SelectedIndex;
+                    universityID = cmbUniversity.SelectedIndex;
+                    universityID++; addressID++;
+                    connection.Open();
+                    cmd = new SqlCommand("update studentInformation set fName='" + firstName + "',lName='" + lastName + "' ,student_phone='" + phone + "',address_id='" + addressID + "',university_id='" + universityID + "' where student_id =" + this.ID + "", connection);
+                    cmd.ExecuteNonQuery();
 
+                    connection.Close();
                     //clear
                     txtFirstName.Clear();
                     txtLastName.Clear();
                     txtPhone.Clear();
-                    cmbAddress.SelectedIndex = cmbBookingType.SelectedIndex = cmbUniversity.SelectedIndex = -1;
+                    cmbAddress.SelectedIndex = cmbUniversity.SelectedIndex = -1;
                     MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     this.Close();
                 }

@@ -33,11 +33,9 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBody = new System.Windows.Forms.Panel();
             this.grbEditStudent = new System.Windows.Forms.GroupBox();
-            this.lblID = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.cmbBookingType = new Guna.UI.WinForms.GunaComboBox();
             this.cmbUniversity = new Guna.UI.WinForms.GunaComboBox();
             this.cmbAddress = new Guna.UI.WinForms.GunaComboBox();
             this.txtPhone = new Guna.UI.WinForms.GunaTextBox();
@@ -47,7 +45,6 @@
             this.btnEditStudent = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtFirstName = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -73,11 +70,9 @@
             // 
             // grbEditStudent
             // 
-            this.grbEditStudent.Controls.Add(this.lblID);
             this.grbEditStudent.Controls.Add(this.lblPhone);
             this.grbEditStudent.Controls.Add(this.lblLastName);
             this.grbEditStudent.Controls.Add(this.lblFirstName);
-            this.grbEditStudent.Controls.Add(this.cmbBookingType);
             this.grbEditStudent.Controls.Add(this.cmbUniversity);
             this.grbEditStudent.Controls.Add(this.cmbAddress);
             this.grbEditStudent.Controls.Add(this.txtPhone);
@@ -87,7 +82,6 @@
             this.grbEditStudent.Controls.Add(this.btnEditStudent);
             this.grbEditStudent.Controls.Add(this.label1);
             this.grbEditStudent.Controls.Add(this.label2);
-            this.grbEditStudent.Controls.Add(this.label6);
             this.grbEditStudent.Controls.Add(this.txtFirstName);
             this.grbEditStudent.Controls.Add(this.label3);
             this.grbEditStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,18 +92,6 @@
             this.grbEditStudent.TabIndex = 37;
             this.grbEditStudent.TabStop = false;
             this.grbEditStudent.Text = "Edit Student";
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.Transparent;
-            this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(186, 63);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(117, 30);
-            this.lblID.TabIndex = 44;
-            this.lblID.Text = "First Name";
             // 
             // lblPhone
             // 
@@ -147,32 +129,6 @@
             this.lblFirstName.TabIndex = 38;
             this.lblFirstName.Text = "ex: Mohamed";
             // 
-            // cmbBookingType
-            // 
-            this.cmbBookingType.BackColor = System.Drawing.Color.Transparent;
-            this.cmbBookingType.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.cmbBookingType.BorderColor = System.Drawing.Color.Black;
-            this.cmbBookingType.BorderSize = 0;
-            this.cmbBookingType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbBookingType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBookingType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbBookingType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.cmbBookingType.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBookingType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.cmbBookingType.FormattingEnabled = true;
-            this.cmbBookingType.Items.AddRange(new object[] {
-            "Monthly",
-            "Daily",
-            "Term"});
-            this.cmbBookingType.Location = new System.Drawing.Point(63, 644);
-            this.cmbBookingType.Name = "cmbBookingType";
-            this.cmbBookingType.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cmbBookingType.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmbBookingType.Radius = 8;
-            this.cmbBookingType.Size = new System.Drawing.Size(461, 31);
-            this.cmbBookingType.TabIndex = 41;
-            this.cmbBookingType.Validating += new System.ComponentModel.CancelEventHandler(this.CmbBookingType_Validating);
-            // 
             // cmbUniversity
             // 
             this.cmbUniversity.BackColor = System.Drawing.Color.Transparent;
@@ -186,11 +142,6 @@
             this.cmbUniversity.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUniversity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.cmbUniversity.FormattingEnabled = true;
-            this.cmbUniversity.Items.AddRange(new object[] {
-            "Mansoura",
-            "MET",
-            "Nile",
-            "Delta"});
             this.cmbUniversity.Location = new System.Drawing.Point(63, 520);
             this.cmbUniversity.Name = "cmbUniversity";
             this.cmbUniversity.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -213,13 +164,6 @@
             this.cmbAddress.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.cmbAddress.FormattingEnabled = true;
-            this.cmbAddress.Items.AddRange(new object[] {
-            "Dikirnis",
-            "Menyet El-Nasr",
-            "Eldraksa",
-            "Mit Taher",
-            "Mit Temamah",
-            "Al Baglat"});
             this.cmbAddress.Location = new System.Drawing.Point(63, 396);
             this.cmbAddress.Name = "cmbAddress";
             this.cmbAddress.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -358,18 +302,6 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Address";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(58, 598);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 30);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Booking Type";
-            // 
             // txtFirstName
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.Transparent;
@@ -453,7 +385,6 @@
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
-        private Guna.UI.WinForms.GunaComboBox cmbBookingType;
         private Guna.UI.WinForms.GunaComboBox cmbUniversity;
         private Guna.UI.WinForms.GunaComboBox cmbAddress;
         private Guna.UI.WinForms.GunaTextBox txtPhone;
@@ -463,9 +394,7 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnEditStudent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaTextBox txtFirstName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblID;
     }
 }

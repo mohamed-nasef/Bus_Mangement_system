@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,20 @@ namespace Bus_Mangement_system.SCR.Student
 {
     public partial class ReportStudent : Form
     {
+
+
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds;
+        DataRow dr;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
 
         #region Prop
         public int ID { get; set; }
@@ -28,7 +43,7 @@ namespace Bus_Mangement_system.SCR.Student
         }
         private void ReportStudent_Load(object sender, EventArgs e)
         {
-            lblID.Text = this.ID.ToString();
+            
 
             //data from database
 

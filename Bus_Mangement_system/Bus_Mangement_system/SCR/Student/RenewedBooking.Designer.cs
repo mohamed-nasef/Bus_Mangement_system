@@ -33,9 +33,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBody = new System.Windows.Forms.Panel();
             this.grbRenewedBooking = new System.Windows.Forms.GroupBox();
-            this.txtUniversity = new Guna.UI.WinForms.GunaTextBox();
-            this.txtAddress = new Guna.UI.WinForms.GunaTextBox();
-            this.lblID = new System.Windows.Forms.Label();
             this.cmbBookingType = new Guna.UI.WinForms.GunaComboBox();
             this.txtPhone = new Guna.UI.WinForms.GunaTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,10 +40,8 @@
             this.txtLastName = new Guna.UI.WinForms.GunaTextBox();
             this.btnRenewedBooking = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFirstName = new Guna.UI.WinForms.GunaTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panelBody.SuspendLayout();
@@ -70,9 +65,6 @@
             // 
             // grbRenewedBooking
             // 
-            this.grbRenewedBooking.Controls.Add(this.txtUniversity);
-            this.grbRenewedBooking.Controls.Add(this.txtAddress);
-            this.grbRenewedBooking.Controls.Add(this.lblID);
             this.grbRenewedBooking.Controls.Add(this.cmbBookingType);
             this.grbRenewedBooking.Controls.Add(this.txtPhone);
             this.grbRenewedBooking.Controls.Add(this.label5);
@@ -80,10 +72,8 @@
             this.grbRenewedBooking.Controls.Add(this.txtLastName);
             this.grbRenewedBooking.Controls.Add(this.btnRenewedBooking);
             this.grbRenewedBooking.Controls.Add(this.label1);
-            this.grbRenewedBooking.Controls.Add(this.label2);
             this.grbRenewedBooking.Controls.Add(this.label6);
             this.grbRenewedBooking.Controls.Add(this.txtFirstName);
-            this.grbRenewedBooking.Controls.Add(this.label3);
             this.grbRenewedBooking.Font = new System.Drawing.Font("Segoe UI Semibold", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbRenewedBooking.ForeColor = System.Drawing.Color.White;
             this.grbRenewedBooking.Location = new System.Drawing.Point(412, 0);
@@ -92,62 +82,6 @@
             this.grbRenewedBooking.TabIndex = 38;
             this.grbRenewedBooking.TabStop = false;
             this.grbRenewedBooking.Text = "Renew Booking";
-            // 
-            // txtUniversity
-            // 
-            this.txtUniversity.BackColor = System.Drawing.Color.Transparent;
-            this.txtUniversity.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtUniversity.BorderColor = System.Drawing.Color.Silver;
-            this.txtUniversity.BorderSize = 0;
-            this.txtUniversity.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUniversity.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtUniversity.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtUniversity.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.txtUniversity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUniversity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtUniversity.Location = new System.Drawing.Point(63, 520);
-            this.txtUniversity.MaxLength = 11;
-            this.txtUniversity.Name = "txtUniversity";
-            this.txtUniversity.PasswordChar = '\0';
-            this.txtUniversity.Radius = 8;
-            this.txtUniversity.ReadOnly = true;
-            this.txtUniversity.SelectedText = "";
-            this.txtUniversity.Size = new System.Drawing.Size(461, 32);
-            this.txtUniversity.TabIndex = 46;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.BackColor = System.Drawing.Color.Transparent;
-            this.txtAddress.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtAddress.BorderColor = System.Drawing.Color.Silver;
-            this.txtAddress.BorderSize = 0;
-            this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddress.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.txtAddress.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtAddress.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
-            this.txtAddress.Location = new System.Drawing.Point(63, 396);
-            this.txtAddress.MaxLength = 11;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.PasswordChar = '\0';
-            this.txtAddress.Radius = 8;
-            this.txtAddress.ReadOnly = true;
-            this.txtAddress.SelectedText = "";
-            this.txtAddress.Size = new System.Drawing.Size(461, 32);
-            this.txtAddress.TabIndex = 45;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.Transparent;
-            this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(186, 63);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(117, 30);
-            this.lblID.TabIndex = 44;
-            this.lblID.Text = "First Name";
             // 
             // cmbBookingType
             // 
@@ -162,11 +96,7 @@
             this.cmbBookingType.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBookingType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.cmbBookingType.FormattingEnabled = true;
-            this.cmbBookingType.Items.AddRange(new object[] {
-            "Monthly",
-            "Daily",
-            "Term"});
-            this.cmbBookingType.Location = new System.Drawing.Point(63, 644);
+            this.cmbBookingType.Location = new System.Drawing.Point(63, 396);
             this.cmbBookingType.Name = "cmbBookingType";
             this.cmbBookingType.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmbBookingType.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -290,25 +220,13 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "First Name";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(58, 350);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 30);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Address";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(58, 598);
+            this.label6.Location = new System.Drawing.Point(58, 350);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 30);
             this.label6.TabIndex = 33;
@@ -335,18 +253,6 @@
             this.txtFirstName.SelectedText = "";
             this.txtFirstName.Size = new System.Drawing.Size(218, 32);
             this.txtFirstName.TabIndex = 26;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(58, 474);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 30);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "University";
             // 
             // btnClose
             // 
@@ -394,7 +300,6 @@
         private System.Windows.Forms.Panel panelBody;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox grbRenewedBooking;
-        private System.Windows.Forms.Label lblID;
         private Guna.UI.WinForms.GunaComboBox cmbBookingType;
         private Guna.UI.WinForms.GunaTextBox txtPhone;
         private System.Windows.Forms.Label label5;
@@ -404,9 +309,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaTextBox txtFirstName;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaTextBox txtUniversity;
-        private Guna.UI.WinForms.GunaTextBox txtAddress;
-        private System.Windows.Forms.Label label2;
     }
 }

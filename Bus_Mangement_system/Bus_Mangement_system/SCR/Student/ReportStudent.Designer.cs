@@ -33,7 +33,6 @@
             this.txtBookingType = new Guna.UI.WinForms.GunaTextBox();
             this.txtUniversity = new Guna.UI.WinForms.GunaTextBox();
             this.txtAddress = new Guna.UI.WinForms.GunaTextBox();
-            this.lblID = new System.Windows.Forms.Label();
             this.txtPhone = new Guna.UI.WinForms.GunaTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.grbReportStudent.Controls.Add(this.txtBookingType);
             this.grbReportStudent.Controls.Add(this.txtUniversity);
             this.grbReportStudent.Controls.Add(this.txtAddress);
-            this.grbReportStudent.Controls.Add(this.lblID);
             this.grbReportStudent.Controls.Add(this.txtPhone);
             this.grbReportStudent.Controls.Add(this.label5);
             this.grbReportStudent.Controls.Add(this.label4);
@@ -147,18 +145,6 @@
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(461, 32);
             this.txtAddress.TabIndex = 45;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.Transparent;
-            this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(204, 63);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(117, 30);
-            this.lblID.TabIndex = 44;
-            this.lblID.Text = "First Name";
             // 
             // txtPhone
             // 
@@ -341,7 +327,6 @@
         private System.Windows.Forms.GroupBox grbReportStudent;
         private Guna.UI.WinForms.GunaTextBox txtUniversity;
         private Guna.UI.WinForms.GunaTextBox txtAddress;
-        private System.Windows.Forms.Label lblID;
         private Guna.UI.WinForms.GunaTextBox txtPhone;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

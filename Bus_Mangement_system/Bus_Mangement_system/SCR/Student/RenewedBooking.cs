@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,24 @@ namespace Bus_Mangement_system.SCR.Student
     public partial class RenewedBooking : Form
     {
 
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds;
+        DataRow dr;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
         #region Prop
         public int ID { get; set; }
-        string firstName, lastName, phone, address, university;
-        int addressID = -1, universityID, bookingID;
+        string firstName, lastName, phone, bookingTo, bookingFrom = DateTime.Now.ToShortDateString();
+        int bookingID=-1,price;
+        int[] arr = { 0, 0, 1, 4 };
+        DateTime d;
 
         #endregion
 
@@ -28,23 +43,60 @@ namespace Bus_Mangement_system.SCR.Student
         }
         private void RenewedBooking_Load(object sender, EventArgs e)
         {
-          
-            lblID.Text = this.ID.ToString();
+            bool flag = false;
+            DateTime sys = DateTime.Now;
+            DateTime expire;
+            connection = new SqlConnection(conString);
+            connection.Open();
+            cmd = new SqlCommand("select * from studentBooking where student_id = "+this.ID+" ", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                expire= (DateTime)dr["bookingTo"];
+                if (sys>expire)
+                    flag = true;
 
-            //data from database
+            }
+            if (!flag)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "\n\nThe student is already Booking", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                connection.Close();
+                this.Close();
+            }
 
-            firstName = txtFirstName.Text = "Moustafa";
-            lastName = txtLastName.Text = "Ibrahem";
-            phone = txtPhone.Text = "01067893079";
+            else
+            {
+                //-------------------------------------------------------------------
+                cmd = new SqlCommand("select bookingType_name from bookingType", connection);
+                cmd.ExecuteNonQuery();
+                dt = new DataTable();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    cmbBookingType.Items.Add(dr["bookingType_name"].ToString());
+                }
 
-            addressID = 1;
-            address = txtAddress.Text = "Menyet El-Nasr";
-            //cmbAddress.SelectedIndex = addressID;
-            //address = cmbAddress.Items[addressID].ToString();
+                cmd = new SqlCommand("select * from studentInformation where student_id =" + this.ID + " ", connection);
+                cmd.ExecuteNonQuery();
+                dt = new DataTable();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
 
-            universityID = 1;
-            university = txtUniversity.Text = "MET";
-            //cmbUniversity.SelectedIndex = universityID;
+                    firstName = txtFirstName.Text = dr["fName"].ToString();
+                    lastName = txtLastName.Text = dr["lName"].ToString();
+                    phone = txtPhone.Text = dr["student_phone"].ToString();
+                }
+                connection.Close();
+
+            }
+
+
 
         }
 
@@ -75,14 +127,50 @@ namespace Bus_Mangement_system.SCR.Student
                 DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"\nBooking Type: {cmbBookingType.Items[bookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
+                    bookingID = cmbBookingType.SelectedIndex+1;
+                    connection.Open();
                     //DB Commands
+
+                    //get price
+                    da = new SqlDataAdapter("select price as pricebooking from bookingPrice bp  where bp.bookingType_id ='" + bookingID + "'and bp.expiryDate is null", connection);
+                    ds = new DataSet();
+                    da.Fill(ds, "pricebooking");
+                    dr = ds.Tables["pricebooking"].Rows[0];
+                    price = (int)dr.ItemArray.GetValue(0);
+
+
+                    //get expireDate
+                    da = new SqlDataAdapter("SELECT DATEADD(Month, " + arr[bookingID] + ", GETDATE()) AS expire", connection);
+                    ds = new DataSet();
+                    da.Fill(ds, "expire");
+                    dr = ds.Tables["expire"].Rows[0];
+                    d = (DateTime)dr.ItemArray.GetValue(0);
+                    bookingTo = d.ToShortDateString();
+
+                    //insert into studentBooking
+                    cmd = new SqlCommand("insert into studentBooking(student_id,bookingType_id,price,bookingFrom,bookingTo)values(" + this.ID + ",'" + bookingID + "','" + price + "','" + bookingFrom + "','" + bookingTo + "')", connection);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+
+                    //insert into profit
+                    connection.Open();
+                    SqlCommand cmdproce = new SqlCommand();
+                    if (bookingID == 1)
+                        cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+                    else if (bookingID == 2)
+                        cmdproce = new SqlCommand("exec monthlyBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+
+                    else if (bookingID == 3)
+                        cmdproce = new SqlCommand("exec termBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+
+                    cmdproce.ExecuteNonQuery();
+                    connection.Close();
+
 
                     //clear
                     txtFirstName.Clear();
                     txtLastName.Clear();
                     txtPhone.Clear();
-                    txtAddress.Clear();
-                    txtUniversity.Clear();
                     cmbBookingType.SelectedIndex = -1;
                     MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been RenewedBooking successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     this.Close();
