@@ -252,6 +252,7 @@ namespace Bus_Mangement_system.SCR.Driver
                     cmbDriver.SelectedIndex = -1;
                     iSalary = iRestOfSalary = iTakenSalary = 0;
                     iDriverId = -1;
+                    txtSalary.Clear();
                     visible();
                 }
             }
