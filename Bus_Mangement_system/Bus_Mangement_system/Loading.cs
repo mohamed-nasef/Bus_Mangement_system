@@ -12,11 +12,23 @@ namespace Bus_Mangement_system
 {
     public partial class Loading : Form
     {
+
+        #region Prop
+
         login obj = new login();
+
+        #endregion
+
+        #region Form
+
         public Loading()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Loading Timer
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -31,5 +43,8 @@ namespace Bus_Mangement_system
                 this.Hide();
             }
         }
+
+        #endregion
+
     }
 }

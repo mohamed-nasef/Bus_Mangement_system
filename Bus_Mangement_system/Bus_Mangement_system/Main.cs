@@ -12,25 +12,37 @@ namespace Bus_Mangement_system
 {
     public partial class Main : Form
     {
+
+        #region Form
+
         public Main()
         {
             InitializeComponent();
             customizeDesign();
         }
-        private void btnExit_Click(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+
         }
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         private void Main_Shown(object sender, EventArgs e)
         {
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
+        #endregion
+
+        #region Close Form
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        #endregion
 
         #region function
         private void customizeDesign()

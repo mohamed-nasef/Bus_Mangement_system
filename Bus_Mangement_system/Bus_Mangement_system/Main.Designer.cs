@@ -90,6 +90,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.reportSubPanel = new System.Windows.Forms.Panel();
+            this.studentReport = new System.Windows.Forms.Button();
             this.universityReport = new System.Windows.Forms.Button();
             this.monthlyReport = new System.Windows.Forms.Button();
             this.dailyReport = new System.Windows.Forms.Button();
@@ -116,7 +117,6 @@
             this.addStudent = new System.Windows.Forms.Button();
             this.btnStudent = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.Panel();
-            this.studentReport = new System.Windows.Forms.Button();
             this.panelChildForm.SuspendLayout();
             this.cardDrivers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -953,6 +953,25 @@
             this.reportSubPanel.Size = new System.Drawing.Size(184, 170);
             this.reportSubPanel.TabIndex = 11;
             // 
+            // studentReport
+            // 
+            this.studentReport.BackColor = System.Drawing.Color.Transparent;
+            this.studentReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.studentReport.FlatAppearance.BorderSize = 0;
+            this.studentReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.studentReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.studentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.studentReport.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentReport.ForeColor = System.Drawing.Color.White;
+            this.studentReport.Location = new System.Drawing.Point(0, 117);
+            this.studentReport.Name = "studentReport";
+            this.studentReport.Size = new System.Drawing.Size(184, 39);
+            this.studentReport.TabIndex = 3;
+            this.studentReport.Text = "Student Report";
+            this.studentReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.studentReport.UseVisualStyleBackColor = false;
+            this.studentReport.Click += new System.EventHandler(this.StudentReport_Click);
+            // 
             // universityReport
             // 
             this.universityReport.BackColor = System.Drawing.Color.Transparent;
@@ -1415,25 +1434,6 @@
             this.Logo.Size = new System.Drawing.Size(184, 94);
             this.Logo.TabIndex = 1;
             // 
-            // studentReport
-            // 
-            this.studentReport.BackColor = System.Drawing.Color.Transparent;
-            this.studentReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.studentReport.FlatAppearance.BorderSize = 0;
-            this.studentReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.studentReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.studentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.studentReport.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentReport.ForeColor = System.Drawing.Color.White;
-            this.studentReport.Location = new System.Drawing.Point(0, 117);
-            this.studentReport.Name = "studentReport";
-            this.studentReport.Size = new System.Drawing.Size(184, 39);
-            this.studentReport.TabIndex = 3;
-            this.studentReport.Text = "Student Report";
-            this.studentReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.studentReport.UseVisualStyleBackColor = false;
-            this.studentReport.Click += new System.EventHandler(this.StudentReport_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1452,6 +1452,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             this.Shown += new System.EventHandler(this.Main_Shown);
             this.panelChildForm.ResumeLayout(false);
             this.cardDrivers.ResumeLayout(false);
