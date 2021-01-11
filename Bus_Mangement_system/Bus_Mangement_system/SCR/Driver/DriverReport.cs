@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,26 @@ namespace Bus_Mangement_system.SCR.Driver
 {
     public partial class DriverReport : Form
     {
+
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds;
+        DataRow dr;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
         #region Prop
         int driverindex = -1;
         string name, phone, address, salary;
         int iSalary = 0;
 
         #endregion
+
         public DriverReport()
         {
             InitializeComponent();
@@ -26,8 +41,19 @@ namespace Bus_Mangement_system.SCR.Driver
         private void DriverReport_Load(object sender, EventArgs e)
         {
             visible();
-
-            //db 3alashan ageb mn goah
+            cmbDriver.SelectedIndex = -1;
+            connection = new SqlConnection(conString);
+            connection.Open();
+            cmd = new SqlCommand("select driver_name from driverInformation", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbDriver.Items.Add(dr["driver_name"].ToString());
+            }
+            connection.Close();
         }
 
         #region Close Form
@@ -89,11 +115,29 @@ namespace Bus_Mangement_system.SCR.Driver
         private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
             True();
-            //db 
-            txtName.Text = "Driver";
-            txtPhone.Text = "01067893079";
-            txtAddress.Text = "aga";
-            txtSalary.Text = "5000";
+            driverindex = cmbDriver.SelectedIndex + 1;
+            name = cmbDriver.SelectedText;
+            connection.Open();
+            cmd = new SqlCommand("select * from driverInformation where driver_id ='" + driverindex + "' ", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                
+                txtName.Text = dr["driver_name"].ToString();
+                name = txtName.Text;
+                txtPhone.Text = dr["driver_phone"].ToString();
+                phone = txtPhone.Text;
+                txtAddress.Text = dr["driver_address"].ToString();
+                address = txtAddress.Text;
+                txtSalary.Text = dr["basicSalary"].ToString();
+                salary = txtSalary.Text;
+                int.TryParse(salary, out iSalary);
+
+            }
+            connection.Close();
         }
 
         #endregion

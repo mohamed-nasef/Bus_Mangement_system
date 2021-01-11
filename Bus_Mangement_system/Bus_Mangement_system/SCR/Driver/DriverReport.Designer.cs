@@ -113,11 +113,6 @@
             this.cmbDriver.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDriver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(187)))), ((int)(((byte)(204)))));
             this.cmbDriver.FormattingEnabled = true;
-            this.cmbDriver.Items.AddRange(new object[] {
-            "Driver 1",
-            "Driver 2",
-            "Driver 3",
-            "Driver 4"});
             this.cmbDriver.Location = new System.Drawing.Point(63, 148);
             this.cmbDriver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbDriver.MaxDropDownItems = 10;
