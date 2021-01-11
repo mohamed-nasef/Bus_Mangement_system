@@ -33,7 +33,10 @@ namespace Bus_Mangement_system.SCR.Bus
 
         int total = 0;
 
-        string strChangeOil, strOther, strLicenseRenewal, strBusWash, strPeriodicMaintenance, strSolar, date = DateTime.Now.ToShortDateString();
+        string strChangeOil, strOther, strLicenseRenewal, strBusWash, strPeriodicMaintenance, strSolar;
+       
+        int year= DateTime.Now.Year , month= DateTime.Now.Month, day= DateTime.Now.Day;
+
 
         string money;
 
@@ -464,7 +467,9 @@ namespace Bus_Mangement_system.SCR.Bus
                     //insert into profit
                     connection.Open();
                     SqlCommand cmdproce = new SqlCommand();
-                    cmdproce = new SqlCommand("exec busFeesCheckExist '" + date + "'," + total + "", connection);
+                    cmdproce = new SqlCommand("exec busFeesCheckExist '"+year+"-"+month+"-"+day+"',"+total+" ", connection);
+                    cmdproce.ExecuteNonQuery();
+
                     connection.Close();
 
 

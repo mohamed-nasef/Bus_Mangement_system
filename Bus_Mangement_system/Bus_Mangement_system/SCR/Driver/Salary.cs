@@ -245,6 +245,7 @@ namespace Bus_Mangement_system.SCR.Driver
                     connection.Open();
                     SqlCommand cmdproce = new SqlCommand();
                     cmdproce = new SqlCommand("exec driverTakenSalaryCheckExist '" + date + "'," + iSalary + "", connection);
+                    cmdproce.ExecuteNonQuery();
                     connection.Close();
 
 

@@ -96,6 +96,7 @@ namespace Bus_Mangement_system.SCR.Report
                 btnProfit.Visible = false;
 
             }
+            connection.Close();
         }
 
         #endregion

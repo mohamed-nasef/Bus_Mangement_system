@@ -65,8 +65,9 @@ namespace Bus_Mangement_system
             {
                 labelIncome.Text = $"$ {dr["income"].ToString()}";
                 labelPayments.Text = $"$ {dr["payments"].ToString()}";
-                labelProfits.Text = $"$ {((int)dr["income"] -(int)dr["payments"]).ToString()}";
+                labelProfits.Text = $"$ {((int)dr["income"] - (int)dr["payments"]).ToString()}";
             }
+
 
             //count Daily Tickets
             cmd = new SqlCommand("select count(bookingType_id) as count from studentBooking where bookingFrom='"+DateTime.Now.ToShortDateString()+"' and bookingType_id=1", connection);
@@ -166,7 +167,6 @@ namespace Bus_Mangement_system
         {
             Main_Load(null, EventArgs.Empty);
         }
-
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
