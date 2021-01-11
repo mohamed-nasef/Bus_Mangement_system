@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,20 @@ namespace Bus_Mangement_system.SCR.Bus
     public partial class BusReport : Form
     {
 
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
         #region Prop
         int busindex = -1;
-        string name, LicenseNumber, strCapacity = "0";
-        int capacity = 0, index = -1;
-        int totalFees = 0;
+        string name, LicenseNumber, strCapacity = "0",strID;
+       
 
         #endregion
 
@@ -30,12 +40,25 @@ namespace Bus_Mangement_system.SCR.Bus
         {
             visible();
 
-            //db 3alashan ageb mn goah 
+            cmbBus.SelectedIndex = -1;
+            connection = new SqlConnection(conString);
+            connection.Open();
+            cmd = new SqlCommand("select bus_name from busInformation", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbBus.Items.Add(dr["bus_name"].ToString());
+            }
+            connection.Close();
         }
 
         #region Close Form
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            connection.Close();
             this.Close();
         }
         #endregion
@@ -93,12 +116,27 @@ namespace Bus_Mangement_system.SCR.Bus
         private void CmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
             True();
+            busindex = cmbBus.SelectedIndex + 1;
+            name = cmbBus.SelectedText;
+            connection.Open();
+            cmd = new SqlCommand("select * from busInformation where bus_id ='" + busindex + "' ", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                strID = dr["bus_id"].ToString();
+                txtName.Text = dr["bus_name"].ToString();
+                name = txtName.Text;
+                txtLicenseNumber.Text = dr["bus_licenseNumber"].ToString();
+                LicenseNumber = txtLicenseNumber.Text;
+                txtCapacity.Text = dr["bus_capacity"].ToString();
+                strCapacity = txtCapacity.Text;
+                txtTotalFees.Text= dr["bus_fees"].ToString();
 
-            //db select bus data ------ هنجيب ال fees بتاع الباص
-            txtName.Text = "Bus 1";
-            txtLicenseNumber.Text = "123KFC";
-            txtCapacity.Text="32";
-            txtTotalFees.Text = "1450";
+            }
+            connection.Close();
         }
         #endregion
 
