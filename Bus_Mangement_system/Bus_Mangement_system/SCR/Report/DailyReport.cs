@@ -17,8 +17,7 @@ namespace Bus_Mangement_system.SCR.Report
         #region DB
 
         string date;
-        //dasdl;as,l;d,asld,as;ld,asdl;,asl;d,asdl;,asdlas,dlasd
-        string constr = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";
+        string conString = Program.GetConnectionStringByName();
         SqlConnection connection = new SqlConnection();
         #endregion
 
@@ -30,8 +29,7 @@ namespace Bus_Mangement_system.SCR.Report
         }
         private void DailyReport_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(constr);
-            //this.profitTableAdapter.Fill(this.testDataSet.profit);
+            connection = new SqlConnection(conString);
             dgvDaily.Visible = false;
             date= dtpDaily.Value.ToShortDateString();
         }

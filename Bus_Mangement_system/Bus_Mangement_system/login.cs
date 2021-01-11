@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Bus_Mangement_system
 {
@@ -16,7 +17,7 @@ namespace Bus_Mangement_system
 
         #region DB
 
-        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        string conString = Program.GetConnectionStringByName();
         SqlCommand cmd;
         SqlDataAdapter da;
         DataSet ds;

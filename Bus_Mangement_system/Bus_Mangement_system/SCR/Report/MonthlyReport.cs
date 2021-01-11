@@ -17,8 +17,7 @@ namespace Bus_Mangement_system.SCR.Report
         #region DB
 
         int year, month;
-        //dasdl;as,l;d,asld,as;ld,asdl;,asl;d,asdl;,asdlas,dlasd
-        string constr = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";
+        string conString = Program.GetConnectionStringByName();
         SqlConnection connection = new SqlConnection();
 
         #endregion
@@ -31,7 +30,7 @@ namespace Bus_Mangement_system.SCR.Report
         }
         private void MonthlyReport_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(constr);
+            connection = new SqlConnection(conString);
             //this.profitTableAdapter.Fill(this.testDataSet.profit);
             dgvMonthly.Visible = false;
             year = (int)numYear.Value;

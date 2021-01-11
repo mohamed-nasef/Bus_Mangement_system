@@ -16,7 +16,7 @@ namespace Bus_Mangement_system.SCR.Report
 
         #region DB
 
-        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        string conString = Program.GetConnectionStringByName();
         SqlCommand cmd;
         SqlConnection connection = new SqlConnection();
 
