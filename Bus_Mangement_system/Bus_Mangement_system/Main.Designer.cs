@@ -73,7 +73,7 @@
             this.btnExit = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panelDrawer = new System.Windows.Forms.Panel();
             this.paneliconSetting = new System.Windows.Forms.Panel();
-            this.btniconSetting = new System.Windows.Forms.Button();
+            this.btniconModifyPrice = new System.Windows.Forms.Button();
             this.paneliconReport = new System.Windows.Forms.Panel();
             this.btniconReport = new System.Windows.Forms.Button();
             this.paneliconDailyTicket = new System.Windows.Forms.Panel();
@@ -88,7 +88,7 @@
             this.btnDrawer = new System.Windows.Forms.Button();
             this.panelDraft = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnSetting = new System.Windows.Forms.Button();
+            this.btnModifyPrice = new System.Windows.Forms.Button();
             this.reportSubPanel = new System.Windows.Forms.Panel();
             this.studentReport = new System.Windows.Forms.Button();
             this.universityReport = new System.Windows.Forms.Button();
@@ -165,6 +165,9 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1491, 881);
             this.panelChildForm.TabIndex = 3;
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelChildForm_Paint);
+            this.panelChildForm.Enter += new System.EventHandler(this.PanelChildForm_Enter);
+            this.panelChildForm.MouseEnter += new System.EventHandler(this.PanelChildForm_MouseEnter);
             // 
             // cardDrivers
             // 
@@ -706,7 +709,7 @@
             // 
             // paneliconSetting
             // 
-            this.paneliconSetting.Controls.Add(this.btniconSetting);
+            this.paneliconSetting.Controls.Add(this.btniconModifyPrice);
             this.paneliconSetting.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneliconSetting.Location = new System.Drawing.Point(0, 1195);
             this.paneliconSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -714,22 +717,22 @@
             this.paneliconSetting.Size = new System.Drawing.Size(56, 75);
             this.paneliconSetting.TabIndex = 16;
             // 
-            // btniconSetting
+            // btniconModifyPrice
             // 
-            this.btniconSetting.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_pricing_80_final;
-            this.btniconSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btniconSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btniconSetting.FlatAppearance.BorderSize = 0;
-            this.btniconSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btniconSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btniconSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btniconSetting.Location = new System.Drawing.Point(0, 0);
-            this.btniconSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btniconSetting.Name = "btniconSetting";
-            this.btniconSetting.Size = new System.Drawing.Size(56, 75);
-            this.btniconSetting.TabIndex = 12;
-            this.btniconSetting.UseVisualStyleBackColor = true;
-            this.btniconSetting.Click += new System.EventHandler(this.btniconSetting_Click);
+            this.btniconModifyPrice.BackgroundImage = global::Bus_Mangement_system.Properties.Resources.icons8_pricing_80_final;
+            this.btniconModifyPrice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btniconModifyPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btniconModifyPrice.FlatAppearance.BorderSize = 0;
+            this.btniconModifyPrice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btniconModifyPrice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btniconModifyPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btniconModifyPrice.Location = new System.Drawing.Point(0, 0);
+            this.btniconModifyPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btniconModifyPrice.Name = "btniconModifyPrice";
+            this.btniconModifyPrice.Size = new System.Drawing.Size(56, 75);
+            this.btniconModifyPrice.TabIndex = 12;
+            this.btniconModifyPrice.UseVisualStyleBackColor = true;
+            this.btniconModifyPrice.Click += new System.EventHandler(this.BtniconModifyPrice_Click);
             // 
             // paneliconReport
             // 
@@ -901,7 +904,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
-            this.panelMenu.Controls.Add(this.btnSetting);
+            this.panelMenu.Controls.Add(this.btnModifyPrice);
             this.panelMenu.Controls.Add(this.reportSubPanel);
             this.panelMenu.Controls.Add(this.btnReport);
             this.panelMenu.Controls.Add(this.dailyticketSubPanel);
@@ -920,25 +923,25 @@
             this.panelMenu.Size = new System.Drawing.Size(201, 852);
             this.panelMenu.TabIndex = 8;
             // 
-            // btnSetting
+            // btnModifyPrice
             // 
-            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSetting.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSetting.FlatAppearance.BorderSize = 0;
-            this.btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
-            this.btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.ForeColor = System.Drawing.Color.White;
-            this.btnSetting.Location = new System.Drawing.Point(0, 1195);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(184, 75);
-            this.btnSetting.TabIndex = 12;
-            this.btnSetting.Text = "Modify Price";
-            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            this.btnModifyPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModifyPrice.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnModifyPrice.FlatAppearance.BorderSize = 0;
+            this.btnModifyPrice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.btnModifyPrice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
+            this.btnModifyPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifyPrice.ForeColor = System.Drawing.Color.White;
+            this.btnModifyPrice.Location = new System.Drawing.Point(0, 1195);
+            this.btnModifyPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModifyPrice.Name = "btnModifyPrice";
+            this.btnModifyPrice.Size = new System.Drawing.Size(184, 75);
+            this.btnModifyPrice.TabIndex = 12;
+            this.btnModifyPrice.Text = "Modify Price";
+            this.btnModifyPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModifyPrice.UseVisualStyleBackColor = true;
+            this.btnModifyPrice.Click += new System.EventHandler(this.BtnModifyPrice_Click);
             // 
             // reportSubPanel
             // 
@@ -1517,7 +1520,6 @@
         private System.Windows.Forms.Panel cardDailyTickets;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label labelDateDailyTicket;
-        private System.Windows.Forms.Label labelDailyTickets;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel cardBuses;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -1536,7 +1538,7 @@
         private System.Windows.Forms.Panel panelToolbar;
         private System.Windows.Forms.Panel panelDrawer;
         private System.Windows.Forms.Panel paneliconSetting;
-        private System.Windows.Forms.Button btniconSetting;
+        private System.Windows.Forms.Button btniconModifyPrice;
         private System.Windows.Forms.Panel paneliconReport;
         private System.Windows.Forms.Button btniconReport;
         private System.Windows.Forms.Panel paneliconDailyTicket;
@@ -1550,7 +1552,7 @@
         private System.Windows.Forms.Button btnDrawer;
         private System.Windows.Forms.Panel panelDraft;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Button btnModifyPrice;
         private System.Windows.Forms.Panel reportSubPanel;
         private System.Windows.Forms.Button universityReport;
         private System.Windows.Forms.Button monthlyReport;
@@ -1584,5 +1586,6 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         public System.Windows.Forms.Button btniconBus;
         private System.Windows.Forms.Button studentReport;
+        public System.Windows.Forms.Label labelDailyTickets;
     }
 }

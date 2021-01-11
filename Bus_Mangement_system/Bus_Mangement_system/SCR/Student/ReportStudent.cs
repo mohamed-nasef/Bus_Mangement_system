@@ -58,12 +58,12 @@ namespace Bus_Mangement_system.SCR.Student
             foreach (DataRow dr in dt.Rows)
             {
                 expire = (DateTime)dr["bookingTo"];
-                if (sys > expire)
+                if (sys <= expire)
                     flag = true;
                 bookingID = (int)dr["bookingType_id"];
             }
 
-            if (!flag)
+            if (flag)
             {
                 btnStudentActive.Text = "Active";
                 btnStudentActive.BaseColor = ColorTranslator.FromHtml("#4DE1AF");

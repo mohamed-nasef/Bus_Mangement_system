@@ -133,6 +133,7 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             //validtxtOneWay();
             //validtxtRoundTrip();
             //Validition
+
             if (txtOneWay.Text!=""&&txtRoundTrip.Text=="")
             {
                 if (validtxtOneWay())

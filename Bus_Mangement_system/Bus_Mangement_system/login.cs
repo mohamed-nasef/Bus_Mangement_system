@@ -44,9 +44,19 @@ namespace Bus_Mangement_system
         {
             connection = new SqlConnection(conString);
             connection.Open();
-            //select from DB
-            username = "a";
-            password = "1";
+            cmd = new SqlCommand("select * from userLogin ", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                username = dr["userName"].ToString();
+                password  = dr["password"].ToString();
+
+            }
+            connection.Close();
+           
         }
 
         #endregion
@@ -70,7 +80,7 @@ namespace Bus_Mangement_system
                 this.Hide();
             }
             else
-                MetroFramework.MetroMessageBox.Show(this, "\n\nIncorrect username Or password", "\nincorrect", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroFramework.MetroMessageBox.Show(this, "\n\nIncorrect username or password", "\nincorrect", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion

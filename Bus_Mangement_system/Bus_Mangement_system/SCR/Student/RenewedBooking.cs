@@ -59,11 +59,12 @@ namespace Bus_Mangement_system.SCR.Student
             foreach (DataRow dr in dt.Rows)
             {
                 expire= (DateTime)dr["bookingTo"];
-                if (sys>expire)
+                if (sys <= expire)
                     flag = true;
 
             }
-            if (!flag)
+
+            if (flag)
             {
                 MetroFramework.MetroMessageBox.Show(this, "\n\nThe student is already Booking", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 connection.Close();

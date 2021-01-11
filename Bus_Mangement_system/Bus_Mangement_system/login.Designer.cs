@@ -137,7 +137,6 @@ namespace Bus_Mangement_system
             this.txtUserName.SelectedText = "";
             this.txtUserName.Size = new System.Drawing.Size(205, 32);
             this.txtUserName.TabIndex = 18;
-            this.txtUserName.Text = "a";
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox2
@@ -216,7 +215,6 @@ namespace Bus_Mangement_system
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(205, 32);
             this.txtPassword.TabIndex = 22;
-            this.txtPassword.Text = "1";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseSystemPasswordChar = true;
             // 

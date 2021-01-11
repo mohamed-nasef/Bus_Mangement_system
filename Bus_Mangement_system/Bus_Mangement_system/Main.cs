@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,23 @@ namespace Bus_Mangement_system
     public partial class Main : Form
     {
 
+        #region DB
+
+        string conString = @"Data Source=DESKTOP-7521PNM\SQLEXPRESS;Initial Catalog=test;Integrated Security=True";//-------
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds;
+        DataRow dr;
+        DataTable dt;
+        SqlConnection connection = new SqlConnection();
+
+        #endregion
+
+        #region Prop
+        int year = DateTime.Now.Year,month=DateTime.Now.Month,day=DateTime.Now.Day;
+
+        #endregion
+
         #region Form
 
         public Main()
@@ -23,7 +41,133 @@ namespace Bus_Mangement_system
         private void Main_Load(object sender, EventArgs e)
         {
 
+            //------------------------------------
+            //label
+            labelMonthlyDetailsIncome.Text = labelMonthlyDetailsPayments.Text = labelMonthlyDetailsProfits.Text = $"Details of Last {day} Days";
+            labelDateDailyTicket.Text = $"Details of {DateTime.Now.ToShortDateString()}";
+            //------------------------------------
+
+
+
+            //------------------------------------
+            //db
+            connection = new SqlConnection(conString);
+            connection.Open();
+
+
+            //select income ,payments and profit
+            cmd = new SqlCommand("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking)) as 'income' ,(SUM(driverTakenSalary)+sum(busFees)) as 'payments' FROM profit WHERE DATEPART(YEAR, profit_date) = '" + year + "'  AND DATEPART(MONTH, profit_date) ='" + month + "'", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                labelIncome.Text = $"$ {dr["income"].ToString()}";
+                labelPayments.Text = $"$ {dr["payments"].ToString()}";
+                labelProfits.Text = $"$ {((int)dr["income"] -(int)dr["payments"]).ToString()}";
+            }
+
+            //count Daily Tickets
+            cmd = new SqlCommand("select count(bookingType_id) as count from studentBooking where bookingFrom='"+DateTime.Now.ToShortDateString()+"' and bookingType_id=1", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                labelDailyTickets.Text = $"{dr["count"].ToString()}";
+            }
+
+
+
+            //select student id ,count valid students and count expired students
+            List<int> arrStudentID = new List<int>();
+            int valid=0, expired=0;
+            bool flag = false;
+            DateTime sys = DateTime.Now;
+            DateTime expire;
+
+
+            cmd = new SqlCommand("select student_id as id from studentInformation", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                arrStudentID.Add ((int)dr["id"]);
+            }
+
+            for (int i = 0; i < arrStudentID.Count; i++)
+            {
+                flag = false;
+                cmd = new SqlCommand("select * from studentBooking where student_id = " + arrStudentID[i] + " ", connection);
+                cmd.ExecuteNonQuery();
+                dt = new DataTable();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    expire = (DateTime)dr["bookingTo"];
+                    if (sys <= expire)
+                        flag = true;
+
+                }
+                if (flag)
+                {
+                    valid++;
+                }
+                else
+                {
+                    expired++;
+                }
+            }
+            labelValidStudents.Text = $"{valid}";
+            labelExpiredStudents.Text = expired.ToString();
+
+
+
+            //count bus
+            cmd = new SqlCommand("select count(bus_id) as count from busInformation", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                labelBuses.Text = $"{dr["count"].ToString()}";
+            }
+
+            //count driver
+            cmd = new SqlCommand("select count(driver_id) as count from driverInformation", connection);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                labelDrivers.Text = $"{dr["count"].ToString()}";
+            }
+            connection.Close();
+            //------------------------------------
         }
+        private void PanelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+            Main_Load(null, EventArgs.Empty);
+
+        }
+        private void PanelChildForm_Enter(object sender, EventArgs e)
+        {
+            Main_Load(null, EventArgs.Empty);
+        }
+
+        private void PanelChildForm_MouseEnter(object sender, EventArgs e)
+        {
+            Main_Load(null, EventArgs.Empty);
+        }
+
+
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -332,23 +476,23 @@ namespace Bus_Mangement_system
 
         #endregion
 
-        #region Setting
-        private void btnSetting_Click(object sender, EventArgs e)
+        #region Modify Price
+
+        private void BtnModifyPrice_Click(object sender, EventArgs e)
         {
             customizeDesign();
             SCR.Modify_Price.ModifyPrice mpObj = new SCR.Modify_Price.ModifyPrice();
             openChildForm(mpObj);
-
         }
 
-        private void btniconSetting_Click(object sender, EventArgs e)
+        private void BtniconModifyPrice_Click(object sender, EventArgs e)
         {
             customizeDesign();
+            panelMenu.Visible = false;
+           
             SCR.Modify_Price.ModifyPrice mpObj = new SCR.Modify_Price.ModifyPrice();
             openChildForm(mpObj);
-
         }
-
 
         #endregion
 
