@@ -87,9 +87,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(55, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 65);
+            this.label1.Size = new System.Drawing.Size(559, 65);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Bus Mangmet System";
+            this.label1.Text = "Bus Management System";
             // 
             // timer1
             // 
