@@ -26,7 +26,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #region Prop
         int driverindex = -1;
-        string name, phone, address, salary,strID;
+        string name, phone, address, salary,strID,oldName,oldPhone;
         int iSalary = 0;
 
         #endregion
@@ -83,7 +83,11 @@ namespace Bus_Mangement_system.SCR.Driver
                 txtPhone.Visible = false;
                 txtSalary.Visible = false;
             }
-            else
+           
+        }
+        private void show()
+        {
+            if (label1.Visible==false)
             {
                 label1.Visible = true;
                 label2.Visible = true;
@@ -98,7 +102,6 @@ namespace Bus_Mangement_system.SCR.Driver
                 txtPhone.Visible = true;
                 txtSalary.Visible = true;
             }
-           
         }
         #endregion
 
@@ -172,8 +175,9 @@ namespace Bus_Mangement_system.SCR.Driver
         #region Selected Driver
         private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
-            visible();
+            show();
             driverindex = cmbDriver.SelectedIndex + 1;
+
             name = cmbDriver.SelectedText;
             connection.Open();
             cmd = new SqlCommand("select * from driverInformation where driver_id ='"+driverindex+"' ", connection);
@@ -185,9 +189,9 @@ namespace Bus_Mangement_system.SCR.Driver
             {
                 strID = dr["driver_id"].ToString();
                 txtDriverName.Text = dr["driver_name"].ToString();
-                name = txtDriverName.Text;
+                name=oldName = txtDriverName.Text;
                 txtPhone.Text = dr["driver_phone"].ToString();
-                phone = txtPhone.Text;
+                phone=oldPhone = txtPhone.Text;
                 txtAddress.Text = dr["driver_address"].ToString();
                 address = txtAddress.Text;
                 txtSalary.Text = dr["basicSalary"].ToString();
@@ -215,22 +219,68 @@ namespace Bus_Mangement_system.SCR.Driver
                     DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {name}\nsalary:    {iSalary}\nphone:   {phone}\naddress: {address}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        driverindex = cmbDriver.SelectedIndex + 1;
-                        //DB Commands
-                        cmd = new SqlCommand("update driverInformation SET driver_name ='"+name+"',driver_phone ='"+phone+"', driver_address ='"+address+"',basicSalary ='"+iSalary+"' where driver_id ='"+strID+ "'", connection);
                         connection.Open();
-                        cmd.ExecuteNonQuery();
-                        connection.Close();
+                        // check driver   
+                        bool flagName = true;
+                        bool flagPhone = true;
+                        if (!(name == oldName) || !(phone == oldPhone))
+                        {
+                            // check driver   
+                            cmd = new SqlCommand("select driver_name from driverInformation where driver_name ='" + name + "'", connection);
+                            cmd.ExecuteNonQuery();
+                            dt = new DataTable();
+                            da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+                            foreach (DataRow dr in dt.Rows)
+                            {
+                                if (dr["driver_name"].ToString() == oldName )
+                                    flagName = true;
 
-                        //clear
-                        txtDriverName.Clear();
-                        txtPhone.Clear();
-                        txtAddress.Clear();
-                        txtSalary.Clear();
-                        cmbDriver.SelectedIndex = -1;
+                                else
+                                    flagName = false;
+                            }
+                               
 
-                        MetroFramework.MetroMessageBox.Show(this, "\n\nDriver has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                        this.Close();
+                            cmd = new SqlCommand("select driver_phone from driverInformation where driver_phone ='" + phone + "'", connection);
+                            cmd.ExecuteNonQuery();
+                            dt = new DataTable();
+                            da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+                            foreach (DataRow dr in dt.Rows)
+                            {
+                                if (dr["driver_phone"].ToString() == oldPhone)
+                                    flagPhone = true;
+
+                                else
+                                    flagPhone = false;
+                            }
+                        }
+
+                        if (!flagName || !flagPhone)
+                        {
+                            MetroFramework.MetroMessageBox.Show(this, "\n\nThis driver already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            connection.Close();
+                        }
+
+                        else
+                        {
+                            driverindex = cmbDriver.SelectedIndex + 1;
+                            //DB Commands
+                            cmd = new SqlCommand("update driverInformation SET driver_name ='" + name + "',driver_phone ='" + phone + "', driver_address ='" + address + "',basicSalary ='" + iSalary + "' where driver_id ='" + strID + "'", connection);
+                            cmd.ExecuteNonQuery();
+                            connection.Close();
+
+                            //clear
+                            txtDriverName.Clear();
+                            txtPhone.Clear();
+                            txtAddress.Clear();
+                            txtSalary.Clear();
+                            cmbDriver.SelectedIndex = -1;
+
+                            MetroFramework.MetroMessageBox.Show(this, "\n\nDriver has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            this.Close();
+                        }
+
                     }
                 }
                 else

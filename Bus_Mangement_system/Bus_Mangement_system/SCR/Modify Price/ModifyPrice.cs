@@ -72,7 +72,7 @@ namespace Bus_Mangement_system.SCR.Modify_Price
 
         private void visible()
         {
-            if (label1.Visible==true)
+            if (label4.Visible==true)
             {
                 label1.Visible = false;
                 label5.Visible = false;
@@ -81,7 +81,11 @@ namespace Bus_Mangement_system.SCR.Modify_Price
                 txtNewPrice.Visible = false;
                 btnModifyPrice.Visible = false;
             }
-            else
+           
+        }
+        private void show()
+        {
+            if (label1.Visible==false)
             {
                 label1.Visible = true;
                 label5.Visible = true;
@@ -90,6 +94,7 @@ namespace Bus_Mangement_system.SCR.Modify_Price
                 txtNewPrice.Visible = true;
                 btnModifyPrice.Visible = true;
             }
+           
         }
 
         protected bool valid()
@@ -128,7 +133,7 @@ namespace Bus_Mangement_system.SCR.Modify_Price
 
         private void CmbBookingType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            visible();
+            show();
             iBookingTypeId = cmbBookingType.SelectedIndex + 1;
 
             cmd = new SqlCommand("select price from bookingPrice bp  where bp.bookingType_id ='" + iBookingTypeId + "'and bp.expiryDate is null", connection);

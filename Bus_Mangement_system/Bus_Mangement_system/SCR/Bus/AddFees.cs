@@ -113,6 +113,7 @@ namespace Bus_Mangement_system.SCR.Bus
                 btnBusWash.Visible = false;
                 btnLicenseRenewal.Visible = false;
                 btnOther.Visible = false;
+                btnAddBusFees.Visible = false;
                 
 
             }
@@ -140,7 +141,6 @@ namespace Bus_Mangement_system.SCR.Bus
                 txtMoney.Visible = true;
                 btnClear.Visible = true;
                 btnAssign.Visible = true;
-
             }
           
         }
@@ -158,6 +158,7 @@ namespace Bus_Mangement_system.SCR.Bus
                 btnBusWash.Visible = true;
                 btnLicenseRenewal.Visible = true;
                 btnOther.Visible = true;
+                btnAddBusFees.Visible = true;
             }
 
         }
@@ -244,7 +245,8 @@ namespace Bus_Mangement_system.SCR.Bus
         #region Assign Button
         private void BtnAssign_Click(object sender, EventArgs e)
         {
-            if (valid())
+           
+            if (valid() && cmbFeesType.SelectedIndex != -1)
             {
                 Buttons();
                 string selected = this.cmbFeesType.GetItemText(this.cmbFeesType.SelectedItem);
@@ -328,6 +330,8 @@ namespace Bus_Mangement_system.SCR.Bus
 
                 btnTotal.Text = $"$ {total}";
             }
+            if(cmbFeesType.SelectedIndex == -1)
+                MetroFramework.MetroMessageBox.Show(this, "\n\nPlease select first", "\nError", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -483,6 +487,7 @@ namespace Bus_Mangement_system.SCR.Bus
                     btnChangeOil.Text = $"$ 0";
                     btnPeriodicMaintenance.Text = $"$ 0";
                     btnTotal.Text = $"$ 0";
+                    txtMoney.Clear();
                     iOther = iLicenseRenewal = iBusWash = iChangeOil = iPeriodicMaintenance = total = 0;
                     money =strOther=strLicenseRenewal=strBusWash=strChangeOil=strPeriodicMaintenance= "";
                     BusID = FeesTypeID =- 1;

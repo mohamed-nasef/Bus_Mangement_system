@@ -26,7 +26,7 @@ namespace Bus_Mangement_system.SCR.Student
 
         #region Prop
         public int ID { get; set; }
-        string firstName, lastName, phone, address;
+        string firstName, lastName, phone, address, oldPhone;
         int addressID = -1, universityID;
 
         #endregion
@@ -76,11 +76,11 @@ namespace Bus_Mangement_system.SCR.Student
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                
-                
+
+
                 firstName = txtFirstName.Text = dr["fName"].ToString();
                 lastName = txtLastName.Text = dr["lName"].ToString();
-                phone = txtPhone.Text = dr["student_phone"].ToString();
+                oldPhone = phone = txtPhone.Text = dr["student_phone"].ToString();
 
                 addressID = (int)dr["address_id"];
                 cmbAddress.SelectedIndex = addressID-1;
@@ -172,22 +172,51 @@ namespace Bus_Mangement_system.SCR.Student
                 DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {firstName} {lastName}\nphone:             {phone}\naddress:           {address}\nUniversity:        {cmbUniversity.Items[universityID]}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result==DialogResult.Yes)
                 {
-                    //DB Commands
-                    addressID = cmbAddress.SelectedIndex;
-                    universityID = cmbUniversity.SelectedIndex;
-                    universityID++; addressID++;
-                    connection.Open();
-                    cmd = new SqlCommand("update studentInformation set fName='" + firstName + "',lName='" + lastName + "' ,student_phone='" + phone + "',address_id='" + addressID + "',university_id='" + universityID + "' where student_id =" + this.ID + "", connection);
-                    cmd.ExecuteNonQuery();
 
-                    connection.Close();
-                    //clear
-                    txtFirstName.Clear();
-                    txtLastName.Clear();
-                    txtPhone.Clear();
-                    cmbAddress.SelectedIndex = cmbUniversity.SelectedIndex = -1;
-                    MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                    this.Close();
+                    connection.Open();
+                    // check student   
+                    bool flagPhone = false, flagIN = false;
+                    if (!(phone == oldPhone))
+                    {
+                        // check student   
+                        cmd = new SqlCommand("select student_phone from studentInformation where student_phone ='" + phone + "'", connection);
+                        cmd.ExecuteNonQuery();
+                        dt = new DataTable();
+                        da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        
+                        foreach (DataRow dr in dt.Rows)
+                            flagIN = true;
+                        
+
+                    }
+
+                    if (flagIN)
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "\n\nThis phone already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        connection.Close();
+                    }
+
+                    else
+                    {
+                        //DB Commands
+                        addressID = cmbAddress.SelectedIndex;
+                        universityID = cmbUniversity.SelectedIndex;
+                        universityID++; addressID++;
+                        cmd = new SqlCommand("update studentInformation set fName='" + firstName + "',lName='" + lastName + "' ,student_phone='" + phone + "',address_id='" + addressID + "',university_id='" + universityID + "' where student_id =" + this.ID + "", connection);
+                        cmd.ExecuteNonQuery();
+
+                        connection.Close();
+                        //clear
+                        txtFirstName.Clear();
+                        txtLastName.Clear();
+                        txtPhone.Clear();
+                        cmbAddress.SelectedIndex = cmbUniversity.SelectedIndex = -1;
+                        MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        this.Close();
+                    }
+
+                    
                 }
 
             }

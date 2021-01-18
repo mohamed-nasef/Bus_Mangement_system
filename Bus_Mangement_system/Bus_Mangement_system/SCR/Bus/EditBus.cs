@@ -26,7 +26,7 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #region Prop
         int busindex = -1;
-        string name, LicenseNumber, strCapacity = "0", strID;
+        string name, LicenseNumber, strCapacity = "0", strID, oldName, oldLicenseNumber;
         int capacity = 0, index = -1;
 
         #endregion
@@ -164,9 +164,9 @@ namespace Bus_Mangement_system.SCR.Bus
             {
                 strID = dr["bus_id"].ToString();
                 txtBusName.Text = dr["bus_name"].ToString();
-                name = txtBusName.Text;
+                oldName=name = txtBusName.Text;
                 txtLicenseNumber.Text = dr["bus_licenseNumber"].ToString();
-                LicenseNumber = txtLicenseNumber.Text;
+                oldLicenseNumber=LicenseNumber = txtLicenseNumber.Text;
                 strCapacity= dr["bus_capacity"].ToString();
                 if (strCapacity=="14")
                     cmbCapacity.SelectedIndex = 0;
@@ -192,20 +192,64 @@ namespace Bus_Mangement_system.SCR.Bus
                 DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:                  {name}\nlicense Number: {LicenseNumber}\ncapacity:              {capacity}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    busindex = cmbBus.SelectedIndex + 1;
-                    //DB Commands
-                    cmd = new SqlCommand("update busInformation SET bus_name ='" + name + "',bus_licenseNumber ='" + LicenseNumber + "', bus_capacity ='" + capacity + "' where bus_id ='" + strID + "'", connection);
                     connection.Open();
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
+                    bool flagName = true;
+                    bool flagLicenseNumber = true;
+                    if (!(name == oldName) || !(LicenseNumber == oldLicenseNumber))
+                    {
+                        // check bus   
+                        cmd = new SqlCommand("select bus_name from busInformation where bus_name ='" + name + "'", connection);
+                        cmd.ExecuteNonQuery();
+                        dt = new DataTable();
+                        da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            if (dr["bus_name"].ToString() == oldName)
+                                flagName = true;
 
-                    //clear
-                    txtBusName.Clear();
-                    txtLicenseNumber.Clear();
-                    cmbCapacity.SelectedIndex = cmbBus.SelectedIndex = -1;
-                    MetroFramework.MetroMessageBox.Show(this, "\n\nBus has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            else
+                                flagName = false;
+                        }
 
-                    this.Close();
+
+                        cmd = new SqlCommand("select bus_licenseNumber from busInformation where bus_licenseNumber ='" + LicenseNumber + "'", connection);
+                        cmd.ExecuteNonQuery();
+                        dt = new DataTable();
+                        da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            if (dr["bus_licenseNumber"].ToString() == oldLicenseNumber)
+                                flagLicenseNumber = true;
+
+                            else
+                                flagLicenseNumber = false;
+                        }
+                    }
+
+                    if (!flagName || !flagLicenseNumber)
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "\n\nThis Bus already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        connection.Close();
+                    }
+
+                    else
+                    {
+                        busindex = cmbBus.SelectedIndex + 1;
+                        //DB Commands
+                        cmd = new SqlCommand("update busInformation SET bus_name ='" + name + "',bus_licenseNumber ='" + LicenseNumber + "', bus_capacity ='" + capacity + "' where bus_id ='" + strID + "'", connection);
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+
+                        //clear
+                        txtBusName.Clear();
+                        txtLicenseNumber.Clear();
+                        cmbCapacity.SelectedIndex = cmbBus.SelectedIndex = -1;
+                        MetroFramework.MetroMessageBox.Show(this, "\n\nBus has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        this.Close();
+                    }
+
                 }
             }
         }
