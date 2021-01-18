@@ -25,9 +25,9 @@ namespace Bus_Mangement_system.SCR.Bus
         #endregion
 
         #region Prop
-        int busindex = -1;
-        string name, LicenseNumber, strCapacity = "0",strID;
 
+        int iBusindex = -1;
+        string strName, strLicenseNumber, strCapacity = "0",strID;
 
         #endregion
 
@@ -120,10 +120,10 @@ namespace Bus_Mangement_system.SCR.Bus
         private void CmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
             True();
-            busindex = cmbBus.SelectedIndex + 1;
-            name = cmbBus.SelectedText;
+            iBusindex = cmbBus.SelectedIndex + 1;
+            strName = cmbBus.SelectedText;
             connection.Open();
-            cmd = new SqlCommand("select * from busInformation where bus_id ='" + busindex + "' ", connection);
+            cmd = new SqlCommand("select * from busInformation where bus_id ='" + iBusindex + "' ", connection);
             cmd.ExecuteNonQuery();
             dt = new DataTable();
             da = new SqlDataAdapter(cmd);
@@ -132,9 +132,9 @@ namespace Bus_Mangement_system.SCR.Bus
             {
                 strID = dr["bus_id"].ToString();
                 txtName.Text = dr["bus_name"].ToString();
-                name = txtName.Text;
+                strName = txtName.Text;
                 txtLicenseNumber.Text = dr["bus_licenseNumber"].ToString();
-                LicenseNumber = txtLicenseNumber.Text;
+                strLicenseNumber = txtLicenseNumber.Text;
                 txtCapacity.Text = dr["bus_capacity"].ToString();
                 strCapacity = txtCapacity.Text;
                 txtTotalFees.Text= dr["bus_fees"].ToString();

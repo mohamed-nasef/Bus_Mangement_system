@@ -27,8 +27,8 @@ namespace Bus_Mangement_system
 
         #region Prop
 
-        string username, password;
-        Main obj = new Main();
+        string strUserName, strPassword;
+        Main mObj = new Main();
 
         #endregion
 
@@ -50,8 +50,8 @@ namespace Bus_Mangement_system
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                username = dr["userName"].ToString();
-                password  = dr["password"].ToString();
+                strUserName = dr["userName"].ToString();
+                strPassword  = dr["password"].ToString();
 
             }
             connection.Close();
@@ -73,9 +73,9 @@ namespace Bus_Mangement_system
         #region Login Button
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (username == txtUserName.Text && password == txtPassword.Text)
+            if (strUserName == txtUserName.Text && strPassword == txtPassword.Text)
             {
-                obj.Show();
+                mObj.Show();
                 this.Hide();
             }
             else

@@ -25,10 +25,12 @@ namespace Bus_Mangement_system.SCR
         #endregion
 
         #region prop
+
         public int ID { get; set; }
-        public string path { get; set; }
-        string strid ="";
-        int id;
+        public string strPath { get; set; }
+        string strId ="";
+        int iID;
+
         #endregion
 
         #region Form
@@ -40,16 +42,16 @@ namespace Bus_Mangement_system.SCR
         }
         private void Search_Load(object sender, EventArgs e)
         {
-            if (path == "Renew Booking")
+            if (strPath == "Renew Booking")
             {
-                grbSearch.Text = $"Search to {path}";
+                grbSearch.Text = $"Search to {strPath}";
             }
-            else if (path== "Report")
+            else if (strPath== "Report")
             {
-                grbSearch.Text = $"Search to Student {path}";
+                grbSearch.Text = $"Search to Student {strPath}";
             }
             else
-                grbSearch.Text = $"Search to {path} Student";
+                grbSearch.Text = $"Search to {strPath} Student";
         }
 
         #endregion
@@ -76,7 +78,7 @@ namespace Bus_Mangement_system.SCR
 
         private void TxtStudentId_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtStudentId, "Please Enter ID", ref strid, e,errorProvider1);
+            Functions.validationTxt(txtStudentId, "Please Enter Valid ID not 0 or Character", ref strId, e,errorProvider1);
         }
 
         #endregion
@@ -86,32 +88,32 @@ namespace Bus_Mangement_system.SCR
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                bool isNumber = int.TryParse(strid, out id);
-                if (isNumber&&id!=0)
+                bool isNumber = int.TryParse(strId, out iID);
+                if (isNumber&&iID!=0)
                 {
                    
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"ID: {id}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"ID: {iID}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
                         connection = new SqlConnection(conString);
                         connection.Open();
                         // check student
-                        da = new SqlDataAdapter("SELECT student_id from studentInformation where student_id = "+id+"", connection);
+                        da = new SqlDataAdapter("SELECT student_id from studentInformation where student_id = "+iID+"", connection);
                         try
                         {
                             ds = new DataSet();
                             da.Fill(ds, "studentSearch");
                             dr = ds.Tables["studentSearch"].Rows[0];
 
-                            this.ID = id;
-                            if (path == "Edit")
+                            this.ID = iID;
+                            if (strPath == "Edit")
                             {
                                 Student.EditStuent esObj = new Student.EditStuent();
                                 esObj.ID = this.ID;
                                 this.Close();
                                 esObj.ShowDialog();
                             }
-                            else if (path == "Renew Booking")
+                            else if (strPath == "Renew Booking")
                             {
                                 Student.RenewedBooking rbObj = new Student.RenewedBooking();
                                 rbObj.ID = this.ID;
@@ -119,7 +121,7 @@ namespace Bus_Mangement_system.SCR
                                 rbObj.ShowDialog();
 
                             }
-                            else if (path == "Report")
+                            else if (strPath == "Report")
                             {
                                 Student.ReportStudent rsObj = new Student.ReportStudent();
                                 rsObj.ID = this.ID;

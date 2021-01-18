@@ -104,7 +104,7 @@ namespace Bus_Mangement_system.SCR.Modify_Price
             if (!(r.IsMatch(txtNewPrice.Text)))
             {
 
-                errorProvider1.SetError(txtNewPrice, "Enter valid money like $ 500");
+                errorProvider1.SetError(txtNewPrice, "Enter Valid Money Like $ 500");
                 flag = false;
             }
             else

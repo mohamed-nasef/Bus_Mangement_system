@@ -26,7 +26,7 @@ namespace Bus_Mangement_system.SCR.Driver
         #endregion
 
         #region Prop
-        string name, phone, address,salary;
+        string strName, strPhone, strAddress,strSalary;
         int iSalary=0;
 
         #endregion
@@ -82,23 +82,23 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void TxtDriverName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtDriverName, "Please Enter Driver Name", ref name, e, errorProvider1);
+            Functions.validationTxt(txtDriverName, "Please Enter Valid Driver Name Without Any Numbers", ref strName, e, errorProvider1);
         }
 
         private void txtPhone_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtPhone, "Please Enter Phone", ref phone, e, errorProvider1);
+            Functions.validationTxt(txtPhone, "Please Enter Valid Phone Like (01*********)", ref strPhone, e, errorProvider1);
         }
 
 
         private void txtAddress_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtAddress, "Please Enter Address", ref address, e, errorProvider1);
+            Functions.validationTxt(txtAddress, "Please Enter Valid Address Without Any Numbers", ref strAddress, e, errorProvider1);
         }
 
         private void TxtSalary_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtSalary, "Please Enter Salary", ref salary, e, errorProvider1);
+            Functions.validationTxt(txtSalary, "Please Enter Valid Salary Like $ 5000 Not 0 or Character", ref strSalary, e, errorProvider1);
 
         }
 
@@ -111,16 +111,16 @@ namespace Bus_Mangement_system.SCR.Driver
             //Validition
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                bool isNumber = int.TryParse(salary, out iSalary);
+                bool isNumber = int.TryParse(strSalary, out iSalary);
                 if (isNumber && iSalary != 0)
                 {
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {name}\nsalary:    {iSalary}\nphone:   {phone}\naddress: {address}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {strName}\nsalary:    {iSalary}\nphone:   {strPhone}\naddress: {strAddress}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
                         //DB Commands
                         connection = new SqlConnection(conString);
                         connection.Open();
-                        da = new SqlDataAdapter("SELECT driver_id from driverInformation where driver_name ='" + name + "'", connection);
+                        da = new SqlDataAdapter("SELECT driver_id from driverInformation where driver_name ='" + strName + "'", connection);
                         try
                         {
                             ds = new DataSet();
@@ -132,7 +132,7 @@ namespace Bus_Mangement_system.SCR.Driver
                         }
                         catch (Exception)
                         {
-                            cmd = new SqlCommand("insert into driverInformation (driver_name,driver_phone,driver_address,basicSalary)values('" + name + "','" + phone + "','" + address + "',"+ iSalary + ")", connection);
+                            cmd = new SqlCommand("insert into driverInformation (driver_name,driver_phone,driver_address,basicSalary)values('" + strName + "','" + strPhone + "','" + strAddress + "',"+ iSalary + ")", connection);
                             cmd.ExecuteNonQuery();
                             MetroFramework.MetroMessageBox.Show(this, "\n\nDriver Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
 

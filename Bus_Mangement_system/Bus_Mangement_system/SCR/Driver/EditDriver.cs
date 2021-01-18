@@ -25,9 +25,9 @@ namespace Bus_Mangement_system.SCR.Driver
         #endregion
 
         #region Prop
-        int driverindex = -1;
-        string name, phone, address, salary,strID,oldName,oldPhone;
-        int iSalary = 0;
+
+        string strName, strPhone, strAddress, strSalary,strID,strOldName,strOldPhone, strOldAddress, strOldSalary;
+        int iSalary = 0,iDriverIndex = -1;
 
         #endregion
 
@@ -136,25 +136,25 @@ namespace Bus_Mangement_system.SCR.Driver
        
         private void TxtDriverName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtDriverName, "Please Enter Name", ref name, e, errorProvider1);
+            Functions.validationTxt(txtDriverName, "Please Enter Valid Driver Name Without Any Numbers", ref strName, e, errorProvider1);
 
         }
 
         private void TxtPhone_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtPhone, "Please Enter Phone", ref phone, e, errorProvider1);
+            Functions.validationTxt(txtPhone, "Please Enter Valid Phone Like (01*********)", ref strPhone, e, errorProvider1);
 
         }
 
         private void TxtAddress_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtAddress, "Please Enter Address", ref address, e, errorProvider1);
+            Functions.validationTxt(txtAddress, "Please Enter Valid Address Without Any Numbers", ref strAddress, e, errorProvider1);
 
         }
 
         private void TxtSalary_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtSalary, "Please Enter Salary", ref salary, e, errorProvider1);
+            Functions.validationTxt(txtSalary, "Please Enter Valid Salary Like $ 5000 Not 0 or Character", ref strSalary, e, errorProvider1);
 
         }
 
@@ -166,7 +166,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void CmbDriver_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbDriver, "Please Select Driver", ref driverindex, e, errorProvider1);
+            Functions.validationcmb(cmbDriver, "Please Select Driver", ref iDriverIndex, e, errorProvider1);
 
         }
 
@@ -176,11 +176,11 @@ namespace Bus_Mangement_system.SCR.Driver
         private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
             show();
-            driverindex = cmbDriver.SelectedIndex + 1;
+            iDriverIndex = cmbDriver.SelectedIndex + 1;
 
-            name = cmbDriver.SelectedText;
+            strName = cmbDriver.SelectedText;
             connection.Open();
-            cmd = new SqlCommand("select * from driverInformation where driver_id ='"+driverindex+"' ", connection);
+            cmd = new SqlCommand("select * from driverInformation where driver_id ='"+iDriverIndex+"' ", connection);
             cmd.ExecuteNonQuery();
             dt = new DataTable();
             da = new SqlDataAdapter(cmd);
@@ -189,14 +189,14 @@ namespace Bus_Mangement_system.SCR.Driver
             {
                 strID = dr["driver_id"].ToString();
                 txtDriverName.Text = dr["driver_name"].ToString();
-                name=oldName = txtDriverName.Text;
+                strName=strOldName = txtDriverName.Text;
                 txtPhone.Text = dr["driver_phone"].ToString();
-                phone=oldPhone = txtPhone.Text;
+                strPhone=strOldPhone = txtPhone.Text;
                 txtAddress.Text = dr["driver_address"].ToString();
-                address = txtAddress.Text;
+                strOldAddress = strAddress = txtAddress.Text;
                 txtSalary.Text = dr["basicSalary"].ToString();
-                salary = txtSalary.Text;
-                int.TryParse(salary, out iSalary);
+                strOldSalary = strSalary = txtSalary.Text;
+                int.TryParse(strSalary, out iSalary);
 
             }
             connection.Close();
@@ -210,82 +210,89 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void BtnEditDriver_Click(object sender, EventArgs e)
         {
-            //Validition
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            if (strOldName==strName&&strOldPhone==strPhone&&strOldAddress==strAddress&&strOldSalary==strSalary)
+                MetroFramework.MetroMessageBox.Show(this, "\n\nYou didn't make any change\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            else
             {
-                bool isNumber = int.TryParse(salary, out iSalary);
-                if (isNumber && iSalary != 0)
+                //Validition
+                if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {name}\nsalary:    {iSalary}\nphone:   {phone}\naddress: {address}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (result == DialogResult.Yes)
+                    bool isNumber = int.TryParse(strSalary, out iSalary);
+                    if (isNumber && iSalary != 0)
                     {
-                        connection.Open();
-                        // check driver   
-                        bool flagName = true;
-                        bool flagPhone = true;
-                        if (!(name == oldName) || !(phone == oldPhone))
+                        DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {strName}\nsalary:    {iSalary}\nphone:   {strPhone}\naddress: {strAddress}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (result == DialogResult.Yes)
                         {
+                            connection.Open();
                             // check driver   
-                            cmd = new SqlCommand("select driver_name from driverInformation where driver_name ='" + name + "'", connection);
-                            cmd.ExecuteNonQuery();
-                            dt = new DataTable();
-                            da = new SqlDataAdapter(cmd);
-                            da.Fill(dt);
-                            foreach (DataRow dr in dt.Rows)
+                            bool flagName = true;
+                            bool flagPhone = true;
+                            if (!(strName == strOldName) || !(strPhone == strOldPhone))
                             {
-                                if (dr["driver_name"].ToString() == oldName )
-                                    flagName = true;
+                                // check driver   
+                                cmd = new SqlCommand("select driver_name from driverInformation where driver_name ='" + strName + "'", connection);
+                                cmd.ExecuteNonQuery();
+                                dt = new DataTable();
+                                da = new SqlDataAdapter(cmd);
+                                da.Fill(dt);
+                                foreach (DataRow dr in dt.Rows)
+                                {
+                                    if (dr["driver_name"].ToString() == strOldName)
+                                        flagName = true;
 
-                                else
-                                    flagName = false;
+                                    else
+                                        flagName = false;
+                                }
+
+
+                                cmd = new SqlCommand("select driver_phone from driverInformation where driver_phone ='" + strPhone + "'", connection);
+                                cmd.ExecuteNonQuery();
+                                dt = new DataTable();
+                                da = new SqlDataAdapter(cmd);
+                                da.Fill(dt);
+                                foreach (DataRow dr in dt.Rows)
+                                {
+                                    if (dr["driver_phone"].ToString() == strOldPhone)
+                                        flagPhone = true;
+
+                                    else
+                                        flagPhone = false;
+                                }
                             }
-                               
 
-                            cmd = new SqlCommand("select driver_phone from driverInformation where driver_phone ='" + phone + "'", connection);
-                            cmd.ExecuteNonQuery();
-                            dt = new DataTable();
-                            da = new SqlDataAdapter(cmd);
-                            da.Fill(dt);
-                            foreach (DataRow dr in dt.Rows)
+                            if (!flagName || !flagPhone)
                             {
-                                if (dr["driver_phone"].ToString() == oldPhone)
-                                    flagPhone = true;
-
-                                else
-                                    flagPhone = false;
+                                MetroFramework.MetroMessageBox.Show(this, "\n\nThis driver already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                connection.Close();
                             }
+
+                            else
+                            {
+                                iDriverIndex = cmbDriver.SelectedIndex + 1;
+                                //DB Commands
+                                cmd = new SqlCommand("update driverInformation SET driver_name ='" + strName + "',driver_phone ='" + strPhone + "', driver_address ='" + strAddress + "',basicSalary ='" + iSalary + "' where driver_id ='" + strID + "'", connection);
+                                cmd.ExecuteNonQuery();
+                                connection.Close();
+
+                                //clear
+                                txtDriverName.Clear();
+                                txtPhone.Clear();
+                                txtAddress.Clear();
+                                txtSalary.Clear();
+                                cmbDriver.SelectedIndex = -1;
+
+                                MetroFramework.MetroMessageBox.Show(this, "\n\nDriver has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                                this.Close();
+                            }
+
                         }
-
-                        if (!flagName || !flagPhone)
-                        {
-                            MetroFramework.MetroMessageBox.Show(this, "\n\nThis driver already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            connection.Close();
-                        }
-
-                        else
-                        {
-                            driverindex = cmbDriver.SelectedIndex + 1;
-                            //DB Commands
-                            cmd = new SqlCommand("update driverInformation SET driver_name ='" + name + "',driver_phone ='" + phone + "', driver_address ='" + address + "',basicSalary ='" + iSalary + "' where driver_id ='" + strID + "'", connection);
-                            cmd.ExecuteNonQuery();
-                            connection.Close();
-
-                            //clear
-                            txtDriverName.Clear();
-                            txtPhone.Clear();
-                            txtAddress.Clear();
-                            txtSalary.Clear();
-                            cmbDriver.SelectedIndex = -1;
-
-                            MetroFramework.MetroMessageBox.Show(this, "\n\nDriver has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                            this.Close();
-                        }
-
                     }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "\n\nPlease Enter a correct monthly salary ", "\nError", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
-                    MetroFramework.MetroMessageBox.Show(this, "\n\nPlease Enter a correct monthly salary ", "\nError", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+           
 
             #endregion
 

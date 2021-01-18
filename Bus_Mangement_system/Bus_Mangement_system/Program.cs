@@ -17,7 +17,7 @@ namespace Bus_Mangement_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Loading());
         }
         
         public static string GetConnectionStringByName()

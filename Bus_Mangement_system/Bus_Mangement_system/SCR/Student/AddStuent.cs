@@ -28,13 +28,10 @@ namespace Bus_Mangement_system.SCR.Student
 
         #region Prop
 
-        string firstName,lastName, phone,address;
-        int addressID = -1, universityID, bookingID;
-        int stid, price;
-        int [] arr = {0,0,1,4};
-        string bookingFrom = DateTime.Now.ToShortDateString();
-        string bookingTo;
-        DateTime d;
+        string strFirstName,strLastName, strPhone,strAddress,strBookingFrom = DateTime.Now.ToShortDateString(),strBookingTo;
+        int iAddressID = -1, iUniversityID, iBookingID,iStId, iPrice;
+        int [] arrDuration = {0,0,1,4};
+        DateTime date;
 
         #endregion
 
@@ -115,16 +112,16 @@ namespace Bus_Mangement_system.SCR.Student
         #region TextBox Validation
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtFirstName, "Please Enter First Name",ref firstName,e,errorProvider1);
+            Functions.validationTxt(txtFirstName, "Please Enter Valid First Name Without Any Numbers", ref strFirstName,e,errorProvider1);
         }
         private void txtLastName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtLastName, "Please Enter Last Name", ref lastName, e, errorProvider1);
+            Functions.validationTxt(txtLastName, "Please Enter Valid Last Name Without Any Numbers", ref strLastName, e, errorProvider1);
         }
 
         private void txtPhone_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtPhone, "Please Enter Phone Number", ref phone, e, errorProvider1);
+            Functions.validationTxt(txtPhone, "Please Enter Valid Phone Like (01*********)", ref strPhone, e, errorProvider1);
         }
 
         #endregion
@@ -132,18 +129,18 @@ namespace Bus_Mangement_system.SCR.Student
         #region ComboBox Validation
         private void cmbAddress_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbAddress, "Please Select Address",ref addressID, e, errorProvider1);
-            if (addressID != -1)
-                address = cmbAddress.Items[addressID].ToString();
+            Functions.validationcmb(cmbAddress, "Please Select Address",ref iAddressID, e, errorProvider1);
+            if (iAddressID != -1)
+                strAddress = cmbAddress.Items[iAddressID].ToString();
         }
         private void cmbUniversity_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbUniversity, "Please Select University", ref universityID, e, errorProvider1);
+            Functions.validationcmb(cmbUniversity, "Please Select University", ref iUniversityID, e, errorProvider1);
         }
 
         private void cmbBookingType_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbBookingType, "Please Select Type", ref bookingID, e, errorProvider1);
+            Functions.validationcmb(cmbBookingType, "Please Select Type", ref iBookingID, e, errorProvider1);
         }
 
         #endregion
@@ -153,16 +150,16 @@ namespace Bus_Mangement_system.SCR.Student
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {firstName} {lastName}\nphone:             {phone}\naddress:           {address}\nUniversity:        {cmbUniversity.Items[universityID]}\nBooking Type: {cmbBookingType.Items[bookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {strFirstName} {strLastName}\nphone:             {strPhone}\naddress:           {strAddress}\nUniversity:        {cmbUniversity.Items[iUniversityID]}\nBooking Type: {cmbBookingType.Items[iBookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result==DialogResult.Yes)
                 {
 
                     //db
-                    universityID++;addressID++;bookingID++;
+                    iUniversityID++;iAddressID++;iBookingID++;
                     connection = new SqlConnection(conString);
                     connection.Open();
                     // check student
-                    da = new SqlDataAdapter("SELECT student_id from studentInformation where fName = '" + firstName + "' and lName = '" + lastName + "' and student_phone = '" + phone + "' and address_id = '" + addressID + "' and university_id = '" + universityID + "' ", connection);
+                    da = new SqlDataAdapter("SELECT student_id from studentInformation where fName = '" + strFirstName + "' and lName = '" + strLastName + "' and student_phone = '" + strPhone + "' and address_id = '" + iAddressID + "' and university_id = '" + iUniversityID + "' ", connection);
                     try
                     {
                         ds = new DataSet();
@@ -175,45 +172,45 @@ namespace Bus_Mangement_system.SCR.Student
                     catch (Exception)
                     {
                         //insert into studentInformation
-                        cmd = new SqlCommand("insert into studentInformation(fName,lName,student_phone,address_id,university_id)values('" + firstName + "','" + lastName + "','" + phone + "','" + addressID + "','" + universityID + "')", connection);
+                        cmd = new SqlCommand("insert into studentInformation(fName,lName,student_phone,address_id,university_id)values('" + strFirstName + "','" + strLastName + "','" + strPhone + "','" + iAddressID + "','" + iUniversityID + "')", connection);
                         cmd.ExecuteNonQuery();
 
                         //get studentid
-                        da = new SqlDataAdapter("SELECT student_id from studentInformation where fName = '" + firstName + "' and lName = '" + lastName + "' and student_phone = '" + phone + "' and address_id = '" + addressID + "' and university_id = '" + universityID + "' ", connection);
+                        da = new SqlDataAdapter("SELECT student_id from studentInformation where fName = '" + strFirstName + "' and lName = '" + strLastName + "' and student_phone = '" + strPhone + "' and address_id = '" + iAddressID + "' and university_id = '" + iUniversityID + "' ", connection);
                         ds = new DataSet();
                         da.Fill(ds, "studentID");
                         dr = ds.Tables["studentID"].Rows[0];
-                        stid = (int)dr.ItemArray.GetValue(0);
+                        iStId = (int)dr.ItemArray.GetValue(0);
 
                         //get booking price
-                        da = new SqlDataAdapter("select price as pricebooking from bookingPrice bp  where bp.bookingType_id ='" + bookingID + "'and bp.expiryDate is null", connection);
+                        da = new SqlDataAdapter("select price as pricebooking from bookingPrice bp  where bp.bookingType_id ='" + iBookingID + "'and bp.expiryDate is null", connection);
                         da.Fill(ds, "pricebooking");
                         dr = ds.Tables["pricebooking"].Rows[0];
-                        price = (int)dr.ItemArray.GetValue(0);
+                        iPrice = (int)dr.ItemArray.GetValue(0);
 
                         //get expireDate
-                        da = new SqlDataAdapter("SELECT DATEADD(Month, " + arr[bookingID] + ", GETDATE()) AS expire", connection);
+                        da = new SqlDataAdapter("SELECT DATEADD(Month, " + arrDuration[iBookingID] + ", GETDATE()) AS expire", connection);
                         ds = new DataSet();
                         da.Fill(ds, "expire");
                         dr = ds.Tables["expire"].Rows[0];
-                        d = (DateTime)dr.ItemArray.GetValue(0);
-                        bookingTo = d.ToShortDateString();
+                        date = (DateTime)dr.ItemArray.GetValue(0);
+                        strBookingTo = date.ToShortDateString();
 
                         //insert into studentBooking
-                        cmd = new SqlCommand("insert into studentBooking(student_id,bookingType_id,price,bookingFrom,bookingTo)values('" + stid + "','" + bookingID + "','" + price + "','" + bookingFrom + "','" + bookingTo + "')", connection);
+                        cmd = new SqlCommand("insert into studentBooking(student_id,bookingType_id,price,bookingFrom,bookingTo)values('" + iStId + "','" + iBookingID + "','" + iPrice + "','" + strBookingFrom + "','" + strBookingTo + "')", connection);
                         cmd.ExecuteNonQuery();
                         connection.Close();
 
                         //insert into profit
                         connection.Open();
                         SqlCommand cmdproce=new SqlCommand();
-                        if (bookingID==1)
-                            cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
-                        else if (bookingID==2)
-                            cmdproce = new SqlCommand("exec monthlyBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+                        if (iBookingID==1)
+                            cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + strBookingFrom + "'," + iPrice + "", connection);
+                        else if (iBookingID==2)
+                            cmdproce = new SqlCommand("exec monthlyBookingCheckExist '" + strBookingFrom + "'," + iPrice + "", connection);
 
-                        else if (bookingID==3)
-                            cmdproce = new SqlCommand("exec termBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+                        else if (iBookingID==3)
+                            cmdproce = new SqlCommand("exec termBookingCheckExist '" + strBookingFrom + "'," + iPrice + "", connection);
 
                         cmdproce.ExecuteNonQuery();
                         connection.Close();

@@ -26,9 +26,7 @@ namespace Bus_Mangement_system.SCR.Driver
         #endregion
 
         #region Prop
-        int iDriverId, month, year;
-        int iTakenSalary=0, iRestOfSalary=0, iSalary=0,iBasicSalary=0,total=0;
-
+        int iTakenSalary=0, iRestOfSalary=0, iSalary=0,iBasicSalary=0,iTotal=0,iDriverId, iMonth, iYear;
         string strSalary,strBasic,strTaken;
         DateTime date = DateTime.Now;
         #endregion
@@ -43,9 +41,9 @@ namespace Bus_Mangement_system.SCR.Driver
         {
 
             visible();
-            month = date.Month;
-            year = date.Year;
-            numMonth.Value = month;
+            iMonth = date.Month;
+            iYear = date.Year;
+            numMonth.Value = iMonth;
             cmbDriver.SelectedIndex = -1;
             connection = new SqlConnection(conString);
             connection.Open();
@@ -127,7 +125,7 @@ namespace Bus_Mangement_system.SCR.Driver
             if (!(r.IsMatch(txtSalary.Text)))
             {
 
-                errorProvider1.SetError(txtSalary, "Enter valid money like $ 500");
+                errorProvider1.SetError(txtSalary, "Please Enter Valid Salary Like $ 1000 Not 0 or Character");
                 flag = false;
             }
             else
@@ -177,7 +175,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void NumMonth_ValueChanged(object sender, EventArgs e)
         {
-            month = (int)numMonth.Value;
+            iMonth = (int)numMonth.Value;
         }
         #endregion
 
@@ -188,12 +186,10 @@ namespace Bus_Mangement_system.SCR.Driver
             show();
             iDriverId = cmbDriver.SelectedIndex + 1;
 
-            //db select by iddriver get all what happen in this month in taple salary and but in iTakenSalary iRestOfSalary
             connection = new SqlConnection(conString);
             connection.Open();
 
-            //da = new SqlDataAdapter("SELECT * FROM driverSalary WHERE DATEPART(YEAR, monthSalary) = '" + year + "' AND DATEPART(MONTH, monthSalary) = '" + month + "'", connection);
-            cmd = new SqlCommand("SELECT * FROM driverSalary WHERE DATEPART(YEAR, monthSalary) = '" + year + "' AND DATEPART(MONTH, monthSalary) = '" + month + "' and driver_id='"+ iDriverId + "' ", connection);
+            cmd = new SqlCommand("SELECT * FROM driverSalary WHERE DATEPART(YEAR, monthSalary) = '" + iYear + "' AND DATEPART(MONTH, monthSalary) = '" + iMonth + "' and driver_id='"+ iDriverId + "' ", connection);
             cmd.ExecuteNonQuery();
             try
             {
@@ -203,8 +199,8 @@ namespace Bus_Mangement_system.SCR.Driver
                 foreach (DataRow dr in dt.Rows)
                 {
                     strTaken= dr["takenSalary"].ToString();
-                    int.TryParse(strTaken, out total);
-                    iTakenSalary += total;
+                    int.TryParse(strTaken, out iTotal);
+                    iTakenSalary += iTotal;
                     strBasic = dr["basicSalary"].ToString();
                     int.TryParse(strBasic, out iBasicSalary);
                 }
@@ -235,7 +231,7 @@ namespace Bus_Mangement_system.SCR.Driver
                     //DB
                     iDriverId = cmbDriver.SelectedIndex + 1;
                     connection.Open();
-                    cmd = new SqlCommand("insert into driverSalary(driver_id,takenSalary,basicSalary,monthSalary)values ("+iDriverId+","+iSalary+","+iBasicSalary+",'"+year+"-"+month+"-1')", connection);
+                    cmd = new SqlCommand("insert into driverSalary(driver_id,takenSalary,basicSalary,monthSalary)values ("+iDriverId+","+iSalary+","+iBasicSalary+",'"+iYear+"-"+iMonth+"-1')", connection);
                     cmd.ExecuteNonQuery();
                     connection.Close();
 

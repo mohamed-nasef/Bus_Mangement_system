@@ -24,7 +24,6 @@ namespace Bus_Mangement_system.SCR
 
         #endregion
 
-       
         #region Validation
         public static void validationTxt(Guna.UI.WinForms.GunaTextBox txt, string errorMessage, ref string str, CancelEventArgs e, ErrorProvider errorProvider)
         {
@@ -39,49 +38,22 @@ namespace Bus_Mangement_system.SCR
             {
 
                 //Phone
-                if (txt.Name == "txtPhone"&& txt.Text.Length == 11)
+                if (txt.Name== "txtPhone")
                 {
-                    bool isnumber = false;
-                    char[] arrnumber = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-                    for (int i = 0; i < txt.Text.Length; i++)
-                    {
-                        isnumber = false;
-                        for (int y = 0; y < 10; y++)
-                        {
-                            if (txt.Text[i] == arrnumber[y])
-                            {
-                                isnumber = true;
-                                break;
-                            }
-                        }
-                        if (!isnumber)
-                            break;
-                    }
-                    if (isnumber)
-                    {
-                        e.Cancel = false;
-                        isnumber = false;
-                        errorProvider.SetError(txt, null);
-                        str = txt.Text;
-                    }
-                    else
+                    Regex r = new Regex(@"^[0]{1}[1]{1}[0-9]{9}$");
+                    if (!(r.IsMatch(txt.Text)))
                     {
                         e.Cancel = true;
                         //txt.Focus();
                         errorProvider.SetError(txt, errorMessage);
                     }
-
-
-
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider.SetError(txt, null);
+                        str = txt.Text;
+                    }
                 }
-
-                else if (txt.Name == "txtPhone" && txt.Text.Length != 11)
-                {
-                    e.Cancel = true;
-                    //txt.Focus();
-                    errorProvider.SetError(txt, errorMessage);
-                }
-
                 //Driver name and bus
                 else if (txt.Name == "txtDriverName"|| txt.Name == "txtBusName")
                 {

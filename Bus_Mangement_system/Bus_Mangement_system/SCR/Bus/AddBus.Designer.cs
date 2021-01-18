@@ -105,9 +105,9 @@ namespace Bus_Mangement_system.SCR.Bus
             this.lblLicenseNumber.ForeColor = System.Drawing.Color.Gray;
             this.lblLicenseNumber.Location = new System.Drawing.Point(69, 403);
             this.lblLicenseNumber.Name = "lblLicenseNumber";
-            this.lblLicenseNumber.Size = new System.Drawing.Size(78, 17);
+            this.lblLicenseNumber.Size = new System.Drawing.Size(74, 17);
             this.lblLicenseNumber.TabIndex = 46;
-            this.lblLicenseNumber.Text = "ex: 1234 KFC";
+            this.lblLicenseNumber.Text = "ex: 1234KFC";
             // 
             // lblName
             // 

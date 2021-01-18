@@ -25,9 +25,10 @@ namespace Bus_Mangement_system.SCR.Student
         #endregion
 
         #region Prop
+
         public int ID { get; set; }
-        string firstName, lastName, phone, address, university,type;
-        int bookingID;
+        string strFirstName, strLastName, strPhone, strAddress, strUniversity,strType;
+        int iBookingID;
 
         #endregion
 
@@ -58,7 +59,7 @@ namespace Bus_Mangement_system.SCR.Student
                 expire = (DateTime)dr["bookingTo"];
                 if (sys <= expire)
                     flag = true;
-                bookingID = (int)dr["bookingType_id"];
+                iBookingID = (int)dr["bookingType_id"];
             }
 
             if (flag)
@@ -86,22 +87,22 @@ namespace Bus_Mangement_system.SCR.Student
             foreach (DataRow dr in dt.Rows)
             {
 
-                firstName = txtFirstName.Text = dr["fName"].ToString();
-                lastName = txtLastName.Text = dr["lName"].ToString();
-                phone = txtPhone.Text = dr["student_phone"].ToString();
-                address = txtAddress.Text = dr["address_name"].ToString();
-                university = txtUniversity.Text = dr["university_name"].ToString();
+                strFirstName = txtFirstName.Text = dr["fName"].ToString();
+                strLastName = txtLastName.Text = dr["lName"].ToString();
+                strPhone = txtPhone.Text = dr["student_phone"].ToString();
+                strAddress = txtAddress.Text = dr["address_name"].ToString();
+                strUniversity = txtUniversity.Text = dr["university_name"].ToString();
 
             }
             connection.Close();
 
             //--------------------------------------------------------------------
-            if (bookingID==1)
-                type = txtBookingType.Text = "Daily";
-            else if (bookingID == 2)
-                type = txtBookingType.Text = "Monthly";
+            if (iBookingID==1)
+                strType = txtBookingType.Text = "Daily";
+            else if (iBookingID == 2)
+                strType = txtBookingType.Text = "Monthly";
             else
-                type = txtBookingType.Text = "Term";
+                strType = txtBookingType.Text = "Term";
 
         }
 

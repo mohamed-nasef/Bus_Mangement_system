@@ -25,7 +25,8 @@ namespace Bus_Mangement_system
         #endregion
 
         #region Prop
-        int year = DateTime.Now.Year,month=DateTime.Now.Month,day=DateTime.Now.Day;
+
+        int iYear = DateTime.Now.Year, iMonth = DateTime.Now.Month, iDay = DateTime.Now.Day;
 
         #endregion
 
@@ -41,7 +42,7 @@ namespace Bus_Mangement_system
 
             //------------------------------------
             //label
-            labelMonthlyDetailsIncome.Text = labelMonthlyDetailsPayments.Text = labelMonthlyDetailsProfits.Text = $"Details of Last {day} Days";
+            labelMonthlyDetailsIncome.Text = labelMonthlyDetailsPayments.Text = labelMonthlyDetailsProfits.Text = $"Details of Last {iDay} Days";
             labelDateDailyTicket.Text = $"Details of {DateTime.Now.ToShortDateString()}";
             //------------------------------------
 
@@ -54,7 +55,7 @@ namespace Bus_Mangement_system
 
 
             //select income ,payments and profit
-            cmd = new SqlCommand("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking)) as 'income' ,(SUM(driverTakenSalary)+sum(busFees)) as 'payments' FROM profit WHERE DATEPART(YEAR, profit_date) = '" + year + "'  AND DATEPART(MONTH, profit_date) ='" + month + "'", connection);
+            cmd = new SqlCommand("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking)) as 'income' ,(SUM(driverTakenSalary)+sum(busFees)) as 'payments' FROM profit WHERE DATEPART(YEAR, profit_date) = '" + iYear + "'  AND DATEPART(MONTH, profit_date) ='" + iMonth + "'", connection);
             cmd.ExecuteNonQuery();
             dt = new DataTable();
             da = new SqlDataAdapter(cmd);
@@ -304,7 +305,7 @@ namespace Bus_Mangement_system
         {
             customizeDesign();
             SCR.Search sObj = new SCR.Search();
-            sObj.path = "Edit";
+            sObj.strPath = "Edit";
             openChildForm(sObj);
 
         }
@@ -313,7 +314,7 @@ namespace Bus_Mangement_system
         {
             customizeDesign();
             SCR.Search sObj = new SCR.Search();
-            sObj.path = "Renew Booking";
+            sObj.strPath = "Renew Booking";
             openChildForm(sObj);
             
         }
@@ -322,7 +323,7 @@ namespace Bus_Mangement_system
         {
             customizeDesign();
             SCR.Search sObj = new SCR.Search();
-            sObj.path = "Report";
+            sObj.strPath = "Report";
             openChildForm(sObj);
         }
 

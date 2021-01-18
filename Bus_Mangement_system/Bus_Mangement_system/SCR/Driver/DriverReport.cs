@@ -25,9 +25,9 @@ namespace Bus_Mangement_system.SCR.Driver
         #endregion
 
         #region Prop
-        int driverindex = -1;
-        string name, phone, address, salary;
-        int iSalary = 0;
+
+        string strName, strPhone, strAddress, strSalary;
+        int iSalary = 0, iDriverIndex = -1;
 
         #endregion
 
@@ -118,10 +118,10 @@ namespace Bus_Mangement_system.SCR.Driver
         private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
             True();
-            driverindex = cmbDriver.SelectedIndex + 1;
-            name = cmbDriver.SelectedText;
+            iDriverIndex = cmbDriver.SelectedIndex + 1;
+            strName = cmbDriver.SelectedText;
             connection.Open();
-            cmd = new SqlCommand("select * from driverInformation where driver_id ='" + driverindex + "' ", connection);
+            cmd = new SqlCommand("select * from driverInformation where driver_id ='" + iDriverIndex + "' ", connection);
             cmd.ExecuteNonQuery();
             dt = new DataTable();
             da = new SqlDataAdapter(cmd);
@@ -130,14 +130,14 @@ namespace Bus_Mangement_system.SCR.Driver
             {
                 
                 txtName.Text = dr["driver_name"].ToString();
-                name = txtName.Text;
+                strName = txtName.Text;
                 txtPhone.Text = dr["driver_phone"].ToString();
-                phone = txtPhone.Text;
+                strPhone = txtPhone.Text;
                 txtAddress.Text = dr["driver_address"].ToString();
-                address = txtAddress.Text;
+                strAddress = txtAddress.Text;
                 txtSalary.Text = dr["basicSalary"].ToString();
-                salary = txtSalary.Text;
-                int.TryParse(salary, out iSalary);
+                strSalary = txtSalary.Text;
+                int.TryParse(strSalary, out iSalary);
 
             }
             connection.Close();

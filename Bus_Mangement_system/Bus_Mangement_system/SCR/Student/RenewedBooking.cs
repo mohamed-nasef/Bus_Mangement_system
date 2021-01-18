@@ -27,11 +27,12 @@ namespace Bus_Mangement_system.SCR.Student
         #endregion
 
         #region Prop
+
         public int ID { get; set; }
-        string firstName, lastName, phone, bookingTo, bookingFrom = DateTime.Now.ToShortDateString();
-        int bookingID=-1,price;
-        int[] arr = { 0, 0, 1, 4 };
-        DateTime d;
+        string strFirstName, strLastName, strPhone, strBookingTo, strBookingFrom = DateTime.Now.ToShortDateString();
+        int iBookingID=-1,price;
+        int[] arrDuration = { 0, 0, 1, 4 };
+        DateTime date;
 
         #endregion
 
@@ -92,9 +93,9 @@ namespace Bus_Mangement_system.SCR.Student
                 foreach (DataRow dr in dt.Rows)
                 {
 
-                    firstName = txtFirstName.Text = dr["fName"].ToString();
-                    lastName = txtLastName.Text = dr["lName"].ToString();
-                    phone = txtPhone.Text = dr["student_phone"].ToString();
+                    strFirstName = txtFirstName.Text = dr["fName"].ToString();
+                    strLastName = txtLastName.Text = dr["lName"].ToString();
+                    strPhone = txtPhone.Text = dr["student_phone"].ToString();
                 }
                 connection.Close();
 
@@ -118,7 +119,7 @@ namespace Bus_Mangement_system.SCR.Student
         #region ComboBox Validation
         private void CmbBookingType_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbBookingType, "Please Select Type", ref bookingID, e, errorProvider1);
+            Functions.validationcmb(cmbBookingType, "Please Select Type", ref iBookingID, e, errorProvider1);
 
         }
 
@@ -130,15 +131,15 @@ namespace Bus_Mangement_system.SCR.Student
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"\nBooking Type: {cmbBookingType.Items[bookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"\nBooking Type: {cmbBookingType.Items[iBookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    bookingID = cmbBookingType.SelectedIndex+1;
+                    iBookingID = cmbBookingType.SelectedIndex+1;
                     connection.Open();
                     //DB Commands
 
                     //get price
-                    da = new SqlDataAdapter("select price as pricebooking from bookingPrice bp  where bp.bookingType_id ='" + bookingID + "'and bp.expiryDate is null", connection);
+                    da = new SqlDataAdapter("select price as pricebooking from bookingPrice bp  where bp.bookingType_id ='" + iBookingID + "'and bp.expiryDate is null", connection);
                     ds = new DataSet();
                     da.Fill(ds, "pricebooking");
                     dr = ds.Tables["pricebooking"].Rows[0];
@@ -146,28 +147,28 @@ namespace Bus_Mangement_system.SCR.Student
 
 
                     //get expireDate
-                    da = new SqlDataAdapter("SELECT DATEADD(Month, " + arr[bookingID] + ", GETDATE()) AS expire", connection);
+                    da = new SqlDataAdapter("SELECT DATEADD(Month, " + arrDuration[iBookingID] + ", GETDATE()) AS expire", connection);
                     ds = new DataSet();
                     da.Fill(ds, "expire");
                     dr = ds.Tables["expire"].Rows[0];
-                    d = (DateTime)dr.ItemArray.GetValue(0);
-                    bookingTo = d.ToShortDateString();
+                    date = (DateTime)dr.ItemArray.GetValue(0);
+                    strBookingTo = date.ToShortDateString();
 
                     //insert into studentBooking
-                    cmd = new SqlCommand("insert into studentBooking(student_id,bookingType_id,price,bookingFrom,bookingTo)values(" + this.ID + ",'" + bookingID + "','" + price + "','" + bookingFrom + "','" + bookingTo + "')", connection);
+                    cmd = new SqlCommand("insert into studentBooking(student_id,bookingType_id,price,bookingFrom,bookingTo)values(" + this.ID + ",'" + iBookingID + "','" + price + "','" + strBookingFrom + "','" + strBookingTo + "')", connection);
                     cmd.ExecuteNonQuery();
                     connection.Close();
 
                     //insert into profit
                     connection.Open();
                     SqlCommand cmdproce = new SqlCommand();
-                    if (bookingID == 1)
-                        cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
-                    else if (bookingID == 2)
-                        cmdproce = new SqlCommand("exec monthlyBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+                    if (iBookingID == 1)
+                        cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + strBookingFrom + "'," + price + "", connection);
+                    else if (iBookingID == 2)
+                        cmdproce = new SqlCommand("exec monthlyBookingCheckExist '" + strBookingFrom + "'," + price + "", connection);
 
-                    else if (bookingID == 3)
-                        cmdproce = new SqlCommand("exec termBookingCheckExist '" + bookingFrom + "'," + price + "", connection);
+                    else if (iBookingID == 3)
+                        cmdproce = new SqlCommand("exec termBookingCheckExist '" + strBookingFrom + "'," + price + "", connection);
 
                     cmdproce.ExecuteNonQuery();
                     connection.Close();

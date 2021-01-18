@@ -27,8 +27,8 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #region Prop
 
-        string name, LicenseNumber , strCapacity="0";
-        int capacity=0,index=-1;
+        string strName, strLicenseNumber , strCapacity="0";
+        int iCapacity=0,iIndex=-1;
 
         #endregion
 
@@ -74,12 +74,12 @@ namespace Bus_Mangement_system.SCR.Bus
 
         private void txtBusName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtBusName, "Please Enter Name", ref name, e, errorProvider1);
+            Functions.validationTxt(txtBusName, "Please Enter Valid Bus Name Without any numbers", ref strName, e, errorProvider1);
         }
 
         private void txtLicenseNumber_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtLicenseNumber, "Please Enter License Number", ref LicenseNumber, e, errorProvider1);
+            Functions.validationTxt(txtLicenseNumber, "Please Enter Valid License Number like 124KF or 8574UODK", ref strLicenseNumber, e, errorProvider1);
         }
 
         #endregion
@@ -88,11 +88,11 @@ namespace Bus_Mangement_system.SCR.Bus
         private void cmbCapacity_Validating(object sender, CancelEventArgs e)
         {
 
-            Functions.validationcmb(cmbCapacity, "Please Select Number", ref index, e, errorProvider1);
-            if (index != -1)
+            Functions.validationcmb(cmbCapacity, "Please Select The Bus Capacity", ref iIndex, e, errorProvider1);
+            if (iIndex != -1)
             {
-                strCapacity = cmbCapacity.Items[index].ToString();
-                capacity = int.Parse(strCapacity);
+                strCapacity = cmbCapacity.Items[iIndex].ToString();
+                iCapacity = int.Parse(strCapacity);
             }
         }
         #endregion
@@ -104,13 +104,13 @@ namespace Bus_Mangement_system.SCR.Bus
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
 
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:                  {name}\nlicense Number: {LicenseNumber}\ncapacity:              {capacity}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:                  {strName}\nlicense Number: {strLicenseNumber}\ncapacity:              {iCapacity}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if(result==DialogResult.Yes)
                 {
                     //DB Commands
                     connection = new SqlConnection(conString);
                     connection.Open();
-                    da = new SqlDataAdapter("SELECT bus_id from busInformation where bus_name ='" + name+"'", connection);
+                    da = new SqlDataAdapter("SELECT bus_id from busInformation where bus_name ='" + strName + "'", connection);
                     try
                     {
                         ds = new DataSet();
@@ -122,7 +122,7 @@ namespace Bus_Mangement_system.SCR.Bus
                     }
                     catch (Exception)
                     {
-                        cmd = new SqlCommand("insert into busInformation (bus_name,bus_licenseNumber,bus_capacity)values('"+name+"','"+LicenseNumber+"',"+capacity+")", connection);
+                        cmd = new SqlCommand("insert into busInformation (bus_name,bus_licenseNumber,bus_capacity)values('"+strName+ "','"+strLicenseNumber+"',"+iCapacity+")", connection);
                         cmd.ExecuteNonQuery();
                         MetroFramework.MetroMessageBox.Show(this, "\n\nBus Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
 

@@ -24,9 +24,8 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
 
         #region Prop
 
-        string oneWay ="", roundTrip="",strPrice,date=DateTime.Now.ToShortDateString();
-        int iOneWay, iRoundTrip,iPrice,total=0;
-
+        string strOneWay ="", strRoundTrip="",strPrice,strDate=DateTime.Now.ToShortDateString();
+        int iOneWay, iRoundTrip,iPrice,iTotal=0;
 
         #endregion
 
@@ -61,14 +60,14 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             if (!(r.IsMatch(txtOneWay.Text)))
             {
 
-                errorProvider1.SetError(txtOneWay, "Enter valid money like $ 500");
+                errorProvider1.SetError(txtOneWay, "Enter Ticket Numbers Like 30");
                 flag = false;
             }
             else
             {
 
                 errorProvider1.SetError(txtOneWay, null);
-                oneWay = txtOneWay.Text;
+                strOneWay = txtOneWay.Text;
                 flag = true;
             }
             return flag;
@@ -81,14 +80,14 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             if (!(r.IsMatch(txtRoundTrip.Text)))
             {
 
-                errorProvider1.SetError(txtRoundTrip, "Enter valid money like $ 500");
+                errorProvider1.SetError(txtRoundTrip, "Enter Ticket Numbers Like 60");
                 flag = false;
             }
             else
             {
 
                 errorProvider1.SetError(txtRoundTrip, null);
-                roundTrip = txtRoundTrip.Text;
+                strRoundTrip = txtRoundTrip.Text;
                 flag = true;
             }
             return flag;
@@ -109,23 +108,10 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
 
         #endregion
 
-        #region TextBox Validation
-        //private void txtOneWay_Validating(object sender, CancelEventArgs e)
-        //{
-        //    Functions.validationTxt(txtOneWay, "Please Enter Number Of Tickets", ref oneWay, e, errorProvider1);
-        //}
-
-        //private void txtRoundTrip_Validating(object sender, CancelEventArgs e)
-        //{
-        //    Functions.validationTxt(txtRoundTrip, "Please Enter Number Of Tickets", ref roundTrip, e, errorProvider1);
-        //}
-
-        #endregion
-
         #region Add Daily Tickets Button
         private void btnAddDailyTickets_Click(object sender, EventArgs e)
         {
-            total = 0;
+            iTotal = 0;
             //validtxtOneWay();
             //validtxtRoundTrip();
             //Validition
@@ -134,10 +120,10 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
             {
                 if (validtxtOneWay())
                 {
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A one-way ticket: {oneWay}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A one-way ticket: {strOneWay}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        int.TryParse(oneWay, out iOneWay);
+                        int.TryParse(strOneWay, out iOneWay);
 
                         //DB Commands
                         cmd = new SqlCommand("select price from bookingPrice bp  where bp.bookingType_id ='1' and bp.expiryDate is null", connection);
@@ -149,11 +135,11 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                             strPrice = (string)dr["price"].ToString();
                             int.TryParse(strPrice, out iPrice);
                         }
-                        total = iOneWay * (iPrice/2);
+                        iTotal = iOneWay * (iPrice/2);
                         connection.Close();
 
                         connection.Open();
-                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '"+date+"',"+total+"", connection);
+                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '"+strDate+"',"+iTotal+"", connection);
                         cmdproce.ExecuteNonQuery();
 
                         connection.Close();
@@ -172,10 +158,10 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                 if (validtxtRoundTrip())
                 {
                     
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A Round Trip ticket: {roundTrip}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A Round Trip ticket: {strRoundTrip}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        int.TryParse(roundTrip, out iRoundTrip);
+                        int.TryParse(strRoundTrip, out iRoundTrip);
 
                         //DB Commands
                         cmd = new SqlCommand("select price from bookingPrice bp  where bp.bookingType_id ='1' and bp.expiryDate is null", connection);
@@ -187,11 +173,11 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                             strPrice = (string)dr["price"].ToString();
                             int.TryParse(strPrice, out iPrice);
                         }
-                        total = iRoundTrip * iPrice;
+                        iTotal = iRoundTrip * iPrice;
                         connection.Close();
 
                         connection.Open();
-                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + date + "'," + total + "", connection);
+                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + strDate + "'," + iTotal + "", connection);
                         cmdproce.ExecuteNonQuery();
 
                         connection.Close();
@@ -209,11 +195,11 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                 if (validtxtRoundTrip()&&validtxtOneWay())
                 {
 
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A one-way ticket: {oneWay}\nA Round Trip ticket: {roundTrip}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"A one-way ticket: {strOneWay}\nA Round Trip ticket: {strRoundTrip}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        int.TryParse(roundTrip, out iRoundTrip);
-                        int.TryParse(oneWay, out iOneWay);
+                        int.TryParse(strRoundTrip, out iRoundTrip);
+                        int.TryParse(strOneWay, out iOneWay);
 
                         //DB Commands
                         cmd = new SqlCommand("select price from bookingPrice bp  where bp.bookingType_id ='1' and bp.expiryDate is null", connection);
@@ -225,11 +211,11 @@ namespace Bus_Mangement_system.SCR.Daily_Ticket
                             strPrice = (string)dr["price"].ToString();
                             int.TryParse(strPrice, out iPrice);
                         }
-                        total = (iRoundTrip * iPrice) + (iOneWay * (iPrice / 2));
+                        iTotal = (iRoundTrip * iPrice) + (iOneWay * (iPrice / 2));
                         connection.Close();
 
                         connection.Open();
-                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + date + "'," + total + "", connection);
+                        SqlCommand cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + strDate + "'," + iTotal + "", connection);
                         cmdproce.ExecuteNonQuery();
 
                         connection.Close();

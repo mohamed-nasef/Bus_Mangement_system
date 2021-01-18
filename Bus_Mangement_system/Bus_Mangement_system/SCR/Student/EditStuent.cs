@@ -25,9 +25,10 @@ namespace Bus_Mangement_system.SCR.Student
         #endregion
 
         #region Prop
+
         public int ID { get; set; }
-        string firstName, lastName, phone, address, oldPhone;
-        int addressID = -1, universityID;
+        string strFirstName, strLastName, strPhone, strAddress, strOldFirstName, strOldLastName, strOldPhone,strOldAddress;
+        int iAddressID = -1, iUniversityID, iOldAddressID, iOldUniversityID;
 
         #endregion
 
@@ -78,16 +79,16 @@ namespace Bus_Mangement_system.SCR.Student
             {
 
 
-                firstName = txtFirstName.Text = dr["fName"].ToString();
-                lastName = txtLastName.Text = dr["lName"].ToString();
-                oldPhone = phone = txtPhone.Text = dr["student_phone"].ToString();
+                strOldFirstName = strFirstName = txtFirstName.Text = dr["fName"].ToString();
+                strOldLastName = strLastName = txtLastName.Text = dr["lName"].ToString();
+                strOldPhone = strPhone = txtPhone.Text = dr["student_phone"].ToString();
 
-                addressID = (int)dr["address_id"];
-                cmbAddress.SelectedIndex = addressID-1;
-                address = cmbAddress.Items[addressID-1].ToString();
+                iOldAddressID = iAddressID = (int)dr["address_id"];
+                cmbAddress.SelectedIndex = iAddressID-1;
+                strOldAddress=strAddress = cmbAddress.Items[iAddressID-1].ToString();
 
-                universityID = (int)dr["university_id"];
-                cmbUniversity.SelectedIndex = universityID-1;
+                iOldUniversityID=iUniversityID = (int)dr["university_id"];
+                cmbUniversity.SelectedIndex = iUniversityID-1;
 
 
             }
@@ -133,15 +134,15 @@ namespace Bus_Mangement_system.SCR.Student
         #region TextBox Validation
         private void TxtFirstName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtFirstName, "Please Enter First Name", ref firstName, e, errorProvider1);
+            Functions.validationTxt(txtFirstName, "Please Enter Valid First Name Without Any Numbers", ref strFirstName, e, errorProvider1);
         }
         private void TxtLastName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtLastName, "Please Enter Last Name", ref lastName, e, errorProvider1);
+            Functions.validationTxt(txtLastName, "Please Enter Valid Last Name Without Any Numbers", ref strLastName, e, errorProvider1);
         }
         private void TxtPhone_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtPhone, "Please Enter Phone Number", ref phone, e, errorProvider1);
+            Functions.validationTxt(txtPhone, "Please Enter Valid Phone Like (01*********)", ref strPhone, e, errorProvider1);
 
         }
         #endregion
@@ -149,14 +150,14 @@ namespace Bus_Mangement_system.SCR.Student
         #region ComboBox Validation
         private void CmbAddress_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbAddress, "Please Select Address", ref addressID, e, errorProvider1);
-            if (addressID != -1)
-                address = cmbAddress.Items[addressID].ToString();
+            Functions.validationcmb(cmbAddress, "Please Select Address", ref iAddressID, e, errorProvider1);
+            if (iAddressID != -1)
+                strAddress = cmbAddress.Items[iAddressID].ToString();
         }
 
         private void CmbUniversity_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbUniversity, "Please Select University", ref universityID, e, errorProvider1);
+            Functions.validationcmb(cmbUniversity, "Please Select University", ref iUniversityID, e, errorProvider1);
 
         }
 
@@ -165,61 +166,69 @@ namespace Bus_Mangement_system.SCR.Student
         #region Edit Student Button
         private void BtnEditStudent_Click(object sender, EventArgs e)
         {
-            //Validition
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
 
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {firstName} {lastName}\nphone:             {phone}\naddress:           {address}\nUniversity:        {cmbUniversity.Items[universityID]}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result==DialogResult.Yes)
+            if (strOldFirstName==strFirstName&& strOldLastName==strLastName&& strOldPhone==strPhone&& iOldAddressID==iAddressID&& iOldUniversityID == iUniversityID)
+                MetroFramework.MetroMessageBox.Show(this, "\n\nYou didn't make any change\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
+            else
+            {
+                //Validition
+                if (ValidateChildren(ValidationConstraints.Enabled))
                 {
 
-                    connection.Open();
-                    // check student   
-                    bool flagPhone = false, flagIN = false;
-                    if (!(phone == oldPhone))
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {strFirstName} {strLastName}\nphone:             {strPhone}\naddress:           {strAddress}\nUniversity:        {cmbUniversity.Items[iUniversityID]}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
                     {
+
+                        connection.Open();
                         // check student   
-                        cmd = new SqlCommand("select student_phone from studentInformation where student_phone ='" + phone + "'", connection);
-                        cmd.ExecuteNonQuery();
-                        dt = new DataTable();
-                        da = new SqlDataAdapter(cmd);
-                        da.Fill(dt);
-                        
-                        foreach (DataRow dr in dt.Rows)
-                            flagIN = true;
-                        
+                        bool flagIN = false;
+                        if (!(strPhone == strOldPhone))
+                        {
+                            // check student   
+                            cmd = new SqlCommand("select student_phone from studentInformation where student_phone ='" + strPhone + "'", connection);
+                            cmd.ExecuteNonQuery();
+                            dt = new DataTable();
+                            da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+
+                            foreach (DataRow dr in dt.Rows)
+                                flagIN = true;
+
+
+                        }
+
+                        if (flagIN)
+                        {
+                            MetroFramework.MetroMessageBox.Show(this, "\n\nThis phone already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            connection.Close();
+                        }
+
+                        else
+                        {
+                            //DB Commands
+                            iAddressID = cmbAddress.SelectedIndex;
+                            iUniversityID = cmbUniversity.SelectedIndex;
+                            iUniversityID++; iAddressID++;
+                            cmd = new SqlCommand("update studentInformation set fName='" + strFirstName + "',lName='" + strLastName + "' ,student_phone='" + strPhone + "',address_id='" + iAddressID + "',university_id='" + iUniversityID + "' where student_id =" + this.ID + "", connection);
+                            cmd.ExecuteNonQuery();
+
+                            connection.Close();
+                            //clear
+                            txtFirstName.Clear();
+                            txtLastName.Clear();
+                            txtPhone.Clear();
+                            cmbAddress.SelectedIndex = cmbUniversity.SelectedIndex = -1;
+                            MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            this.Close();
+                        }
+
 
                     }
 
-                    if (flagIN)
-                    {
-                        MetroFramework.MetroMessageBox.Show(this, "\n\nThis phone already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        connection.Close();
-                    }
-
-                    else
-                    {
-                        //DB Commands
-                        addressID = cmbAddress.SelectedIndex;
-                        universityID = cmbUniversity.SelectedIndex;
-                        universityID++; addressID++;
-                        cmd = new SqlCommand("update studentInformation set fName='" + firstName + "',lName='" + lastName + "' ,student_phone='" + phone + "',address_id='" + addressID + "',university_id='" + universityID + "' where student_id =" + this.ID + "", connection);
-                        cmd.ExecuteNonQuery();
-
-                        connection.Close();
-                        //clear
-                        txtFirstName.Clear();
-                        txtLastName.Clear();
-                        txtPhone.Clear();
-                        cmbAddress.SelectedIndex = cmbUniversity.SelectedIndex = -1;
-                        MetroFramework.MetroMessageBox.Show(this, "\n\nStudent has been modified successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                        this.Close();
-                    }
-
-                    
                 }
-
             }
+           
 
         }
 
