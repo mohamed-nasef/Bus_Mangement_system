@@ -16,18 +16,13 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataSet ds;
-        DataRow dr;
-        SqlConnection connection = new SqlConnection();
+        DataBase dataBase = new DataBase();
 
         #endregion
 
         #region Prop
-        string strName, strPhone, strAddress,strSalary;
-        int iSalary=0;
+
+        Driver driver = new Driver();
 
         #endregion
 
@@ -40,7 +35,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void AddDriver_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(conString);
+            dataBase.connection = new SqlConnection(dataBase.conString);
         }
 
         #endregion
@@ -49,7 +44,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            connection.Close();
+            dataBase.connection.Close();
             this.Close();
         }
 
@@ -82,24 +77,31 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void TxtDriverName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtDriverName, "Please Enter Valid Driver Name Without Any Numbers", ref strName, e, errorProvider1);
+            string refStrName = "";
+            Functions.validationTxt(txtDriverName, "Please Enter Valid Driver Name Without Any Numbers", ref refStrName, e, errorProvider1);
+            driver.strName = refStrName;
         }
 
         private void txtPhone_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtPhone, "Please Enter Valid Phone Like (01*********)", ref strPhone, e, errorProvider1);
+            string refStrPhone = "";
+            Functions.validationTxt(txtPhone, "Please Enter Valid Phone Like (01*********)", ref refStrPhone, e, errorProvider1);
+            driver.strPhone = refStrPhone;
         }
 
 
         private void txtAddress_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtAddress, "Please Enter Valid Address Without Any Numbers", ref strAddress, e, errorProvider1);
+            string refStrAddress = "";
+            Functions.validationTxt(txtAddress, "Please Enter Valid Address Without Any Numbers", ref refStrAddress, e, errorProvider1);
+            driver.strAddress = refStrAddress;
         }
 
         private void TxtSalary_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtSalary, "Please Enter Valid Salary Like $ 5000 Not 0 or Character", ref strSalary, e, errorProvider1);
-
+            string refStrSalary = "";
+            Functions.validationTxt(txtSalary, "Please Enter Valid Salary Like $ 5000 Not 0 or Character", ref refStrSalary, e, errorProvider1);
+            driver.strSalary = refStrSalary;
         }
 
         #endregion
@@ -111,29 +113,31 @@ namespace Bus_Mangement_system.SCR.Driver
             //Validition
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                bool isNumber = int.TryParse(strSalary, out iSalary);
-                if (isNumber && iSalary != 0)
+                int refISalary;
+                bool isNumber = int.TryParse(driver.strSalary, out refISalary);
+                driver.iSalary = refISalary;
+                if (isNumber && driver.iSalary != 0)
                 {
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {strName}\nsalary:    {iSalary}\nphone:   {strPhone}\naddress: {strAddress}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:    {driver.strName}\nsalary:    {driver.iSalary}\nphone:   {driver.strPhone}\naddress: {driver.strAddress}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
                         //DB Commands
-                        connection = new SqlConnection(conString);
-                        connection.Open();
-                        da = new SqlDataAdapter("SELECT driver_id from driverInformation where driver_name ='" + strName + "'", connection);
+                        dataBase.connection = new SqlConnection(dataBase.conString);
+                        dataBase.connection.Open();
+                        dataBase.da = new SqlDataAdapter("SELECT driver_id from driverInformation where driver_name ='" + driver.strName + "'", dataBase.connection);
                         try
                         {
-                            ds = new DataSet();
-                            da.Fill(ds, "driverid");
-                            dr = ds.Tables["driverid"].Rows[0];
-                            if (ds.Tables["driverid"].Rows.Count > 0)
+                            dataBase.ds = new DataSet();
+                            dataBase.da.Fill(dataBase.ds, "driverid");
+                            dataBase.dr = dataBase.ds.Tables["driverid"].Rows[0];
+                            if (dataBase.ds.Tables["driverid"].Rows.Count > 0)
                                 MetroFramework.MetroMessageBox.Show(this, "\n\nYou have already added this Driver\nPlease go to Add Salary or Edit", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                         }
                         catch (Exception)
                         {
-                            cmd = new SqlCommand("insert into driverInformation (driver_name,driver_phone,driver_address,basicSalary)values('" + strName + "','" + strPhone + "','" + strAddress + "',"+ iSalary + ")", connection);
-                            cmd.ExecuteNonQuery();
+                            dataBase.cmd = new SqlCommand("insert into driverInformation (driver_name,driver_phone,driver_address,basicSalary)values('" + driver.strName + "','" + driver.strPhone + "','" + driver.strAddress + "',"+ driver.iSalary + ")", dataBase.connection);
+                            dataBase.cmd.ExecuteNonQuery();
                             MetroFramework.MetroMessageBox.Show(this, "\n\nDriver Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
 
                         }

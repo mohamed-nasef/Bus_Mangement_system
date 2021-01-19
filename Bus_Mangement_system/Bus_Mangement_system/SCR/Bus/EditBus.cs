@@ -16,18 +16,16 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
+        DataBase dataBase = new DataBase();
 
         #endregion
 
         #region Prop
 
-        string strName, strLicenseNumber, strCapacity = "0", strID, oldName, oldLicenseNumber, oldStrCapacity;
-        int iCapacity = 0, iIndex = -1, iBusindex = -1;
+        Bus bus = new Bus();
+        string refStrName, refStrLicenseNumber;
+        int refIBusindex, refICapacityIndex;
+
 
         #endregion
 
@@ -40,20 +38,22 @@ namespace Bus_Mangement_system.SCR.Bus
         private void EditBus_Load(object sender, EventArgs e)
         {
             visible();
-
+            
+            
+            //get Buses form DB but in comboBox
             cmbBus.SelectedIndex = -1;
-            connection = new SqlConnection(conString);
-            connection.Open();
-            cmd = new SqlCommand("select bus_name from busInformation", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select bus_name from busInformation", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 cmbBus.Items.Add(dr["bus_name"].ToString());
             }
-            connection.Close();
+            dataBase.connection.Close();
 
         }
 
@@ -62,7 +62,7 @@ namespace Bus_Mangement_system.SCR.Bus
         #region Close Form
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            connection.Close();
+            dataBase.connection.Close();
             this.Close();
         }
 
@@ -114,13 +114,14 @@ namespace Bus_Mangement_system.SCR.Bus
    
         private void TxtBusName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtBusName, "Please Enter Valid Bus Name Without any numbers", ref strName, e, errorProvider1);
+            Functions.validationTxt(txtBusName, "Please Enter Valid Bus Name Without any numbers", ref refStrName, e, errorProvider1);
+            bus.strName = refStrName;
         }
         
         private void TxtLicenseNumber_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtLicenseNumber, "Please Enter Valid License Number like 124KF or 8574UODK", ref strLicenseNumber, e, errorProvider1);
-
+            Functions.validationTxt(txtLicenseNumber, "Please Enter Valid License Number like 124KF or 8574UODK", ref refStrLicenseNumber, e, errorProvider1);
+            bus.strLicenseNumber = refStrLicenseNumber;
         }
 
         #endregion
@@ -129,18 +130,19 @@ namespace Bus_Mangement_system.SCR.Bus
 
         private void CmbBus_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbBus, "Please Select Bus", ref iBusindex, e, errorProvider1);
-
+            Functions.validationcmb(cmbBus, "Please Select Bus", ref refIBusindex, e, errorProvider1);
+            bus.iBusindex = refIBusindex;
         }
 
 
         private void CmbCapacity_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbCapacity, "Please Select The Bus Capacity", ref iIndex, e, errorProvider1);
-            if (iIndex != -1)
+            Functions.validationcmb(cmbCapacity, "Please Select The Bus Capacity", ref refICapacityIndex, e, errorProvider1);
+            bus.iCapacityIndex = refICapacityIndex;
+            if (bus.iCapacityIndex != -1)
             {
-                strCapacity = cmbCapacity.Items[iIndex].ToString();
-                iCapacity = int.Parse(strCapacity);
+                bus.strCapacity = cmbCapacity.Items[bus.iCapacityIndex].ToString();
+                bus.iCapacity = int.Parse(bus.strCapacity);
             }
         }
 
@@ -149,33 +151,33 @@ namespace Bus_Mangement_system.SCR.Bus
         #region Selected Bus
         private void CmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (iBusindex==-1)
+            if (bus.iBusindex==-1)
                 visible();
 
-            iBusindex = cmbBus.SelectedIndex + 1;
-            strName = cmbBus.SelectedText;
-            connection.Open();
-            cmd = new SqlCommand("select * from busInformation where bus_id ='" + iBusindex + "' ", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            bus.iBusindex = cmbBus.SelectedIndex + 1;
+            bus.strName = cmbBus.SelectedText;
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select * from busInformation where bus_id ='" + bus.iBusindex + "' ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
-                strID = dr["bus_id"].ToString();
+                bus.strID = dr["bus_id"].ToString();
                 txtBusName.Text = dr["bus_name"].ToString();
-                oldName = strName = txtBusName.Text;
+                bus.oldName = bus.strName = txtBusName.Text;
                 txtLicenseNumber.Text = dr["bus_licenseNumber"].ToString();
-                oldLicenseNumber = strLicenseNumber = txtLicenseNumber.Text;
-                oldStrCapacity = strCapacity = dr["bus_capacity"].ToString();
-                if (strCapacity=="14")
+                bus.oldLicenseNumber = bus.strLicenseNumber = txtLicenseNumber.Text;
+                bus.oldStrCapacity = bus.strCapacity = dr["bus_capacity"].ToString();
+                if (bus.strCapacity =="14")
                     cmbCapacity.SelectedIndex = 0;
-                else if (strCapacity == "32")
+                else if (bus.strCapacity == "32")
                     cmbCapacity.SelectedIndex = 1;
                 else
                     cmbCapacity.SelectedIndex = 2;
             }
-            connection.Close();
+            dataBase.connection.Close();
 
         }
 
@@ -186,7 +188,7 @@ namespace Bus_Mangement_system.SCR.Bus
         private void BtnEditBus_Click(object sender, EventArgs e)
         {
 
-            if (oldName==strName&&oldLicenseNumber==strLicenseNumber&&oldStrCapacity==strCapacity)
+            if (bus.oldName == bus.strName && bus.oldLicenseNumber == bus.strLicenseNumber && bus.oldStrCapacity == bus.strCapacity)
                 MetroFramework.MetroMessageBox.Show(this, "\n\nYou didn't make any change\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
@@ -196,23 +198,23 @@ namespace Bus_Mangement_system.SCR.Bus
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
 
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:                  {strName}\nlicense Number: {strLicenseNumber}\ncapacity:              {iCapacity}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:                  {bus.strName}\nlicense Number: {bus.strLicenseNumber}\ncapacity:              {bus.iCapacity}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        connection.Open();
+                        dataBase.connection.Open();
                         bool flagName = true;
                         bool flagLicenseNumber = true;
-                        if (!(strName == oldName) || !(strLicenseNumber == oldLicenseNumber))
+                        if (!(bus.strName == bus.oldName) || !(bus.strLicenseNumber == bus.oldLicenseNumber))
                         {
                             // check bus   
-                            cmd = new SqlCommand("select bus_name from busInformation where bus_name ='" + strName + "'", connection);
-                            cmd.ExecuteNonQuery();
-                            dt = new DataTable();
-                            da = new SqlDataAdapter(cmd);
-                            da.Fill(dt);
-                            foreach (DataRow dr in dt.Rows)
+                            dataBase.cmd = new SqlCommand("select bus_name from busInformation where bus_name ='" + bus.strName + "'", dataBase.connection);
+                            dataBase.cmd.ExecuteNonQuery();
+                            dataBase.dt = new DataTable();
+                            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+                            dataBase.da.Fill(dataBase.dt);
+                            foreach (DataRow dr in dataBase.dt.Rows)
                             {
-                                if (dr["bus_name"].ToString() == oldName)
+                                if (dr["bus_name"].ToString() == bus.oldName)
                                     flagName = true;
 
                                 else
@@ -220,14 +222,14 @@ namespace Bus_Mangement_system.SCR.Bus
                             }
 
 
-                            cmd = new SqlCommand("select bus_licenseNumber from busInformation where bus_licenseNumber ='" + strLicenseNumber + "'", connection);
-                            cmd.ExecuteNonQuery();
-                            dt = new DataTable();
-                            da = new SqlDataAdapter(cmd);
-                            da.Fill(dt);
-                            foreach (DataRow dr in dt.Rows)
+                            dataBase.cmd = new SqlCommand("select bus_licenseNumber from busInformation where bus_licenseNumber ='" + bus.strLicenseNumber + "'", dataBase.connection);
+                            dataBase.cmd.ExecuteNonQuery();
+                            dataBase.dt = new DataTable();
+                            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+                            dataBase.da.Fill(dataBase.dt);
+                            foreach (DataRow dr in dataBase.dt.Rows)
                             {
-                                if (dr["bus_licenseNumber"].ToString() == oldLicenseNumber)
+                                if (dr["bus_licenseNumber"].ToString() == bus.oldLicenseNumber)
                                     flagLicenseNumber = true;
 
                                 else
@@ -238,16 +240,16 @@ namespace Bus_Mangement_system.SCR.Bus
                         if (!flagName || !flagLicenseNumber)
                         {
                             MetroFramework.MetroMessageBox.Show(this, "\n\nThis Bus already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            connection.Close();
+                            dataBase.connection.Close();
                         }
 
                         else
                         {
-                            iBusindex = cmbBus.SelectedIndex + 1;
+                            bus.iBusindex = cmbBus.SelectedIndex + 1;
                             //DB Commands
-                            cmd = new SqlCommand("update busInformation SET bus_name ='" + strName + "',bus_licenseNumber ='" + strLicenseNumber + "', bus_capacity ='" + iCapacity + "' where bus_id ='" + strID + "'", connection);
-                            cmd.ExecuteNonQuery();
-                            connection.Close();
+                            dataBase.cmd = new SqlCommand("update busInformation SET bus_name ='" + bus.strName + "',bus_licenseNumber ='" + bus.strLicenseNumber + "', bus_capacity ='" + bus.iCapacity + "' where bus_id ='" + bus.strID + "'", dataBase.connection);
+                            dataBase.cmd.ExecuteNonQuery();
+                            dataBase.connection.Close();
 
                             //clear
                             txtBusName.Clear();

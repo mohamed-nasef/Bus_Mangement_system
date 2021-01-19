@@ -17,18 +17,15 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
+        DataBase dataBase = new DataBase();
 
         #endregion
 
         #region Prop
-        int iTakenSalary=0, iRestOfSalary=0, iSalary=0,iBasicSalary=0,iTotal=0,iDriverId, iMonth, iYear;
-        string strSalary,strBasic,strTaken;
-        DateTime date = DateTime.Now;
+
+        Driver driver = new Driver();
+        int refIBasicSalary;
+
         #endregion
 
         #region Form
@@ -41,22 +38,21 @@ namespace Bus_Mangement_system.SCR.Driver
         {
 
             visible();
-            iMonth = date.Month;
-            iYear = date.Year;
-            numMonth.Value = iMonth;
+            
+            numMonth.Value = driver.iMonth;
             cmbDriver.SelectedIndex = -1;
-            connection = new SqlConnection(conString);
-            connection.Open();
-            cmd = new SqlCommand("select driver_name from driverInformation", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select driver_name from driverInformation", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 cmbDriver.Items.Add(dr["driver_name"].ToString());
             }
-            connection.Close();
+            dataBase.connection.Close();
         }
 
         #endregion
@@ -65,7 +61,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            connection.Close();
+            dataBase.connection.Close();
             this.Close();
         }
 
@@ -132,8 +128,10 @@ namespace Bus_Mangement_system.SCR.Driver
             {
 
                 errorProvider1.SetError(txtSalary, null);
-                strSalary = txtSalary.Text;
-                int.TryParse(strSalary, out iSalary);
+                driver.strSalary = txtSalary.Text;
+                int refISalary;
+                int.TryParse(driver.strSalary, out refISalary);
+                driver.iSalary = refISalary;
                 flag = true;
             }
             return flag;
@@ -150,32 +148,47 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #endregion
 
-        #region Select Driver
-
-        private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            iDriverId = cmbDriver.SelectedIndex + 1;
-            connection.Open();
-            cmd = new SqlCommand("select * from driverInformation where driver_id ='" + iDriverId + "' ", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
-            {
-                strBasic = dr["basicSalary"].ToString();
-                int.TryParse(strBasic, out iBasicSalary);
-            }
-            connection.Close();
-            numMon();
-        }
-        #endregion
-
         #region Select Month
 
         private void NumMonth_ValueChanged(object sender, EventArgs e)
         {
-            iMonth = (int)numMonth.Value;
+            driver.iMonth = (int)numMonth.Value;
+        }
+        #endregion
+
+        #region Select Driver
+
+        private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (txtSalaryTaken.Visible == true)
+            {
+                txtSalaryTaken.Visible = false;
+                txtRestOfSalary.Visible = false;
+                txtSalary.Visible = false;
+                btnAddSalary.Visible = false;
+                label2.Visible = false;
+                label5.Visible = false;
+                label6.Visible = false;
+                lblSalary.Visible = false;
+            }
+            
+            driver.iDriverId = cmbDriver.SelectedIndex + 1;
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select * from driverInformation where driver_id ='" + driver.iDriverId + "' ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
+            {
+                driver.strBasic = dr["basicSalary"].ToString();
+                
+                int.TryParse(driver.strBasic, out refIBasicSalary);
+                driver.iBasicSalary = refIBasicSalary;
+            }
+            dataBase.connection.Close();
+            numMon();
         }
         #endregion
 
@@ -184,37 +197,58 @@ namespace Bus_Mangement_system.SCR.Driver
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             show();
-            iDriverId = cmbDriver.SelectedIndex + 1;
+            driver = new Driver();
+            driver.iDriverId = cmbDriver.SelectedIndex + 1;
+            driver.iMonth = (int)numMonth.Value;
 
-            connection = new SqlConnection(conString);
-            connection.Open();
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
 
-            cmd = new SqlCommand("SELECT * FROM driverSalary WHERE DATEPART(YEAR, monthSalary) = '" + iYear + "' AND DATEPART(MONTH, monthSalary) = '" + iMonth + "' and driver_id='"+ iDriverId + "' ", connection);
-            cmd.ExecuteNonQuery();
+            //get all Taken money in this month and the reset salary
+            dataBase.cmd = new SqlCommand("SELECT * FROM driverSalary WHERE DATEPART(YEAR, monthSalary) = '" + driver.iYear + "' AND DATEPART(MONTH, monthSalary) = '" + driver.iMonth + "' and driver_id='"+ driver.iDriverId + "' ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
             try
             {
-                dt = new DataTable();
-                da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                dataBase.dt = new DataTable();
+                dataBase.da = new SqlDataAdapter(dataBase.cmd);
+                dataBase.da.Fill(dataBase.dt);
+                bool flagIn = false;
+                foreach (DataRow dr in dataBase.dt.Rows)
                 {
-                    strTaken= dr["takenSalary"].ToString();
-                    int.TryParse(strTaken, out iTotal);
-                    iTakenSalary += iTotal;
-                    strBasic = dr["basicSalary"].ToString();
-                    int.TryParse(strBasic, out iBasicSalary);
-                }
-                connection.Close();
+                    flagIn = true;
+                    driver.strTaken = dr["takenSalary"].ToString();
+                    int refITotal;
+                    int.TryParse(driver.strTaken, out refITotal);
+                    driver.iTotal = refITotal;
+                    driver.iTakenSalary += driver.iTotal;
 
-                txtSalaryTaken.Text = iTakenSalary.ToString();
-                txtRestOfSalary.Text = (iBasicSalary - iTakenSalary).ToString();
+
+                    driver.strBasic = dr["basicSalary"].ToString();
+                    int refIBasicSalary;
+                    int.TryParse(driver.strBasic, out refIBasicSalary);
+                    driver.iBasicSalary = refIBasicSalary;
+                }
+                dataBase.connection.Close();
+                if (!flagIn)
+                {
+                    txtSalaryTaken.Text = "0";
+                    driver.iBasicSalary = refIBasicSalary;
+                    txtRestOfSalary.Text = driver.iBasicSalary.ToString();
+                }
+                else
+                {
+                    txtSalaryTaken.Text = driver.iTakenSalary.ToString();
+                    txtRestOfSalary.Text = (driver.iBasicSalary - driver.iTakenSalary).ToString();
+                }
+
             }
             catch (Exception)
             {
                 txtSalaryTaken.Text = "0";
-                txtRestOfSalary.Text = iBasicSalary.ToString();
+                driver.iBasicSalary = refIBasicSalary;
+                txtRestOfSalary.Text = driver.iBasicSalary.ToString();
             }
-            connection.Close();
+            dataBase.connection.Close();
         }
         #endregion
 
@@ -222,43 +256,46 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void BtnAddSalary_Click(object sender, EventArgs e)
         {
-            int.TryParse(txtRestOfSalary.Text, out iRestOfSalary);
-            if (salaryValid()&&iSalary<=iRestOfSalary)
+            int refIRestOfSalary;
+            int.TryParse(txtRestOfSalary.Text, out refIRestOfSalary);
+            driver.iRestOfSalary = refIRestOfSalary;
+
+            //Validation
+            if (salaryValid()&& driver.iSalary <= driver.iRestOfSalary)
             {
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"To add $ {iSalary} to {cmbDriver.SelectedValue} ", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"To add $ {driver.iSalary} to {cmbDriver.SelectedValue} ", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     //DB
-                    iDriverId = cmbDriver.SelectedIndex + 1;
-                    connection.Open();
-                    cmd = new SqlCommand("insert into driverSalary(driver_id,takenSalary,basicSalary,monthSalary)values ("+iDriverId+","+iSalary+","+iBasicSalary+",'"+iYear+"-"+iMonth+"-1')", connection);
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
+                    driver.iDriverId = cmbDriver.SelectedIndex + 1;
+                    dataBase.connection.Open();
+                    dataBase.cmd = new SqlCommand("insert into driverSalary(driver_id,takenSalary,basicSalary,monthSalary)values ("+ driver.iDriverId +","+ driver.iSalary +","+ driver.iBasicSalary +",'"+ driver.iYear +"-"+ driver.iMonth +"-1')", dataBase.connection);
+                    dataBase.cmd.ExecuteNonQuery();
+                    dataBase.connection.Close();
 
                     //insert into profit
-                    connection.Open();
+                    dataBase.connection.Open();
                     SqlCommand cmdproce = new SqlCommand();
-                    cmdproce = new SqlCommand("exec driverTakenSalaryCheckExist '" + date + "'," + iSalary + "", connection);
+                    cmdproce = new SqlCommand("exec driverTakenSalaryCheckExist '" + driver.date + "'," + driver.iSalary + "", dataBase.connection);
                     cmdproce.ExecuteNonQuery();
-                    connection.Close();
+                    dataBase.connection.Close();
 
 
                     //clear
                     MetroFramework.MetroMessageBox.Show(this, "\n\nDriver Salary Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     cmbDriver.SelectedIndex = -1;
-                    iSalary = iRestOfSalary = iTakenSalary = 0;
-                    iDriverId = -1;
+                    driver.iSalary = driver.iRestOfSalary = driver.iTakenSalary = 0;
+                    driver.iDriverId = -1;
                     txtSalary.Clear();
                     visible();
                 }
             }
             else
-                MetroFramework.MetroMessageBox.Show(this, $"\n\nMake sure put right salary\nor you don't give this driver more than {iRestOfSalary}", "\nError", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroFramework.MetroMessageBox.Show(this, $"\n\nMake sure put right salary\nor you don't give this driver more than {driver.iRestOfSalary}", "\nError", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
         }
         #endregion
-
 
     }
 }

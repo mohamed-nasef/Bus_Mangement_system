@@ -16,24 +16,16 @@ namespace Bus_Mangement_system.SCR.Student
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataSet ds;
-        DataRow dr;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
+        DataBase dataBase = new DataBase();
 
         #endregion
 
         #region Prop
 
+        Student student = new Student();
         public int ID { get; set; }
-        string strFirstName, strLastName, strPhone, strBookingTo, strBookingFrom = DateTime.Now.ToShortDateString();
-        int iBookingID=-1,price;
         int[] arrDuration = { 0, 0, 1, 4 };
-        DateTime date;
-
+       
         #endregion
 
         #region Form
@@ -50,14 +42,14 @@ namespace Bus_Mangement_system.SCR.Student
             DateTime sys = DateTime.Now;
             DateTime expire;
 
-            connection = new SqlConnection(conString);
-            connection.Open();
-            cmd = new SqlCommand("select * from studentBooking where student_id = "+this.ID+" ", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select * from studentBooking where student_id = "+this.ID+" ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 expire= (DateTime)dr["bookingTo"];
                 if (sys <= expire)
@@ -68,36 +60,36 @@ namespace Bus_Mangement_system.SCR.Student
             if (flag)
             {
                 MetroFramework.MetroMessageBox.Show(this, "\n\nThe student is already Booking", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                connection.Close();
+                dataBase.connection.Close();
                 this.Close();
             }
 
             else
             {
                 //-------------------------------------------------------------------
-                cmd = new SqlCommand("select bookingType_name from bookingType", connection);
-                cmd.ExecuteNonQuery();
-                dt = new DataTable();
-                da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                dataBase.cmd = new SqlCommand("select bookingType_name from bookingType", dataBase.connection);
+                dataBase.cmd.ExecuteNonQuery();
+                dataBase.dt = new DataTable();
+                dataBase.da = new SqlDataAdapter(dataBase.cmd);
+                dataBase.da.Fill(dataBase.dt);
+                foreach (DataRow dr in dataBase.dt.Rows)
                 {
                     cmbBookingType.Items.Add(dr["bookingType_name"].ToString());
                 }
 
-                cmd = new SqlCommand("select * from studentInformation where student_id =" + this.ID + " ", connection);
-                cmd.ExecuteNonQuery();
-                dt = new DataTable();
-                da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                dataBase.cmd = new SqlCommand("select * from studentInformation where student_id =" + this.ID + " ", dataBase.connection);
+                dataBase.cmd.ExecuteNonQuery();
+                dataBase.dt = new DataTable();
+                dataBase.da = new SqlDataAdapter(dataBase.cmd);
+                dataBase.da.Fill(dataBase.dt);
+                foreach (DataRow dr in dataBase.dt.Rows)
                 {
 
-                    strFirstName = txtFirstName.Text = dr["fName"].ToString();
-                    strLastName = txtLastName.Text = dr["lName"].ToString();
-                    strPhone = txtPhone.Text = dr["student_phone"].ToString();
+                    student.strFirstName = txtFirstName.Text = dr["fName"].ToString();
+                    student.strLastName = txtLastName.Text = dr["lName"].ToString();
+                    student.strPhone = txtPhone.Text = dr["student_phone"].ToString();
                 }
-                connection.Close();
+                dataBase.connection.Close();
 
             }
 
@@ -119,8 +111,9 @@ namespace Bus_Mangement_system.SCR.Student
         #region ComboBox Validation
         private void CmbBookingType_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbBookingType, "Please Select Type", ref iBookingID, e, errorProvider1);
-
+            int refIBookingID=-1;
+            Functions.validationcmb(cmbBookingType, "Please Select Type", ref refIBookingID, e, errorProvider1);
+            student.iBookingID = refIBookingID;
         }
 
         #endregion
@@ -131,47 +124,47 @@ namespace Bus_Mangement_system.SCR.Student
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"\nBooking Type: {cmbBookingType.Items[iBookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"\nBooking Type: {cmbBookingType.Items[student.iBookingID]}", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    iBookingID = cmbBookingType.SelectedIndex+1;
-                    connection.Open();
+                    student.iBookingID = cmbBookingType.SelectedIndex+1;
+                    dataBase.connection.Open();
                     //DB Commands
 
                     //get price
-                    da = new SqlDataAdapter("select price as pricebooking from bookingPrice bp  where bp.bookingType_id ='" + iBookingID + "'and bp.expiryDate is null", connection);
-                    ds = new DataSet();
-                    da.Fill(ds, "pricebooking");
-                    dr = ds.Tables["pricebooking"].Rows[0];
-                    price = (int)dr.ItemArray.GetValue(0);
+                    dataBase.da = new SqlDataAdapter("select price as pricebooking from bookingPrice bp  where bp.bookingType_id ='" + student.iBookingID + "'and bp.expiryDate is null", dataBase.connection);
+                    dataBase.ds = new DataSet();
+                    dataBase.da.Fill(dataBase.ds, "pricebooking");
+                    dataBase.dr = dataBase.ds.Tables["pricebooking"].Rows[0];
+                    student.price = (int)dataBase.dr.ItemArray.GetValue(0);
 
 
                     //get expireDate
-                    da = new SqlDataAdapter("SELECT DATEADD(Month, " + arrDuration[iBookingID] + ", GETDATE()) AS expire", connection);
-                    ds = new DataSet();
-                    da.Fill(ds, "expire");
-                    dr = ds.Tables["expire"].Rows[0];
-                    date = (DateTime)dr.ItemArray.GetValue(0);
-                    strBookingTo = date.ToShortDateString();
+                    dataBase.da = new SqlDataAdapter("SELECT DATEADD(Month, " + arrDuration[student.iBookingID] + ", GETDATE()) AS expire", dataBase.connection);
+                    dataBase.ds = new DataSet();
+                    dataBase.da.Fill(dataBase.ds, "expire");
+                    dataBase.dr = dataBase.ds.Tables["expire"].Rows[0];
+                    student.date = (DateTime)dataBase.dr.ItemArray.GetValue(0);
+                    student.strBookingTo = student.date.ToShortDateString();
 
                     //insert into studentBooking
-                    cmd = new SqlCommand("insert into studentBooking(student_id,bookingType_id,price,bookingFrom,bookingTo)values(" + this.ID + ",'" + iBookingID + "','" + price + "','" + strBookingFrom + "','" + strBookingTo + "')", connection);
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
+                    dataBase.cmd = new SqlCommand("insert into studentBooking(student_id,bookingType_id,price,bookingFrom,bookingTo)values(" + this.ID + ",'" + student.iBookingID + "','" + student.price + "','" + student.strBookingFrom + "','" + student.strBookingTo + "')", dataBase.connection);
+                    dataBase.cmd.ExecuteNonQuery();
+                    dataBase.connection.Close();
 
                     //insert into profit
-                    connection.Open();
+                    dataBase.connection.Open();
                     SqlCommand cmdproce = new SqlCommand();
-                    if (iBookingID == 1)
-                        cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + strBookingFrom + "'," + price + "", connection);
-                    else if (iBookingID == 2)
-                        cmdproce = new SqlCommand("exec monthlyBookingCheckExist '" + strBookingFrom + "'," + price + "", connection);
+                    if (student.iBookingID == 1)
+                        cmdproce = new SqlCommand("exec dailyBookingCheckExist '" + student.strBookingFrom + "'," + student.price + "", dataBase.connection);
+                    else if (student.iBookingID == 2)
+                        cmdproce = new SqlCommand("exec monthlyBookingCheckExist '" + student.strBookingFrom + "'," + student.price + "", dataBase.connection);
 
-                    else if (iBookingID == 3)
-                        cmdproce = new SqlCommand("exec termBookingCheckExist '" + strBookingFrom + "'," + price + "", connection);
+                    else if (student.iBookingID == 3)
+                        cmdproce = new SqlCommand("exec termBookingCheckExist '" + student.strBookingFrom + "'," + student.price + "", dataBase.connection);
 
                     cmdproce.ExecuteNonQuery();
-                    connection.Close();
+                    dataBase.connection.Close();
 
 
                     //clear

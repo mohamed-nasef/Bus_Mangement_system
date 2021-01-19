@@ -16,18 +16,13 @@ namespace Bus_Mangement_system.SCR.Bus
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
+        DataBase dataBase = new DataBase();
 
         #endregion
 
         #region Prop
 
-        int iBusindex = -1;
-        string strName, strLicenseNumber, strCapacity = "0",strID;
+        Bus bus = new Bus();
 
         #endregion
 
@@ -43,18 +38,18 @@ namespace Bus_Mangement_system.SCR.Bus
             visible();
 
             cmbBus.SelectedIndex = -1;
-            connection = new SqlConnection(conString);
-            connection.Open();
-            cmd = new SqlCommand("select bus_name from busInformation", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select bus_name from busInformation", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 cmbBus.Items.Add(dr["bus_name"].ToString());
             }
-            connection.Close();
+            dataBase.connection.Close();
         }
 
         #endregion
@@ -62,7 +57,7 @@ namespace Bus_Mangement_system.SCR.Bus
         #region Close Form
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            connection.Close();
+            dataBase.connection.Close();
             this.Close();
         }
         #endregion
@@ -120,27 +115,27 @@ namespace Bus_Mangement_system.SCR.Bus
         private void CmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
             True();
-            iBusindex = cmbBus.SelectedIndex + 1;
-            strName = cmbBus.SelectedText;
-            connection.Open();
-            cmd = new SqlCommand("select * from busInformation where bus_id ='" + iBusindex + "' ", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            bus.iBusindex = cmbBus.SelectedIndex + 1;
+            bus.strName = cmbBus.SelectedText;
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select * from busInformation where bus_id ='" + bus.iBusindex + "' ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
-                strID = dr["bus_id"].ToString();
+                bus.strID = dr["bus_id"].ToString();
                 txtName.Text = dr["bus_name"].ToString();
-                strName = txtName.Text;
+                bus.strName = txtName.Text;
                 txtLicenseNumber.Text = dr["bus_licenseNumber"].ToString();
-                strLicenseNumber = txtLicenseNumber.Text;
+                bus.strLicenseNumber = txtLicenseNumber.Text;
                 txtCapacity.Text = dr["bus_capacity"].ToString();
-                strCapacity = txtCapacity.Text;
+                bus.strCapacity = txtCapacity.Text;
                 txtTotalFees.Text= dr["bus_fees"].ToString();
 
             }
-            connection.Close();
+            dataBase.connection.Close();
         }
         #endregion
 

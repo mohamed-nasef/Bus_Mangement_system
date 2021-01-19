@@ -16,19 +16,14 @@ namespace Bus_Mangement_system.SCR.Student
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
-
+        DataBase dataBase = new DataBase();
+        
         #endregion
 
         #region Prop
 
+        Student student = new Student();
         public int ID { get; set; }
-        string strFirstName, strLastName, strPhone, strAddress, strUniversity,strType;
-        int iBookingID;
 
         #endregion
 
@@ -46,20 +41,20 @@ namespace Bus_Mangement_system.SCR.Student
             DateTime sys = DateTime.Now;
             DateTime expire;
 
-            connection = new SqlConnection(conString);
-            connection.Open();
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
 
-            cmd = new SqlCommand("select * from studentBooking where student_id = " + this.ID + " ", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("select * from studentBooking where student_id = " + this.ID + " ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 expire = (DateTime)dr["bookingTo"];
                 if (sys <= expire)
                     flag = true;
-                iBookingID = (int)dr["bookingType_id"];
+                student.iBookingID = (int)dr["bookingType_id"];
             }
 
             if (flag)
@@ -79,30 +74,30 @@ namespace Bus_Mangement_system.SCR.Student
 
 
             //------------------------------------------
-            cmd = new SqlCommand("select  s.fName ,s.lName ,s.student_phone ,u.university_name ,a.address_name  from studentInformation s inner join university u on s.university_id=u.university_id inner join address a on s.address_id=a.address_id where s.student_id = " + this.ID + "", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("select  s.fName ,s.lName ,s.student_phone ,u.university_name ,a.address_name  from studentInformation s inner join university u on s.university_id=u.university_id inner join address a on s.address_id=a.address_id where s.student_id = " + this.ID + "", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
 
-                strFirstName = txtFirstName.Text = dr["fName"].ToString();
-                strLastName = txtLastName.Text = dr["lName"].ToString();
-                strPhone = txtPhone.Text = dr["student_phone"].ToString();
-                strAddress = txtAddress.Text = dr["address_name"].ToString();
-                strUniversity = txtUniversity.Text = dr["university_name"].ToString();
+                student.strFirstName = txtFirstName.Text = dr["fName"].ToString();
+                student.strLastName = txtLastName.Text = dr["lName"].ToString();
+                student.strPhone = txtPhone.Text = dr["student_phone"].ToString();
+                student.strAddress = txtAddress.Text = dr["address_name"].ToString();
+                student.strUniversity = txtUniversity.Text = dr["university_name"].ToString();
 
             }
-            connection.Close();
+            dataBase.connection.Close();
 
             //--------------------------------------------------------------------
-            if (iBookingID==1)
-                strType = txtBookingType.Text = "Daily";
-            else if (iBookingID == 2)
-                strType = txtBookingType.Text = "Monthly";
+            if (student.iBookingID ==1)
+                student.strType = txtBookingType.Text = "Daily";
+            else if (student.iBookingID == 2)
+                student.strType = txtBookingType.Text = "Monthly";
             else
-                strType = txtBookingType.Text = "Term";
+                student.strType = txtBookingType.Text = "Term";
 
         }
 

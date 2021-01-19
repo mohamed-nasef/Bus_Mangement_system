@@ -16,19 +16,14 @@ namespace Bus_Mangement_system.SCR.Student
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
+        DataBase dataBase = new DataBase();
 
         #endregion
 
         #region Prop
 
+        Student student = new Student();
         public int ID { get; set; }
-        string strFirstName, strLastName, strPhone, strAddress, strOldFirstName, strOldLastName, strOldPhone,strOldAddress;
-        int iAddressID = -1, iUniversityID, iOldAddressID, iOldUniversityID;
 
         #endregion
 
@@ -48,54 +43,54 @@ namespace Bus_Mangement_system.SCR.Student
             lblPhone.Visible = false;
 
             //db
-            connection = new SqlConnection(conString);
-            connection.Open();
-            cmd = new SqlCommand("select university_name from university", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select university_name from university", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 cmbUniversity.Items.Add(dr["university_name"].ToString());
             }
 
-            cmd = new SqlCommand("select address_name from address", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("select address_name from address", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 cmbAddress.Items.Add(dr["address_name"].ToString());
             }
 
-            cmd = new SqlCommand("select * from studentInformation where student_id =" + this.ID + " ", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("select * from studentInformation where student_id =" + this.ID + " ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
 
 
-                strOldFirstName = strFirstName = txtFirstName.Text = dr["fName"].ToString();
-                strOldLastName = strLastName = txtLastName.Text = dr["lName"].ToString();
-                strOldPhone = strPhone = txtPhone.Text = dr["student_phone"].ToString();
+                student.strOldFirstName = student.strFirstName = txtFirstName.Text = dr["fName"].ToString();
+                student.strOldLastName = student.strLastName = txtLastName.Text = dr["lName"].ToString();
+                student.strOldPhone = student.strPhone = txtPhone.Text = dr["student_phone"].ToString();
 
-                iOldAddressID = iAddressID = (int)dr["address_id"];
-                cmbAddress.SelectedIndex = iAddressID-1;
-                strOldAddress=strAddress = cmbAddress.Items[iAddressID-1].ToString();
+                student.iOldAddressID = student.iAddressID = (int)dr["address_id"];
+                cmbAddress.SelectedIndex = student.iAddressID -1;
+                student.strOldAddress = student.strAddress = cmbAddress.Items[student.iAddressID -1].ToString();
 
-                iOldUniversityID=iUniversityID = (int)dr["university_id"];
-                cmbUniversity.SelectedIndex = iUniversityID-1;
+                student.iOldUniversityID = student.iUniversityID = (int)dr["university_id"];
+                cmbUniversity.SelectedIndex = student.iUniversityID -1;
 
 
             }
 
-            
 
-            connection.Close();
+
+            dataBase.connection.Close();
 
             
         }
@@ -134,31 +129,40 @@ namespace Bus_Mangement_system.SCR.Student
         #region TextBox Validation
         private void TxtFirstName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtFirstName, "Please Enter Valid First Name Without Any Numbers", ref strFirstName, e, errorProvider1);
+            string refStrFirstName = "";
+            Functions.validationTxt(txtFirstName, "Please Enter Valid First Name Without Any Numbers", ref refStrFirstName, e, errorProvider1);
+            student.strFirstName = refStrFirstName;
         }
         private void TxtLastName_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtLastName, "Please Enter Valid Last Name Without Any Numbers", ref strLastName, e, errorProvider1);
+            string refStrLastName = "";
+            Functions.validationTxt(txtLastName, "Please Enter Valid Last Name Without Any Numbers", ref refStrLastName, e, errorProvider1);
+            student.strLastName = refStrLastName;
         }
         private void TxtPhone_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationTxt(txtPhone, "Please Enter Valid Phone Like (01*********)", ref strPhone, e, errorProvider1);
-
+            string refPhone = "";
+            Functions.validationTxt(txtPhone, "Please Enter Valid Phone Like (01*********)", ref refPhone, e, errorProvider1);
+            student.strPhone = refPhone;
         }
         #endregion
 
         #region ComboBox Validation
         private void CmbAddress_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbAddress, "Please Select Address", ref iAddressID, e, errorProvider1);
-            if (iAddressID != -1)
-                strAddress = cmbAddress.Items[iAddressID].ToString();
+            int refIAddressID = -1;
+            Functions.validationcmb(cmbAddress, "Please Select Address", ref refIAddressID, e, errorProvider1);
+            student.iAddressID = refIAddressID;
+
+            if (student.iAddressID != -1)
+                student.strAddress = cmbAddress.Items[student.iAddressID].ToString();
         }
 
         private void CmbUniversity_Validating(object sender, CancelEventArgs e)
         {
-            Functions.validationcmb(cmbUniversity, "Please Select University", ref iUniversityID, e, errorProvider1);
-
+            int refIUniversityID = -1;
+            Functions.validationcmb(cmbUniversity, "Please Select University", ref refIUniversityID, e, errorProvider1);
+            student.iUniversityID = refIUniversityID;
         }
 
         #endregion
@@ -167,7 +171,7 @@ namespace Bus_Mangement_system.SCR.Student
         private void BtnEditStudent_Click(object sender, EventArgs e)
         {
 
-            if (strOldFirstName==strFirstName&& strOldLastName==strLastName&& strOldPhone==strPhone&& iOldAddressID==iAddressID&& iOldUniversityID == iUniversityID)
+            if (student.strOldFirstName == student.strFirstName && student.strOldLastName == student.strLastName && student.strOldPhone == student.strPhone && student.iOldAddressID == student.iAddressID && student.iOldUniversityID == student.iUniversityID)
                 MetroFramework.MetroMessageBox.Show(this, "\n\nYou didn't make any change\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             
             else
@@ -176,23 +180,23 @@ namespace Bus_Mangement_system.SCR.Student
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
 
-                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {strFirstName} {strLastName}\nphone:             {strPhone}\naddress:           {strAddress}\nUniversity:        {cmbUniversity.Items[iUniversityID]}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"name:              {student.strFirstName} {student.strLastName}\nphone:             {student.strPhone}\naddress:           {student.strAddress}\nUniversity:        {cmbUniversity.Items[student.iUniversityID]}\n", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
 
-                        connection.Open();
+                        dataBase.connection.Open();
                         // check student   
                         bool flagIN = false;
-                        if (!(strPhone == strOldPhone))
+                        if (!(student.strPhone == student.strOldPhone))
                         {
                             // check student   
-                            cmd = new SqlCommand("select student_phone from studentInformation where student_phone ='" + strPhone + "'", connection);
-                            cmd.ExecuteNonQuery();
-                            dt = new DataTable();
-                            da = new SqlDataAdapter(cmd);
-                            da.Fill(dt);
+                            dataBase.cmd = new SqlCommand("select student_phone from studentInformation where student_phone ='" + student.strPhone + "'", dataBase.connection);
+                            dataBase.cmd.ExecuteNonQuery();
+                            dataBase.dt = new DataTable();
+                            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+                            dataBase.da.Fill(dataBase.dt);
 
-                            foreach (DataRow dr in dt.Rows)
+                            foreach (DataRow dr in dataBase.dt.Rows)
                                 flagIN = true;
 
 
@@ -201,19 +205,19 @@ namespace Bus_Mangement_system.SCR.Student
                         if (flagIN)
                         {
                             MetroFramework.MetroMessageBox.Show(this, "\n\nThis phone already exists\nPlease be careful", "\nWarning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            connection.Close();
+                            dataBase.connection.Close();
                         }
 
                         else
                         {
                             //DB Commands
-                            iAddressID = cmbAddress.SelectedIndex;
-                            iUniversityID = cmbUniversity.SelectedIndex;
-                            iUniversityID++; iAddressID++;
-                            cmd = new SqlCommand("update studentInformation set fName='" + strFirstName + "',lName='" + strLastName + "' ,student_phone='" + strPhone + "',address_id='" + iAddressID + "',university_id='" + iUniversityID + "' where student_id =" + this.ID + "", connection);
-                            cmd.ExecuteNonQuery();
+                            student.iAddressID = cmbAddress.SelectedIndex;
+                            student.iUniversityID = cmbUniversity.SelectedIndex;
+                            student.iUniversityID++; student.iAddressID++;
+                            dataBase.cmd = new SqlCommand("update studentInformation set fName='" + student.strFirstName + "',lName='" + student.strLastName + "' ,student_phone='" + student.strPhone + "',address_id='" + student.iAddressID + "',university_id='" + student.iUniversityID + "' where student_id =" + this.ID + "", dataBase.connection);
+                            dataBase.cmd.ExecuteNonQuery();
 
-                            connection.Close();
+                            dataBase.connection.Close();
                             //clear
                             txtFirstName.Clear();
                             txtLastName.Clear();

@@ -16,18 +16,13 @@ namespace Bus_Mangement_system.SCR.Driver
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
+        DataBase dataBase = new DataBase();
 
         #endregion
 
         #region Prop
 
-        string strName, strPhone, strAddress, strSalary;
-        int iSalary = 0, iDriverIndex = -1;
+        Driver driver = new Driver();
 
         #endregion
 
@@ -42,18 +37,18 @@ namespace Bus_Mangement_system.SCR.Driver
         {
             visible();
             cmbDriver.SelectedIndex = -1;
-            connection = new SqlConnection(conString);
-            connection.Open();
-            cmd = new SqlCommand("select driver_name from driverInformation", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select driver_name from driverInformation", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 cmbDriver.Items.Add(dr["driver_name"].ToString());
             }
-            connection.Close();
+            dataBase.connection.Close();
         }
 
         #endregion
@@ -62,7 +57,7 @@ namespace Bus_Mangement_system.SCR.Driver
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            connection.Close();
+            dataBase.connection.Close();
             this.Close();
         }
 
@@ -118,29 +113,30 @@ namespace Bus_Mangement_system.SCR.Driver
         private void CmbDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
             True();
-            iDriverIndex = cmbDriver.SelectedIndex + 1;
-            strName = cmbDriver.SelectedText;
-            connection.Open();
-            cmd = new SqlCommand("select * from driverInformation where driver_id ='" + iDriverIndex + "' ", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            driver.iDriverIndex = cmbDriver.SelectedIndex + 1;
+            driver.strName = cmbDriver.SelectedText;
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select * from driverInformation where driver_id ='" + driver.iDriverIndex + "' ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 
                 txtName.Text = dr["driver_name"].ToString();
-                strName = txtName.Text;
+                driver.strName = txtName.Text;
                 txtPhone.Text = dr["driver_phone"].ToString();
-                strPhone = txtPhone.Text;
+                driver.strPhone = txtPhone.Text;
                 txtAddress.Text = dr["driver_address"].ToString();
-                strAddress = txtAddress.Text;
+                driver.strAddress = txtAddress.Text;
                 txtSalary.Text = dr["basicSalary"].ToString();
-                strSalary = txtSalary.Text;
-                int.TryParse(strSalary, out iSalary);
-
+                driver.strSalary = txtSalary.Text;
+                int refISalary;
+                int.TryParse(driver.strSalary, out refISalary);
+                driver.iSalary = refISalary;
             }
-            connection.Close();
+            dataBase.connection.Close();
         }
 
         #endregion

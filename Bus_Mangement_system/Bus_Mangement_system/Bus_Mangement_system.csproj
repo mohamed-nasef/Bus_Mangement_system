@@ -91,6 +91,7 @@
     <Compile Include="SCR\Bus\AddFees.Designer.cs">
       <DependentUpon>AddFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Bus\Bus.cs" />
     <Compile Include="SCR\Bus\BusReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,18 +104,22 @@
     <Compile Include="SCR\Bus\EditBus.Designer.cs">
       <DependentUpon>EditBus.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Bus\FeesType.cs" />
     <Compile Include="SCR\Daily Ticket\AddDailyTickets.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SCR\Daily Ticket\AddDailyTickets.Designer.cs">
       <DependentUpon>AddDailyTickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Daily Ticket\DailyTicket.cs" />
+    <Compile Include="SCR\DataBase.cs" />
     <Compile Include="SCR\Driver\AddDriver.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SCR\Driver\AddDriver.Designer.cs">
       <DependentUpon>AddDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Driver\Driver.cs" />
     <Compile Include="SCR\Driver\DriverReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +139,7 @@
       <DependentUpon>Salary.cs</DependentUpon>
     </Compile>
     <Compile Include="SCR\Functions.cs" />
+    <Compile Include="SCR\Modify Price\BookingPrice.cs" />
     <Compile Include="SCR\Modify Price\ModifyPrice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,7 @@
     <Compile Include="SCR\Student\ReportStudent.Designer.cs">
       <DependentUpon>ReportStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="SCR\Student\Student.cs" />
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
