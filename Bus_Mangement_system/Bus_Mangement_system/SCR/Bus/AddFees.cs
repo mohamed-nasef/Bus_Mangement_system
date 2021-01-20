@@ -482,7 +482,6 @@ namespace Bus_Mangement_system.SCR.Bus
 
                     //clear
                     visible();
-                    cmbBus.SelectedIndex = -1;
                     cmbFeesType.SelectedIndex = -1;
                     btnOther.Text = $"$ 0";
                     btnLicenseRenewal.Text = $"$ 0";
