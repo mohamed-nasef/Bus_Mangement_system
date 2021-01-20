@@ -16,11 +16,7 @@ namespace Bus_Mangement_system
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
+        SCR.DataBase dataBase = new SCR.DataBase();
 
         #endregion
 
@@ -50,17 +46,17 @@ namespace Bus_Mangement_system
 
             //------------------------------------
             //db
-            connection = new SqlConnection(conString);
-            connection.Open();
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
 
 
             //select income ,payments and profit
-            cmd = new SqlCommand("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking)) as 'income' ,(SUM(driverTakenSalary)+sum(busFees)) as 'payments' FROM profit WHERE DATEPART(YEAR, profit_date) = '" + iYear + "'  AND DATEPART(MONTH, profit_date) ='" + iMonth + "'", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("SELECT (sum(dailyBooking)+SUM(monthlyBooking)+SUM(termBooking)) as 'income' ,(SUM(driverTakenSalary)+sum(busFees)) as 'payments' FROM profit WHERE DATEPART(YEAR, profit_date) = '" + iYear + "'  AND DATEPART(MONTH, profit_date) ='" + iMonth + "'", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 labelIncome.Text = $"$ {dr["income"].ToString()}";
                 labelPayments.Text = $"$ {dr["payments"].ToString()}";
@@ -69,12 +65,12 @@ namespace Bus_Mangement_system
 
 
             //count Daily Tickets
-            cmd = new SqlCommand("select count(bookingType_id) as count from studentBooking where bookingFrom='"+DateTime.Now.ToShortDateString()+"' and bookingType_id=1", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("select count(bookingType_id) as count from studentBooking where bookingFrom='"+DateTime.Now.ToShortDateString()+"' and bookingType_id=1", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 labelDailyTickets.Text = $"{dr["count"].ToString()}";
             }
@@ -89,12 +85,12 @@ namespace Bus_Mangement_system
             DateTime expire;
 
 
-            cmd = new SqlCommand("select student_id as id from studentInformation", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("select student_id as id from studentInformation", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 arrStudentID.Add ((int)dr["id"]);
             }
@@ -102,12 +98,12 @@ namespace Bus_Mangement_system
             for (int i = 0; i < arrStudentID.Count; i++)
             {
                 flag = false;
-                cmd = new SqlCommand("select * from studentBooking where student_id = " + arrStudentID[i] + " ", connection);
-                cmd.ExecuteNonQuery();
-                dt = new DataTable();
-                da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                dataBase.cmd = new SqlCommand("select * from studentBooking where student_id = " + arrStudentID[i] + " ", dataBase.connection);
+                dataBase.cmd.ExecuteNonQuery();
+                dataBase.dt = new DataTable();
+                dataBase.da = new SqlDataAdapter(dataBase.cmd);
+                dataBase.da.Fill(dataBase.dt);
+                foreach (DataRow dr in dataBase.dt.Rows)
                 {
                     expire = (DateTime)dr["bookingTo"];
                     if (sys <= expire)
@@ -129,27 +125,27 @@ namespace Bus_Mangement_system
 
 
             //count bus
-            cmd = new SqlCommand("select count(bus_id) as count from busInformation", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("select count(bus_id) as count from busInformation", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 labelBuses.Text = $"{dr["count"].ToString()}";
             }
 
             //count driver
-            cmd = new SqlCommand("select count(driver_id) as count from driverInformation", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.cmd = new SqlCommand("select count(driver_id) as count from driverInformation", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 labelDrivers.Text = $"{dr["count"].ToString()}";
             }
-            connection.Close();
+            dataBase.connection.Close();
             //------------------------------------
         }
         private void PanelChildForm_Paint(object sender, PaintEventArgs e)

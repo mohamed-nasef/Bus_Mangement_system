@@ -17,11 +17,7 @@ namespace Bus_Mangement_system
 
         #region DB
 
-        string conString = Program.GetConnectionStringByName();
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataTable dt;
-        SqlConnection connection = new SqlConnection();
+        SCR.DataBase dataBase = new SCR.DataBase();
 
         #endregion
 
@@ -41,20 +37,20 @@ namespace Bus_Mangement_system
 
         private void login_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(conString);
-            connection.Open();
-            cmd = new SqlCommand("select * from userLogin ", connection);
-            cmd.ExecuteNonQuery();
-            dt = new DataTable();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            dataBase.connection = new SqlConnection(dataBase.conString);
+            dataBase.connection.Open();
+            dataBase.cmd = new SqlCommand("select * from userLogin ", dataBase.connection);
+            dataBase.cmd.ExecuteNonQuery();
+            dataBase.dt = new DataTable();
+            dataBase.da = new SqlDataAdapter(dataBase.cmd);
+            dataBase.da.Fill(dataBase.dt);
+            foreach (DataRow dr in dataBase.dt.Rows)
             {
                 strUserName = dr["userName"].ToString();
                 strPassword  = dr["password"].ToString();
 
             }
-            connection.Close();
+            dataBase.connection.Close();
            
         }
 
@@ -64,7 +60,7 @@ namespace Bus_Mangement_system
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
-            connection.Close();
+            dataBase.connection.Close();
             Application.Exit();
         }
 
