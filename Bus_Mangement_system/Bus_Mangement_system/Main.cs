@@ -35,13 +35,11 @@ namespace Bus_Mangement_system
         }
         private void Main_Load(object sender, EventArgs e)
         {
-
             //------------------------------------
             //label
             labelMonthlyDetailsIncome.Text = labelMonthlyDetailsPayments.Text = labelMonthlyDetailsProfits.Text = $"Details of Last {iDay} Days";
             labelDateDailyTicket.Text = $"Details of {DateTime.Now.ToShortDateString()}";
             //------------------------------------
-
 
 
             //------------------------------------
@@ -75,15 +73,12 @@ namespace Bus_Mangement_system
                 labelDailyTickets.Text = $"{dr["count"].ToString()}";
             }
 
-
-
             //select student id ,count valid students and count expired students
             List<int> arrStudentID = new List<int>();
             int valid=0, expired=0;
             bool flag = false;
             DateTime sys = DateTime.Now;
             DateTime expire;
-
 
             dataBase.cmd = new SqlCommand("select student_id as id from studentInformation", dataBase.connection);
             dataBase.cmd.ExecuteNonQuery();

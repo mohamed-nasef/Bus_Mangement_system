@@ -90,25 +90,6 @@ namespace Bus_Mangement_system.SCR
                         str = txt.Text;
                     }
                 }
-
-                //StudentId
-                else if (txt.Name== "txtStudentId" || txt.Name== "txtOneWay" || txt.Name== "txtRoundTrip")
-                {
-                    Regex r = new Regex(@"^[1-9]{1}[0-9]*$");
-                    if (!(r.IsMatch(txt.Text)))
-                    {
-                        e.Cancel = true;
-                        //txt.Focus();
-                        errorProvider.SetError(txt, errorMessage);
-                    }
-                    else
-                    {
-                        e.Cancel = false;
-                        errorProvider.SetError(txt, null);
-                        str = txt.Text;
-                    }
-                }
-
                 //SalaryDriver
                 else if (txt.Name == "txtSalary")
                 {
@@ -126,6 +107,24 @@ namespace Bus_Mangement_system.SCR
                         str = txt.Text;
                     }
 
+                }
+
+                //StudentId
+                else if (txt.Name== "txtStudentId" || txt.Name== "txtOneWay" || txt.Name== "txtRoundTrip")
+                {
+                    Regex r = new Regex(@"^[1-9]{1}[0-9]*$");
+                    if (!(r.IsMatch(txt.Text)))
+                    {
+                        e.Cancel = true;
+                        //txt.Focus();
+                        errorProvider.SetError(txt, errorMessage);
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider.SetError(txt, null);
+                        str = txt.Text;
+                    }
                 }
 
                 //Money

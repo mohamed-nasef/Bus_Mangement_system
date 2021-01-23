@@ -20,6 +20,7 @@ namespace Bus_Mangement_system
             Application.Run(new Loading());
         }
         
+        //GET Connection String From App.Config
         public static string GetConnectionStringByName()
         {
             
