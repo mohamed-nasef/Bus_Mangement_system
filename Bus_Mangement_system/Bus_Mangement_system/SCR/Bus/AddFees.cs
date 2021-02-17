@@ -1,4 +1,6 @@
-﻿using System;
+using Guna.UI.WinForms;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,9 +27,7 @@ namespace Bus_Mangement_system.SCR.Bus
 
         Bus bus = new Bus();
         FeesType feesType = new FeesType();
-
         int refIBusID, refIFeesTypeID;
-
         #endregion
 
         #region Form
@@ -39,9 +39,9 @@ namespace Bus_Mangement_system.SCR.Bus
         private void AddFees_Load(object sender, EventArgs e)
         {
             visible();
-            dataBase.connection = new SqlConnection(dataBase.conString);
 
             //db
+            dataBase.connection = new SqlConnection(dataBase.conString);
             cmbBus.SelectedIndex = -1;
 
             dataBase.connection = new SqlConnection(dataBase.conString);
@@ -64,9 +64,19 @@ namespace Bus_Mangement_system.SCR.Bus
             foreach (DataRow dr in dataBase.dt.Rows)
             {
                 cmbFeesType.Items.Add(dr["feesType_name"].ToString());
+                feesType.strName.Add(dr["feesType_name"].ToString());
+                feesType.iPrice.Add(0);
             }
 
             dataBase.connection.Close();
+
+            feesType.GunaButton.Add(btnChangeOil);
+            feesType.GunaButton.Add(btnPeriodicMaintenance);
+            feesType.GunaButton.Add(btnLicenseRenewal);
+            feesType.GunaButton.Add(btnBusWash);
+            feesType.GunaButton.Add(btnSolar);
+            feesType.GunaButton.Add(btnOther);
+
 
         }
 
@@ -214,19 +224,7 @@ namespace Bus_Mangement_system.SCR.Bus
         {
             //select FeesType id 
             feesType.iFeesTypeID = cmbFeesType.SelectedIndex + 1;
-            string selected = this.cmbFeesType.GetItemText(this.cmbFeesType.SelectedItem);
-            if (selected == "Other")
-                txtMoney.Text = feesType.iOther.ToString();
-            else if (selected == "License Renewal")
-                txtMoney.Text = feesType.iLicenseRenewal.ToString();
-            else if (selected == "Bus Wash")
-                txtMoney.Text = feesType.iBusWash.ToString();
-            else if (selected == "Change Oil")
-                txtMoney.Text = feesType.iChangeOil.ToString();
-            else if (selected == "Solar")
-                txtMoney.Text = feesType.iSolar.ToString();
-            else if (selected == "Periodic Maintenance")
-                txtMoney.Text = feesType.iPeriodicMaintenance.ToString();
+            txtMoney.Text = feesType.iPrice[cmbFeesType.SelectedIndex].ToString();
 
         }
 
@@ -239,97 +237,16 @@ namespace Bus_Mangement_system.SCR.Bus
             if (valid() && cmbFeesType.SelectedIndex != -1)
             {
                 Buttons();
-                string selected = this.cmbFeesType.GetItemText(this.cmbFeesType.SelectedItem);
-                if (selected == "Other")
-                {
-                    if (feesType.iOther != 0)
-                        feesType.iTotal -= feesType.iOther;
-                    feesType.strOther = feesType.strMoney;
-                    btnOther.Text = $"$ {feesType.strOther}";
-                    int refIOther;
-                    int.TryParse(feesType.strOther, out refIOther);
-                    feesType.iOther = refIOther;
-                    feesType.iTotal += feesType.iOther;
-                    btnOther.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
-                    btnOther.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
-
-
-                }
-                else if (selected == "License Renewal")
-                {
-                    if (feesType.iLicenseRenewal != 0)
-                        feesType.iTotal -= feesType.iLicenseRenewal;
-                    feesType.strLicenseRenewal = feesType.strMoney;
-                    btnLicenseRenewal.Text = $"$ {feesType.strLicenseRenewal}";
-                    int refILicenseRenewal;
-                    int.TryParse(feesType.strLicenseRenewal, out refILicenseRenewal);
-                    feesType.iLicenseRenewal = refILicenseRenewal;
-                    feesType.iTotal += feesType.iLicenseRenewal;
-                    btnLicenseRenewal.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
-                    btnLicenseRenewal.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
-
-
-                }
-                else if (selected == "Bus Wash")
-                {
-                    if (feesType.iBusWash != 0)
-                        feesType.iTotal -= feesType.iBusWash;
-                    feesType.strBusWash = feesType.strMoney;
-                    btnBusWash.Text = $"$ {feesType.strBusWash}";
-                    int refIBusWash;
-                    int.TryParse(feesType.strBusWash, out refIBusWash);
-                    feesType.iBusWash = refIBusWash;
-
-                    feesType.iTotal += feesType.iBusWash;
-                    btnBusWash.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
-                    btnBusWash.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
-
-                }
-                else if (selected == "Change Oil")
-                {
-                    if (feesType.iChangeOil != 0)
-                        feesType.iTotal -= feesType.iChangeOil;
-                    feesType.strChangeOil = feesType.strMoney;
-                    btnChangeOil.Text = $"$ {feesType.strChangeOil}";
-                    int refIChangeOil;
-                    int.TryParse(feesType.strChangeOil, out refIChangeOil);
-                    feesType.iChangeOil = refIChangeOil;
-                    feesType.iTotal += feesType.iChangeOil;
-                    btnChangeOil.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
-                    btnChangeOil.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
-
-
-                }
-                else if (selected == "Solar")
-                {
-                    if (feesType.iSolar != 0)
-                        feesType.iTotal -= feesType.iSolar;
-                    feesType.strSolar = feesType.strMoney;
-                    btnSolar.Text = $"$ {feesType.strSolar}";
-                    int refISolar;
-                    int.TryParse(feesType.strSolar, out refISolar);
-                    feesType.iSolar = refISolar;
-                    feesType.iTotal += feesType.iSolar;
-                    btnSolar.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
-                    btnSolar.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
-
-
-                }
-                else if (selected == "Periodic Maintenance")
-                {
-                    if (feesType.iPeriodicMaintenance != 0)
-                        feesType.iTotal -= feesType.iPeriodicMaintenance;
-                    feesType.strPeriodicMaintenance = feesType.strMoney;
-                    btnPeriodicMaintenance.Text = $"$ {feesType.strPeriodicMaintenance}";
-                    int refIPeriodicMaintenance;
-                    int.TryParse(feesType.strPeriodicMaintenance, out refIPeriodicMaintenance);
-                    feesType.iPeriodicMaintenance = refIPeriodicMaintenance;
-                    feesType.iTotal += feesType.iPeriodicMaintenance;
-                    btnPeriodicMaintenance.OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
-                    btnPeriodicMaintenance.OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
-
-
-                }
+                int index = cmbFeesType.SelectedIndex;
+                if (feesType.iPrice[index] != 0)
+                    feesType.iTotal -= feesType.iPrice[index];
+                int refInt;
+                int.TryParse(feesType.strMoney, out refInt);
+                feesType.iPrice[index] = refInt;
+                feesType.iTotal += feesType.iPrice[index];
+                feesType.GunaButton[index].Text= $"$ {feesType.iPrice[index]}";
+                feesType.GunaButton[index].OnHoverBaseColor = ColorTranslator.FromHtml("#4DE1AF");
+                feesType.GunaButton[index].OnPressedColor = ColorTranslator.FromHtml("#4DE1AF");
 
                 btnTotal.Text = $"$ {feesType.iTotal}";
             }
@@ -343,66 +260,26 @@ namespace Bus_Mangement_system.SCR.Bus
         #region Clear Button
         private void BtnClear_Click(object sender, EventArgs e)
         {
-            string selected = this.cmbFeesType.GetItemText(this.cmbFeesType.SelectedItem);
+            
+            int index = cmbFeesType.SelectedIndex;
 
-            if ((selected == "Other"&& feesType.iOther !=0)|| (selected == "License Renewal" && feesType.iLicenseRenewal != 0) || (selected == "Bus Wash" && feesType.iBusWash != 0) || (selected == "Change Oil" && feesType.iChangeOil != 0) || (selected == "Solar" && feesType.iSolar != 0) || (selected == "Periodic Maintenance" && feesType.iPeriodicMaintenance != 0))
+            if (feesType.iPrice[index]!=0)
             {
 
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"You want to Clear {selected} ? ", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"You want to Clear {feesType.strName[index]} ? ", "\nAre you sure ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    if (selected == "Other")
-                    {
-                        btnOther.Text = $"$ 0";
-                        feesType.iTotal -= feesType.iOther;
-                        feesType.iOther = 0;
-                        btnOther.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
-
-                    }
-                    else if (selected == "License Renewal")
-                    {
-                        btnLicenseRenewal.Text = $"$ 0";
-                        feesType.iTotal -= feesType.iLicenseRenewal;
-                        feesType.iLicenseRenewal = 0;
-                        btnLicenseRenewal.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
-
-                    }
-                    else if (selected == "Bus Wash")
-                    {
-                        btnBusWash.Text = $"$ 0";
-                        feesType.iTotal -= feesType.iBusWash;
-                        feesType.iBusWash = 0;
-                        btnBusWash.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
-                    }
-                    else if (selected == "Change Oil")
-                    {
-                        btnChangeOil.Text = $"$ 0";
-                        feesType.iTotal -= feesType.iChangeOil;
-                        feesType.iChangeOil = 0;
-                        btnChangeOil.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
-                    }
-                    else if (selected == "Solar")
-                    {
-                        btnChangeOil.Text = $"$ 0";
-                        feesType.iTotal -= feesType.iSolar;
-                        feesType.iSolar = 0;
-                        btnSolar.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
-                    }
-                    else if (selected == "Periodic Maintenance")
-                    {
-                        btnPeriodicMaintenance.Text = $"$ 0";
-                        feesType.iTotal -= feesType.iPeriodicMaintenance;
-                        feesType.iPeriodicMaintenance = 0;
-                        btnPeriodicMaintenance.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
-                    }
-
+                    feesType.iTotal -= feesType.iPrice[index];
+                    feesType.iPrice[index] = 0;
+                    feesType.GunaButton[index].Text = $"$ 0";
+                    feesType.GunaButton[index].OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
                     btnTotal.Text = $"$ {feesType.iTotal}";
                 }
                 txtMoney.Clear();
 
             }
             else
-                MetroFramework.MetroMessageBox.Show(this, $"No money was assigned to {selected} to clear ", "\nError ?", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MetroFramework.MetroMessageBox.Show(this, $"No money was assigned to {feesType.strName[index]} to clear ", "\nError ?", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
 
@@ -414,8 +291,17 @@ namespace Bus_Mangement_system.SCR.Bus
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
+                string msg = $"Total = {feesType.iTotal}\n\n";
+                for (int i = 0; i < feesType.iPrice.Count; i++)
+                {
+                    if (feesType.iPrice[i]!=0)
+                        msg += $"{feesType.strName[i]} = {feesType.iPrice[i]}        ";
 
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, $"Total = {feesType.iTotal}\n\nChange Oil = {feesType.iChangeOil}   \t\t Periodic Maintenance = {feesType.iPeriodicMaintenance}   \t\t License Renewal = {feesType.iLicenseRenewal}\nBus Wash = {feesType.iBusWash}        \t\t Solar = {feesType.iSolar}             \t\t Other = {feesType.iOther}", "Are you sure to add this ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (i==2)
+                        msg += "\n";
+                }
+                
+                DialogResult result = MetroFramework.MetroMessageBox.Show(this, msg, "Are you sure to add this ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
 
@@ -423,47 +309,16 @@ namespace Bus_Mangement_system.SCR.Bus
                     //db
                     //insert into table BusFees
                     dataBase.connection.Open();
-                    if (feesType.iPeriodicMaintenance != 0)
+                    for (int i = 0; i < feesType.iPrice.Count; i++)
                     {
-                        feesType.iFeesTypeID = cmbFeesType.Items.IndexOf("Periodic Maintenance");
-                        feesType.iFeesTypeID++;
-                        dataBase.cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + bus.iBusID + "','" + feesType.iFeesTypeID + "','" + feesType.iPeriodicMaintenance + "')", dataBase.connection);
-                        dataBase.cmd.ExecuteNonQuery();
-                    }
-                    if (feesType.iSolar != 0)
-                    {
-                        feesType.iFeesTypeID = cmbFeesType.Items.IndexOf("Solar");
-                        feesType.iFeesTypeID++;
-                        dataBase.cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + bus.iBusID + "','" + feesType.iFeesTypeID + "','" + feesType.iSolar + "')", dataBase.connection);
-                        dataBase.cmd.ExecuteNonQuery();
-                    }
-                    if (feesType.iChangeOil != 0)
-                    {
-                        feesType.iFeesTypeID = cmbFeesType.Items.IndexOf("Change Oil");
-                        feesType.iFeesTypeID++;
-                        dataBase.cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + bus.iBusID + "','" + feesType.iFeesTypeID + "','" + feesType.iChangeOil + "')", dataBase.connection);
-                        dataBase.cmd.ExecuteNonQuery();
-                    }
-                    if (feesType.iBusWash != 0)
-                    {
-                        feesType.iFeesTypeID = cmbFeesType.Items.IndexOf("Bus Wash");
-                        feesType.iFeesTypeID++;
-                        dataBase.cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + bus.iBusID + "','" + feesType.iFeesTypeID + "','" + feesType.iBusWash + "')", dataBase.connection);
-                        dataBase.cmd.ExecuteNonQuery();
-                    }
-                    if (feesType.iLicenseRenewal != 0)
-                    {
-                        feesType.iFeesTypeID = cmbFeesType.Items.IndexOf("License Renewal");
-                        feesType.iFeesTypeID++;
-                        dataBase.cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + bus.iBusID + "','" + feesType.iFeesTypeID + "','" + feesType.iLicenseRenewal + "')", dataBase.connection);
-                        dataBase.cmd.ExecuteNonQuery();
-                    }
-                    if (feesType.iOther != 0)
-                    {
-                        feesType.iFeesTypeID = cmbFeesType.Items.IndexOf("Other");
-                        feesType.iFeesTypeID++;
-                        dataBase.cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + bus.iBusID + "','" + feesType.iFeesTypeID + "','" + feesType.iOther + "')", dataBase.connection);
-                        dataBase.cmd.ExecuteNonQuery();
+                        if (feesType.iPrice[i]!=0)
+                        {
+                            feesType.iFeesTypeID = cmbFeesType.Items.IndexOf(feesType.strName[i]);
+                            feesType.iFeesTypeID++;
+                            dataBase.cmd = new SqlCommand("insert into busFees(bus_id,feesType_id,feesPrice)values('" + bus.iBusID + "','" + feesType.iFeesTypeID + "','" + feesType.iPrice[i] + "')", dataBase.connection);
+                            dataBase.cmd.ExecuteNonQuery();
+                        }
+                       
                     }
 
                     //update fees in businformation
@@ -479,32 +334,21 @@ namespace Bus_Mangement_system.SCR.Bus
 
                     dataBase.connection.Close();
 
-
                     //clear
-                    visible();
-                    cmbFeesType.SelectedIndex = -1;
-                    btnOther.Text = $"$ 0";
-                    btnLicenseRenewal.Text = $"$ 0";
-                    btnBusWash.Text = $"$ 0";
-                    btnChangeOil.Text = $"$ 0";
-                    btnPeriodicMaintenance.Text = $"$ 0";
-                    btnTotal.Text = $"$ 0";
                     txtMoney.Clear();
-                    feesType.iOther = feesType.iLicenseRenewal = feesType.iBusWash = feesType.iChangeOil = feesType.iPeriodicMaintenance = feesType.iTotal = 0;
-                    feesType.strMoney = feesType.strOther = feesType.strLicenseRenewal = feesType.strBusWash = feesType.strChangeOil = feesType.strPeriodicMaintenance = "";
+                    cmbFeesType.SelectedIndex = 0;
                     bus.iBusID = feesType.iFeesTypeID =- 1;
-
-                    visible();
+                    foreach (var item in feesType.GunaButton)
+                    {
+                        item.Text= "$ 0";
+                        item.OnHoverBaseColor = ColorTranslator.FromHtml("#E1184D");
+                    }
                     MetroFramework.MetroMessageBox.Show(this, "\n\nBus Fees Added Successfully", "\nDone", MessageBoxButtons.OK, MessageBoxIcon.Question);
-
                     this.Close();
                 }
             }
 
         }
-
         #endregion
-
-
     }
 }
